@@ -11,6 +11,7 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  getMetadata,
 } from './lib-franklin.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -31,12 +32,53 @@ function buildHeroBlock(main) {
 }
 
 /**
+ * Build Floating image block
+ * @param {Element} main The container element
+ */
+function buildFloatingImages(main) {
+console.log('in build floating images ');
+ main.querySelectorAll('.section-metadata').forEach((metadata) => {
+
+    let style;
+    /*[...metadata.querySelectorAll(':scope > div')].every((div) => {
+      const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image-(left|right))/);
+      console.log(match);
+      if (div.children[0]?.textContent.toLowerCase().trim() === 'style' && match) {
+        [, style] = match;
+        return false;
+      }
+      return true;
+    });*/
+      const section = metadata.parentElement;
+      const left = [];
+      const right = [];
+        console.log('if stylesection');
+      [...section.children].forEach((child) => {
+        const picture = child.querySelector(':scope > picture');
+        if (picture) {
+          right.push(picture);
+          child.remove();
+        } else if (!child.classList.contains('section-metadata')) {
+          left.push(child);
+        }
+      });
+      const block = buildBlock('floating-images', [[{ elems: left }, { elems: right }]]);
+      block.classList.add(style);
+      console.log(style);
+      section.prepend(block);
+
+  });
+}
+
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+    buildFloatingImages(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

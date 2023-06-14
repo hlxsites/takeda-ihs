@@ -14,7 +14,7 @@
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
-  --background-color: #fff;
+  --background-color: #edeff0;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #000;
@@ -25,7 +25,7 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
+  --body-font-size-m: 17px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
 
@@ -222,6 +222,8 @@ main img {
 
 main .section {
   padding: 64px 16px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 @media (min-width: 600px) {
