@@ -12,7 +12,6 @@ styles for the floating images auto block */
   display: flex;
   flex-direction: column-reverse;
   padding-top: 1em;
-  min-height: 530px;
 }
 
 .block.floating-images .image {
@@ -34,9 +33,9 @@ styles for the floating images auto block */
   font-size: var(--heading-font-size-m);
 }
 .block.floating-images .content  {
-
   border-left: 3px solid #ee1100;
   padding: 0 24px;
+  max-height: 350px;
 }
 
 .block.floating-images .content ul {
@@ -59,7 +58,6 @@ styles for the floating images auto block */
  .block.floating-images > div {
    flex-direction: row-reverse;
    column-gap: 15px;
-   align-items: center;
  }
 
  .block.floating-images > div > div {
@@ -87,7 +85,6 @@ styles for the floating images auto block */
 
  .block.floating-images .image {
    padding: 0;
-   min-height: 530px;
  }
 
  .image-full-size .block.floating-images > div .image  {
