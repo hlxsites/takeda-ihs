@@ -36,7 +36,6 @@ function buildHeroBlock(main) {
  * @param {Element} main The container element
  */
 function buildFloatingImages(main) {
-console.log('in build floating images ');
  main.querySelectorAll('.section-metadata').forEach((metadata) => {
 
     let style;
@@ -52,7 +51,6 @@ console.log('in build floating images ');
       const section = metadata.parentElement;
       const left = [];
       const right = [];
-        console.log('if stylesection');
       [...section.children].forEach((child) => {
         const picture = child.querySelector(':scope > picture');
         if (picture) {
@@ -64,7 +62,6 @@ console.log('in build floating images ');
       });
       const block = buildBlock('floating-images', [[{ elems: left }, { elems: right }]]);
       block.classList.add(style);
-      console.log(style);
       section.prepend(block);
 
   });
