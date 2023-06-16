@@ -35,19 +35,18 @@ function buildHeroBlock(main) {
  * Build Floating image block
  * @param {Element} main The container element
  */
-function buildFloatingImages(main) {
- main.querySelectorAll('.section-metadata').forEach((metadata) => {
-
+ function buildFloatingImages(main) {
+  main.querySelectorAll('.section-metadata').forEach((metadata) => {
     let style;
-    /*[...metadata.querySelectorAll(':scope > div')].every((div) => {
+    [...metadata.querySelectorAll(':scope > div')].every((div) => {
       const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image-(left|right))/);
-      console.log(match);
       if (div.children[0]?.textContent.toLowerCase().trim() === 'style' && match) {
         [, style] = match;
         return false;
       }
       return true;
-    });*/
+    });
+    if (style) {
       const section = metadata.parentElement;
       const left = [];
       const right = [];
@@ -63,11 +62,9 @@ function buildFloatingImages(main) {
       const block = buildBlock('floating-images', [[{ elems: left }, { elems: right }]]);
       block.classList.add(style);
       section.prepend(block);
-
+    }
   });
 }
-
-
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
