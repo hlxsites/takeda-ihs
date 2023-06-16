@@ -1,17 +1,14 @@
-styles for the floating images auto block */
+/*styles for the floating images auto block */
 
 .block.floating-images {
- margin-bottom: 5em;
-}
-.floating-images {
-  background-color: #edeff0;
-  padding-top: 15px;
+  margin-bottom: 0;
 }
 
 .block.floating-images > div {
   display: flex;
   flex-direction: column-reverse;
   padding-top: 1em;
+  min-height: 350px;
 }
 
 .block.floating-images .image {
@@ -25,17 +22,25 @@ styles for the floating images auto block */
   height: 100%;
   max-width: 100%;
 }
-
-.block.floating-images .content h2 {
-  letter-spacing: normal;
-  margin-bottom: 0.5em;
-  text-align: left;
-  font-size: var(--heading-font-size-m);
-}
 .block.floating-images .content  {
   border-left: 3px solid #ee1100;
   padding: 0 24px;
   max-height: 350px;
+}
+
+/*** move-to-styles? ***/
+.block.floating-images .content p {
+  margin:0;
+  padding:0;
+  font-size: var(--body-font-size-s);
+}
+
+/*** move-to-styles? ***/
+.block.floating-images .content h2 {
+  letter-spacing: normal;
+  margin: 0 0 0.5em 0;
+  text-align: left;
+  font-size: var(--heading-font-size-s);
 }
 
 .block.floating-images .content ul {
@@ -51,72 +56,80 @@ styles for the floating images auto block */
 }
 
 .block.floating-images p.button-container {
-  text-align: center;
+  text-align: left;
+}
+.block.floating-images p.button-container a {
+  background-color: white;
+  box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.2);
+  padding: 8px 20px;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 4px;
+  border:0;
 }
 
+/*** maybe this border should be a section HR
+so the border doesnt show at the bottom
+of every floarting image block ***/
+
 @media screen and (min-width: 900px) {
- .block.floating-images > div {
-   flex-direction: row-reverse;
-   column-gap: 15px;
- }
+  .block.floating-images > div {
+    flex-direction: row;
+    column-gap: 15px;
+    align-items: center;
+    padding-bottom:60px;
+    border-bottom: 1px solid #979797;
+  }
 
- .block.floating-images > div > div {
-   flex: 1;
- }
+  .block.floating-images > div > div {
+    flex: 1;
+  }
 
- .floating-images.image-left > div {
-   flex-direction: row-reverse;
- }
+  .block.floating-images.image-left > div {
+    flex-direction: row-reverse;
+  }
 
- .image-full-size .block.floating-images.image-left > div {
-   justify-content: flex-end;
-   align-items: flex-start;
- }
+  .image-full-size .block.floating-images.image-left > div {
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
 
- .image-full-size .block.floating-images .image img {
-   height: auto;
- }
+  .image-full-size .block.floating-images .image img {
+    height: auto;
+  }
 
- .image-full-size .block.floating-images > div .content  {
-   flex: 0 0 30%;
-   max-width: 30%;
-   padding: 0 20px;
- }
+  .image-full-size .block.floating-images > div .content  {
+    flex: 0 0 30%;
+    max-width: 30%;
+    padding: 0 20px;
+  }
 
- .block.floating-images .image {
-   padding: 0;
- }
+  .block.floating-images .image {
+    padding: 0;
+    min-height: 350px;
+  }
 
- .image-full-size .block.floating-images > div .image  {
-   flex: 0 0 58.3333%;
-   max-width: 58.3333%;
- }
+  .image-full-size .block.floating-images > div .image  {
+    flex: 0 0 58.3333%;
+    max-width: 58.3333%;
+  }
 
- .block.floating-images .image picture {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
- }
+  .block.floating-images .image picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
- .block.floating-images p.button-container {
-   text-align: left;
- }
- .block.floating-images p.button-container a {
-   background-color: white;
-   box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.2);
-   padding: 8px 20px;
-   color: black;
-   font-weight: bold;
-   font-size: 16px;
-   border-radius: 4px;
-   border:0;
- }
+  block.floating-images p.button-container {
+    text-align: left;
+  }
 
-
-@media screen and (min-width: 1200px) {
- .block.floating-images > div {
-   column-gap: 30px;
- }
+  @media screen and (min-width: 1200px) {
+    .block.floating-images > div {
+      column-gap: 30px;
+    }
+  }
 }
