@@ -15,4 +15,11 @@ export default function decorate(block) {
       }
     });
   });
+
+  const icons = document.querySelectorAll(".columns.icon-steps.block .icon > svg");
+  icons.forEach(icon => {
+    icon.setAttribute('height', '43px');
+    icon.setAttribute('width', '43px');
+  })
+
 }
