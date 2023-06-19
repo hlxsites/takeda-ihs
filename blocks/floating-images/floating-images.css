@@ -14,7 +14,9 @@
 .block.floating-images.image-right   {
   border-bottom: 1px solid #979797;
 }
-
+.section.floating-images-container {
+  padding: 32px 32px;
+}
 .block.floating-images .image {
   position: relative;
   padding: 1.5em 0;
