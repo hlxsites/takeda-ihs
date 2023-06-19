@@ -11,6 +11,10 @@
   min-height: 350px;
 }
 
+.block.floating-images.image-right   {
+  border-bottom: 1px solid #979797;
+}
+
 .block.floating-images .image {
   position: relative;
   padding: 1.5em 0;
@@ -79,7 +83,7 @@ of every floarting image block ***/
     column-gap: 15px;
     align-items: center;
     padding-bottom:60px;
-    border-bottom: 1px solid #979797;
+
   }
 
   .block.floating-images > div > div {
@@ -103,6 +107,12 @@ of every floarting image block ***/
     flex: 0 0 30%;
     max-width: 30%;
     padding: 0 20px;
+  }
+
+  .block.floating-images > div .content, .image {
+    height: inherit;
+    width: 50%;
+
   }
 
   .block.floating-images .image {
