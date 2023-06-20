@@ -1,163 +1,67 @@
-.columns img {
-  width: 100%;
+
+.columns.block {
+  display: grid;
+  gap: 24px;
 }
 
-.columns > div > .columns-img-col {
-  order: 0;
-}
-
-.columns > div > .columns-img-col img {
-  display: block;
-}
-
-
-/*
- * Column Manufacturing Steps
-*/
-
-.section.columns-container.manufacturing-steps h2 {
-  font-size: var(--body-font-size-l);
-  font-weight: var(--font-weight-bold);
-  line-height: 30px;
-  margin-bottom: 32px;
-}
-
-.section.columns-container.manufacturing-steps h3 {
-  color: black;
-  font-size: 20px;
-  font-weight: var(--font-weight-bold);
-  line-height: 24px;
-  margin-bottom: 20px;
-
-}
-
-.section.columns-container.manufacturing-steps > .columns-wrapper {
-  display: inline-block;
-  width: 75%
-}
-
-.section.columns-container.manufacturing-steps > div:last-of-type {
-  display: inline-block;
-  width: 25%;
-}
-
-.section.columns-container.manufacturing-steps {
-  background-color: white;
+.columns.block .column .content {
   display: flex;
-  flex-flow: row wrap;
-  justify-items: start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-
-.columns.icon-steps.block > div > div > p {
-  font-size: var(--body-font-size-m);
-  margin-bottom: 24px;
-}
-
-.columns.icon-steps.block > div > div {
-  order: 1;
-  border-radius: 20px 0;
-}
-
-.columns.icon-steps.block > div {
+.columns.block .column .content.card {
+  padding: 20px 30px;
+  align-items: flex-start;
+  justify-content: flex-start;;
   background-color: white;
   box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%);
   border-radius: 10px;
-  padding: 20px 30px;
-  margin: 0;
-  border: 0;
 }
 
-.columns.icon-steps.block > div:last-of-type h3 {
-  margin-top: 0;
+.columns.block .column .content .icon {
+  display: block;
+  height: 43px;
+  width: 43px;
 }
 
-.columns.icon-steps.block .icon > svg {
-  margin-bottom: 24px;
+.columns.block .column .content .icon svg {
+  height: 100%;
+  width: 100%;
 }
 
-.columns.icon-steps.block .step {
-    padding: 20px 30px;
+.columns.block .column .content h3 {
+  color: black;
+  font-size: var(--heading-font-size-s);
+  font-weight: var(--font-weight-bold);
+  line-height: 24px;
+  margin-bottom: 20px;
 }
 
-.columns.icon-steps.block {
-  display: inline-grid;
-  font-size: var(--body-font-size-m);
-  line-height: 21px;
-  word-wrap: break-word;
+.columns.block .column .content p {
+  line-height: var(--line-height-s);
+  column-gap: var(--quartz);
 }
 
-@media (min-width: 300px) {
-  .columns.icon-steps.block > div {
-    min-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .columns.icon-steps.block {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
+.columns.block .column .content p sup {
+  position: relative;
+  bottom: .5em;
+  font-size: var(--body-font-size-xs);
+  line-height: 0;
 }
 
-@media (min-width: 600px) {
-  .columns.icon-steps.block > div {
-    min-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .columns.icon-steps.block {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  main {
-    width: 550px;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 900px) {
-  .columns.icon-steps.block > div > div {
-    order: unset;
-  }
-
-  .columns.icon-steps.block > div {
-    min-width: unset;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .columns.icon-steps.block > div:last-of-type {
-    align-items: center;
-    gap: 24px;
-  }
-
-  .columns.icon-steps.block {
+@media screen and (min-width: 900px) {
+  .columns.block.columns-4-cols {
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-
-  main {
-    width: 740px;
-    margin: 0 auto;
   }
 }
 
-@media (min-width: 1200px){
-  .columns.icon-steps.block > div  {
-    padding: 20px;
-    min-width: unset;
-  }
-
-  .columns.icon-steps.block {
-    grid-template-columns: 4fr 4fr 4fr;
-    gap: 24px;
-  }
-
-  main {
-    width: 1200px;
-    margin: 0 auto;
+@media screen and (min-width: 1200px) {
+  .columns.block.columns-4-cols {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
