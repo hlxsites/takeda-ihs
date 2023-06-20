@@ -1,7 +1,7 @@
 /*styles for the floating images auto block */
 
 .block.floating-images {
-  margin-bottom: 0;
+  margin-bottom:24px;
 }
 
 .block.floating-images > div {
@@ -15,7 +15,7 @@
   border-bottom: 1px solid #979797;
 }
 .section.floating-images-container {
-  padding: 32px 32px;
+  padding: 32px 24px;
 }
 .block.floating-images .image {
   position: relative;
@@ -36,9 +36,12 @@
 
 /*** move-to-styles? ***/
 .block.floating-images .content p {
-  margin:0;
-  padding:0;
-  font-size: var(--body-font-size-s);
+  margin-bottom: 1.5em;
+  padding:0 0 16px 0;
+  line-height: var(--line-height-s);
+  font-size: var(--body-font-size-m);
+  font-weight: var(  --font-weight-light);
+  color: var(--quartz);
 }
 
 /*** move-to-styles? ***/
@@ -46,7 +49,6 @@
   letter-spacing: normal;
   margin: 0 0 0.5em 0;
   text-align: left;
-  font-size: var(--heading-font-size-s);
 }
 
 .block.floating-images .content ul {
@@ -64,6 +66,7 @@
 .block.floating-images p.button-container {
   text-align: left;
 }
+
 .block.floating-images p.button-container a {
   background-color: white;
   box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.2);
@@ -75,17 +78,11 @@
   border:0;
 }
 
-/*** maybe this border should be a section HR
-so the border doesnt show at the bottom
-of every floarting image block ***/
-
 @media screen and (min-width: 900px) {
   .block.floating-images > div {
     flex-direction: row;
     column-gap: 15px;
     align-items: center;
-    padding-bottom:60px;
-
   }
 
   .block.floating-images > div > div {
@@ -95,10 +92,13 @@ of every floarting image block ***/
   .block.floating-images.image-left > div {
     flex-direction: row-reverse;
   }
+  .block.floating-images.image-left > div {
+    flex-direction: row-reverse;
+  }
 
-  .image-full-size .block.floating-images.image-left > div {
-    justify-content: flex-end;
-    align-items: flex-start;
+  .block.floating-images.image-left .image {
+    margin-right: 8px;
+    width:50%;
   }
 
   .image-full-size .block.floating-images .image img {
@@ -114,7 +114,6 @@ of every floarting image block ***/
   .block.floating-images > div .content, .image {
     height: inherit;
     width: 50%;
-
   }
 
   .block.floating-images .image {
