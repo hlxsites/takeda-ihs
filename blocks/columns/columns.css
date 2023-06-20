@@ -10,18 +10,19 @@
   display: block;
 }
 
-.section.columns-container {
-  background-color: white;
-}
 
-.section.columns-container h2 {
+/*
+ * Column Manufacturing Steps
+*/
+
+.section.columns-container.manufacturing-steps h2 {
   font-size: var(--body-font-size-l);
   font-weight: var(--font-weight-bold);
   line-height: 30px;
   margin-bottom: 32px;
 }
 
-.section.columns-container h3 {
+.section.columns-container.manufacturing-steps h3 {
   color: black;
   font-size: 20px;
   font-weight: var(--font-weight-bold);
@@ -30,9 +31,15 @@
 
 }
 
-/*
- * Column Manufacturing Steps
-*/
+.section.columns-container.manufacturing-steps {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column wrap;
+  justify-items: start;
+  align-items: baseline;
+}
+
 
 .columns.icon-steps.block > div > div > p {
   font-size: var(--body-font-size-m);
@@ -53,23 +60,6 @@
   border: 0;
 }
 
-.columns.icon-steps.block > div:last-of-type {
-  background-color: white;
-  box-shadow: unset;
-  border-radius: unset;
-  padding: 20px 30px;
-  margin: 0;
-  border: 0;
-  text-align: center;
-}
-
-.columns.icon-steps.block > div:last-of-type p {
-  margin: 0 auto;
-  max-height: 158px;
-  max-width: 158px;
-
-}
-
 .columns.icon-steps.block > div:last-of-type h3 {
   margin-top: 0;
 }
@@ -83,7 +73,7 @@
 }
 
 .columns.icon-steps.block {
-  display: grid;
+  display: inline-grid;
   font-size: var(--body-font-size-m);
   line-height: 21px;
   word-wrap: break-word;
@@ -103,6 +93,12 @@
 }
 
 @media (min-width: 600px) {
+  .columns.icon-steps.block > div {
+    min-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .columns.icon-steps.block {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -121,9 +117,11 @@
 
   .columns.icon-steps.block > div {
     min-width: unset;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .columns.icon-steps.block > div:last-child {
+  .columns.icon-steps.block > div:last-of-type {
     align-items: center;
     gap: 24px;
   }
@@ -145,14 +143,8 @@
     min-width: unset;
   }
 
-  .columns.icon-steps.block > div:last-of-type > div {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
   .columns.icon-steps.block {
-    grid-template-columns: 4fr 4fr 4fr 3fr;
+    grid-template-columns: 4fr 4fr 4fr;
     gap: 24px;
   }
 
