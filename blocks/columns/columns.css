@@ -31,13 +31,21 @@
 
 }
 
+.section.columns-container.manufacturing-steps > .columns-wrapper {
+  display: inline-block;
+  width: 75%
+}
+
+.section.columns-container.manufacturing-steps > div:last-of-type {
+  display: inline-block;
+  width: 25%;
+}
+
 .section.columns-container.manufacturing-steps {
   background-color: white;
   display: flex;
-  flex-direction: column;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-items: start;
-  align-items: baseline;
 }
 
 
