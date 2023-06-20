@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 5</title>
+    <g id="close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PI---Level-2-ISI-Open" transform="translate(-1314.000000, -27.000000)" stroke="#000000" stroke-width="2">
+            <g id="Group-2-Copy-5" transform="translate(1303.000000, 17.000000)">
+                <g id="Group-5" transform="translate(11.000000, 11.000000)">
+                    <line x1="12" y1="-3.78947368" x2="12" y2="26.5263158" id="Layer-2" transform="translate(12.000000, 11.368421) rotate(45.000000) translate(-12.000000, -11.368421) "></line>
+                    <line x1="27.7894737" y1="12" x2="-2.52631579" y2="12" id="Layer-2" transform="translate(12.631579, 12.000000) rotate(45.000000) translate(-12.631579, -12.000000) "></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
