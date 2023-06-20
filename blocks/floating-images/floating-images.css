@@ -40,7 +40,7 @@
   padding:0 0 16px 0;
   line-height: var(--line-height-s);
   font-size: var(--body-font-size-m);
-  font-weight: var(  --font-weight-light);
+  font-weight: var(--font-weight-light);
   color: var(--quartz);
 }
 
@@ -83,6 +83,7 @@
     flex-direction: row;
     column-gap: 15px;
     align-items: center;
+    margin-bottom:64px;
   }
 
   .block.floating-images > div > div {
@@ -97,7 +98,7 @@
   }
 
   .block.floating-images.image-left .image {
-    margin-right: 8px;
+    margin-right: 16px;
     width:50%;
   }
 

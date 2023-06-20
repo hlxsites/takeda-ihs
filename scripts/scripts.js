@@ -11,15 +11,14 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
-  getMetadata,
 } from './lib-franklin.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
- * Builds hero block and prepends to main in a new section.
- * @param {Element} main The container element
- */
+* Builds hero block and prepends to main in a new section.
+* @param {Element} main The container element
+*/
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
@@ -32,17 +31,17 @@ function buildHeroBlock(main) {
 }
 
 /**
- * Build Floating image block
- * @param {Element} main The container element
- */
- function buildFloatingImages(main) {
-   main.querySelectorAll('.section-metadata').forEach((metadata) => {
+* Builds floating image block and prepends to main in a new section.
+* @param {Element} main The container element
+*/
+function buildFloatingImages(main) {
+  main.querySelectorAll('.section-metadata').forEach((metadata) => {
     let style;
     [...metadata.querySelectorAll(':scope > div')].every((div) => {
       const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image-(left|right))/);
       if (div.children[0]?.textContent.toLowerCase().trim() === 'style' && match) {
-        [, style] = match;
-        return false;
+       [, style] = match;
+         return false;
       }
       return true;
     });
