@@ -36,7 +36,7 @@ function buildHeroBlock(main) {
  * @param {Element} main The container element
  */
  function buildFloatingImages(main) {
-  main.querySelectorAll('.section-metadata').forEach((metadata) => {
+   main.querySelectorAll('.section-metadata').forEach((metadata) => {
     let style;
     [...metadata.querySelectorAll(':scope > div')].every((div) => {
       const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image-(left|right))/);
