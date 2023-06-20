@@ -11,7 +11,6 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
-  getMetadata,
 } from './lib-franklin.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -36,8 +35,8 @@ function buildHeroBlock(main) {
  * @param {Element} main The container element
  */
  function buildFloatingImages(main) {
-   main.querySelectorAll('.section-metadata').forEach((metadata) => {
-    let style;
+  main.querySelectorAll('.section-metadata').forEach((metadata) => {
+  let style;
     [...metadata.querySelectorAll(':scope > div')].every((div) => {
       const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image-(left|right))/);
       if (div.children[0]?.textContent.toLowerCase().trim() === 'style' && match) {
