@@ -37,42 +37,7 @@
   --heading-font-size-l: 24px;
   --heading-font-size-m: 16px;
 
-:root {
-  /** Colors */
-  --bright-gray: #efefef;
-  --grey: #979797;
-  --silver: #d8d8d8;
-  --body-color: #3a3a3a;
-  --quartz: #4c4948;
-  --red: #e10;
-
-  /** Fonts **/
-  --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
-  --font-weight-bold: 700;
-  --font-weight-semibold: 600;
-  --font-weight-normal: 400;
-  --font-weight-light: 300;
-  --font-weight-thin: 100;
-
-  /** Body **/
-  --body-font-size-xs: 12px;
-  --body-font-size-s: 14px;
-  --body-font-size-m: 16px;
-
-  /** Nav Height **/
-  --nav-height: 100px;
-
-  /* Line heights */
-  --line-height-xs: 1.15em;
-  --line-height-s: 1.25em;
-  --line-height-m: 1.5em;
-  --line-height-l: 2em;
-  --line-height-xl: 2.5em;
-  --line-height-xxl: 2.9em;
-
-}
-
-*, *::after, *::before{
+*, *::before, *::after {
   box-sizing: border-box;
 }
 

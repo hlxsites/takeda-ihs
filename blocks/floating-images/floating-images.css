@@ -94,6 +94,11 @@
     flex: 1;
   }
 
+.block.floating-images > div .content, .image {
+  height: inherit;
+  width: 50%;
+}
+
   .block.floating-images.image-left .image {
     margin-right: 16px;
     width:50%;
@@ -102,11 +107,6 @@
   .block.floating-images.image {
     padding: 0;
     min-height: 350px;
-  }
-
-  .block.floating-images > div .content, .image {
-    height: inherit;
-    width: 50%;
   }
 
   .block.floating-images .image picture {
