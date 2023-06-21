@@ -72,7 +72,7 @@
 
 .block.floating-images p.button-container a {
   background-color: white;
-  box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 20%);
+  box-shadow: 3px 3px 7px 1px rgb(0 0 0 / 20%);
   padding: 8px 20px;
   color: black;
   font-weight: bold;
@@ -93,28 +93,10 @@
     flex-direction: row-reverse;
     flex: 1;
   }
-  .block.floating-images.image-left > div {
-    flex-direction: row-reverse;
-  }
 
   .block.floating-images.image-left .image {
     margin-right: 16px;
     width:50%;
-  }
-
-  .image-full-size .block.floating-images .image img {
-    height: auto;
-  }
-
-  .image-full-size .block.floating-images > div .content  {
-    flex: 0 0 30%;
-    max-width: 30%;
-    padding: 0 20px;
-  }
-
-  .block.floating-images > div .content, .image {
-    height: inherit;
-    width: 50%;
   }
 
   .block.floating-images.image {
@@ -122,9 +104,9 @@
     min-height: 350px;
   }
 
-  .block.image-full-sizefloating-images > div .image  {
-    flex: 0 0 58.3333%;
-    max-width: 58.3333%;
+  .block.floating-images > div .content, .image {
+    height: inherit;
+    width: 50%;
   }
 
   .block.floating-images .image picture {
@@ -139,6 +121,21 @@
     text-align: left;
   }
 
+  .image-full-size .block.floating-images .image img {
+    height: auto;
+  }
+
+  .block.image-full-size.floating-images > div .image  {
+    flex: 0 0 58.3333%;
+    max-width: 58.3333%;
+  }
+
+  .image-full-size .block.floating-images > div .content  {
+    flex: 0 0 30%;
+    max-width: 30%;
+    padding: 0 20px;
+  }
+  
   @media screen and (min-width: 1200px) {
     .block.floating-images > div {
       column-gap: 30px;
