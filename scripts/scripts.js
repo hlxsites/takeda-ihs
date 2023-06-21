@@ -15,31 +15,32 @@ import {
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
-/** Builds hero block and prepends to main in a new section.
-* @param {Element} main The container element */
+/**
+* Builds hero block and prepends to main in a new section.
+* @param {Element} main The container element
+*/
 function buildHeroBlock(main) {
-    const h1 = main.querySelector('h1');
-    const picture = main.querySelector('picture');
-    // eslint-disable-next-line no-bitwise
-    if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
+  const h1 = main.querySelector('h1');
+  const picture = main.querySelector('picture');
+  // eslint-disable-next-line no-bitwise
+  if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
     section.append(buildBlock('hero', { elems: [picture, h1] }));
     main.prepend(section);
   }
 }
 
-/**
- * Builds build floating image block.
- * @param {Element} main The container element 
- */
+/*** Build Floating image block*
+* @param {Element} main The container element
+*/
 function buildFloatingImages(main) {
   main.querySelectorAll('.section-metadata').forEach((metadata) => {
     let style;
     [...metadata.querySelectorAll(':scope > div')].every((div) => {
-        const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image-(left|right))/);
-            if (div.children[0]?.textContent.toLowerCase().trim() === 'style' && match) {
-            [, style] = match;
-        return false;
+    const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image-(left|right))/);
+      if (div.children[0]?.textContent.toLowerCase().trim() === 'style' && match) {
+        [, style] = match;
+         return false;
       }
       return true;
     });
