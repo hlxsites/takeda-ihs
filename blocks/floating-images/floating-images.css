@@ -97,7 +97,12 @@
     flex-direction: row-reverse;
   }
 
-.block.floating-images > div .content, .image {
+.block.floating-images > div .content {
+  height: inherit;
+  width: 50%;
+}
+
+.block.floating-images > div .content {
   height: inherit;
   width: 50%;
 }
