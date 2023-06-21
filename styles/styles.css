@@ -33,10 +33,24 @@
   --body-font-size-xs: 12px;
   --body-font-size-s: 14px;
   --body-font-size-m: 16px;
+
+/** Heading tag sizes **/
   --heading-font-size-xl: 32px;
   --heading-font-size-l: 24px;
   --heading-font-size-m: 16px;
+
+ /** Nav Height **/
+ --nav-height: 100px;
+
+ /* Line heights */
+ --line-height-xs: 1.15em;
+ --line-height-s: 1.25em;
+ --line-height-m: 1.5em;
+ --line-height-l: 2em;
+ --line-height-xl: 2.5em;
+ --line-height-xxl: 2.9em;
 }
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -45,19 +59,6 @@ body {
   color: var(--body-color);
   background-color: var(--bright-gray);
   font-family: var(--font-family-opensans);
-}
-
-  /** Nav Height **/
-  --nav-height: 100px;
-
-  /* Line heights */
-  --line-height-xs: 1.15em;
-  --line-height-s: 1.25em;
-  --line-height-m: 1.5em;
-  --line-height-l: 2em;
-  --line-height-xl: 2.5em;
-  --line-height-xxl: 2.9em;
-
 }
 
 *, *::before, *::after {

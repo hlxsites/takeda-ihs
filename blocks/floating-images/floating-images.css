@@ -94,11 +94,10 @@
     flex: 1;
   }
 
-.block.floating-images > div .content {
+.block.floating-images > div .image {
   height: inherit;
   width: 50%;
 }
-
 .block.floating-images > div .content {
   height: inherit;
   width: 50%;
