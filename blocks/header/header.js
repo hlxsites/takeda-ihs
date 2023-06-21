@@ -125,6 +125,7 @@ function buildSections(sections) {
         const li = icon.closest('li');
         li.classList.add('hide', 'show-all');
       }
+
       const anchor = section.querySelector('a');
       anchor.append(expander.cloneNode());
       section.classList.add('nav-drop');
@@ -133,24 +134,29 @@ function buildSections(sections) {
       anchor.setAttribute('tabindex', '0');
       anchor.setAttribute('role', 'button');
       anchor.addEventListener('click', (e) => {
-        if (e.pointerType !== 'mouse' || !isDesktop.matches) {
-          e.preventDefault();
-          e.stopPropagation();
-        }
-      });
-      anchor.addEventListener('pointerdown', (e) => {
         const expanded = section.getAttribute('aria-expanded') === 'true';
-        anchor.releasePointerCapture(e.pointerId);
         if (e.pointerType !== 'mouse' || !isDesktop.matches) {
           e.preventDefault();
           e.stopPropagation();
           toggleAllNavSections(sections);
           section.setAttribute('aria-expanded', !expanded);
-          if (icon) {
-            icon.closest('li').classList.toggle('hide');
+          const all = section.querySelector('.show-all');
+          if (all) {
+            all.classList.toggle('hide');
+          }
+          if (e.pointerType !== 'mouse') {
+            section.setAttribute('data-touch-click', 'true');
           }
         }
       });
+      anchor.addEventListener('mouseenter', () => {
+        toggleAllNavSections(sections);
+        section.setAttribute('aria-expanded', 'true');
+      });
+      anchor.addEventListener('mouseout', () => {
+        toggleAllNavSections(sections);
+      });
+
       // enable nav dropdown keyboard accessibility
       anchor.addEventListener('keydown', openOnKeydown);
     }
@@ -206,6 +212,9 @@ export default async function decorate(block) {
     nav.append(html.querySelector('.nav-utility'));
 
     isDesktop.addEventListener('change', () => toggleMenu(nav, sections, isDesktop.matches));
+    document.body.addEventListener('click', () => {
+      toggleAllNavSections(sections);
+    });
     await decorateIcons(block);
   }
 }
