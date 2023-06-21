@@ -36,7 +36,7 @@
   --heading-font-size-xl: 32px;
   --heading-font-size-l: 24px;
   --heading-font-size-m: 16px;
-
+}
 *, *::before, *::after {
   box-sizing: border-box;
 }
