@@ -38,6 +38,7 @@ function openOnKeydown(e) {
 function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections > ul > li.nav-drop').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
+    section.removeAttribute('data-touch-click');
   });
 }
 
@@ -53,7 +54,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, 'false');
+  toggleAllNavSections(navSections);
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
   // enable menu collapse on escape keypress
   if (!expanded || isDesktop.matches) {
@@ -142,19 +143,22 @@ function buildSections(sections) {
           section.setAttribute('aria-expanded', !expanded);
           const all = section.querySelector('.show-all');
           if (all) {
-            all.classList.toggle('hide');
+            all.classList.remove('hide');
           }
           if (e.pointerType !== 'mouse') {
             section.setAttribute('data-touch-click', 'true');
           }
         }
       });
-      anchor.addEventListener('mouseenter', () => {
-        toggleAllNavSections(sections);
-        section.setAttribute('aria-expanded', 'true');
-      });
-      anchor.addEventListener('mouseout', () => {
-        toggleAllNavSections(sections);
+      section.addEventListener('pointerenter', (e) => {
+        if (e.pointerType === 'mouse') {
+          toggleAllNavSections(sections);
+          section.setAttribute('aria-expanded', 'true');
+          const all = section.querySelector('.show-all');
+          if (all) {
+            all.classList.add('hide');
+          }
+        }
       });
 
       // enable nav dropdown keyboard accessibility
