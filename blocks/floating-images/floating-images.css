@@ -1,4 +1,4 @@
-/*styles for the floating images auto block */
+/* styles for the floating images auto block */
 
 .block.floating-images {
   margin-bottom:24px;
@@ -14,9 +14,11 @@
 .block.floating-images.image-right   {
   border-bottom: 1px solid #979797;
 }
+
 .section.floating-images-container {
   padding: 32px 24px;
 }
+
 .block.floating-images .image {
   position: relative;
   padding: 1.5em 0;
@@ -28,8 +30,9 @@
   height: 100%;
   max-width: 100%;
 }
+
 .block.floating-images .content  {
-  border-left: 3px solid #ee1100;
+  border-left: 3px solid #e10;
   padding: 0 24px;
   max-height: 350px;
 }
@@ -37,7 +40,7 @@
 /*** move-to-styles? ***/
 .block.floating-images .content p {
   margin-bottom: 1.5em;
-  padding:0 0 16px 0;
+  padding-bottom: 6px;
   line-height: var(--line-height-s);
   font-size: var(--body-font-size-m);
   font-weight: var(--font-weight-light);
@@ -47,7 +50,7 @@
 /*** move-to-styles? ***/
 .block.floating-images .content h2 {
   letter-spacing: normal;
-  margin: 0 0 0.5em 0;
+  margin-bottom: 0.5em;
   text-align: left;
 }
 
@@ -69,7 +72,7 @@
 
 .block.floating-images p.button-container a {
   background-color: white;
-  box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 20%);
   padding: 8px 20px;
   color: black;
   font-weight: bold;
@@ -86,12 +89,9 @@
     margin-bottom:64px;
   }
 
-  .block.floating-images > div > div {
-    flex: 1;
-  }
-
   .block.floating-images.image-left > div {
     flex-direction: row-reverse;
+    flex: 1;
   }
   .block.floating-images.image-left > div {
     flex-direction: row-reverse;
@@ -117,12 +117,12 @@
     width: 50%;
   }
 
-  .block.floating-images .image {
+  .block.floating-images.image {
     padding: 0;
     min-height: 350px;
   }
 
-  .image-full-size .block.floating-images > div .image  {
+  .block.image-full-sizefloating-images > div .image  {
     flex: 0 0 58.3333%;
     max-width: 58.3333%;
   }
@@ -135,7 +135,7 @@
     height: 100%;
   }
 
-  block.floating-images p.button-container {
+  .block.floating-images p.button-container {
     text-align: left;
   }
 
