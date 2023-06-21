@@ -97,6 +97,11 @@
     flex-direction: row-reverse;
   }
 
+.block.floating-images > div .content, .image {
+  height: inherit;
+  width: 50%;
+}
+
   .block.floating-images.image-left .image {
     margin-right: 16px;
     width:50%;
