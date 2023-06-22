@@ -40,8 +40,8 @@ function buildFloatingImages(main) {
     [...metadata.querySelectorAll(':scope > div')].every((div) => {
       const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image-(left|right))/);
       if (div.children[0]?.textContent.toLowerCase().trim() === 'style' && match) {
-       [, style] = match;
-         return false;
+        [, style] = match;
+        return false;
       }
       return true;
     });
