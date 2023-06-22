@@ -55,6 +55,11 @@ body {
   color: var(--body-color);
   background-color: var(--bright-gray);
   font-family: var(--font-family-opensans);
+  display: none;
+}
+
+body.appear {
+  display: unset;
 }
 
 header {
