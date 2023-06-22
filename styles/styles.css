@@ -65,6 +65,18 @@ header {
   height: var(--nav-height);
 }
 
+h1 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h2 {
+  font-size: var(--heading-font-size-l);
+}
+
+h3 {
+  font-size: var(--heading-font-size-m);
+}
+
 @media screen and (max-width: 299px) {
   :root {
     --nav-height: 75px;
@@ -98,7 +110,3 @@ header {
   line-gap-override: 0.00%;
   size-adjust: 91.93%;
 }
-
-h1 { font-size: var(--heading-font-size-xl) }
-h2 { font-size: var(--heading-font-size-l) }
-h3 { font-size: var(--heading-font-size-m) }

@@ -96,10 +96,11 @@
    height: inherit;
    width: 50%;
  }
-  .block.floating-images.image-left > div {
-    flex-direction: row-reverse;
-    flex: 1;
-  }
+
+.block.floating-images.image-left > div {
+  flex-direction: row-reverse;
+  flex: 1;
+}
 
 .block.floating-images > div .content {
   height: inherit;
