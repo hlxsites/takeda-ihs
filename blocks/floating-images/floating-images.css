@@ -22,6 +22,7 @@
 .block.floating-images .image {
   position: relative;
   padding: 1.5em 0;
+  margin-bottom:60px;
 }
 
 .block.floating-images .image img {
@@ -35,6 +36,7 @@
   border-left: 3px solid #e10;
   padding: 0 24px;
   max-height: 350px;
+  margin-bottom:60px;
 }
 
 /*** move-to-styles? ***/
@@ -89,19 +91,20 @@
     margin-bottom:64px;
   }
 
+.block.floating-images.image-left > div .image {
+   margin-right: 16px;
+   height: inherit;
+   width: 50%;
+ }
   .block.floating-images.image-left > div {
     flex-direction: row-reverse;
     flex: 1;
   }
 
-.block.floating-images > div .image, .content {
+.block.floating-images > div .content {
   height: inherit;
   width: 50%;
 }
-
-  .block.floating-images.image-left .image {
-    margin-right: 16px;
-  }
 
   .block.floating-images.image {
     padding: 0;

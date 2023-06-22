@@ -38,13 +38,17 @@
   --nav-height: 100px;
 
   /* Line heights */
-  --line-height-xs: 1.15em;
-  --line-height-s: 1.25em;
-  --line-height-m: 1.5em;
-  --line-height-l: 2em;
-  --line-height-xl: 2.5em;
-  --line-height-xxl: 2.9em;
+  --line-height-xs: 1.15;
+  --line-height-s: 1.25;
+  --line-height-m: 1.5;
+  --line-height-l: 2;
+  --line-height-xl: 2.5;
+  --line-height-xxl: 2.9;
 
+/** Heading tag sizes **/
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 16px;
 }
 
 *, *::before, *::after {
@@ -94,3 +98,7 @@ header {
   line-gap-override: 0.00%;
   size-adjust: 91.93%;
 }
+
+h1 { font-size: var(--heading-font-size-xl) }
+h2 { font-size: var(--heading-font-size-l) }
+h3 { font-size: var(--heading-font-size-m) }
