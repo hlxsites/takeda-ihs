@@ -103,6 +103,18 @@ header {
   size-adjust: 91.93%;
 }
 
-h1 { font-size: var(--heading-font-size-xl) }
-h2 { font-size: var(--heading-font-size-l) }
-h3 { font-size: var(--heading-font-size-m) }
+h1 {
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: var(--heading-font-size-m);
+  font-weight: var(--font-weight-bold);
+}
+
+h3 {
+  font-size: var(--heading-font-size-s);
+  font-weight: var(--font-weight-bold);
+
+}

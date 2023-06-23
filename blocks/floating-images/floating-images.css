@@ -1,7 +1,7 @@
 /* styles for the floating images auto block */
 
 .block.floating-images {
-    margin-bottom: 24px;
+    margin-bottom: 64px;
 }
 
 .block.floating-images > div {
@@ -11,12 +11,8 @@
     min-height: 350px;
 }
 
-.block.floating-images.image-right {
-    border-bottom: 1px solid #979797;
-}
-
 .section.floating-images-container {
-    padding: 32px 24px;
+    padding-left: 24px;
 }
 
 .block.floating-images .image {
@@ -87,6 +83,7 @@
         column-gap: 15px;
         align-items: center;
         margin-bottom: 64px;
+        margin-top: 64px;
     }
 
     .block.floating-images > div > div {
