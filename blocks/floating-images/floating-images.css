@@ -13,6 +13,7 @@
 
 .section.floating-images-container {
     padding-left: 24px;
+    border-bottom: 1px solid #979797;
 }
 
 .block.floating-images .image {
