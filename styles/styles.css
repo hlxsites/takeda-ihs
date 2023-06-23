@@ -20,6 +20,7 @@
   --body-color: #3a3a3a;
   --quartz: #4c4948;
   --red: #e10;
+  --white: #fff;
 
   /** Fonts **/
   --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
@@ -36,8 +37,9 @@
   --body-font-size-l: 24px;
   --body-font-size-xl: 32px;
 
-  /** Header **/
-  --header-font-size-m: 24px;
+  /** Heading **/
+  --heading-font-size-m: 26px;
+  --heading-font-size-xl: 42px;
 
   /** Nav Height **/
   --nav-height: 100px;
@@ -50,6 +52,8 @@
   --line-height-xl: 2.5em;
   --line-height-xxl: 2.9em;
 
+  /* Page Widths */
+  --normal-page-width: 1200px;
 }
 
 *, *::before, *::after {
@@ -71,6 +75,17 @@ header {
   height: var(--nav-height);
 }
 
+h1 {
+  margin-bottom: 8px;
+  font-size: var(--heading-font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-s);
+  color: var(--white);
+}
+
+p {
+  margin-bottom: 1.5em;
+}
 
 @media screen and (max-width: 299px) {
   :root {
@@ -81,6 +96,12 @@ header {
 @media screen and (min-width: 600px) {
   :root {
     --nav-height: 125px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: var(--heading-font-size-xl);
   }
 }
 
