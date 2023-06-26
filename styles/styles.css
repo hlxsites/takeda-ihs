@@ -22,9 +22,10 @@
   --red: #e10;
   --white: #fff;
   --blue: #003087;
+  --black: black;
 
   /** Brand Colors **/
-  --gammagard-liq-orange: #f89a38;
+  --gammagard-liq: #f89a38;
 
   /** Fonts **/
   --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
