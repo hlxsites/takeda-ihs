@@ -17,6 +17,7 @@ header {
   justify-content: space-between;
   background-color: transparent;
   z-index: 1000;
+  box-shadow: 2px 2px 10px 1px rgba(0 0 0 / 15%);
 }
 
 .header.block nav[aria-expanded="true"] {
@@ -280,6 +281,10 @@ header {
 }
 
 @media screen and (min-width: 900px) {
+  .header.block nav[aria-expanded="true"] {
+    height: var(--nav-height);
+  }
+
   .header.block nav {
     grid-template:
     'utility utility utility' 50px

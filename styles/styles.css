@@ -21,6 +21,10 @@
   --quartz: #4c4948;
   --red: #e10;
   --white: #fff;
+  --blue: #003087;
+
+  /** Brand Colors **/
+  --gammagard-liq-orange: #f89a38;
 
   /** Fonts **/
   --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
@@ -34,8 +38,9 @@
   --body-font-size-xs: 12px;
   --body-font-size-s: 14px;
   --body-font-size-m: 16px;
-  --body-font-size-l: 24px;
-  --body-font-size-xl: 32px;
+  --body-font-size-l: 18px;
+  --body-font-size-xl: 20px;
+  --body-font-size-xxl: 24px;
 
   /** Heading **/
   --heading-font-size-m: 26px;
@@ -54,6 +59,8 @@
 
   /* Page Widths */
   --normal-page-width: 1200px;
+  --wide-page-width: 1600px;
+  --full-page-width: 100vw;
 }
 
 *, *::before, *::after {
@@ -75,6 +82,15 @@ header {
   height: var(--nav-height);
 }
 
+main {
+  background-color: var(--white);
+}
+
+main .section {
+  max-width: var(--wide-page-width);
+  margin: 0 auto;
+}
+
 h1 {
   margin-bottom: 8px;
   font-size: var(--heading-font-size-m);
@@ -85,6 +101,20 @@ h1 {
 
 p {
   margin-bottom: 1.5em;
+}
+
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+em {
+  font-style: italic;
+}
+
+sup {
+  position: relative;
+  font-size: 75%;
+  bottom: 1ex;
 }
 
 @media screen and (max-width: 299px) {
