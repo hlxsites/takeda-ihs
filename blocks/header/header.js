@@ -160,7 +160,16 @@ function buildSections(sections) {
           }
         }
       });
-
+      section.addEventListener('pointerleave', (e) => {
+        if (e.pointerType === 'mouse') {
+          toggleAllNavSections(sections);
+          section.setAttribute('aria-expanded', 'false');
+          const all = section.querySelector('.show-all');
+          if (all) {
+            all.classList.remove('hide');
+          }
+        }
+      });
       // enable nav dropdown keyboard accessibility
       anchor.addEventListener('keydown', openOnKeydown);
     }
