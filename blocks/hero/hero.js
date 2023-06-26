@@ -48,6 +48,42 @@ function buildProductContent(block) {
   return contentDiv;
 }
 
+function buildCardContent(block) {
+  const config = readBlockConfig(block);
+  const keys = Object.keys(config);
+  const contentDiv = document.createElement('div');
+  contentDiv.classList.add('content');
+
+  if (config.title) {
+    const idx = keys.indexOf('title');
+    const content = block.children[idx].children[1];
+    content.classList.add('title');
+    contentDiv.append(content);
+  }
+
+  if (config.resources) {
+    const idx = keys.indexOf('resources');
+    const content = block.children[idx].children[1];
+    [...content.querySelectorAll('a')].forEach((a) => {
+      a.classList.add('resource');
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('resource-wrapper');
+      const text = a.textContent;
+      const name = document.createElement('p');
+      name.classList.add('name');
+      name.textContent = text;
+      const download = document.createElement('p');
+      download.classList.add('download');
+      download.textContent = 'Download';
+      wrapper.append(name, download);
+      a.replaceChildren(wrapper);
+    });
+
+    content.classList.add('resources');
+    contentDiv.append(content);
+  }
+  return contentDiv;
+}
 /**
  * Builds the content from the block definition & type.
  *
@@ -63,6 +99,10 @@ function buildContent(block, type) {
       wrapper.replaceChildren(buildProductContent(block));
       break;
     }
+    case 'card': {
+      wrapper.replaceChildren(buildCardContent(block));
+      break;
+    }
     default: {
       wrapper.querySelector(':scope > div').classList.add('content');
       break;
@@ -75,6 +115,8 @@ export default async function decorate(block) {
   let type = 'default';
   if (block.classList.contains('product')) {
     type = 'product';
+  } else if (block.classList.contains('card')) {
+    type = 'card';
   }
 
   await loadCSS(`${window.hlx.codeBasePath}/blocks/hero/${type}-hero.css`);
