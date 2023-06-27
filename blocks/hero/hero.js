@@ -118,9 +118,7 @@ export default async function decorate(block) {
   } else if (block.classList.contains('card')) {
     type = 'card';
   }
-
-  await loadCSS(`${window.hlx.codeBasePath}/blocks/hero/${type}-hero.css`);
-
+  block.classList.add(type);
   const image = buildImageWrapper(block);
   const wrapper = buildContent(block, type);
 

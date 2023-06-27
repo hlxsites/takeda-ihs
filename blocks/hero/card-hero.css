@@ -1,9 +1,9 @@
 
-.hero.block.onepath {
+.hero.block.card.onepath {
   --hero-border-color: var(--onepath);
 }
 
-.hero.block .image picture {
+.hero.block.card .image picture {
   display: block;
   position: relative;
   height: 100%;
@@ -11,7 +11,7 @@
   padding-bottom: 70%;
 }
 
-.hero.block .image picture img {
+.hero.block.card .image picture img {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,32 +21,32 @@
   object-fit: cover;
 }
 
-.block.hero .content-wrapper {
+.hero.block.card .content-wrapper {
   padding: 30px 0;
   margin: 0 20px;
 }
 
-.block.hero .content-wrapper .content {
+.hero.block.card .content-wrapper .content {
   padding: 40px 20px;
 }
 
-.hero.block .content-wrapper .content .title {
+.hero.block.card .content-wrapper .content .title {
   padding-left: 20px;
   border-left: 4px solid var(--hero-border-color);
 }
 
-.hero.block .content-wrapper .content .title p {
+.hero.block.card .content-wrapper .content .title p {
   margin-bottom: 14px;
 }
 
-.block.hero .content-wrapper .content .title picture {
+.hero.block.card .content-wrapper .content .title picture {
   display: block;
   position: relative;
   height: 48px;
   width: 100%;
 }
 
-.block.hero .content-wrapper .content .title picture img {
+.hero.block.card .content-wrapper .content .title picture img {
   position: absolute;
   top: 0;
   left: 0;
@@ -56,7 +56,7 @@
   object-fit: contain;
 }
 
-.block.hero .content-wrapper .content .title h2 {
+.hero.block.card .content-wrapper .content .title h2 {
   margin-bottom: 20px;
   font-size: var(--heading-font-size-s);
   font-weight: var(--font-weight-semibold);
@@ -64,23 +64,23 @@
   color: var(--black);
 }
 
-.block.hero .content-wrapper .content .resources {
+.hero.block.card .content-wrapper .content .resources {
   padding: 0 24px;
 }
 
-.block.hero .content-wrapper .content .resources p {
+.hero.block.card .content-wrapper .content .resources p {
   margin-bottom: 20px;
   font-size: var(--body-font-size-s);
   line-height: var(--line-height-s);
 }
 
-.block.hero .content-wrapper .content .resources ul {
+.hero.block.card .content-wrapper .content .resources ul {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
 }
 
-.block.hero .content-wrapper .content .resources a.resource {
+.hero.block.card .content-wrapper .content .resources a.resource {
   display: block;
   padding: 15px 20px;
   text-decoration: none;
@@ -89,7 +89,7 @@
   box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%);
 }
 
-.block.hero .content-wrapper .content .resources .resource-wrapper {
+.hero.block.card .content-wrapper .content .resources .resource-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -98,7 +98,7 @@
   border-top: 3px solid var(--hero-border-color);
 }
 
-.block.hero .content-wrapper .content .resources a.resource p.name {
+.hero.block.card .content-wrapper .content .resources a.resource p.name {
   margin: 0;
   font-weight: var(--font-weight-bold);
   font-size: var(--body-font-size-m);
@@ -106,7 +106,7 @@
   color: var(--black);
 }
 
-.block.hero .content-wrapper .content .resources a.resource p.download {
+.hero.block.card .content-wrapper .content .resources a.resource p.download {
   margin: 0;
   font-weight: var(--font-weight-bold);
   font-size: var(--body-font-size-s);
@@ -116,22 +116,22 @@
 }
 
 @media screen and (min-width: 600px) {
-  .block.hero .content-wrapper .content .resources ul {
+  .hero.block.card .content-wrapper .content .resources ul {
     flex-flow: row wrap;
     gap: 2em;
   }
 
-  .block.hero .content-wrapper .content .resources ul > li {
+  .hero.block.card .content-wrapper .content .resources ul > li {
     flex-basis: calc(50% - 1em);
   }
 
-  .block.hero .content-wrapper .content .resources a.resource {
+  .hero.block.card .content-wrapper .content .resources a.resource {
     height: 100%;
   }
 }
 
 @media screen and (min-width: 900px) {
-  .block.hero .image {
+  .hero.block.card .image {
     position: absolute;
     top: 0;
     left: 0;
@@ -139,15 +139,15 @@
     height: 100%;
   }
 
-  .block.hero .image picture {
+  .hero.block.card .image picture {
     padding-bottom: 0;
   }
 
-  .hero.block .image picture img {
+  .hero.block.card .image picture img {
     object-position: center center;
   }
 
-  .block.hero .content-wrapper {
+  .hero.block.card .content-wrapper {
     display: flex;
     position: relative;
     justify-content: center;
@@ -156,39 +156,39 @@
     padding: 80px 0 150px;
   }
 
-  .block.hero .content-wrapper .content {
+  .hero.block.card .content-wrapper .content {
     padding: 30px 30px 60px;
     max-width: 670px;
     background-color: rgba(255 255 255 / 90%);
     border-radius: 10px;
   }
 
-  .block.hero .content-wrapper .content .title h2 {
+  .hero.block.card .content-wrapper .content .title h2 {
     font-size: var(--heading-font-size-l);
   }
 
-  .block.hero .content-wrapper .content .resources p {
+  .hero.block.card .content-wrapper .content .resources p {
     font-size: var(--body-font-size-m);
   }
 
-  .block.hero .content-wrapper .content .resources a.resource p.name {
+  .hero.block.card .content-wrapper .content .resources a.resource p.name {
     font-size: var(--body-font-size-l);
   }
 
-  .block.hero .content-wrapper .content .resources a.resource p.download {
+  .hero.block.card .content-wrapper .content .resources a.resource p.download {
     font-size: var(--body-font-size-m);
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .block.hero .content-wrapper {
+  .hero.block.card .content-wrapper {
     justify-content: flex-end;
     max-width: 980px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .block.hero .content-wrapper {
+  .hero.block.card .content-wrapper {
     max-width: var(--normal-page-width);
   }
 }

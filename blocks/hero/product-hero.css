@@ -1,5 +1,5 @@
 
-.hero.block .image picture {
+.hero.block.product .image picture {
   display: block;
   position: relative;
   height: 100%;
@@ -7,7 +7,7 @@
   padding-bottom: 70%;
 }
 
-.hero.block .image picture img {
+.hero.block.product .image picture img {
   position: absolute;
   top: 0;
   left: 0;
@@ -17,12 +17,12 @@
   object-fit: cover;
 }
 
-.block.hero .content-wrapper {
+.hero.block.product .content-wrapper {
   padding: 30px 0;
   margin: 0 20px;
 }
 
-.block.hero .content-wrapper .logo picture {
+.hero.block.product .content-wrapper .logo picture {
   display: block;
   position: relative;
   margin-bottom: 20px;
@@ -31,7 +31,7 @@
   padding-bottom: 22%;
 }
 
-.block.hero .content-wrapper .logo picture img {
+.hero.block.product .content-wrapper .logo picture img {
   position: absolute;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@
 }
 
 
-.block.hero .title {
+.hero.block.product .title {
   font-size: var(--body-font-size-xl);
   line-height: var(--line-height-m);
   color: var(--black);
@@ -52,23 +52,23 @@
   color: var(--gammagard-liq);
 }
 
-.block.hero .title p em {
+.hero.block.product .title p em {
   font-size: var(--body-font-size-m);
 }
 
-.block.hero .references p {
+.hero.block.product .references p {
   margin-bottom: 30px;
   font-size: var(--body-font-size-xs);
   line-height: var(--line-height-m);
 }
 
-.block.hero .link p.button-container {
+.hero.block.product .link p.button-container {
   font-size: var(--body-font-size-m);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-m);
 }
 
-.block.hero .link .button-container a {
+.hero.block.product .link .button-container a {
   display: inline-block;
   padding: 12px 16px;
   text-decoration: none;
@@ -81,21 +81,21 @@
 }
 
 @media screen and (min-width: 600px) {
-  .block.hero .title p {
+  .hero.block.product .title p {
     font-size: var(--body-font-size-xxl);
   }
 
-  .block.hero .title p em {
+  .hero.block.product .title p em {
     font-size: var(--body-font-size-xl);
   }
 
-  .block.hero .link p.button-container {
+  .hero.block.product .link p.button-container {
     font-size: var(--body-font-size-l);
   }
 }
 
 @media screen and (min-width: 900px) {
-  .block.hero .image {
+  .hero.block.product .image {
     position: absolute;
     top: 0;
     left: 0;
@@ -103,35 +103,35 @@
     height: 100%;
   }
 
-  .block.hero .image picture {
+  .hero.block.product .image picture {
     padding-bottom: 0;
   }
 
-  .hero.block .image picture img {
+  .hero.block.product .image picture img {
     object-position: center center;
   }
 
-  .block.hero .content-wrapper {
+  .hero.block.product .content-wrapper {
     position: relative;
     max-width: 740px;
     margin: 0 auto;
     padding: 0;
   }
 
-  .block.hero .content-wrapper .content {
+  .hero.block.product .content-wrapper .content {
     padding: 175px 0;
     max-width: 500px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .block.hero .content-wrapper {
+  .hero.block.product .content-wrapper {
     max-width: 980px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .block.hero .content-wrapper {
+  .hero.block.product .content-wrapper {
     max-width: var(--normal-page-width);
   }
 }
