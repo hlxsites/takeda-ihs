@@ -68,7 +68,6 @@ header {
 .header.block .nav-hamburger .nav-hamburger-icon {
   display: block;
   margin: 0 15px;
-  border: none;
   background-color: transparent;
 }
 
@@ -83,10 +82,14 @@ header {
   display: none;
 }
 
-.header.block .nav-hamburger .icon svg {
-  display: block;
+.header.block .nav-hamburger .icon {
   height: 25px;
   width: 25px;
+}
+
+.header.block .nav-hamburger .icon svg {
+  height: 100%;
+  width: 100%;
 }
 
 .header.block .nav-sections {
@@ -243,7 +246,7 @@ header {
     justify-content: flex-start;
   }
 
-  .header.block .nav-hamburger .nav-hamburger-icon svg {
+  .header.block .nav-hamburger .nav-hamburger-icon .icon {
     height: 35px;
     width: 35px;
   }
