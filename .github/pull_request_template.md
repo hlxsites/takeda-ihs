@@ -4,4 +4,4 @@ Fix #<gh-issue-id>
 
 Test URLs:
 - Before: https://main--takeda-ihs--hlxsites.hlx.page/
-- After: https://<branch>--takeda-ihs--hlxistes.hlx.page/
+- After: https://<branch>--takeda-ihs--hlxsites.hlx.page/

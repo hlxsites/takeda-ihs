@@ -7,6 +7,7 @@ header {
   position: relative;
   display: grid;
   height: var(--nav-height);
+  overflow-y: scroll;
   grid-template:
     'logo . hamburger' 75px
     'brand brand brand' min-content
@@ -14,12 +15,12 @@ header {
     'utility utility utility' min-content
     / min-content 1fr min-content;
   justify-content: space-between;
-  background-color: white;
+  background-color: transparent;
   z-index: 1000;
 }
 
 .header.block nav[aria-expanded="true"] {
-  height: unset;
+  height: 100vh;
 }
 
 .header.block .nav-logo {
@@ -30,15 +31,14 @@ header {
   position: relative;
   display: flex;
   margin: 0 15px;
-  padding: 5px 0;
   height: 100%;
   align-items: center;
 }
 
 .header.block .nav-logo img {
   padding: 15px 0;
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 105px;
 }
 
 .header.block .nav-brand {
@@ -92,6 +92,7 @@ header {
 .header.block .nav-sections {
   display: none;
   grid-area: sections;
+  background-color: white;
 }
 
 .header.block .nav-utility {
@@ -310,7 +311,7 @@ header {
     z-index: 1000;
   }
 
-  .header.block .nav-sections > ul > li.nav-drop:hover > ul {
+  .header.block .nav-sections > ul > li.nav-drop:not([data-touch-click="true"]):hover > ul {
     display: block;
   }
 
@@ -325,7 +326,7 @@ header {
     white-space: nowrap;
   }
 
-  .header.block .nav-sections > ul > li.nav-drop:hover > a > span {
+  .header.block .nav-sections > ul > li.nav-drop:not([data-touch-click="true"]):hover > a > span {
     transform: rotate(180deg);
   }
 
