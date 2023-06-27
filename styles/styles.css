@@ -152,6 +152,17 @@ sup {
 
 @font-face {
   font-family: 'Open Sans Fallback';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Arial Italic');
+  ascent-override: 107.47%;
+  descent-override: 29.46%;
+  line-gap-override: 0.00%;
+  size-adjust: 99.46%;
+}
+
+@font-face {
+  font-family: 'Open Sans Fallback';
   font-style: normal;
   font-weight: 600;
   src: local('Arial Bold');
