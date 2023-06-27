@@ -11,7 +11,7 @@
     min-height: 350px;
 }
 
-.section.floating-images-container {
+.block.floating-images  {
     padding-left: 24px;
     border-bottom: 1px solid #979797;
 }
@@ -29,26 +29,9 @@
 }
 
 .block.floating-images .content {
-    border-left: 3px solid #e10;
+    border-left: 3px solid var(--red);
     padding: 0 24px;
     max-height: 350px;
-}
-
-/*** move-to-styles? ***/
-.block.floating-images .content p {
-    margin-bottom: 1.5em;
-    padding: 0 0 16px;
-    line-height: var(--line-height-s);
-    font-size: var(--body-font-size-m);
-    font-weight: var(--font-weight-light);
-    color: var(--quartz);
-}
-
-/*** move-to-styles? ***/
-.block.floating-images .content h2 {
-    letter-spacing: normal;
-    margin: 0 0 0.5em;
-    text-align: left;
 }
 
 .block.floating-images .content ul {
