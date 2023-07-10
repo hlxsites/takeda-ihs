@@ -20,6 +20,13 @@
   --body-color: #3a3a3a;
   --quartz: #4c4948;
   --red: #e10;
+  --white: #fff;
+  --blue: #003087;
+  --black: black;
+
+  /** Brand Colors **/
+  --gammagard-liq: #f89a38;
+  --onepath: #00a9ec;
 
   /** Fonts **/
   --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
@@ -33,6 +40,15 @@
   --body-font-size-xs: 12px;
   --body-font-size-s: 14px;
   --body-font-size-m: 16px;
+  --body-font-size-l: 18px;
+  --body-font-size-xl: 20px;
+  --body-font-size-xxl: 24px;
+
+  /** Heading **/
+  --heading-font-size-s: 24px;
+  --heading-font-size-m: 26px;
+  --heading-font-size-l: 30px;
+  --heading-font-size-xl: 42px;
 
    /* heading sizes */
   --heading-font-size-xxl: 48px;
@@ -53,6 +69,10 @@
   --line-height-xl: 2.5em;
   --line-height-xxl: 2.9em;
 
+  /* Page Widths */
+  --normal-page-width: 1200px;
+  --wide-page-width: 1600px;
+  --full-page-width: 100vw;
 }
 
 *, *::after, *::before{
@@ -63,10 +83,50 @@ body {
   color: var(--body-color);
   background-color: var(--bright-gray);
   font-family: var(--font-family-opensans);
+  display: none;
+}
+
+body.appear {
+  display: unset;
 }
 
 header {
   height: var(--nav-height);
+}
+
+main {
+  background-color: var(--white);
+}
+
+main .section {
+  max-width: var(--wide-page-width);
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: var(--heading-font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-s);
+  color: var(--white);
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+em {
+  font-style: italic;
+}
+
+sup {
+  position: relative;
+  font-size: 75%;
+  bottom: 1ex;
 }
 
 @media screen and (max-width: 299px) {
@@ -79,6 +139,34 @@ header {
   :root {
     --nav-height: 125px;
   }
+}
+
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+@font-face {
+  font-family: 'Open Sans Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 101.58%;
+  descent-override: 27.84%;
+  line-gap-override: 0.00%;
+  size-adjust: 105.22%;
+}
+
+@font-face {
+  font-family: 'Open Sans Fallback';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Arial Italic');
+  ascent-override: 107.47%;
+  descent-override: 29.46%;
+  line-gap-override: 0.00%;
+  size-adjust: 99.46%;
 }
 
 @font-face {
@@ -97,11 +185,12 @@ header {
   font-style: normal;
   font-weight: 700;
   src: local('Arial Bold');
-  ascent-override: 116.27%;
-  descent-override: 31.87%;
+  ascent-override: 109.90%;
+  descent-override: 30.12%;
   line-gap-override: 0.00%;
-  size-adjust: 91.93%;
+  size-adjust: 97.26%;
 }
+
 p {
   margin-bottom: 1.5em;
   padding: 0 0 16px;
@@ -128,3 +217,4 @@ h3 {
   font-weight: var(--font-weight-bold);
 
 }
+

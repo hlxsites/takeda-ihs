@@ -1,6 +1,5 @@
 import {
   sampleRUM,
-  buildBlock,
   loadHeader,
   loadFooter,
   decorateButtons,
@@ -29,6 +28,9 @@ function buildHeroBlock(main) {
     main.prepend(section);
   }
 }
+
+const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
+
 
 /**
 * Builds floating image block and prepends to main in a new section.
@@ -68,10 +70,14 @@ function buildFloatingImages(main) {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
+// eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
   try {
+
     buildHeroBlock(main);
     buildFloatingImages(main);
+
+    // No Auto blocks yet;
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
