@@ -7,7 +7,8 @@ import { decorateIcons, getMetadata } from '../../scripts/lib-franklin.js';
 export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
   const footerPath = footerMeta ? new URL(footerMeta).pathname : '/footer';
-  const resp = await fetch(`${footerPath}.plain.html`,
+  const resp = await fetch(
+    `${footerPath}.plain.html`,
     window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {},
   );
 
