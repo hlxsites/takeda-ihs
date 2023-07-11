@@ -66,12 +66,12 @@
     font-size: var(--heading-font-size-m);
 }
 
-
-
 .lists.triple-aim.block div > ul > li {
     text-transform: uppercase;
     font-weight: var(--font-weight-bold);
-    font-size: var(--body-font-size-xl);
+    font-size: var(--body-font-size-l);
+    border-left: solid 5px var(--red);
+    padding: 0 8px;
 
 }
 
@@ -109,10 +109,6 @@
         font-size: var(--heading-font-size-m);
     }
 
-    .lists.triple-aim.block div > ul > li {
-        font-size: var(--body-font-size-l);
-    }
-
     .lists.triple-aim.block > div {
         grid-template-columns: 1fr;
     }
@@ -122,6 +118,11 @@
 @media screen and (min-width: 600px) {
     .lists.triple-aim.block > div > div > ul {
         grid-template-columns: 1fr;
+    }
+
+    .lists.triple-aim.block div > ul > li > ul {
+        font-size: var(--body-font-size-s);
+        font-weight: var(--font-weight-light);
     }
 
     .lists.triple-aim.block > div {
@@ -138,10 +139,6 @@
         font-size: var(--body-font-size-s);
     }
 
-    .lists.triple-aim.block div > ul > li {
-        font-size: var(--body-font-size-l);
-        padding: 0 8px;
-    }
 
     .lists.triple-aim.block > div > div > h2 {
         font-size: var(--heading-font-size-l);
@@ -165,11 +162,6 @@
 
     .lists.triple-aim.block div > ul > li > ul {
         font-size: var(--body-font-size-m);
-    }
-
-    .lists.triple-aim.block div > ul > li {
-        font-size: var(--body-font-size-xl);
-        padding: 0 8px;
     }
 
     .lists.triple-aim.block > div > div > h2 {

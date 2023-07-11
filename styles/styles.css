@@ -196,6 +196,10 @@ p, li {
   text-align: inherit;
 }
 
+ul, li {
+  font-family: var(--body-font-family);
+}
+
 p {
   margin-bottom: 1.5em;
 }
