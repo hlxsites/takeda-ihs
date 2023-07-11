@@ -66,12 +66,12 @@
     font-size: var(--heading-font-size-m);
 }
 
-
-
 .lists.triple-aim.block div > ul > li {
     text-transform: uppercase;
     font-weight: var(--font-weight-bold);
     font-size: var(--body-font-size-xl);
+    border-left: solid 5px var(--red);
+    padding: 0 8px;
 
 }
 
