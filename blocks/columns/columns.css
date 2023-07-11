@@ -4,7 +4,7 @@
 }
 
 .columns-container h2 {
-  font-size: var(--header-font-size-m);
+  font-size: var(--heading-font-size-m);
   font-weight: var(--font-weight-bold);
 }
 
@@ -61,104 +61,6 @@
   bottom: .5em;
   font-size: var(--body-font-size-xs);
   line-height: 0;
-}
-
-.columns.triple-aim.block > div > div > p {
-    margin: 0;
-    padding: 0;
-}
-
-.columns.triple-aim.block > div > div:first-of-type {
-    text-align: center;
-    flex-grow: 2;
-}
-
-.columns.triple-aim.block ul {
-    list-style-type: none;
-}
-
-.columns.triple-aim.block > div > div ul {
-    margin: 0;
-    padding: 0;
-}
-
-.columns.triple-aim.block > div > div > ul {
-    display: flex;
-    flex-flow: row;
-}
-
-.columns.triple-aim.block div > ul > li > ul {
-    font-weight: var(--font-weight-normal);
-    text-transform: none;
-    margin-top: 6px;
-}
-
-.columns.triple-aim.block div:not(:first-of-type) > ul {
-    list-style-type: none;
-}
-
-.columns.triple-aim.block div:not(:first-of-type) > ul:first-of-type strong {
-   color: var(--red);
-}
-
-.columns.triple-aim.block div > h3 {
-    font-size: var(--body-font-size-m);
-    font-weight: var(--font-weight-bold);
-}
-
-.columns.triple-aim.block > div > div h3 {
-    font-weight: var(--font-weight-bold);
-    font-size: var(--header-font-size-m);
-}
-
-.columns.triple-aim.block > div > div:first-of-type p,
-.columns.triple-aim.block > div > div:first-of-type h3 {
-   margin: 0;
-   padding: 0;
-}
-
-.columns.triple-aim.block > div > div:first-of-type p,
-.columns.triple-aim.block > div > div:not(:first-of-type) h3 {
-  font-size: var(--header-font-size-m);
-}
-
-
-.columns.triple-aim.block div > ul > li {
-    font-weight: var(--font-weight-bold);
-    font-size: var(--body-font-size-l);
-    text-transform: uppercase;
-}
-
-.columns.triple-aim.block > div > div > h2 {
-    font-weight: var(--font-weight-bold);
-    font-size: var(--header-font-size-m);
-    margin-bottom: 32px;
-}
-
-.columns.triple-aim.block > div > div > p > picture img {
-    display: block;
-    width: auto;
-    height: auto;
-    margin: 0 auto;
-}
-
-.columns.triple-aim.block > div > div:last-of-type {
-    flex-grow: 3;
-}
-
-@media screen and (max-width: 599px) {
-    .columns.triple-aim.block > div > div > ul {
-        display: flex;
-        flex-flow: row wrap;
-    }
-
-}
-
-@media screen and (min-width: 600px) {
-    .columns.triple-aim.block > div > div > ul {
-        display: flex;
-        flex-flow: row;
-    }
 }
 
 @media screen and (min-width: 900px) {
