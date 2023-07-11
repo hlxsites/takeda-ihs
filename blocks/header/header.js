@@ -38,7 +38,6 @@ function openOnKeydown(e) {
 function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections > ul > li.nav-drop').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
-    section.removeAttribute('data-touch-click');
   });
 }
 
@@ -54,7 +53,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections);
+  toggleAllNavSections(navSections, 'false');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
   // enable menu collapse on escape keypress
   if (!expanded || isDesktop.matches) {
@@ -87,7 +86,7 @@ function buildLogo() {
 function buildBrand() {
   const brand = document.createElement('div');
   brand.classList.add('nav-brand');
-  brand.innerHTML = '<a href="/" rel="noopener">Takeda\'s Integrated Health Systems Team</a>';
+  brand.innerHTML = '<a href="/" rel="noopener"><div>Takeda\'s Integrated Health Systems Team</div></a>';
   return brand;
 }
 
@@ -126,7 +125,6 @@ function buildSections(sections) {
         const li = icon.closest('li');
         li.classList.add('hide', 'show-all');
       }
-
       const anchor = section.querySelector('a');
       anchor.append(expander.cloneNode());
       section.classList.add('nav-drop');
@@ -135,38 +133,21 @@ function buildSections(sections) {
       anchor.setAttribute('tabindex', '0');
       anchor.setAttribute('role', 'button');
       anchor.addEventListener('click', (e) => {
+        if (e.pointerType !== 'mouse' || !isDesktop.matches) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      });
+      anchor.addEventListener('pointerdown', (e) => {
         const expanded = section.getAttribute('aria-expanded') === 'true';
+        anchor.releasePointerCapture(e.pointerId);
         if (e.pointerType !== 'mouse' || !isDesktop.matches) {
           e.preventDefault();
           e.stopPropagation();
           toggleAllNavSections(sections);
           section.setAttribute('aria-expanded', !expanded);
-          const all = section.querySelector('.show-all');
-          if (all) {
-            all.classList.remove('hide');
-          }
-          if (e.pointerType !== 'mouse') {
-            section.setAttribute('data-touch-click', 'true');
-          }
-        }
-      });
-      section.addEventListener('pointerenter', (e) => {
-        if (e.pointerType === 'mouse') {
-          toggleAllNavSections(sections);
-          section.setAttribute('aria-expanded', 'true');
-          const all = section.querySelector('.show-all');
-          if (all) {
-            all.classList.add('hide');
-          }
-        }
-      });
-      section.addEventListener('pointerleave', (e) => {
-        if (e.pointerType === 'mouse') {
-          toggleAllNavSections(sections);
-          section.setAttribute('aria-expanded', 'false');
-          const all = section.querySelector('.show-all');
-          if (all) {
-            all.classList.remove('hide');
+          if (icon) {
+            icon.closest('li').classList.toggle('hide');
           }
         }
       });
@@ -225,9 +206,6 @@ export default async function decorate(block) {
     nav.append(html.querySelector('.nav-utility'));
 
     isDesktop.addEventListener('change', () => toggleMenu(nav, sections, isDesktop.matches));
-    document.body.addEventListener('click', () => {
-      toggleAllNavSections(sections);
-    });
     await decorateIcons(block);
   }
 }
