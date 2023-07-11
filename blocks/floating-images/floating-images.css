@@ -2,6 +2,8 @@
 
 .block.floating-images {
     margin-bottom: 64px;
+    padding-left: 24px;
+    border-bottom: 1px solid #979797;
 }
 
 .block.floating-images > div {
@@ -9,11 +11,6 @@
     flex-direction: column-reverse;
     padding-top: 1em;
     min-height: 350px;
-}
-
-.block.floating-images  {
-    padding-left: 24px;
-    border-bottom: 1px solid #979797;
 }
 
 .block.floating-images .image {
