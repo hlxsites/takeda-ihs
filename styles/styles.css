@@ -13,30 +13,38 @@
 @import url('reset.css');
 
 :root {
-  /** Colors */
+  /* Colors */
   --bright-gray: #efefef;
-  --grey: #979797;
+  --gray: #979797;
   --silver: #d8d8d8;
-  --body-color: #3a3a3a;
   --quartz: #4c4948;
   --red: #e10;
   --white: #fff;
   --blue: #003087;
+  --black-olive: #3a3a3a;
   --black: black;
+  --cadet: #edeff0; /* gray-blue */
 
-  /** Brand Colors **/
+  /* Brand Colors */
   --gammagard-liq: #f89a38;
   --onepath: #00a9ec;
 
-  /** Fonts **/
+  /* Font Colors */
+  --default-text-color: var(--black-olive);
+
+  /* Fonts */
   --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
+  --body-font-family: var(--font-family-opensans);
+  --heading-font-family: var(--font-family-opensans);
+  
+  /* Font Weights */
   --font-weight-bold: 700;
   --font-weight-semibold: 600;
   --font-weight-normal: 400;
   --font-weight-light: 300;
   --font-weight-thin: 100;
 
-  /** Body **/
+  /* Body */
   --body-font-size-xs: 12px;
   --body-font-size-s: 14px;
   --body-font-size-m: 16px;
@@ -44,22 +52,23 @@
   --body-font-size-xl: 20px;
   --body-font-size-xxl: 24px;
 
-  /** Heading **/
+  /* Heading */
   --heading-font-size-s: 24px;
   --heading-font-size-m: 26px;
   --heading-font-size-l: 30px;
   --heading-font-size-xl: 42px;
 
-  /** Nav Height **/
+  /* Nav Height */
   --nav-height: 100px;
 
   /* Line heights */
   --line-height-xs: 1.15em;
   --line-height-s: 1.25em;
   --line-height-m: 1.5em;
-  --line-height-l: 2em;
-  --line-height-xl: 2.5em;
-  --line-height-xxl: 2.9em;
+  --line-height-l: 1.75em;
+  --line-height-xl: 2em;
+  --line-height-xxl: 2.5em;
+  --line-height-xxxl: 2.9em;
 
   /* Page Widths */
   --normal-page-width: 1200px;
@@ -71,40 +80,54 @@
   box-sizing: border-box;
 }
 
-body {
-  color: var(--body-color);
-  background-color: var(--bright-gray);
-  font-family: var(--font-family-opensans);
-  display: none;
-}
 
-body.appear {
-  display: unset;
-}
-
-header {
-  height: var(--nav-height);
-}
-
-main {
-  background-color: var(--white);
-}
-
-main .section {
-  max-width: var(--wide-page-width);
-  margin: 0 auto;
+h1, h2 {
+  font-weight: var(--font-weight-bold);
 }
 
 h1 {
   margin-bottom: 8px;
   font-size: var(--heading-font-size-m);
-  font-weight: var(--font-weight-bold);
   line-height: var(--line-height-s);
   color: var(--white);
 }
 
+h2 {
+  margin-bottom: 12px;
+  font-size: var(--heading-font-size-s);
+  line-height: var(--line-height-s);
+  color: var(--black);
+}
+
 p {
   margin-bottom: 1.5em;
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--body-font-size-m);
+  line-height: var(--line-height-s);
+  color: var(--default-text-color);
+  text-align: inherit;
+}
+
+a, a:visited{
+  color: var(--blue);
+}
+
+p.button-container a {
+  display: inline-block;
+  padding: 8px 20px;
+  font-weight: bold;
+  line-height: var(--line-height-l);
+  text-decoration: none;
+  color: var(--black);
+  background-color: var(--white);
+  border-radius: 4px;
+  box-shadow: 3px 3px 7px 1px rgba(0 0 0 / 20%);
+}
+
+p.button-container a:visited {
+  color: var(--black);
+  text-decoration: none;
 }
 
 strong {
@@ -121,6 +144,67 @@ sup {
   bottom: 1ex;
 }
 
+sub {
+  font-size: var(--body-font-size-xs);
+  line-height: var(--line-height-xs);
+}
+
+
+body {
+  display: none;
+}
+
+body.appear {
+  display: unset;
+}
+
+header {
+  height: var(--nav-height);
+}
+
+main {
+  background-color: var(--white);
+}
+
+main .section {
+  padding: 32px 0;
+}
+
+main .section.gray-background {
+  background-color: var(--bright-gray);
+}
+
+main .section.silver-background {
+  background-color: var(--silver);
+}
+
+main .section.quartz-background {
+  background-color: var(--quartz);
+}
+
+main .section.quartz-background h1,
+main .section.quartz-background h2,
+main .section.quartz-background p {
+  color: var(--white);
+}
+
+main .section.cadet-gradient-background {
+  background: linear-gradient(
+      -180deg,
+      #5b6770 0%,
+      #edeff0 86%,
+      rgba(242 244 245 / 55%) 88%,
+      rgba(247 248 248 / 0%) 90%,
+      rgba(255 255 255 / 0%) 100%
+  );
+}
+
+main .section > div {
+  padding: 0 16px;
+  margin: 0 auto;
+  max-width: var(--normal-page-width  );
+}
+
 @media screen and (max-width: 299px) {
   :root {
     --nav-height: 75px;
@@ -131,11 +215,27 @@ sup {
   :root {
     --nav-height: 125px;
   }
+
+  main .section > div {
+    padding: 0 24px;
+  }
 }
 
 @media screen and (min-width: 900px) {
   h1 {
     font-size: var(--heading-font-size-xl);
+  }
+
+  h2 {
+    font-size: var(--heading-font-size-l);
+  }
+
+  p {
+    font-size: var(--body-font-size-l);
+  }
+
+  main .section > div {
+    padding: 0 90px;
   }
 }
 
