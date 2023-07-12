@@ -1,7 +1,14 @@
-footer {
-  padding: 2rem;
-  background-color: var(--overlay-background-color);
-  font-size: var(--body-font-size-s);
+.footer.block a {
+  color: inherit;
+}
+
+.footer.block p > picture, footer.footer.block p > picture > img {
+  height: 36px;
+  width: auto;
+}
+
+.footer.block > div > div > p {
+  margin-bottom: 14px;
 }
 
 footer .footer {
@@ -9,6 +16,10 @@ footer .footer {
   margin: auto;
 }
 
-footer .footer p {
+footer {
   margin: 0;
+  padding: 2rem;
+  font-size: var(--body-font-size-xs);
+  font-weight: var(--font-weight-light);
+  text-align: center;
 }
