@@ -7,7 +7,6 @@ header {
   position: relative;
   display: grid;
   height: var(--nav-height);
-  overflow-y: scroll;
   grid-template:
     'logo . hamburger' 75px
     'brand brand brand' min-content
@@ -15,12 +14,12 @@ header {
     'utility utility utility' min-content
     / min-content 1fr min-content;
   justify-content: space-between;
-  background-color: transparent;
-  box-shadow: 2px 2px 10px 1px rgba(0 0 0 / 15%);
+  background-color: white;
+  z-index: 1000;
 }
 
 .header.block nav[aria-expanded="true"] {
-  height: 100vh;
+  height: unset;
 }
 
 .header.block .nav-logo {
@@ -31,14 +30,15 @@ header {
   position: relative;
   display: flex;
   margin: 0 15px;
+  padding: 5px 0;
   height: 100%;
   align-items: center;
 }
 
 .header.block .nav-logo img {
   padding: 15px 0;
-  height: auto;
-  width: 105px;
+  height: 100%;
+  width: auto;
 }
 
 .header.block .nav-brand {
@@ -68,6 +68,7 @@ header {
 .header.block .nav-hamburger .nav-hamburger-icon {
   display: block;
   margin: 0 15px;
+  border: none;
   background-color: transparent;
 }
 
@@ -82,20 +83,15 @@ header {
   display: none;
 }
 
-.header.block .nav-hamburger .icon {
+.header.block .nav-hamburger .icon svg {
+  display: block;
   height: 25px;
   width: 25px;
-}
-
-.header.block .nav-hamburger .icon svg {
-  height: 100%;
-  width: 100%;
 }
 
 .header.block .nav-sections {
   display: none;
   grid-area: sections;
-  background-color: white;
 }
 
 .header.block .nav-utility {
@@ -233,9 +229,8 @@ header {
 
 @media screen and (min-width: 600px) {
   .header.block nav {
-    overflow-y: visible;
     grid-template:
-    'utility utility utility' 50px
+    'utility utility utility' min-content
     'logo brand hamburger' 75px
     'sections sections sections' min-content
     / min-content 1fr min-content;
@@ -246,7 +241,7 @@ header {
     justify-content: flex-start;
   }
 
-  .header.block .nav-hamburger .nav-hamburger-icon .icon {
+  .header.block .nav-hamburger .nav-hamburger-icon svg {
     height: 35px;
     width: 35px;
   }
@@ -284,10 +279,6 @@ header {
 }
 
 @media screen and (min-width: 900px) {
-  .header.block nav[aria-expanded="true"] {
-    height: var(--nav-height);
-  }
-
   .header.block nav {
     grid-template:
     'utility utility utility' 50px
@@ -319,7 +310,7 @@ header {
     z-index: 1000;
   }
 
-  .header.block .nav-sections > ul > li.nav-drop:not([data-touch-click="true"]):hover > ul {
+  .header.block .nav-sections > ul > li.nav-drop:hover > ul {
     display: block;
   }
 
@@ -334,7 +325,7 @@ header {
     white-space: nowrap;
   }
 
-  .header.block .nav-sections > ul > li.nav-drop:not([data-touch-click="true"]):hover > a > span {
+  .header.block .nav-sections > ul > li.nav-drop:hover > a > span {
     transform: rotate(180deg);
   }
 
