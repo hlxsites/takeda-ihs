@@ -82,6 +82,7 @@
 
 
 h1, h2 {
+  font-family: var(--heading-font-family);
   font-weight: var(--font-weight-bold);
 }
 
@@ -110,6 +111,7 @@ p {
 }
 
 a, a:visited{
+  font-family: var(--body-font-family);
   color: var(--blue);
 }
 
