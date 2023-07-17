@@ -207,6 +207,15 @@ main .section > div {
   max-width: var(--normal-page-width  );
 }
 
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 299px) {
   :root {
     --nav-height: 75px;
