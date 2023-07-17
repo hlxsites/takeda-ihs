@@ -3,6 +3,10 @@ header {
   background-color: white;
 }
 
+.header.block.nav-wrapper {
+  box-shadow: 2px 2px 10px 1px rgba(0 0 0 / 15%);
+}
+
 .header.block nav {
   position: relative;
   display: grid;
@@ -16,7 +20,6 @@ header {
     / min-content 1fr min-content;
   justify-content: space-between;
   background-color: transparent;
-  box-shadow: 2px 2px 10px 1px rgba(0 0 0 / 15%);
 }
 
 .header.block nav[aria-expanded="true"] {
@@ -377,4 +380,6 @@ header {
   .header.block .nav-sections > ul > li > ul > li.hide {
     display: none;
   }
+
+
 }
