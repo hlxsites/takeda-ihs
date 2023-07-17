@@ -1,25 +1,28 @@
-.footer.block a {
-  color: inherit;
-}
-
-.footer.block p > picture, footer.footer.block p > picture > img {
-  height: 36px;
-  width: auto;
-}
-
-.footer.block > div > div > p {
-  margin-bottom: 14px;
-}
-
-footer .footer {
-  max-width: 1200px;
-  margin: auto;
-}
-
 footer {
   margin: 0;
   padding: 2rem;
   font-size: var(--body-font-size-xs);
   font-weight: var(--font-weight-light);
   text-align: center;
+}
+
+
+footer .footer {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer.block a {
+  color: inherit;
+}
+
+.footer.block p > picture {
+  display: inline-block;
+  position: relative;
+  height: 36px;
+  width: auto;
+}
+
+.footer.block > div > div > p {
+  margin-bottom: 14px;
 }

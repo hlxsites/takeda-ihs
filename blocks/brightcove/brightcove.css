@@ -55,7 +55,6 @@
   background-color: #0071bd;
 }
 
-
 .brightcove.block .placeholder button span.arrow {
   margin-left: 1px;
   width: 24px;
@@ -64,7 +63,6 @@
   border-width: 15px 0 15px 24px;
   border-color: transparent transparent transparent white;
 }
-
 
 .brightcove.block .video {
   position: absolute;
