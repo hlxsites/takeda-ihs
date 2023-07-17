@@ -1,4 +1,6 @@
 
+
+
 .hero.block.default .image {
   display: block;
   position: absolute;
@@ -25,6 +27,8 @@
 }
 
 .hero.block.default .content-wrapper {
+  position: relative;
+  z-index: 1;
   padding: 40px 0;
   margin: 0 20px;
 }
