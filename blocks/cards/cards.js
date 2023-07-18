@@ -46,6 +46,8 @@ function buildIconCards(block) {
 export default async function decorate(block) {
   if (block.classList.contains('icons')) {
     buildIconCards(block);
+    await decorateIcons(block);
   }
-  await decorateIcons(block);
+
+  block.innerHTML = '';
 }
