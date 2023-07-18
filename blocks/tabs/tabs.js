@@ -1,4 +1,6 @@
-import { decorateBlocks, decorateIcons, decorateSections, loadBlocks } from '../../scripts/lib-franklin.js';
+import {
+  decorateBlocks, decorateIcons, decorateSections, loadBlocks,
+} from '../../scripts/lib-franklin.js';
 
 export default async function decorate(block) {
   const promises = [];
