@@ -44,33 +44,8 @@ function buildIconCards(block) {
 }
 
 export default async function decorate(block) {
-
   if (block.classList.contains('icons')) {
     buildIconCards(block);
   }
-
-  /* change to ul, li */
-  // const ul = document.createElement('ul');
-  // [...block.children].forEach((row) => {
-  //   const li = document.createElement('li');
-  //   const card = document.createElement('div');
-  //   card.classList.add('card');
-  //   li.append(card);
-  //   card.innerHTML = row.innerHTML;
-  //   [...card.children].forEach((div) => {
-  //     if (div.children.length === 1 && (div.querySelector('picture') || div.querySelector('span.icon'))) div.className = 'card-image';
-  //     else div.className = 'card-body';
-  //
-  //     const button = div.querySelector('p.button-container');
-  //     if (button) {
-  //       const link = document.createElement('div');
-  //       link.classList.add('card-link');
-  //       link.append(button);
-  //       card.append(link);
-  //     }
-  //   });
-  //   ul.append(li);
-  // });
-  // block.replaceChildren(ul);
   await decorateIcons(block);
 }
