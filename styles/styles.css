@@ -53,6 +53,8 @@
   --body-font-size-xxl: 24px;
 
   /* Heading */
+  --heading-font-size-xxs: 18px;
+  --heading-font-size-xs: 20px;
   --heading-font-size-s: 24px;
   --heading-font-size-m: 26px;
   --heading-font-size-l: 30px;
@@ -71,7 +73,7 @@
   --line-height-xxxl: 2.9em;
 
   /* Page Widths */
-  --normal-page-width: 1200px;
+  --normal-page-width: 1280px;
   --wide-page-width: 1600px;
   --full-page-width: 100vw;
 }
@@ -81,7 +83,7 @@
 }
 
 
-h1, h2 {
+h1, h2, h3 {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-bold);
 }
@@ -100,6 +102,13 @@ h2 {
   color: var(--black);
 }
 
+h3 {
+  margin-bottom: 12px;
+  font-size: var(--heading-font-size-xxs);
+  line-height: var(--line-height-m);
+  color: var(--black);
+}
+
 p {
   margin-bottom: 1.5em;
   font-family: var(--body-font-family);
@@ -113,6 +122,14 @@ p {
 a, a:visited{
   font-family: var(--body-font-family);
   color: var(--blue);
+}
+
+span {
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--body-font-size-m);
+  line-height: var(--line-height-s);
+  color: var(--default-text-color);
 }
 
 p.button-container a {
@@ -150,7 +167,6 @@ sub {
   font-size: var(--body-font-size-xs);
   line-height: var(--line-height-xs);
 }
-
 
 body {
   display: none;
@@ -201,10 +217,25 @@ main .section.cadet-gradient-background {
   );
 }
 
+main .section[data-layout] .layout-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+main .section[data-layout] .layout-content-wrapper .default-content-wrapper {
+  padding: 0 24px;
+  border-left: 6px solid var(--red);
+}
+
+main .section[data-layout] .layout-content-wrapper .default-content-wrapper h2 {
+  color: var(--red);
+}
+
 main .section > div {
   padding: 0 16px;
   margin: 0 auto;
-  max-width: var(--normal-page-width  );
+  max-width: var(--normal-page-width);
 }
 
 @media screen and (max-width: 299px) {
@@ -238,6 +269,22 @@ main .section > div {
 
   main .section > div {
     padding: 0 90px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main .section[data-layout] .layout-content-wrapper {
+    display: grid;
+    align-items: center;
+    gap: 1em;
+  }
+
+  main .section[data-layout="25/75"] .layout-content-wrapper {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  main .section > div {
+    padding: 0 40px;
   }
 }
 

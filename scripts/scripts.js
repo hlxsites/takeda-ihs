@@ -28,6 +28,17 @@ function buildAutoBlocks(main) {
   }
 }
 
+function buildLayoutContainers(main) {
+  main.querySelectorAll('.section[data-layout]').forEach((section) => {
+    const container = document.createElement('div');
+    container.classList.add('layout-content-wrapper');
+    const title = section.querySelector('.section-title-wrapper');
+    container.append(...section.children);
+    if (title) section.prepend(title);
+    section.append(container);
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -40,6 +51,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  buildLayoutContainers(main);
 }
 
 /**
