@@ -47,7 +47,7 @@ export default async function decorate(block) {
   if (block.classList.contains('icons')) {
     buildIconCards(block);
     await decorateIcons(block);
+  } else {
+    block.innerHTML = '';
   }
-
-  block.innerHTML = '';
 }
