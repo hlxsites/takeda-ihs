@@ -3,6 +3,19 @@
 @import url('card-hero.css');
 @import url('product-hero.css');
 
+/* Global styles override for hero */
+main .section.hero-container {
+  padding: 0;
+}
+
+main .section.hero-container > div {
+  padding: 0;
+  margin: 0;
+  max-width: unset;
+}
+
+/* End global overrides */
+
 .block.hero {
   position: relative;
 }

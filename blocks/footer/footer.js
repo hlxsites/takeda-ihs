@@ -14,10 +14,8 @@ export default async function decorate(block) {
 
   if (resp.ok) {
     const footer = document.createElement('div');
-    const html = await resp.text();
-
     // decorate footer DOM
-    footer.innerHTML = html;
+    footer.innerHTML = await resp.text();
 
     // size the footer image
     const image = footer.querySelector('picture img');
