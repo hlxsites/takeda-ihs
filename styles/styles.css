@@ -27,6 +27,12 @@
 
   /* Brand Colors */
   --gammagard-liq: #f89a38;
+  --gammagard-sd: #35a4d8;
+  --hyqvia: #500778;
+  --cuvitru: #485CC7;
+  --flexbumin: #3a6853;
+  --glassia: #00b140;
+  --aralast: #3a6853;
   --onepath: #00a9ec;
 
   /* Font Colors */
@@ -45,6 +51,7 @@
   --font-weight-thin: 100;
 
   /* Body */
+  --body-font-size-xxs: 10px;
   --body-font-size-xs: 12px;
   --body-font-size-s: 14px;
   --body-font-size-m: 16px;
@@ -279,6 +286,13 @@ main > .section > div {
   main > .section > div {
     padding: 0 90px;
   }
+
+  main .section[data-layout="50/50"] .layout-content-wrapper {
+    display: grid;
+    align-items: center;
+    gap: 3em;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -286,6 +300,10 @@ main > .section > div {
     display: grid;
     align-items: center;
     gap: 1em;
+  }
+
+  main .section[data-layout="50/50"] .layout-content-wrapper {
+    gap: 3em;
   }
 
   main .section[data-layout="25/75"] .layout-content-wrapper {

@@ -43,10 +43,41 @@ function buildIconCards(block) {
   });
 }
 
+/**
+ * Builds the Icons variation of the cards block.
+ * @param {HTMLDivElement} block
+ */
+function buildProductCards(block) {
+  const ul = document.createElement('ul');
+  [...block.children].forEach((card) => {
+    const li = document.createElement('li');
+    li.classList.add('product', card.children[0].textContent);
+    const picture = card.children[1].querySelector('picture');
+
+    const img = picture.querySelector('img');
+    const ratio = (parseInt(img.height, 10) / parseInt(img.width, 10)) * 100;
+    picture.style.paddingBottom = `${ratio}%`;
+
+    const link = card.children[1].querySelector('a');
+    link.innerHTML = `
+      <hr>
+      <div class="logo">
+        ${picture.outerHTML}
+      </div>
+      <p>Learn More</p>
+    `;
+    li.append(link);
+    ul.append(li);
+  });
+  block.replaceChildren(ul);
+}
+
 export default async function decorate(block) {
   if (block.classList.contains('icons')) {
     buildIconCards(block);
     await decorateIcons(block);
+  } if (block.classList.contains('products')) {
+    buildProductCards(block);
   } else {
     block.innerHTML = '';
   }
