@@ -24,6 +24,8 @@
   --black-olive: #3a3a3a;
   --black: black;
   --cadet: #edeff0; /* gray-blue */
+  --gray-gradient-light: #edeff0;
+  --gray-gradient-dark: #9da8af; /* Gradient breakpoint is defined below */
 
   /* Brand Colors */
   --gammagard-liq: #f89a38;
@@ -36,7 +38,7 @@
   --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
   --body-font-family: var(--font-family-opensans);
   --heading-font-family: var(--font-family-opensans);
-  
+
   /* Font Weights */
   --font-weight-bold: 700;
   --font-weight-semibold: 600;
@@ -76,6 +78,12 @@
   --normal-page-width: 1280px;
   --wide-page-width: 1600px;
   --full-page-width: 100vw;
+
+  /* Gradient breakpoints */
+  --gray-gradient-breakpoint: 41%;
+
+  /* Gradient angles */
+  --gray-gradient-angle: -172.8750deg;
 }
 
 *, *::before, *::after {
@@ -184,7 +192,16 @@ main {
   background-color: var(--white);
 }
 
-main > .section {
+body.gray-gradient > main {
+  background: linear-gradient(
+          var(--gray-gradient-angle),
+          var(--gray-gradient-light) 0%,
+          var(--gray-gradient-light) var(--gray-gradient-breakpoint),
+          var(--gray-gradient-dark) 100%
+  );
+}
+
+main .section {
   padding: 32px 0;
 }
 
@@ -236,6 +253,15 @@ main > .section > div {
   padding: 0 16px;
   margin: 0 auto;
   max-width: var(--normal-page-width);
+}
+
+main .section.gradient-gray {
+  background: linear-gradient(
+          var(--gray-gradient-angle),
+          var(--gray-gradient-light) 0%,
+          var(--gray-gradient-light) var(--gray-gradient-breakpoint),
+          var(--gray-gradient-dark) 100%
+  );
 }
 
 .sr-only {
