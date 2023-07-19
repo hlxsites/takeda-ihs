@@ -28,6 +28,8 @@
   /* Brand Colors */
   --gammagard-liq: #f89a38;
   --onepath: #00a9ec;
+  --myigsource: #a1e1b3;
+  --hello-programs: #808080;
 
   /* Font Colors */
   --default-text-color: var(--black-olive);
@@ -82,6 +84,24 @@
   box-sizing: border-box;
 }
 
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+em {
+  font-style: italic;
+}
+
+sup {
+  position: relative;
+  font-size: 75%;
+  bottom: 1ex;
+}
+
+sub {
+  font-size: var(--body-font-size-xs);
+  line-height: var(--line-height-xs);
+}
 
 h1, h2, h3 {
   font-family: var(--heading-font-family);
@@ -102,6 +122,13 @@ h2 {
   color: var(--black);
 }
 
+h2 sub {
+  position: relative;
+  top: .5ex;
+  font-size: 75%;
+  line-height: 0;
+}
+
 h3 {
   margin-bottom: 12px;
   font-size: var(--heading-font-size-xxs);
@@ -109,8 +136,7 @@ h3 {
   color: var(--black);
 }
 
-p {
-  margin-bottom: 1.5em;
+p, li {
   font-family: var(--body-font-family);
   font-weight: var(--font-weight-normal);
   font-size: var(--body-font-size-m);
@@ -119,10 +145,15 @@ p {
   text-align: inherit;
 }
 
+p {
+  margin-bottom: 1.5em;
+}
+
 a, a:visited{
   font-family: var(--body-font-family);
   color: var(--blue);
 }
+
 
 span {
   font-family: var(--body-font-family);
@@ -147,25 +178,6 @@ p.button-container a {
 p.button-container a:visited {
   color: var(--black);
   text-decoration: none;
-}
-
-strong {
-  font-weight: var(--font-weight-bold);
-}
-
-em {
-  font-style: italic;
-}
-
-sup {
-  position: relative;
-  font-size: 75%;
-  bottom: 1ex;
-}
-
-sub {
-  font-size: var(--body-font-size-xs);
-  line-height: var(--line-height-xs);
 }
 
 body {

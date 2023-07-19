@@ -1,53 +1,20 @@
-import { decorateIcons } from '../../scripts/lib-franklin.js';
-
-/**
- * Builds the Icons variation of the cards block.
- * @param {HTMLDivElement} block
- */
-function buildIconCards(block) {
-  [...block.children].forEach((card) => {
-    card.classList.add('card');
-    [...card.children].forEach((body) => {
-      const anchor = body.querySelector('a');
-
-      const content = document.createElement('a');
-      content.classList.add('card-content');
-      content.href = anchor.href;
-      content.title = anchor.title;
-
-      // Pull out the icon
-      const icon = body.querySelector('span.icon');
-      if (icon) {
-        const tmp = icon.parentElement;
-        const iconWrapper = document.createElement('div');
-        iconWrapper.classList.add('card-icon');
-        iconWrapper.append(icon);
-        tmp.remove();
-        content.append(iconWrapper);
-      } else {
-        card.classList.add('no-icon');
-      }
-
-      const link = document.createElement('div');
-      link.classList.add('card-link');
-      link.innerHTML = `<span>${anchor.textContent}</span>`;
-
-      body.classList.add('card-body');
-
-      const tmp = anchor.parentElement;
-      tmp.remove();
-
-      content.append(body);
-      card.append(content, link);
-    });
-  });
-}
+/* eslint-disable import/no-named-default */
+import { default as product } from './product.js';
+import { default as icon } from './icon.js';
+import { default as profile } from './profile.js';
+import { default as cta } from './cta.js';
+/* eslint-enable import/no-named-default */
 
 export default async function decorate(block) {
-  if (block.classList.contains('icons')) {
-    buildIconCards(block);
-    await decorateIcons(block);
+  if (block.classList.contains('icon')) {
+    await icon(block);
+  } else if (block.classList.contains('product')) {
+    await product(block);
+  } else if (block.classList.contains('profile')) {
+    await profile(block);
+  } else if (block.classList.contains('cta')) {
+    await cta(block);
   } else {
-    block.innerHTML = '';
+    block.classList.add('default');
   }
 }
