@@ -14,6 +14,7 @@ import {
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
+// This logic turns a fake block into the individual paragraphs.s
 function buildRefParagraphs(main) {
   main.querySelectorAll('div.reference').forEach((block) => {
     const paragraphs = [];
@@ -34,6 +35,16 @@ function buildRefParagraphs(main) {
   });
 }
 
+// This logic finds the sups and turns the containing paragraphs into references.
+function updateRefParagraphs(main) {
+  main.querySelectorAll('sup').forEach((sup) => {
+    if (!sup.previousElementSibling) {
+      sup.parentElement.classList.add('reference');
+      sup.remove();
+    }
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -42,6 +53,7 @@ function buildRefParagraphs(main) {
 function buildAutoBlocks(main) {
   try {
     buildRefParagraphs(main);
+    updateRefParagraphs(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
