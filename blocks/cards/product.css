@@ -1,0 +1,88 @@
+.cards.product.block > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+.cards.product.block > ul > li > a {
+  display: block;
+  padding: 20px 20px 10px;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%);
+  background-color: var(--white);
+}
+
+.cards.product.block > ul > li hr {
+  border-top: 3px solid white;
+}
+
+.cards.product.block > ul > li .logo {
+  padding-top: 10px;
+  max-width: 240px;
+}
+
+.cards.product.block > ul > li picture {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.cards.product.block > ul > li.gammagard-liq hr {
+  border-color: var(--gammagard-liq);
+}
+
+.cards.product.block > ul > li.gammagard-sd hr {
+  border-color: var(--gammagard-sd);
+}
+
+.cards.product.block > ul > li.hyqvia hr {
+  border-color: var(--hyqvia);
+}
+
+.cards.product.block > ul > li.cuvitru hr {
+  border-color: var(--cuvitru);
+}
+
+.cards.product.block > ul > li.flexbumin hr {
+  border-color: var(--flexbumin);
+}
+
+
+.cards.product.block > ul > li.glassia hr {
+  border-color: var(--glassia);
+}
+
+.cards.product.block > ul > li.aralast hr {
+  border-color: var(--aralast);
+}
+
+
+.cards.product.block > ul > li .logo picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-position: center center;
+  object-fit: contain;
+}
+
+.cards.product.block > ul > li > a p {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: var(--body-font-size-s);
+  text-align: right;
+}
+
+@media screen and (min-width: 600px) {
+  .cards.product.block > ul > li .logo {
+    margin-left: 45px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main .section[data-layout] .cards.product.block > ul > li .logo {
+    margin-left: 1em;
+  }
+}

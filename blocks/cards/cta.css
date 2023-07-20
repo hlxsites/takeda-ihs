@@ -1,0 +1,92 @@
+.cards.cta.block ul {
+  display: grid;
+  gap: 1em;
+}
+
+.cards.cta.block > ul > li {
+  display: block;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%);
+}
+
+.cards.cta.block > ul > li div {
+  padding-top: 30px;
+  border-top: 3px solid white;
+}
+
+.cards.cta.block > ul > li.onepath div {
+  border-color: var(--onepath);
+}
+
+.cards.cta.block > ul > li.myigsource div {
+  border-color: var(--myigsource);
+}
+
+.cards.cta.block > ul > li.hello-programs div {
+  border-color: var(--hello-programs);
+}
+
+.cards.cta.block > ul > li div p.image {
+  width: 230px;
+  margin: 0 auto;
+}
+
+.cards.cta.block > ul > li picture {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.cards.cta.block > ul > li picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-position: center center;
+  object-fit: contain;
+}
+
+.cards.cta.block > ul > li h3 {
+  font-size: var(--heading-font-size-xs);
+  text-align: center;
+  color: var(--gray);
+  margin: 12px auto;
+}
+
+.cards.cta.block > ul > li p {
+  text-align: center;
+}
+
+.cards.cta.block > ul > li p.button-container {
+  margin: 18px auto;
+}
+
+@media screen and (min-width: 900px) {
+  .cards.cta.block ul.cards-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cards.cta.block > ul > li > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: 100%;
+  }
+
+  .cards.cta.block > ul > li > div > * {
+    flex-basis: 33%;
+  }
+
+  .cards.cta.block > ul > li div p.image {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cards.cta.block > ul > li div p.image {
+    width: 230px;
+  }
+}
