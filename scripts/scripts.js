@@ -38,7 +38,7 @@ function buildRefParagraphs(main) {
 // This logic finds the sups and turns the containing paragraphs into references.
 function updateRefParagraphs(main) {
   main.querySelectorAll('sup').forEach((sup) => {
-    if (!sup.previousElementSibling) {
+    if (!sup.previousSibling) {
       sup.parentElement.classList.add('reference');
       sup.remove();
     }
