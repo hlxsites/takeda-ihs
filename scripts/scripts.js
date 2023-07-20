@@ -14,6 +14,26 @@ import {
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
+function buildRefParagraphs(main) {
+  main.querySelectorAll('div.reference').forEach((block) => {
+    const paragraphs = [];
+    block.querySelectorAll(':scope > div > div').forEach((ref) => {
+      if (ref.querySelector('p')) {
+        ref.querySelectorAll('p').forEach((p) => {
+          p.classList.add('reference');
+          paragraphs.push(p);
+        });
+      } else {
+        const p = document.createElement('p');
+        p.classList.add('reference');
+        p.innerHTML = ref.innerHTML;
+        paragraphs.push(p);
+      }
+    });
+    block.replaceWith(...paragraphs);
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -21,7 +41,7 @@ const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 // eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
   try {
-    // No Auto blocks yet;
+    buildRefParagraphs(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
