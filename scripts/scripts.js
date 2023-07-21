@@ -14,14 +14,22 @@ import {
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
+function updateRefParagraphs(main) {
+  main.querySelectorAll('sup').forEach((sup) => {
+    if (!sup.previousSibling) {
+      sup.parentElement.classList.add('reference');
+      sup.remove();
+    }
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-// eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
   try {
-    // No Auto blocks yet;
+    updateRefParagraphs(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
