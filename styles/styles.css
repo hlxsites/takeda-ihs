@@ -43,9 +43,9 @@
   font-family: 'Open Sans Fallback';
   font-style: normal;
   font-weight: 700;
+  src: local('Arial Bold');
   size-adjust: 105.43%;
   ascent-override: 105%;
-  src: local('Arial Bold');
 }
 
 :root {
