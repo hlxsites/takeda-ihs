@@ -49,6 +49,7 @@
   --font-weight-thin: 100;
 
   /* Body */
+  --body-font-size-xxs: 10px;
   --body-font-size-xs: 12px;
   --body-font-size-s: 14px;
   --body-font-size-m: 16px;
@@ -157,11 +158,14 @@ p {
   margin-bottom: 1.5em;
 }
 
+p.reference {
+  font-size: var(--body-font-size-xxs);
+}
+
 a, a:visited{
   font-family: var(--body-font-family);
   color: var(--blue);
 }
-
 
 span {
   font-family: var(--body-font-family);
