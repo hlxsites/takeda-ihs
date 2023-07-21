@@ -9,10 +9,43 @@ import {
   decorateTemplateAndTheme,
   waitForLCP,
   loadBlocks,
+  buildBlock,
   loadCSS,
 } from './lib-franklin.js';
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
+
+function buildFloatingImages(main) {
+  main.querySelectorAll('.section-metadata').forEach((metadata) => {
+    let style = 'image-right';
+    [...metadata.querySelectorAll(':scope > div')].every((div) => {
+      const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image-(left|right))/);
+      if (div.children[0]?.textContent.toLowerCase().trim() === 'style' && match) {
+        [, style] = match;
+        return false;
+      }
+      return true;
+    });
+    if (style) {
+      const section = metadata.parentElement;
+      const left = [];
+      const right = [];
+      [...section.children].forEach((child) => {
+        const picture = child.querySelector(':scope > picture');
+        if (picture) {
+          right.push(picture);
+          child.remove();
+        } else if (!child.classList.contains('section-metadata')) {
+          left.push(child);
+        }
+      });
+      const block = buildBlock('floating-images', [[{ elems: left }, { elems: right }]]);
+      block.classList.add(style);
+      section.prepend(block);
+    }
+  });
+}
+
 
 /**
  * Builds all synthetic blocks in a container element.
@@ -21,7 +54,7 @@ const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 // eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
   try {
-    // No Auto blocks yet;
+    buildFloatingImages(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
