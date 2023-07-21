@@ -15,7 +15,7 @@
 
 /* fallback font for Open Sans (italic - 400) */
 @font-face {
-  font-family: open-sans-fallback;
+  font-family: 'Open Sans Fallback';
   font-style: italic;
   size-adjust: 99.119%;
   src: local("Arial");
@@ -23,11 +23,10 @@
 
 /* fallback font for Open Sans (normal - 400) */
 @font-face {
-  font-family: open-sans-fallback;
+  font-family: 'Open Sans Fallback';
   size-adjust: 104.7%;
   src: local("Arial");
 }
-
 
 
 :root {
@@ -55,7 +54,7 @@
   --default-text-color: var(--black-olive);
 
   /* Fonts */
-  --font-family-opensans: 'Open Sans', 'open-sans-fallback' 'Arial', sans-serif;
+  --font-family-opensans: 'Open Sans', 'Open Sans Fallback' 'Arial', sans-serif;
   --body-font-family: var(--font-family-opensans);
   --heading-font-family: var(--font-family-opensans);
 
