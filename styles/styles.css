@@ -29,6 +29,12 @@
 
   /* Brand Colors */
   --gammagard-liq: #f89a38;
+  --gammagard-sd: #35a4d8;
+  --hyqvia: #500778;
+  --cuvitru: #485CC7;
+  --flexbumin: #3a6853;
+  --glassia: #00b140;
+  --aralast: #3a6853;
   --onepath: #00a9ec;
   --myigsource: #a1e1b3;
   --hello-programs: #808080;
@@ -249,16 +255,23 @@ main .section.cadet-gradient-background {
 main .section[data-layout] .layout-content-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 3em;
 }
 
 main .section[data-layout] .layout-content-wrapper .default-content-wrapper {
   padding: 0 24px;
-  border-left: 6px solid var(--red);
+  border-left: 3px solid var(--red);
 }
 
-main .section[data-layout] .layout-content-wrapper .default-content-wrapper h2 {
-  color: var(--red);
+main .section[data-layout="50/50"] .layout-content-wrapper > div.separator-wrapper {
+  flex-basis: 100%;
+  padding: 2em 0;
+}
+
+main .section[data-layout="50/50"] .layout-content-wrapper > div.separator-wrapper hr {
+  border: none;
+  border-top: 1px solid var(--gray);
+  margin: 0;
 }
 
 main > .section > div {
@@ -267,7 +280,7 @@ main > .section > div {
   max-width: var(--normal-page-width);
 }
 
-main .section.gradient-gray {
+main .section.gray-gradient {
   background: linear-gradient(
           var(--gray-gradient-angle),
           var(--gray-gradient-light) 0%,
@@ -317,16 +330,34 @@ main .section.gradient-gray {
   main > .section > div {
     padding: 0 90px;
   }
+
+
+  main .section[data-layout="50/50"] .layout-content-wrapper {
+    flex-flow: row wrap;
+    align-items: center;
+    column-gap: 3em;
+  }
+
+
+  main .section[data-layout="50/50"] .layout-content-wrapper > div {
+    flex-basis: calc(50% - 1.5em);
+  }
+
+  main .section[data-layout] .layout-content-wrapper .default-content-wrapper {
+    border-width: 3px;
+  }
+
+  main .section[data-layout] .default-content-wrapper p {
+    font-size: var(--body-font-size-s);
+  }
+
 }
 
 @media screen and (min-width: 1200px) {
-  main .section[data-layout] .layout-content-wrapper {
+  main .section[data-layout="25/75"] .layout-content-wrapper {
     display: grid;
     align-items: center;
     gap: 1em;
-  }
-
-  main .section[data-layout="25/75"] .layout-content-wrapper {
     grid-template-columns: 1fr 3fr;
   }
 

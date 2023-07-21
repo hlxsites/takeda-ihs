@@ -36,6 +36,10 @@ function buildLayoutContainers(main) {
     container.append(...section.children);
     if (title) section.prepend(title);
     section.append(container);
+
+    section.querySelectorAll('.separator-wrapper').forEach((sep) => {
+      sep.innerHTML = '<hr/>';
+    });
   });
 }
 
