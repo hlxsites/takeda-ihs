@@ -134,6 +134,7 @@
 
 @media screen and (min-width: 1280px) {
   .hero.block.product .content-wrapper {
+    padding: 0 40px;
     max-width: var(--normal-page-width);
   }
 }

@@ -245,6 +245,7 @@ header {
   .header.block .nav-brand {
     align-items: center;
     justify-content: flex-start;
+    height: 100%;
   }
 
   .header.block .nav-hamburger .nav-hamburger-icon .icon {

@@ -307,6 +307,11 @@ main > .section > div {
   max-width: var(--normal-page-width);
 }
 
+main > .section.full-width > div {
+  margin: 0;
+  max-width: var(--full-page-width);
+}
+
 main .section.gradient-gray {
   background: linear-gradient(
           var(--gray-gradient-angle),

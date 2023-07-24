@@ -36,7 +36,7 @@ function buildAutoBlocks(main) {
   }
 }
 
-function buildLayoutContainers(main) {
+export function buildLayoutContainers(main) {
   main.querySelectorAll('.section[data-layout]').forEach((section) => {
     const container = document.createElement('div');
     container.classList.add('layout-content-wrapper');
