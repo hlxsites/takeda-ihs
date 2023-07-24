@@ -12,6 +12,42 @@
 
 @import url('reset.css');
 
+@font-face {
+  font-family: 'Open Sans Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  size-adjust: 105.43%;
+  ascent-override: 105%;
+}
+
+@font-face {
+  font-family: 'Open Sans Fallback';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Arial Italic');
+  size-adjust: 105.43%;
+  ascent-override: 105%;
+}
+
+@font-face {
+  font-family: 'Open Sans Fallback';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Arial Bold');
+  size-adjust: 105.43%;
+  ascent-override: 105%;
+}
+
+@font-face {
+  font-family: 'Open Sans Fallback';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arial Bold');
+  size-adjust: 105.43%;
+  ascent-override: 105%;
+}
+
 :root {
   /* Colors */
   --bright-gray: #efefef;
@@ -271,6 +307,11 @@ main > .section > div {
   max-width: var(--normal-page-width);
 }
 
+main > .section.full-width > div {
+  margin: 0;
+  max-width: var(--full-page-width);
+}
+
 main .section.gradient-gray {
   background: linear-gradient(
           var(--gray-gradient-angle),
@@ -337,48 +378,4 @@ main .section.gradient-gray {
   main .section > div {
     padding: 0 40px;
   }
-}
-
-@font-face {
-  font-family: 'Open Sans Fallback';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Arial');
-  ascent-override: 101.58%;
-  descent-override: 27.84%;
-  line-gap-override: 0.00%;
-  size-adjust: 105.22%;
-}
-
-@font-face {
-  font-family: 'Open Sans Fallback';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Arial Italic');
-  ascent-override: 107.47%;
-  descent-override: 29.46%;
-  line-gap-override: 0.00%;
-  size-adjust: 99.46%;
-}
-
-@font-face {
-  font-family: 'Open Sans Fallback';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Arial Bold');
-  ascent-override: 109.90%;
-  descent-override: 30.12%;
-  line-gap-override: 0.00%;
-  size-adjust: 97.26%;
-}
-
-@font-face {
-  font-family: 'Open Sans Fallback';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Arial Bold');
-  ascent-override: 109.90%;
-  descent-override: 30.12%;
-  line-gap-override: 0.00%;
-  size-adjust: 97.26%;
 }
