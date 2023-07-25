@@ -28,7 +28,7 @@
 .block.floating-images .content {
     border-left: 3px solid var(--red);
     padding: 0 24px;
-    max-height: 350px;
+    margin-bottom: 40px;
 }
 
 .block.floating-images .content ul {
