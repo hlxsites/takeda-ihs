@@ -42,26 +42,34 @@ function buildFloatingImages(main) {
       const block = buildBlock('floating-images', [[{ elems: left }, { elems: right }]]);
       block.classList.add(style);
       section.prepend(block);
+
+function updateRefParagraphs(main) {
+  main.querySelectorAll('sup').forEach((sup) => {
+    if (!sup.previousSibling) {
+      sup.parentElement.classList.add('reference');
+      sup.remove();
+
     }
   });
 }
-
 
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-// eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
   try {
+
     buildFloatingImages(main);
+    updateRefParagraphs(main);
+
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
   }
 }
 
-function buildLayoutContainers(main) {
+export function buildLayoutContainers(main) {
   main.querySelectorAll('.section[data-layout]').forEach((section) => {
     const container = document.createElement('div');
     container.classList.add('layout-content-wrapper');
@@ -69,6 +77,10 @@ function buildLayoutContainers(main) {
     container.append(...section.children);
     if (title) section.prepend(title);
     section.append(container);
+
+    section.querySelectorAll('.separator-wrapper').forEach((sep) => {
+      sep.innerHTML = '<hr/>';
+    });
   });
 }
 

@@ -1,6 +1,7 @@
 import {
   decorateBlocks, decorateIcons, decorateSections, loadBlocks,
 } from '../../scripts/lib-franklin.js';
+import { buildLayoutContainers } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
   const promises = [];
@@ -10,7 +11,7 @@ export default async function decorate(block) {
   /* This only supports 2 tabs, switching between them. */
   for (let i = 0; i < 2; i += 1) {
     const row = block.children[i];
-    row.classList.add('tab', `tab-${i}`, 'hidden');
+    row.classList.add('tab', `tab-${i}`);
     const ref = row.children[1].querySelector('a');
     selectorHtml += `<div class='tab-link'><a href="#tab-${i}">${row.children[0].innerHTML}</a></div>`;
     if (ref) {
@@ -21,8 +22,9 @@ export default async function decorate(block) {
             div.innerHTML = await resp.text();
             decorateSections(div);
             decorateBlocks(div);
+            buildLayoutContainers(div);
             await loadBlocks(div);
-            row.replaceChildren(div.children[0]);
+            row.replaceChildren(...div.children);
             return;
           }
           throw new Error(`${resp.status}: ${resp.statusText}`);
