@@ -90,23 +90,7 @@
     font-size: var(--body-font-size-l);
 }
 
-@media screen and (max-width: 300px){
-    .calendar-events.block {
-        width: 340px;
-    }
-}
-
-@media screen and (min-width: 600px){
-    .calendar-events.block {
-        width: 550px;
-    }
-}
-
 @media screen and (min-width: 900px){
-    .calendar-events.block {
-        width: 740px;
-    }
-
     .calendar-events.block .calendar-event > .event-card p:first-of-type {
         font-size: var(--body-font-size-l);
         line-height: 21px;
@@ -124,10 +108,6 @@
 }
 
 @media screen and (min-width: 1200px){
-    .calendar-events.block {
-        width: 343px;
-    }
-
     .calendar-events.block .calendar-event > .event-card p:first-of-type {
         font-size: var(--body-font-size-s);
         line-height: 14px;
