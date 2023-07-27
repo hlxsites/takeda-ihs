@@ -1,0 +1,77 @@
+.disclaimer-modal-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    font-family: 'Open Sans', sans-serif;
+}
+.disclaimer-modal-container .disclaimer-modal-wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 598px;
+    background-color: #ffffff;
+}
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-title {
+font-size: 28px;
+color: white;
+padding: 30px 38px;
+margin: 0;
+font-weight: bold;
+line-height: 35px;
+background-color: #898989;
+}
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-body-content {
+    padding-left: 38px;
+    padding-right: 38px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 18px;
+}
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-button-wrapper {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 40px;
+    padding-left: 38px;
+    padding-right: 38px;
+}
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-button-wrapper .modal-agree-button {
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    background-color: #ee1100;
+    color: white;
+    font-size: 16px;
+    padding: 12px 18px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.2);
+    
+}
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-button-wrapper .modal-agree-button:hover{
+
+    background-color: #cc0000;
+}
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-button-wrapper .modal-go-button a {
+
+text-decoration: underline;
+color: black;
+margin-left: 18px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
