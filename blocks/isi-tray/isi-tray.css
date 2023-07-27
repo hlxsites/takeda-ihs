@@ -187,6 +187,7 @@ main .section.isi-tray-container > div {
   padding-top: 10px;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .isi-tray.block .expanded-tray .indication h5 {
   margin: 8px 0;
   max-width: 70%;
