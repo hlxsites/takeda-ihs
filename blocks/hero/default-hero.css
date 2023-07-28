@@ -37,6 +37,7 @@
 
 .hero.block.default.red .content-wrapper .content h1 {
   display: flex;
+  align-items: center;
   column-gap: 15px;
   color: var(--red);
 }
