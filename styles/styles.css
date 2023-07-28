@@ -287,6 +287,11 @@ main .section.quartz-background p {
   color: var(--white);
 }
 
+main .section.red-title h1,
+main .section.red-title h2 {
+  color: var(--red);
+}
+
 main .section.cadet-gradient-background {
   background: linear-gradient(
       -180deg,
