@@ -303,6 +303,26 @@ main .section.cadet-gradient-background {
   );
 }
 
+main .section .default-content-wrapper span.icon {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
+
+main .section .default-content-wrapper span.icon svg {
+  height: 100%;
+  width: 100%;
+}
+
+main .section .default-content-wrapper ul {
+  margin: .25em 0 1.5em 2em;
+  list-style: disc;
+}
+
+main .section .default-content-wrapper ul li {
+  margin-bottom: 4px;
+}
+
 main .section[data-layout] .layout-content-wrapper {
   display: flex;
   flex-direction: column;
