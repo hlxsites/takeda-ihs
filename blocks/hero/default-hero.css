@@ -64,13 +64,14 @@
     max-width: 550px;
     margin: 0 auto;
   }
-}
 
-@media screen and (min-width: 900px) {
   .hero.block.default .image picture {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
   }
 
+}
+
+@media screen and (min-width: 900px) {
   .hero.block.default .content-wrapper {
     padding: 80px 0;
     max-width: 740px;
