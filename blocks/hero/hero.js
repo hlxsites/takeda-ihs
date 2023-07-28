@@ -53,7 +53,6 @@ function buildProductContent(block) {
     contentDiv.querySelector('.logo picture').style.paddingBottom = `${ratio}%`;
   }
 
-
   decorateButtons(contentDiv);
   return contentDiv;
 }
