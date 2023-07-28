@@ -173,8 +173,11 @@ function buildSections(sections) {
       // enable nav dropdown keyboard accessibility
       anchor.addEventListener('keydown', openOnKeydown);
     }
-    if (section.querySelector('hr')) {
-      section.classList.add('separator');
+  });
+  sections.querySelectorAll(':scope > ul > li').forEach((li) => {
+    if (li.textContent.match(/^---/)) {
+      li.classList.add('separator');
+      li.textContent = '';
     }
   });
 
