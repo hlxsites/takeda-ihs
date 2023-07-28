@@ -159,20 +159,19 @@ sub {
 h1, h2, h3 {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-bold);
+  color: var(--black);
 }
 
 h1 {
   margin-bottom: 8px;
   font-size: var(--heading-font-size-m);
   line-height: var(--line-height-s);
-  color: var(--white);
 }
 
 h2 {
   margin-bottom: 12px;
   font-size: var(--heading-font-size-s);
   line-height: var(--line-height-s);
-  color: var(--black);
 }
 
 h2 sub {
@@ -186,7 +185,6 @@ h3 {
   margin-bottom: 12px;
   font-size: var(--heading-font-size-xxs);
   line-height: var(--line-height-m);
-  color: var(--black);
 }
 
 p, li {
@@ -283,7 +281,8 @@ main .section.quartz-background {
 
 main .section.quartz-background h1,
 main .section.quartz-background h2,
-main .section.quartz-background p {
+main .section.quartz-background p,
+main .section.quartz-background li{
   color: var(--white);
 }
 

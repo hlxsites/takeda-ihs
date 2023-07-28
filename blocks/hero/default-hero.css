@@ -1,4 +1,8 @@
 
+.hero.block.default h1 {
+  color: var(--white);
+}
+
 .hero.block.default .image {
   display: block;
   position: absolute;
