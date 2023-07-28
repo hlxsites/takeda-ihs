@@ -1,5 +1,9 @@
 /* Global overrides */
 
+main > .section.quote-banner-container {
+  padding: 0;
+}
+
 main > .section.quote-banner-container > .quote-banner-wrapper {
   padding: 0;
 }
