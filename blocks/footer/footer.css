@@ -1,9 +1,8 @@
 footer {
   margin: 0;
   padding: 2rem;
-  font-size: var(--body-font-size-xs);
-  font-weight: var(--font-weight-light);
   text-align: center;
+  background-color: var(--bright-gray);
 }
 
 
@@ -24,5 +23,6 @@ footer .footer {
 }
 
 .footer.block > div > div > p {
+  font-size: var(--body-font-size-xxs);
   margin-bottom: 14px;
 }
