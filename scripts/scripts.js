@@ -13,6 +13,12 @@ import {
   loadCSS,
 } from './lib-franklin.js';
 
+export const BREAKPOINTS = {
+  small: window.matchMedia('(min-width: 600px)'),
+  medium: window.matchMedia('(min-width: 900px)'),
+  large: window.matchMedia('(min-width: 1200px)'),
+};
+
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
 function updateRefParagraphs(main) {

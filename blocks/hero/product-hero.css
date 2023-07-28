@@ -50,7 +50,7 @@
   color: var(--black);
 }
 
-.block.hero.gamma-guard-liquid .title {
+.block.hero.gammagard-liquid .title p {
   color: var(--gammagard-liq);
 }
 
@@ -78,7 +78,7 @@
   box-shadow: 3px 3px 7px 1px rgba(0 0 0 / 20%);;
 }
 
-.block.hero.gamma-guard-liquid .link .button-container a {
+.block.hero.gammagard-liquid .link .button-container a {
   color: var(--gammagard-liq);
 }
 
