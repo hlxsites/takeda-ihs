@@ -50,7 +50,7 @@
   color: var(--black);
 }
 
-.block.hero.gammagard-liquid .title {
+.block.hero.gammagard-liquid .title p {
   color: var(--gammagard-liq);
 }
 

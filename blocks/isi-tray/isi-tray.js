@@ -105,7 +105,6 @@ export default async function decorate(block) {
   }
 
   block.innerHTML = `
-   
     <div class="initial-tray">
       <h5 class="upper">Indication &<br/> Important Safety Information</h5>
       <div class="buttons">

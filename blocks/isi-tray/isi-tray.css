@@ -16,7 +16,7 @@ main .section.isi-tray-container > div {
   --tray-font-size: 13px;
 
   position: relative;
-  padding: 0 10px 15px;
+  padding: 0 20px 15px;
   border-top: 2px solid var(--black-olive);
 }
 
@@ -24,11 +24,35 @@ main .section.isi-tray-container > div {
   border-color: var(--gammagard-liq);
 }
 
+.isi-tray.block.gammagard-sd {
+  border-color: var(--gammagard-sd);
+}
+
+.isi-tray.block.hyqvia {
+  border-color: var(--hyqvia);
+}
+
+.isi-tray.block.cuvitru {
+  border-color: var(--cuvitru);
+}
+
+.isi-tray.block.flexbumin {
+  border-color: var(--flexbumin);
+}
+
+.isi-tray.block.glassia {
+  border-color: var(--glassia);
+}
+
+.isi-tray.block.aralast {
+  border-color: var(--aralast);
+}
+
 .isi-tray.block .buttons {
   display: flex;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 20px;
   justify-content: flex-end;
   column-gap: 3px;
 }
@@ -39,14 +63,35 @@ main .section.isi-tray-container > div {
   height: 38px;
   align-items: center;
   border-bottom-left-radius: 10px;
-}
-
-.isi-tray.block button.collapse {
   border-bottom-right-radius: 10px;
 }
 
 .isi-tray.block.gammagard-liquid button {
   background-color: var(--gammagard-liq);
+}
+
+.isi-tray.block.gammagard-sd button {
+  border-color: var(--gammagard-sd);
+}
+
+.isi-tray.block.hyqvia button {
+  border-color: var(--hyqvia);
+}
+
+.isi-tray.block.cuvitru button {
+  border-color: var(--cuvitru);
+}
+
+.isi-tray.block.flexbumin button {
+  border-color: var(--flexbumin);
+}
+
+.isi-tray.block.glassia button {
+  border-color: var(--glassia);
+}
+
+.isi-tray.block.aralast button {
+  border-color: var(--aralast);
 }
 
 .isi-tray.block button span {
@@ -105,7 +150,36 @@ main .section.isi-tray-container > div {
   z-index: 100;
   background-color: var(--white);
   box-shadow: 0 -2px 10px 3px rgba(0 0 0 / 25%);
+  border-top: 2px solid var(--black-olive);
   transition: bottom 1s ease-out;
+}
+
+.isi-tray.block.gammagard-liquid .initial-tray {
+  border-top: 2px solid var(--gammagard-liq);
+}
+
+.isi-tray.block.gammagard-sd .initial-tray {
+  border-color: var(--gammagard-sd);
+}
+
+.isi-tray.block.hyqvia .initial-tray {
+  border-color: var(--hyqvia);
+}
+
+.isi-tray.block.cuvitru .initial-tray {
+  border-color: var(--cuvitru);
+}
+
+.isi-tray.block.flexbumin .initial-tray {
+  border-color: var(--flexbumin);
+}
+
+.isi-tray.block.glassia .initial-tray {
+  border-color: var(--glassia);
+}
+
+.isi-tray.block.aralast .initial-tray {
+  border-color: var(--aralast);
 }
 
 .isi-tray.block.cookied .initial-tray,
@@ -114,12 +188,12 @@ main .section.isi-tray-container > div {
 }
 
 .isi-tray.block .initial-tray > h5 {
-  margin: 8px 10px;
-  max-width: 70%;
+  margin: 8px 20px;
+  max-width: calc(100% - 125px); /* buttons and margins */
 }
 
 .isi-tray.block .initial-tray > div:not(.buttons) {
-  margin: 5px 12px 12px;
+  margin: 5px 20px 12px;
 }
 
 .isi-tray.block .initial-tray .boxed-warning {
@@ -142,8 +216,7 @@ main .section.isi-tray-container > div {
   left: 0;
   bottom: 0;
   z-index: 100;
-  padding-left: 12px;
-  padding-bottom: 12px;
+  padding: 0 12px 12px;
   background-color: var(--medium-gray);
   border-top: 2px solid var(--black-olive);
   box-shadow: 0 -2px 10px 3px rgba(0 0 0 / 25%);
@@ -152,6 +225,31 @@ main .section.isi-tray-container > div {
 .isi-tray.block.gammagard-liquid .collapsed-tray {
   border-color: var(--gammagard-liq);
 }
+
+.isi-tray.block.gammagard-sd .collapsed-tray {
+  border-color: var(--gammagard-sd);
+}
+
+.isi-tray.block.hyqvia .collapsed-tray {
+  border-color: var(--hyqvia);
+}
+
+.isi-tray.block.cuvitru .collapsed-tray {
+  border-color: var(--cuvitru);
+}
+
+.isi-tray.block.flexbumin .collapsed-tray {
+  border-color: var(--flexbumin);
+}
+
+.isi-tray.block.glassia .collapsed-tray {
+  border-color: var(--glassia);
+}
+
+.isi-tray.block.aralast .collapsed-tray {
+  border-color: var(--aralast);
+}
+
 
 .isi-tray.block.cookied .collapsed-tray {
   display: block;
@@ -163,11 +261,12 @@ main .section.isi-tray-container > div {
 
 .isi-tray.block .collapsed-tray .mobile > div:first-of-type {
   margin-top: 5px;
-  max-width: calc(100% - 50px);
+  max-width: calc(100% - 85px); /* Buttons and margins */
 }
 
 .isi-tray.block .collapsed-tray .desktop {
   display: none;
+  padding: 0 8px
 }
 
 
