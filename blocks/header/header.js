@@ -118,7 +118,13 @@ function buildSections(sections) {
   const expander = document.createElement('span');
   expander.classList.add('icon', 'icon-chevron-down');
 
-  sections.querySelectorAll('ul > li').forEach((section) => {
+  sections.querySelectorAll(':scope > ul > li').forEach((section) => {
+    const anchor = section.querySelector('a');
+    if (anchor) {
+      const url = new URL(anchor.href);
+      if (window.location.pathname.startsWith(url.pathname)) section.classList.add('active');
+    }
+
     const submenu = section.querySelector('ul');
     if (submenu) {
       const icon = submenu.querySelector('span.icon-right-arrow');
@@ -220,17 +226,26 @@ export default async function decorate(block) {
       toggleMenu(nav, sections);
     });
 
+    const utility = html.querySelector('.nav-utility');
+
     // Order maintains tabindex keyboard nav
     nav.append(buildLogo());
     nav.append(buildBrand());
     nav.append(hamburger);
     nav.append(sections);
-    nav.append(html.querySelector('.nav-utility'));
+    nav.append(utility);
 
     isDesktop.addEventListener('change', () => toggleMenu(nav, sections, isDesktop.matches));
     document.body.addEventListener('click', () => {
       toggleAllNavSections(sections);
     });
     await decorateIcons(block);
+
+    // Add a link to the Author guide, if anywhere in the Author Guide
+    if (window.location.pathname.startsWith('/author-guide')) {
+      const li = document.createElement('li');
+      li.innerHTML = '<a href="/author-guide">Author Guide</a>';
+      utility.querySelector('ul').prepend(li);
+    }
   }
 }
