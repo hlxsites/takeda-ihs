@@ -1,127 +1,62 @@
 /* styles for the floating images auto block */
 
-.block.floating-images {
-    margin-bottom: 64px;
-    padding-left: 24px;
-    border-bottom: 1px solid #979797;
-}
 
 .block.floating-images > div {
-    display: flex;
-    flex-direction: column-reverse;
-    padding-top: 1em;
-    min-height: 350px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1em;
 }
 
-.block.floating-images .image {
-    position: relative;
-    padding: 1.5em 0;
+.block.floating-images > div > div {
+  flex: 1;
+}
+
+.block.floating-images .image picture {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .block.floating-images .image img {
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .block.floating-images .content {
-    border-left: 3px solid var(--red);
-    padding: 0 24px;
-    max-height: 350px;
+  border-left: 3px solid var(--red);
+  padding: 0 24px;
 }
 
 .block.floating-images .content ul {
-    margin-left: 1em;
-    margin-bottom: 1em;
-    list-style-type: disc;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  list-style-type: disc;
 }
 
 .block.floating-images .content ul li {
-    margin-bottom: 1.5em;
-    padding-left: 1em;
-    line-height: var(--line-height-m);
+  margin-bottom: 1.5em;
+  padding-left: 1em;
 }
 
-.block.floating-images p.button-container {
-    text-align: left;
+@media screen and (min-width: 600px) {
+  .block.floating-images > div {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .block.floating-images.image-left > div {
+    flex-direction: row-reverse;
+  }
 }
 
-.block.floating-images p.button-container a {
-    background-color: white;
-    box-shadow: 3px 3px 7px 1px rgb(0 0 0 / 20%);
-    padding: 8px 20px;
-    color: black;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 0;
-}
-
-@media screen and (min-width: 900px) {
-    .block.floating-images > div {
-        flex-direction: row;
-        column-gap: 15px;
-        align-items: center;
-        margin-bottom: 64px;
-        margin-top: 64px;
-    }
-
-    .block.floating-images > div > div {
-        flex: 1;
-    }
-
-    .block.floating-images.image-left > div {
-        flex-direction: row-reverse;
-    }
-
-    .block.floating-images > div .content {
-        height: inherit;
-        width: 50%;
-    }
-
-    .block.floating-images > div .content, .image {
-        height: inherit;
-        width: 50%;
-    }
-
-    .block.floating-images .image {
-        padding: 0;
-        min-height: 350px;
-    }
-
-    .block.floating-images.image-left .image {
-        margin-right: 16px;
-        width: 50%;
-    }
-
-    .image-full-size .block.floating-images .image img {
-        height: auto;
-    }
-
-    .image-full-size .block.floating-images > div .content {
-        flex: 0 0 30%;
-        max-width: 30%;
-        padding: 0 20px;
-    }
-
-    .image-full-size .block.floating-images > div .image {
-        flex: 0 0 58.3333%;
-        max-width: 58.3333%;
-    }
-
-    .block.floating-images .image picture {
-        width: 100%;
-        height: 100%;
-    }
-
-    .block.floating-images p.button-container {
-        text-align: left;
-    }
-
-    @media screen and (min-width: 1200px) {
-        .block.floating-images > div {
-            column-gap: 30px;
-        }
-    }
+@media screen and (min-width: 1200px) {
+  .block.floating-images > div {
+    gap: 30px;
+  }
 }

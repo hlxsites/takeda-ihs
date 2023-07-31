@@ -34,9 +34,9 @@ function buildFloatingImages(main) {
   main.querySelectorAll('.section-metadata').forEach((metadata) => {
     let style;
     [...metadata.querySelectorAll(':scope > div')].every((div) => {
-      const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image-(left|right))/);
+      const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image[\s-](left|right))/i);
       if (div.children[0]?.textContent.toLowerCase().trim() === 'style' && match) {
-        [, style] = match;
+        style = match[1].replaceAll(/\s/g, '-');
         return false;
       }
       return true;

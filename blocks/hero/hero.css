@@ -20,6 +20,6 @@ main .section.hero-container > div {
   position: relative;
 }
 
-.block.hero.grey-background .image {
+.block.hero.gray-background .image {
   background-color: var(--bright-gray);
 }
