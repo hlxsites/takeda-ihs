@@ -119,9 +119,9 @@ function buildSections(sections) {
   expander.classList.add('icon', 'icon-chevron-down');
 
   sections.querySelectorAll(':scope > ul > li').forEach((section) => {
-    const anchor = section.querySelector('a');
-    if (anchor) {
-      const url = new URL(anchor.href);
+    const active = section.querySelector('a');
+    if (active) {
+      const url = new URL(active.href);
       if (window.location.pathname.startsWith(url.pathname)) section.classList.add('active');
     }
 
