@@ -355,7 +355,7 @@ main > .section.full-width > div {
   max-width: var(--full-page-width);
 }
 
-main .section.gray-gradient {
+main .section.gray-gradient-background {
   background: linear-gradient(
           var(--gray-gradient-angle),
           var(--gray-gradient-light) 0%,
@@ -364,14 +364,14 @@ main .section.gray-gradient {
   );
 }
 
-.angle-background-top,
-.angle-background-top-s,
-.angle-background-top-l {
+.angled-background,
+.small-angled-background,
+.large-angled-background {
   background: var(--white);
 }
 
-.section .angle-background-top::after,
-.section .angle-background-top-s::after {
+.section .angled-background::after,
+.section .small-angled-background::after {
   background: var(--gray-gradient-light);
   clip-path: polygon(0 100%, 100% 5vw, 100% 0, 0 100%);
   content: '';
@@ -382,7 +382,7 @@ main .section.gray-gradient {
   width: 100%;
 }
 
-.section .angle-background-top-l::after {
+.section .large-angled-background::after {
   background: var(--gray-gradient-light);
   clip-path: polygon(0 100%, 100% 10vw, 100% 0, 0 100%);
   content: '';
@@ -394,14 +394,14 @@ main .section.gray-gradient {
 }
 
 .section.angle-background,
-.section.angle-background-top,
-.section.angle-background-top-s,
-.section.angle-background-top-l {
+.section.angled-background,
+.section.small-angled-background,
+.section.large-angled-background {
   padding-bottom: unset;
 }
 
-.section.angle-background-top::after,
-.section.angle-background-top-s::after {
+.section.angled-background::after,
+.section.small-angled-background::after {
   background: var(--gray-gradient-light);
   clip-path: polygon(0 100%, 100% 5vw, 100% 0, 0 100%);
   content: '';
@@ -413,7 +413,7 @@ main .section.gray-gradient {
 
 }
 
-.section.angle-background-top-l::after {
+.section.large-angled-background::after {
   background: var(--gray-gradient-light);
   clip-path: polygon(0 100%, 100% 10vw, 100% 0, 0 100%);
   content: '';
