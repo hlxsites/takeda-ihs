@@ -21,6 +21,10 @@ export const BREAKPOINTS = {
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
+/**
+ * Converts paagraphs that start with a `<sup>` element, to a p.reference paragraph.
+ * @param {HTMLElement} main
+ */
 function updateRefParagraphs(main) {
   main.querySelectorAll('sup').forEach((sup) => {
     if (!sup.previousSibling) {
@@ -30,6 +34,11 @@ function updateRefParagraphs(main) {
   });
 }
 
+/**
+ * Builds the Floating Images auto-block sections.
+ *
+ * @param {HTMLElement} main
+ */
 function buildFloatingImages(main) {
   main.querySelectorAll('.section-metadata').forEach((metadata) => {
     let style;
@@ -63,7 +72,7 @@ function buildFloatingImages(main) {
 
 /**
  * Builds all synthetic blocks in a container element.
- * @param {Element} main The container element
+ * @param {HTMLElement} main The container element
  */
 function buildAutoBlocks(main) {
   try {
@@ -75,6 +84,10 @@ function buildAutoBlocks(main) {
   }
 }
 
+/**
+ * Builds layout containers after all sections & blocks have been decorated.
+ * @param {HTMLElement} main
+ */
 export function buildLayoutContainers(main) {
   main.querySelectorAll('.section[data-layout]').forEach((section) => {
     const container = document.createElement('div');
