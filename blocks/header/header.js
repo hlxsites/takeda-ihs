@@ -244,7 +244,7 @@ export default async function decorate(block) {
     // Add a link to the Author guide, if anywhere in the Author Guide
     if (window.location.pathname.startsWith('/author-guide')) {
       const li = document.createElement('li');
-      li.innerHTML = '<a href="/author-guide">Author Guide</a>';
+      li.innerHTML = '<a href="/author-guide/">Author Guide</a>';
       utility.querySelector('ul').prepend(li);
     }
   }
