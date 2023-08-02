@@ -7,6 +7,8 @@
     left: 0;
     z-index: 100;
     font-family: 'Open Sans', sans-serif;
+    padding: 0 !important;
+   
 }
 .disclaimer-modal-container .disclaimer-modal-wrapper {
     background-color: rgba(0, 0, 0, 0.8);
@@ -23,7 +25,7 @@
     max-width: 598px;
     background-color: #ffffff;
 }
-.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-title {
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .title h2 {
 font-size: 28px;
 color: white;
 padding: 30px 38px;
@@ -32,7 +34,7 @@ font-weight: bold;
 line-height: 35px;
 background-color: #898989;
 }
-.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-body-content {
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .content p {
     padding-left: 38px;
     padding-right: 38px;
     padding-top: 30px;
@@ -41,7 +43,7 @@ background-color: #898989;
     font-size: 15px;
     line-height: 18px;
 }
-.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-button-wrapper {
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section {
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
@@ -50,7 +52,7 @@ background-color: #898989;
     padding-left: 38px;
     padding-right: 38px;
 }
-.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-button-wrapper .modal-agree-button {
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .agree p {
     cursor: pointer;
     font-weight: 600;
     text-align: center;
@@ -62,11 +64,11 @@ background-color: #898989;
     box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.2);
     
 }
-.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-button-wrapper .modal-agree-button:hover{
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .agree p:hover{
 
     background-color: #cc0000;
 }
-.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .modal-button-wrapper .modal-go-button a {
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .leave a p {
 
 text-decoration: underline;
 color: black;
