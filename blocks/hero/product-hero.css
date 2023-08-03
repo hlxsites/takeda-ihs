@@ -39,10 +39,9 @@
   left: 0;
   height: 100%;
   width: 100%;
-  object-position: center center;
+  object-position: center left;
   object-fit: contain;
 }
-
 
 .hero.block.product .title {
   font-size: var(--body-font-size-xl);
@@ -52,6 +51,26 @@
 
 .block.hero.gammagard-liquid .title p {
   color: var(--gammagard-liq);
+}
+
+.block.hero.gammagard-sd .title p {
+  color: var(--gammagard-sd);
+}
+
+.block.hero.hyqvia .title p {
+  color: var(--black);
+}
+
+.block.hero.aralast .title p {
+  color: var(--black);
+}
+
+.block.hero.glassia .title p {
+  color: var(--white);
+}
+
+.block.hero.aralast .references p {
+  color: var(--black);
 }
 
 .hero.block.product .title p em {
@@ -80,6 +99,30 @@
 
 .block.hero.gammagard-liquid .link .button-container a {
   color: var(--gammagard-liq);
+}
+
+.block.hero.gammagard-sd .link .button-container a {
+  color: var(--gammagard-sd);
+}
+
+.block.hero.hyqvia .link .button-container a {
+  color: var(--hyqvia);
+}
+
+.block.hero.cuvitru .link .button-container a {
+  color: var(--cuvitru);
+}
+
+.block.hero.flexbumin .link .button-container a {
+  color: var(--flexbumin);
+}
+
+.block.hero.glassia .link .button-container a {
+  color: var(--glassia);
+}
+
+.block.hero.aralast .link .button-container a {
+  color: var(--aralast);
 }
 
 @media screen and (min-width: 600px) {
