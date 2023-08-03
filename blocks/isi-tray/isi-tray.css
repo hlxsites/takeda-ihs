@@ -71,27 +71,27 @@ main .section.isi-tray-container > div {
 }
 
 .isi-tray.block.gammagard-sd button {
-  border-color: var(--gammagard-sd);
+  background-color: var(--gammagard-sd);
 }
 
 .isi-tray.block.hyqvia button {
-  border-color: var(--hyqvia);
+  background-color: var(--hyqvia);
 }
 
 .isi-tray.block.cuvitru button {
-  border-color: var(--cuvitru);
+  background-color: var(--cuvitru);
 }
 
 .isi-tray.block.flexbumin button {
-  border-color: var(--flexbumin);
+  background-color: var(--flexbumin);
 }
 
 .isi-tray.block.glassia button {
-  border-color: var(--glassia);
+ background-color: var(--glassia);
 }
 
 .isi-tray.block.aralast button {
-  border-color: var(--aralast);
+  background-color: var(--aralast);
 }
 
 .isi-tray.block button span {

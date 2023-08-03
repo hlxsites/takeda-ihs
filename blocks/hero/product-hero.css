@@ -42,7 +42,6 @@
   object-fit: contain;
 }
 
-
 .hero.block.product .title {
   font-size: var(--body-font-size-xl);
   line-height: var(--line-height-m);
@@ -70,11 +69,11 @@
 }
 
 .block.hero.glassia .title p {
-  color: var(--glassia);
+  color: var(--white);
 }
 
-.block.hero.aralast .title p {
-  color: var(--aralast);
+.block.hero.glassia .references p {
+  color: var(--white);
 }
 
 .hero.block.product .title p em {
@@ -128,7 +127,6 @@
 .block.hero.aralast .link .button-container a {
   color: var(--aralast);
 }
-
 
 @media screen and (min-width: 600px) {
   .hero.block.product .title p {
