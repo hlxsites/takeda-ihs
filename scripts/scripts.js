@@ -17,7 +17,6 @@ import {
   integrateMartech,
 } from './third-party.js';
 
-
 export const BREAKPOINTS = {
   small: window.matchMedia('(min-width: 600px)'),
   medium: window.matchMedia('(min-width: 900px)'),
@@ -165,7 +164,6 @@ function initPartytown() {
   };
   import('./partytown/partytown.js');
 }
-
 
 /**
  * Loads everything that doesn't need to be delayed.
