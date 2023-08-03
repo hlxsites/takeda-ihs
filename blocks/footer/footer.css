@@ -25,4 +25,5 @@ footer .footer {
 .footer.block > div > div > p {
   font-size: var(--body-font-size-xxs);
   margin-bottom: 14px;
+  font-size: var( --body-font-size-xxs);
 }

@@ -38,10 +38,9 @@
   left: 0;
   height: 100%;
   width: 100%;
-  object-position: center center;
+  object-position: center left;
   object-fit: contain;
 }
-
 
 .hero.block.product .title {
   font-size: var(--body-font-size-xl);
@@ -74,7 +73,19 @@
 }
 
 .block.hero.aralast .title p {
-  color: var(--aralast);
+  color: var(--black);
+}
+
+.block.hero.aralast .title p {
+  color: var(--black);
+}
+
+.block.hero.glassia .title p {
+  color: var(--white);
+}
+
+.block.hero.aralast .references p {
+  color: var(--black);
 }
 
 .hero.block.product .title p em {
@@ -128,7 +139,6 @@
 .block.hero.aralast .link .button-container a {
   color: var(--aralast);
 }
-
 
 @media screen and (min-width: 600px) {
   .hero.block.product .title p {

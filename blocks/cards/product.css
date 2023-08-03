@@ -48,7 +48,6 @@
   border-color: var(--flexbumin);
 }
 
-
 .cards.product.block > ul > li.glassia hr {
   border-color: var(--glassia);
 }
@@ -56,7 +55,6 @@
 .cards.product.block > ul > li.aralast hr {
   border-color: var(--aralast);
 }
-
 
 .cards.product.block > ul > li .logo picture img {
   position: absolute;
