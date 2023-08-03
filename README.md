@@ -2,8 +2,8 @@
 Takeda Integrated Health Systems
 
 ## Environments
-- Preview: https://product-page-defects--takeda-ihs--hlxsites.hlx.page/
-- Live: https://product-page-defects--takeda-ihs--hlxsites.hlx.live/
+Preview: https://main--takeda-ihs--hlxsites.hlx.page/
+Live: https://main--takeda-ihs--hlxsites.hlx.live/
 
 ## Installation
 
