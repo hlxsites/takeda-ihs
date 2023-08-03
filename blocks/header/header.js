@@ -118,7 +118,13 @@ function buildSections(sections) {
   const expander = document.createElement('span');
   expander.classList.add('icon', 'icon-chevron-down');
 
-  sections.querySelectorAll('ul > li').forEach((section) => {
+  sections.querySelectorAll(':scope > ul > li').forEach((section) => {
+    const active = section.querySelector('a');
+    if (active) {
+      const url = new URL(active.href);
+      if (window.location.pathname.startsWith(url.pathname)) section.classList.add('active');
+    }
+
     const submenu = section.querySelector('ul');
     if (submenu) {
       const icon = submenu.querySelector('span.icon-right-arrow');
@@ -173,8 +179,11 @@ function buildSections(sections) {
       // enable nav dropdown keyboard accessibility
       anchor.addEventListener('keydown', openOnKeydown);
     }
-    if (section.querySelector('hr')) {
-      section.classList.add('separator');
+  });
+  sections.querySelectorAll(':scope > ul > li').forEach((li) => {
+    if (li.textContent.match(/^---/)) {
+      li.classList.add('separator');
+      li.textContent = '';
     }
   });
 
@@ -217,17 +226,26 @@ export default async function decorate(block) {
       toggleMenu(nav, sections);
     });
 
+    const utility = html.querySelector('.nav-utility');
+
     // Order maintains tabindex keyboard nav
     nav.append(buildLogo());
     nav.append(buildBrand());
     nav.append(hamburger);
     nav.append(sections);
-    nav.append(html.querySelector('.nav-utility'));
+    nav.append(utility);
 
     isDesktop.addEventListener('change', () => toggleMenu(nav, sections, isDesktop.matches));
     document.body.addEventListener('click', () => {
       toggleAllNavSections(sections);
     });
     await decorateIcons(block);
+
+    // Add a link to the Author guide, if anywhere in the Author Guide
+    if (window.location.pathname.startsWith('/author-guide')) {
+      const li = document.createElement('li');
+      li.innerHTML = '<a href="/author-guide/">Author Guide</a>';
+      utility.querySelector('ul').prepend(li);
+    }
   }
 }

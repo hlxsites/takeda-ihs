@@ -139,7 +139,6 @@
         font-size: var(--body-font-size-s);
     }
 
-
     .lists.triple-aim.block > div > div > h2 {
         font-size: var(--heading-font-size-l);
     }
@@ -148,10 +147,6 @@
         align-items: center;
         grid-template-columns: 2fr 3fr;
         gap: 16px;
-    }
-
-    .lists.triple-aim.block {
-        max-width: 740px;
     }
 }
 
@@ -166,9 +161,5 @@
 
     .lists.triple-aim.block > div > div > h2 {
         font-size: var(--heading-font-size-l);
-    }
-
-    .lists.triple-aim.block {
-        max-width: 980px;
     }
 }

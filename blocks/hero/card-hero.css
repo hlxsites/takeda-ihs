@@ -3,6 +3,14 @@
   --hero-border-color: var(--onepath);
 }
 
+.hero.block.card.myigsource {
+  --hero-border-color: var(--myigsource);
+}
+
+.hero.block.card.hello-programs {
+  --hero-border-color: var(--hello-programs);
+}
+
 .hero.block.card .image picture {
   display: block;
   position: relative;

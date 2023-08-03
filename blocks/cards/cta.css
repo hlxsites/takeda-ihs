@@ -65,6 +65,10 @@
 }
 
 @media screen and (min-width: 900px) {
+  .cards.cta.block ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .cards.cta.block ul.cards-3 {
     grid-template-columns: 1fr 1fr 1fr;
   }

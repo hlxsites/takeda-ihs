@@ -19,8 +19,8 @@ export default async function decorate(block) {
 
     // size the footer image
     const image = footer.querySelector('picture img');
-    image.setAttribute('width', '100');
-    image.removeAttribute('height');
+    image.width = '100';
+    image.height = '36';
 
     decorateIcons(footer);
     block.append(footer);

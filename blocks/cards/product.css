@@ -28,7 +28,7 @@
   width: 100%;
 }
 
-.cards.product.block > ul > li.gammagard-liq hr {
+.cards.product.block > ul > li.gammagard-liquid hr {
   border-color: var(--gammagard-liq);
 }
 

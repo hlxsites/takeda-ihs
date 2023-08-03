@@ -311,6 +311,17 @@ header {
     justify-content: space-around;
   }
 
+  .header.block .nav-sections > ul > li {
+    display: flex;
+    height: 100%;
+    padding: 0;
+    align-items: center;
+  }
+
+  .header.block .nav-sections > ul > li.active {
+    border-bottom: 3px solid var(--red);
+  }
+
   .header.block .nav-sections > ul > li > ul {
     position: absolute;
     padding: 0 20px;

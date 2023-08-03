@@ -9,11 +9,22 @@ import {
   decorateTemplateAndTheme,
   waitForLCP,
   loadBlocks,
+  buildBlock,
   loadCSS,
 } from './lib-franklin.js';
 
+export const BREAKPOINTS = {
+  small: window.matchMedia('(min-width: 600px)'),
+  medium: window.matchMedia('(min-width: 900px)'),
+  large: window.matchMedia('(min-width: 1200px)'),
+};
+
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
+/**
+ * Converts paagraphs that start with a `<sup>` element, to a p.reference paragraph.
+ * @param {HTMLElement} main
+ */
 function updateRefParagraphs(main) {
   main.querySelectorAll('sup').forEach((sup) => {
     if (!sup.previousSibling) {
@@ -24,18 +35,59 @@ function updateRefParagraphs(main) {
 }
 
 /**
+ * Builds the Floating Images auto-block sections.
+ *
+ * @param {HTMLElement} main
+ */
+function buildFloatingImages(main) {
+  main.querySelectorAll('.section-metadata').forEach((metadata) => {
+    let style;
+    [...metadata.querySelectorAll(':scope > div')].every((div) => {
+      const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image[\s-](left|right))/i);
+      if (div.children[0]?.textContent.toLowerCase().trim() === 'style' && match) {
+        style = match[1].replaceAll(/\s/g, '-');
+        return false;
+      }
+      return true;
+    });
+    if (style) {
+      const section = metadata.parentElement;
+      const left = [];
+      const right = [];
+      [...section.children].forEach((child) => {
+        const picture = child.querySelector(':scope > picture');
+        if (picture) {
+          right.push(picture);
+          child.remove();
+        } else if (!child.classList.contains('section-metadata')) {
+          left.push(child);
+        }
+      });
+      const block = buildBlock('floating-images', [[{ elems: left }, { elems: right }]]);
+      block.classList.add(style);
+      section.prepend(block);
+    }
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
- * @param {Element} main The container element
+ * @param {HTMLElement} main The container element
  */
 function buildAutoBlocks(main) {
   try {
     updateRefParagraphs(main);
+    buildFloatingImages(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
   }
 }
 
+/**
+ * Builds layout containers after all sections & blocks have been decorated.
+ * @param {HTMLElement} main
+ */
 export function buildLayoutContainers(main) {
   main.querySelectorAll('.section[data-layout]').forEach((section) => {
     const container = document.createElement('div');
@@ -82,6 +134,23 @@ async function loadEager(doc) {
 }
 
 /**
+ * Adds the favicon.
+ * @param {string} href The favicon URL
+ */
+export function addFavIcon(href) {
+  const link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/png';
+  link.href = href;
+  const existingLink = document.querySelector('head link[rel="icon"]');
+  if (existingLink) {
+    existingLink.parentElement.replaceChild(link, existingLink);
+  } else {
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }
+}
+
+/**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
@@ -97,6 +166,7 @@ async function loadLazy(doc) {
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+  addFavIcon(`${window.hlx.codeBasePath}/icons/favicon.png`);
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));
