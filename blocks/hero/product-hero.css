@@ -69,22 +69,9 @@
 }
 
 .block.hero.glassia .title p {
-  color: var(--glassia);
-}
-
-.block.hero.aralast .title p {
-  color: var(--black);
-}
-
-.block.hero.aralast .title p {
-  color: var(--black);
-}
-
-.block.hero.glassia .title p {
   color: var(--white);
 }
-
-.block.hero.aralast .references p {
+.block.hero.glassia .references p {
   color: var(--white);
 }
 
