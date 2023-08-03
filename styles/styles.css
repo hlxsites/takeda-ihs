@@ -456,7 +456,6 @@ main .section.gray-gradient-background {
   main > .section > div {
     padding: 0 24px;
   }
-
 }
 
 @media screen and (min-width: 900px) {
