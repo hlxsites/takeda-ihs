@@ -38,7 +38,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  object-position: center left;
+  object-position: center center;
   object-fit: contain;
 }
 
