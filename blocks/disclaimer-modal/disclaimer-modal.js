@@ -27,8 +27,7 @@ export default async function decorate(block) {
       document.cookie = `hcpModalDismiss=1;path=/;myCookie=to_be_deleted;expires=${CookieDate.toUTCString()};`;
       modalContainer.style.display = 'none';
     });
-  }
-  else {
+  } else {
     block.parentElement.style.background = 'none';
     block.parentElement.parentElement.style.background = 'none';
     block.style.display = 'none';
