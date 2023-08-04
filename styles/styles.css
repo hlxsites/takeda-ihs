@@ -51,7 +51,9 @@
 :root {
   /* Colors */
   --bright-gray: #efefef;
+  --medium-gray: #ddd;
   --gray: #979797;
+  --gray-box-shadow: rgb(0 0 0 / 20%);
   --silver: #d8d8d8;
   --quartz: #4c4948;
   --red: #e10;
@@ -69,7 +71,7 @@
   --hyqvia: #500778;
   --cuvitru: #485CC7;
   --flexbumin: #3a6853;
-  --glassia: #00b140;
+  --glassia: #573aa4;
   --aralast: #3a6853;
   --onepath: #00a9ec;
   --myigsource: #a1e1b3;
@@ -128,7 +130,7 @@
   --gray-gradient-breakpoint: 41%;
 
   /* Gradient angles */
-  --gray-gradient-angle: -172.8750deg;
+  --gray-gradient-angle: -180deg;
 }
 
 *, *::before, *::after {
@@ -157,20 +159,19 @@ sub {
 h1, h2, h3 {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-bold);
+  color: var(--black);
 }
 
 h1 {
   margin-bottom: 8px;
   font-size: var(--heading-font-size-m);
   line-height: var(--line-height-s);
-  color: var(--white);
 }
 
 h2 {
   margin-bottom: 12px;
   font-size: var(--heading-font-size-s);
   line-height: var(--line-height-s);
-  color: var(--black);
 }
 
 h2 sub {
@@ -184,7 +185,6 @@ h3 {
   margin-bottom: 12px;
   font-size: var(--heading-font-size-xxs);
   line-height: var(--line-height-m);
-  color: var(--black);
 }
 
 p, li {
@@ -281,8 +281,14 @@ main .section.quartz-background {
 
 main .section.quartz-background h1,
 main .section.quartz-background h2,
-main .section.quartz-background p {
+main .section.quartz-background p,
+main .section.quartz-background li{
   color: var(--white);
+}
+
+main .section.red-title h1,
+main .section.red-title h2 {
+  color: var(--red);
 }
 
 main .section.cadet-gradient-background {
@@ -294,6 +300,26 @@ main .section.cadet-gradient-background {
       rgba(247 248 248 / 0%) 90%,
       rgba(255 255 255 / 0%) 100%
   );
+}
+
+main .section .default-content-wrapper span.icon {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
+
+main .section .default-content-wrapper span.icon svg {
+  height: 100%;
+  width: 100%;
+}
+
+main .section .default-content-wrapper ul {
+  margin: .25em 0 1.5em 2em;
+  list-style: disc;
+}
+
+main .section .default-content-wrapper ul li {
+  margin-bottom: 4px;
 }
 
 main .section[data-layout] .layout-content-wrapper {
@@ -329,7 +355,76 @@ main > .section.full-width > div {
   max-width: var(--full-page-width);
 }
 
-main .section.gray-gradient {
+main .section.gray-gradient-background {
+  background: linear-gradient(
+          var(--gray-gradient-angle),
+          var(--gray-gradient-light) 0%,
+          var(--gray-gradient-light) var(--gray-gradient-breakpoint),
+          var(--gray-gradient-dark) 100%
+  );
+}
+
+.angled-background,
+.small-angled-background,
+.large-angled-background {
+  background: var(--white);
+}
+
+.section .angled-background::after,
+.section .small-angled-background::after {
+  background: var(--gray-gradient-light);
+  clip-path: polygon(0 100%, 100% 5vw, 100% 0, 0 100%);
+  content: '';
+  display: block;
+  height: 5vw;
+  margin-bottom: -1px;
+  padding-bottom: 5vw;
+  width: 100%;
+}
+
+.section .large-angled-background::after {
+  background: var(--gray-gradient-light);
+  clip-path: polygon(0 100%, 100% 10vw, 100% 0, 0 100%);
+  content: '';
+  display: block;
+  height: 10vw;
+  margin-bottom: -1px;
+  padding-bottom: 10vw;
+  width: 100%;
+}
+
+.section.angle-background,
+.section.angled-background,
+.section.small-angled-background,
+.section.large-angled-background {
+  padding-bottom: unset;
+}
+
+.section.angled-background::after,
+.section.small-angled-background::after {
+  background: var(--gray-gradient-light);
+  clip-path: polygon(0 100%, 100% 5vw, 100% 0, 0 100%);
+  content: '';
+  display: block;
+  height: 5vw;
+  margin-bottom: -1px;
+  padding-bottom: 5vw;
+  width: 100%;
+
+}
+
+.section.large-angled-background::after {
+  background: var(--gray-gradient-light);
+  clip-path: polygon(0 100%, 100% 10vw, 100% 0, 0 100%);
+  content: '';
+  display: block;
+  height: 10vw;
+  margin-bottom: -1px;
+  padding-bottom: 5vw;
+  width: 100%;
+}
+
+.angle-background {
   background: linear-gradient(
           var(--gray-gradient-angle),
           var(--gray-gradient-light) 0%,
@@ -361,6 +456,7 @@ main .section.gray-gradient {
   main > .section > div {
     padding: 0 24px;
   }
+
 }
 
 @media screen and (min-width: 900px) {
@@ -380,13 +476,11 @@ main .section.gray-gradient {
     padding: 0 90px;
   }
 
-
   main .section[data-layout="50/50"] .layout-content-wrapper {
     flex-flow: row wrap;
     align-items: center;
     column-gap: 3em;
   }
-
 
   main .section[data-layout="50/50"] .layout-content-wrapper > div {
     flex-basis: calc(50% - 1.5em);
@@ -399,7 +493,6 @@ main .section.gray-gradient {
   main .section[data-layout] .default-content-wrapper p {
     font-size: var(--body-font-size-s);
   }
-
 }
 
 @media screen and (min-width: 1200px) {

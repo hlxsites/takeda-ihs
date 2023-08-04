@@ -30,7 +30,6 @@
   margin-bottom: 20px;
   height: 100%;
   width: 100%;
-  padding-bottom: 22%;
 }
 
 .hero.block.product .content-wrapper .logo picture img {
@@ -43,15 +42,38 @@
   object-fit: contain;
 }
 
-
 .hero.block.product .title {
   font-size: var(--body-font-size-xl);
   line-height: var(--line-height-m);
   color: var(--black);
 }
 
-.block.hero.gamma-guard-liquid .title {
+.block.hero.gammagard-liquid .title p {
   color: var(--gammagard-liq);
+}
+
+.block.hero.gammagard-sd .title p {
+  color: var(--gammagard-sd);
+}
+
+.block.hero.hyqvia .title p {
+  color: var(--hyqvia);
+}
+
+.block.hero.cuvitru .title p {
+  color: var(--cuvitru);
+}
+
+.block.hero.flexbumin .title p {
+  color: var(--flexbumin);
+}
+
+.block.hero.glassia .title p {
+  color: var(--white);
+}
+
+.block.hero.glassia .references p {
+  color: var(--white);
 }
 
 .hero.block.product .title p em {
@@ -78,8 +100,32 @@
   box-shadow: 3px 3px 7px 1px rgba(0 0 0 / 20%);;
 }
 
-.block.hero.gamma-guard-liquid .link .button-container a {
+.block.hero.gammagard-liquid .link .button-container a {
   color: var(--gammagard-liq);
+}
+
+.block.hero.gammagard-sd .link .button-container a {
+  color: var(--gammagard-sd);
+}
+
+.block.hero.hyqvia .link .button-container a {
+  color: var(--hyqvia);
+}
+
+.block.hero.cuvitru .link .button-container a {
+  color: var(--cuvitru);
+}
+
+.block.hero.flexbumin .link .button-container a {
+  color: var(--flexbumin);
+}
+
+.block.hero.glassia .link .button-container a {
+  color: var(--glassia);
+}
+
+.block.hero.aralast .link .button-container a {
+  color: var(--aralast);
 }
 
 @media screen and (min-width: 600px) {

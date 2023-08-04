@@ -44,6 +44,15 @@ function buildProductContent(block) {
       }
     }
   });
+
+  const logo = contentDiv.querySelector('.logo');
+  if (logo) {
+    const img = contentDiv.querySelector('.logo img');
+    const ratio = (parseInt(img.height, 10) / parseInt(img.width, 10)) * 100;
+    logo.style.maxWidth = `${img.width}px`;
+    contentDiv.querySelector('.logo picture').style.paddingBottom = `${ratio}%`;
+  }
+
   decorateButtons(contentDiv);
   return contentDiv;
 }
