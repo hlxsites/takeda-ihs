@@ -3,11 +3,10 @@ import { decorateButtons, readBlockConfig } from '../../scripts/lib-franklin.js'
 /**
  * Builds the image wrapper div from the block definition
  *
- * @param {HTMLDivElement} block the block
+ * @param {HTMLPictureElement} picture the picture
  * @return {HTMLDivElement} the image wrapper
  */
-function buildImageWrapper(block) {
-  const picture = block.querySelector('picture');
+function buildImageWrapper(picture) {
   picture.querySelector('img').setAttribute('loading', 'eager');
   const p = picture.parentElement;
   const image = document.createElement('div');
@@ -128,8 +127,15 @@ export default async function decorate(block) {
     type = 'card';
   }
   block.classList.add(type);
-  const image = buildImageWrapper(block);
-  const wrapper = buildContent(block, type);
+  const children = [];
 
-  block.replaceChildren(image, wrapper);
+  const content = buildContent(block, type)
+  const picture = block.querySelector('picture');
+  if (picture) {
+    children.push(buildImageWrapper(block));
+  } else {
+    content.classList.add('no-image');
+  }
+  children.push(content);
+  block.replaceChildren(...children);
 }
