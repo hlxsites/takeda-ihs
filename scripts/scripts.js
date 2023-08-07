@@ -11,12 +11,13 @@ import {
   loadBlocks,
   buildBlock,
   loadCSS,
-  readBlockConfig
+  readBlockConfig,
 } from './lib-franklin.js';
 
 import {
   integrateMartech,
 } from './third-party.js';
+
 export const BREAKPOINTS = {
   small: window.matchMedia('(min-width: 600px)'),
   medium: window.matchMedia('(min-width: 900px)'),
@@ -52,13 +53,11 @@ async function decorateDisclaimerModal() {
         CookieDate.setFullYear(CookieDate.getFullYear() + 5);
         document.cookie = `hcpModalDismiss=1;path=/;myCookie=to_be_deleted;expires=${CookieDate.toUTCString()};`;
         block.parentElement.parentElement.remove();
-
       });
     } else {
       block.parentElement.parentElement.remove();
     }
-  }
-  else {
+  } else {
     block.remove();
   }
 }
