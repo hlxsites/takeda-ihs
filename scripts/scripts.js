@@ -11,12 +11,12 @@ import {
   loadBlocks,
   buildBlock,
   loadCSS,
+  readBlockConfig
 } from './lib-franklin.js';
 
 import {
   integrateMartech,
 } from './third-party.js';
-
 export const BREAKPOINTS = {
   small: window.matchMedia('(min-width: 600px)'),
   medium: window.matchMedia('(min-width: 900px)'),
@@ -24,7 +24,44 @@ export const BREAKPOINTS = {
 };
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
+async function decorateDisclaimerModal() {
+  const main = document.querySelector('main');
+  const isModalAccepted = document.cookie.match(/\shcpModalDismiss=1;?/) !== null || window.location.href.indexOf('?bypassModal') > -1;
+  const shouldShowModal = !isModalAccepted || (document.location.href.indexOf('?showModal') > -1);
+  const block = main.querySelector('.disclaimer-modal');
+  if (shouldShowModal) {
+    const response = await fetch('/fragments/disclaimer-modal.plain.html');
+    if (response.ok) {
+      block.style.display = 'block';
+      const html = await response.text();
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      const modal = tmp.querySelector('.disclaimer-modal');
+      const config = readBlockConfig(modal);
+      block.innerHTML = `
+  <div class="title"><h2>${config.title}</h2></div>
+  <div class="content"><p> ${config.content}</p></div>
+  <div class="button-section">
+  <div class="agree"><p> ${config.agree}</p></div>
+  <div class="leave"><a class="link" href=" ${config.link} "> <p>${config.leave} </p></a></div>
+  </div>
+  `;
+      const acceptButn = main.querySelector('.agree');
+      acceptButn.addEventListener('click', () => {
+        const CookieDate = new Date();
+        CookieDate.setFullYear(CookieDate.getFullYear() + 5);
+        document.cookie = `hcpModalDismiss=1;path=/;myCookie=to_be_deleted;expires=${CookieDate.toUTCString()};`;
+        block.parentElement.parentElement.remove();
 
+      });
+    } else {
+      block.parentElement.parentElement.remove();
+    }
+  }
+  else {
+    block.remove();
+  }
+}
 /**
  * Converts paagraphs that start with a `<sup>` element, to a p.reference paragraph.
  * @param {HTMLElement} main
@@ -200,6 +237,7 @@ function loadDelayed() {
 }
 
 async function loadPage() {
+  decorateDisclaimerModal();
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
