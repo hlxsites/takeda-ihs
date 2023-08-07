@@ -22,10 +22,13 @@
 }
 
 .hero.block.default .image picture img {
-  object-position: center top;
-  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .hero.block.default .content-wrapper {
