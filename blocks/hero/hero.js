@@ -129,7 +129,7 @@ export default async function decorate(block) {
   block.classList.add(type);
   const children = [];
 
-  const content = buildContent(block, type)
+  const content = buildContent(block, type);
   const picture = block.querySelector('picture');
   if (picture) {
     children.push(buildImageWrapper(block));
