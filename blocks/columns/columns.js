@@ -1,18 +1,22 @@
 import { decorateIcons } from '../../scripts/lib-franklin.js';
 
 export default async function decorate(block) {
-  block.classList.add(`columns-${block.children.length}-cols`);
+  let count;
 
   // setup image columns
   [...block.children].forEach((row) => {
-    row.classList.add('column');
-    const decoration = row.children[0].textContent;
-    const content = row.children[1];
-    content.classList.add('content');
-    if (decoration) {
-      content.classList.add(decoration.replaceAll(/[^a-zA-Z-]/g, '-'));
+    if (!count) {
+      count = row.children.length;
+      block.classList.add(`columns-${count}-cols`);
     }
-    row.replaceChildren(content);
+    row.classList.add('columns-row');
+    [...row.children].forEach((item) => {
+      item.classList.add('column-item');
+      const imgp = item.querySelector(':scope > p > picture');
+      if (imgp) {
+        imgp.parentElement.classList.add('image-wrapper');
+      }
+    });
   });
 
   await decorateIcons(block);
