@@ -302,6 +302,24 @@ main .section.cadet-gradient-background {
   );
 }
 
+main .section .default-content-wrapper > p > picture {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+main .section .default-content-wrapper > p > picture > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+
 main .section .default-content-wrapper span.icon {
   display: inline-block;
   height: 30px;

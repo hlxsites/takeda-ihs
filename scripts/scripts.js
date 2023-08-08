@@ -88,6 +88,13 @@ function buildAutoBlocks(main) {
   }
 }
 
+function fixDefaultImage(main) {
+  main.querySelectorAll(':scope .default-content-wrapper > p > picture > img').forEach((img) => {
+    const ratio = (parseInt(img.height, 10) / parseInt(img.width, 10)) * 100;
+    img.parentElement.style.paddingBottom = `${ratio}%`;
+  });
+}
+
 /**
  * Builds layout containers after all sections & blocks have been decorated.
  * @param {HTMLElement} main
@@ -118,6 +125,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  fixDefaultImage(main);
   decorateBlocks(main);
   buildLayoutContainers(main);
 }
