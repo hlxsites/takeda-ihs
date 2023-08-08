@@ -578,7 +578,6 @@ main .section.gray-gradient-background[data-background-image] {
 }
 
 @media screen and (min-width: 1200px) {
-
   main .section.cadet-gradient-background[data-background-image] {
     background: linear-gradient(
         -180deg,
