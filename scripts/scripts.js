@@ -78,7 +78,7 @@ function buildSectionBackgroundImage(main) {
   main.querySelectorAll(':scope > div div.section-metadata').forEach((metadata) => {
     const keys = Object.keys(readBlockConfig(metadata));
     const bgIdx = keys.indexOf(keys.find((k) => k.match(/background-image/i)));
-    if (bgIdx) {
+    if (bgIdx >= 0) {
       const picture = metadata.children[bgIdx].children[1];
       picture.querySelector('picture').classList.add('section-bg-image');
       metadata.parentElement.append(picture.cloneNode(true));
