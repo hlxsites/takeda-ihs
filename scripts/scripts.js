@@ -58,7 +58,10 @@ async function decorateDisclaimerModal() {
       block.parentElement.parentElement.remove();
     }
   } else {
-    block.remove();
+    if (block) {
+      block.remove();
+    }
+
   }
 }
 /**
