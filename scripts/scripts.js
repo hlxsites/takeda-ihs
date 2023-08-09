@@ -51,7 +51,7 @@ async function decorateDisclaimerModal() {
       acceptButn.addEventListener('click', () => {
         const CookieDate = new Date();
         CookieDate.setFullYear(CookieDate.getFullYear() + 5);
-        document.cookie = `hcpModalDismiss=1;path=/;myCookie=to_be_deleted;expires=${CookieDate.toUTCString()};`;
+        document.cookie = `hcpModalDismiss=1;path=/;expires=${CookieDate.toUTCString()};`;
         block.parentElement.parentElement.remove();
       });
     } else {
