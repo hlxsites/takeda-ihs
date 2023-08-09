@@ -22,10 +22,13 @@
 }
 
 .hero.block.default .image picture img {
-  object-position: center top;
-  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .hero.block.default .content-wrapper {
@@ -39,11 +42,19 @@
   max-width: 75%;
 }
 
+.hero.block.default .content-wrapper.no-image .content {
+  max-width: unset;
+}
+
 .hero.block.default.red .content-wrapper .content h1 {
   display: flex;
   align-items: center;
   column-gap: 15px;
   color: var(--red);
+}
+
+.hero.block.default.red .content-wrapper.no-image .content h1 {
+  margin-bottom: 1em;
 }
 
 .hero.block.default .content-wrapper .content h1 span.icon {
@@ -54,11 +65,27 @@
   height: 100%;
 }
 
+.hero.block.default.red .content-wrapper .content h2 {
+  margin-bottom: 1em;
+  font-size: var(--heading-font-size-xxs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--quartz);
+}
+
+
 .hero.block.default .content-wrapper .content p {
   font-size: var(--body-font-size-s);
   line-height: var(--line-height-s);
   color: var(--white);
 }
+
+.hero.block.default .content-wrapper.no-image .content p {
+  margin-bottom: 1em;
+  font-size: var(--body-font-size-m);
+  line-height: var(--line-height-m);
+  color: var(--quartz);
+}
+
 
 .hero.block.default.light-image .content-wrapper .content p {
   color: var(--quartz);
@@ -86,12 +113,21 @@
     max-width: 600px;
   }
 
-  .hero.block.default .content-wrapper .content h1 span.icon {
+  .hero.block.default .content-wrapper.no-image .content h2 {
+    font-size: var(--heading-font-size-xs);
+  }
+
+
+    .hero.block.default .content-wrapper .content h1 span.icon {
     height: 35px;
   }
 
   .hero.block.default .content-wrapper .content p {
     font-size: var(--body-font-size-xxl);
+  }
+
+  .hero.block.default .content-wrapper.no-image .content p {
+    font-size: var(--body-font-size-l);
   }
 }
 

@@ -5,6 +5,7 @@ indices:
       - '/**'
     exclude:
       - 'author-guide/**'
+      - 'copy/**'
       - 'drafts/**'
       - 'pdfs/**'
       - '/footer'

@@ -250,10 +250,6 @@ header {
   height: var(--nav-height);
 }
 
-main {
-  background-color: var(--white);
-}
-
 body.gray-gradient > main {
   background: linear-gradient(
           var(--gray-gradient-angle),
@@ -265,6 +261,7 @@ body.gray-gradient > main {
 
 main .section {
   padding: 32px 0;
+  background-color: var(--white);
 }
 
 main .section.gray-background {
@@ -291,15 +288,58 @@ main .section.red-title h2 {
   color: var(--red);
 }
 
-main .section.cadet-gradient-background {
-  background: linear-gradient(
-      -180deg,
-      #5b6770 0%,
-      #edeff0 86%,
-      rgba(242 244 245 / 55%) 88%,
-      rgba(247 248 248 / 0%) 90%,
-      rgba(255 255 255 / 0%) 100%
-  );
+main .section[data-background-image] {
+  position: relative;
+  padding-bottom: 200px;
+}
+
+main .section.center .default-content-wrapper {
+  text-align: center;
+}
+
+main .section .default-content-wrapper > p > picture {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main .section .default-content-wrapper > p > picture > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+main > .section[data-background-image] > .section-bg-image-wrapper {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 20%;
+  width: 100%;
+  max-width: unset;
+}
+
+main > .section[data-background-image] > .section-bg-image-wrapper picture {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+main > .section[data-background-image] > .section-bg-image-wrapper picture img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 main .section .default-content-wrapper span.icon {
@@ -328,7 +368,7 @@ main .section[data-layout] .layout-content-wrapper {
   gap: 3em;
 }
 
-main .section[data-layout] .layout-content-wrapper .default-content-wrapper {
+main .section[data-layout]:not(.center) .layout-content-wrapper .default-content-wrapper {
   padding: 0 24px;
   border-left: 3px solid var(--red);
 }
@@ -355,12 +395,44 @@ main > .section.full-width > div {
   max-width: var(--full-page-width);
 }
 
+
+main .section.cadet-gradient-background {
+  background: linear-gradient(
+      -180deg,
+      #5b6770 0%,
+      #edeff0 86%,
+      rgba(242 244 245 / 55%) 88%,
+      rgba(247 248 248 / 0%) 90%,
+      rgba(255 255 255 / 0%) 100%
+  );
+}
+
+main .section.cadet-gradient-background[data-background-image] {
+  background: linear-gradient(
+      -180deg,
+      #5b6770 0%,
+      #edeff0 86%,
+      rgba(242 244 245 / 55%) 88%,
+      rgba(247 248 248 / 0%) 90%,
+      rgba(255 255 255 / 0%) 100%
+  );
+}
+
 main .section.gray-gradient-background {
   background: linear-gradient(
           var(--gray-gradient-angle),
           var(--gray-gradient-light) 0%,
           var(--gray-gradient-light) var(--gray-gradient-breakpoint),
           var(--gray-gradient-dark) 100%
+  );
+}
+
+main .section.gray-gradient-background[data-background-image] {
+  background: linear-gradient(
+      var(--gray-gradient-angle),
+      var(--gray-gradient-light) 0%,
+      var(--gray-gradient-light) var(--gray-gradient-breakpoint),
+      var(--gray-gradient-dark) 80%
   );
 }
 
@@ -457,6 +529,13 @@ main .section.gray-gradient-background {
     padding: 0 24px;
   }
 
+  main > .section[data-background-image] > .section-bg-image-wrapper {
+    height: 20%;
+  }
+
+  main > .section[data-background-image] > .section-bg-image-wrapper > picture > img {
+    object-position: unset;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -474,6 +553,14 @@ main .section.gray-gradient-background {
 
   main > .section > div {
     padding: 0 90px;
+  }
+
+  main > .section[data-background-image] {
+    padding-bottom: 300px;
+  }
+
+  main > .section[data-background-image] > .section-bg-image-wrapper picture {
+    height: 100%;
   }
 
   main .section[data-layout="50/50"] .layout-content-wrapper {
@@ -496,11 +583,33 @@ main .section.gray-gradient-background {
 }
 
 @media screen and (min-width: 1200px) {
+  main .section.cadet-gradient-background[data-background-image] {
+    background: linear-gradient(
+        -180deg,
+        #5b6770 0%,
+        #edeff0 78%,
+        rgba(242 244 245 / 55%) 80%,
+        rgba(247 248 248 / 0%) 82%,
+        rgba(255 255 255 / 0%) 92%
+    );
+  }
+
+  main > .section[data-background-image] > .section-bg-image-wrapper {
+    height: 30%;
+  }
+
   main .section[data-layout="25/75"] .layout-content-wrapper {
     display: grid;
     align-items: center;
     gap: 1em;
     grid-template-columns: 1fr 3fr;
+  }
+
+  main .section[data-layout="75/25"] .layout-content-wrapper {
+    display: grid;
+    align-items: center;
+    gap: 1em;
+    grid-template-columns: 3fr 1fr;
   }
 
   main .section > div {
