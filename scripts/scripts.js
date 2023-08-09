@@ -104,7 +104,10 @@ function buildAutoBlocks(main) {
 function fixDefaultImage(main) {
   main.querySelectorAll(':scope .default-content-wrapper > p > picture > img').forEach((img) => {
     const ratio = (parseInt(img.height, 10) / parseInt(img.width, 10)) * 100;
-    img.parentElement.style.paddingBottom = `${ratio}%`;
+    const picture = img.parentElement;
+    picture.style.paddingBottom = `${ratio}%`;
+    picture.parentElement.style.maxWidth = `${img.width}px`;
+    picture.parentElement.style.margin = '0 auto 1.5em';
   });
 }
 
