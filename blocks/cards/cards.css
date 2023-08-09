@@ -16,6 +16,12 @@
   background-color: rgba(255 255 255 / 66%);
 }
 
+.cards.default.block.white-bg > div {
+  padding: 20px 16px;
+  border-radius: 10px;
+  background-color: var(--white);
+}
+
 .cards.default.block > div > div > p:first-of-type {
   margin-bottom: 0;
   font-size: var(--body-font-size-m);
