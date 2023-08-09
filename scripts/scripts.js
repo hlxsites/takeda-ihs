@@ -46,14 +46,21 @@ async function decorateDisclaimerModal() {
           <div class="leave"><a class="link" href=" ${config.link} "> <p>${config.leave} </p></a></div>
         </div>
       `;
+      const disclaimerContainer = document.createElement('div');
+      disclaimerContainer.className = 'disclaimer-modal-container';
+      const disclaimerWrapper = document.createElement('div');
+      disclaimerWrapper.className = 'disclaimer-modal-wrapper';
+      disclaimerWrapper.appendChild(modal);
+      disclaimerContainer.appendChild(disclaimerWrapper);
+      
       const acceptButn = modal.querySelector('.agree');
       acceptButn.addEventListener('click', () => {
         const CookieDate = new Date();
         CookieDate.setFullYear(CookieDate.getFullYear() + 5);
         document.cookie = `hcpModalDismiss=1;path=/;expires=${CookieDate.toUTCString()};`;
-        modal.remove();
+        disclaimerContainer.remove();
       });
-      main.append(modal);
+      main.append(disclaimerContainer);
     }
   }
 }
