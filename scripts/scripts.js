@@ -10,7 +10,7 @@ import {
   waitForLCP,
   loadBlocks,
   buildBlock,
-  loadCSS,
+  loadCSS, readBlockConfig,
 } from './lib-franklin.js';
 
 import {
@@ -44,7 +44,7 @@ function updateRefParagraphs(main) {
  * @param {HTMLElement} main
  */
 function buildFloatingImages(main) {
-  main.querySelectorAll('.section-metadata').forEach((metadata) => {
+  main.querySelectorAll(':scope > div div.section-metadata').forEach((metadata) => {
     let style;
     [...metadata.querySelectorAll(':scope > div')].every((div) => {
       const match = div.children[1]?.textContent.toLowerCase().trim().match(/(image[\s-](left|right))/i);
@@ -74,6 +74,18 @@ function buildFloatingImages(main) {
   });
 }
 
+function buildSectionBackgroundImage(main) {
+  main.querySelectorAll(':scope > div div.section-metadata').forEach((metadata) => {
+    const keys = Object.keys(readBlockConfig(metadata));
+    const bgIdx = keys.indexOf(keys.find((k) => k.match(/background-image/i)));
+    if (bgIdx) {
+      const picture = metadata.children[bgIdx].children[1];
+      picture.querySelector('picture').classList.add('section-bg-image');
+      metadata.parentElement.append(picture.cloneNode(true));
+    }
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {HTMLElement} main The container element
@@ -82,6 +94,7 @@ function buildAutoBlocks(main) {
   try {
     updateRefParagraphs(main);
     buildFloatingImages(main);
+    buildSectionBackgroundImage(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -118,6 +131,18 @@ export function buildLayoutContainers(main) {
 }
 
 /**
+ * Decorates the previously created background image div.
+ * @param main
+ */
+function decorateSectionBackgroundImage(main) {
+  main.querySelectorAll(':scope div > picture.section-bg-image').forEach((picture) => {
+    const wrapper = picture.parentElement;
+    wrapper.classList.add('section-bg-image-wrapper');
+    wrapper.parentElement.replaceWith(wrapper);
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -131,6 +156,7 @@ export function decorateMain(main) {
   fixDefaultImage(main);
   decorateBlocks(main);
   buildLayoutContainers(main);
+  decorateSectionBackgroundImage(main);
 }
 
 /**
