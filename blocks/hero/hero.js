@@ -100,19 +100,23 @@ function buildCardContent(block) {
  * @return {HTMLDivElement} the content wrapper
  */
 function buildContent(block, type) {
-  const wrapper = block.querySelector(':scope > div');
+  const wrapper = document.createElement('div');
   wrapper.classList.add('content-wrapper');
   switch (type) {
     case 'product': {
-      wrapper.replaceChildren(buildProductContent(block));
+      wrapper.append(buildProductContent(block));
       break;
     }
     case 'card': {
-      wrapper.replaceChildren(buildCardContent(block));
+      wrapper.append(buildCardContent(block));
       break;
     }
     default: {
-      wrapper.querySelector(':scope > div').classList.add('content');
+      const picture = block.querySelector('picture');
+      block.prepend(picture);
+      const content = block.querySelector(':scope > div > div');
+      content.classList.add('content');
+      wrapper.append(content);
       break;
     }
   }
