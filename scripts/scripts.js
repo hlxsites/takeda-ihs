@@ -25,6 +25,7 @@ export const BREAKPOINTS = {
 };
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
+
 async function decorateDisclaimerModal() {
   const main = document.querySelector('main');
   const isModalAccepted = document.cookie.match(/\shcpModalDismiss=1;?/) !== null || window.location.href.indexOf('?bypassModal') > -1 || window.hlx.lighthouse;
