@@ -28,7 +28,9 @@ export default async function decorate(block) {
         card.classList.add('no-icon');
       }
 
-      const link = document.createElement('div');
+      const link = document.createElement('a');
+      link.href = anchor.href;
+      link.title = anchor.title;
       link.classList.add('card-link');
       link.innerHTML = `<span>${anchor.textContent}</span>`;
 
@@ -37,7 +39,7 @@ export default async function decorate(block) {
       const tmp = anchor.parentElement;
       tmp.remove();
 
-      content.append(body);
+      content.append(body, link);
       card.append(content, link);
     });
   });
