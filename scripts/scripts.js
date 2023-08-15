@@ -30,8 +30,9 @@ async function decorateDisclaimerModal() {
   const isModalAccepted = document.cookie.match(/\shcpModalDismiss=1;?/) !== null || window.location.href.indexOf('?bypassModal') > -1;
   const shouldShowModal = !isModalAccepted || (document.location.href.indexOf('?showModal') > -1);
   if (shouldShowModal) {
-    loadCSS(`${window.hlx.codeBasePath}/blocks/disclaimer-modal/disclaimer-modal.css`);
+    await loadCSS(`${window.hlx.codeBasePath}/blocks/disclaimer-modal/disclaimer-modal.css`);
     const response = await fetch('/fragments/disclaimer-modal.plain.html');
+    document.body.style.overflowY = 'hidden';
     if (response.ok) {
       const html = await response.text();
       const tmp = document.createElement('div');
@@ -52,12 +53,13 @@ async function decorateDisclaimerModal() {
       disclaimerWrapper.className = 'disclaimer-modal-wrapper';
       disclaimerWrapper.appendChild(modal);
       disclaimerContainer.appendChild(disclaimerWrapper);
-      
+
       const acceptButn = modal.querySelector('.agree');
       acceptButn.addEventListener('click', () => {
         const CookieDate = new Date();
         CookieDate.setFullYear(CookieDate.getFullYear() + 5);
         document.cookie = `hcpModalDismiss=1;path=/;expires=${CookieDate.toUTCString()};`;
+        document.body.style.overflowY = null;
         disclaimerContainer.remove();
       });
       main.append(disclaimerContainer);
