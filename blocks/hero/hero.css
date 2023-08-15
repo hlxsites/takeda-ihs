@@ -23,3 +23,7 @@ main .section.hero-container > div {
 .block.hero.gray-background .image {
   background-color: var(--bright-gray);
 }
+
+.block.hero.quartz-background .image {
+  background-color: var(--quartz);
+}
