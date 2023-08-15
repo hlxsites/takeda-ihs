@@ -233,8 +233,11 @@ export default async function decorate(block) {
     nav.append(buildBrand());
     nav.append(hamburger);
     nav.append(sections);
-    nav.append(utility);
-
+    console.log(nav);
+    if (typeof utility !== 'undefined') {
+      console.log('here');
+      nav.append(utility);
+    }
     isDesktop.addEventListener('change', () => toggleMenu(nav, sections, isDesktop.matches));
     document.body.addEventListener('click', () => {
       toggleAllNavSections(sections);
