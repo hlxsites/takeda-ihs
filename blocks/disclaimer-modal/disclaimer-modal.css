@@ -71,6 +71,7 @@
 .disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .agree p:hover {
   background-color: #c00;
 }
+
 @media screen and (min-width: 600px) {
   .disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section {
     flex-direction: row;
