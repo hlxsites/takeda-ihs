@@ -6,6 +6,8 @@ main > .section.quote-banner-container {
 
 main > .section.quote-banner-container > .quote-banner-wrapper {
   padding: 0;
+  margin: 0;
+  max-width: unset;
 }
 
 /* End overides */
