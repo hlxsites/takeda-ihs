@@ -10,7 +10,8 @@ import {
   waitForLCP,
   loadBlocks,
   buildBlock,
-  loadCSS, readBlockConfig,
+  loadCSS,
+  readBlockConfig,
 } from './lib-franklin.js';
 
 import {
@@ -25,6 +26,47 @@ export const BREAKPOINTS = {
 
 const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
+async function decorateDisclaimerModal() {
+  const main = document.querySelector('main');
+  const isModalAccepted = document.cookie.match(/\s*hcpModalDismiss=1;?/) !== null || window.location.search.indexOf('bypassModal') > -1 || window.hlx.lighthouse;
+  const shouldShowModal = !isModalAccepted || (document.location.href.indexOf('?showModal') > -1);
+  if (shouldShowModal) {
+    await loadCSS(`${window.hlx.codeBasePath}/blocks/disclaimer-modal/disclaimer-modal.css`);
+    const response = await fetch('/fragments/disclaimer-modal.plain.html');
+    document.body.style.overflowY = 'hidden';
+    if (response.ok) {
+      const html = await response.text();
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      const modal = tmp.querySelector('.disclaimer-modal');
+      const config = readBlockConfig(modal);
+      modal.innerHTML = `
+        <div class="title"><h2>${config.title}</h2></div>
+          <div class="content"><p> ${config.content}</p></div>
+          <div class="button-section">
+          <div class="agree"><p> ${config.agree}</p></div>
+          <div class="leave"><a class="link" href=" ${config.link} "> <p>${config.leave} </p></a></div>
+        </div>
+      `;
+      const disclaimerContainer = document.createElement('div');
+      disclaimerContainer.className = 'disclaimer-modal-container';
+      const disclaimerWrapper = document.createElement('div');
+      disclaimerWrapper.className = 'disclaimer-modal-wrapper';
+      disclaimerWrapper.appendChild(modal);
+      disclaimerContainer.appendChild(disclaimerWrapper);
+
+      const acceptButn = modal.querySelector('.agree');
+      acceptButn.addEventListener('click', () => {
+        const CookieDate = new Date();
+        CookieDate.setFullYear(CookieDate.getFullYear() + 5);
+        document.cookie = `hcpModalDismiss=1;path=/;expires=${CookieDate.get()};`;
+        document.body.style.overflowY = null;
+        disclaimerContainer.remove();
+      });
+      main.append(disclaimerContainer);
+    }
+  }
+}
 /**
  * Converts paagraphs that start with a `<sup>` element, to a p.reference paragraph.
  * @param {HTMLElement} main
@@ -108,13 +150,6 @@ function fixDefaultImage(main) {
     picture.style.paddingBottom = `${ratio}%`;
     picture.parentElement.style.maxWidth = `${img.width}px`;
     picture.parentElement.style.margin = '0 auto 1.5em';
-  });
-
-  main.querySelectorAll(':scope .section.image-boxshadow .default-content-wrapper > p > picture').forEach((picture) => {
-    const p = picture.parentElement;
-    if (p.children.length === 1) {
-      p.classList.add('image');
-    }
   });
 }
 
@@ -244,6 +279,7 @@ function loadDelayed() {
 }
 
 async function loadPage() {
+  decorateDisclaimerModal();
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
