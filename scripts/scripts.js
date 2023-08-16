@@ -28,7 +28,7 @@ const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
 async function decorateDisclaimerModal() {
   const main = document.querySelector('main');
-  const isModalAccepted = document.cookie.match(/\s*hcpModalDismiss=1;?/) !== null || window.location.href.indexOf('?bypassModal') > -1 || window.hlx.lighthouse;
+  const isModalAccepted = document.cookie.match(/\s*hcpModalDismiss=1;?/) !== null || window.location.search.indexOf('bypassModal') > -1 || window.hlx.lighthouse;
   const shouldShowModal = !isModalAccepted || (document.location.href.indexOf('?showModal') > -1);
   if (shouldShowModal) {
     await loadCSS(`${window.hlx.codeBasePath}/blocks/disclaimer-modal/disclaimer-modal.css`);
