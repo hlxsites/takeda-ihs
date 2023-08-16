@@ -59,7 +59,7 @@ async function decorateDisclaimerModal() {
       acceptButn.addEventListener('click', () => {
         const CookieDate = new Date();
         CookieDate.setFullYear(CookieDate.getFullYear() + 5);
-        document.cookie = `hcpModalDismiss=1;path=/;expires=${CookieDate.get()};`;
+        document.cookie = `hcpModalDismiss=1;path=/;expires=${CookieDate.toUTCString()};`;
         document.body.style.overflowY = null;
         disclaimerContainer.remove();
       });
