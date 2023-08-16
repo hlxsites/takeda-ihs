@@ -61,7 +61,7 @@
   --blue: #003087;
   --black-olive: #3a3a3a;
   --black: black;
-  --cadet: #edeff0; /* gray-blue */
+  --cadet: #5B6770; /* gray-blue */
   --gray-gradient-light: #edeff0;
   --gray-gradient-dark: #9da8af; /* Gradient breakpoint is defined below */
 
@@ -304,6 +304,14 @@ main .section .default-content-wrapper > p > picture {
   width: 100%;
   margin: 0 auto;
 }
+
+main .section.image-boxshadow .default-content-wrapper > p.image {
+  padding: 32px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%)
+}
+
 
 main .section .default-content-wrapper > p > picture > img {
   position: absolute;
@@ -559,6 +567,7 @@ main .section.gray-gradient-background[data-background-image] {
     padding-bottom: 300px;
   }
 
+
   main > .section[data-background-image] > .section-bg-image-wrapper picture {
     height: 100%;
   }
@@ -580,6 +589,17 @@ main .section.gray-gradient-background[data-background-image] {
   main .section[data-layout] .default-content-wrapper p {
     font-size: var(--body-font-size-s);
   }
+
+  main .section.cadet-gradient-background[data-background-image] {
+    background: linear-gradient(
+        -180deg,
+        #5b6770 0%,
+        #edeff0 76%,
+        rgba(242 244 245 / 55%) 78%,
+        rgba(247 248 248 / 0%) 80%,
+        rgba(255 255 255 / 0%) 100%
+    );
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -587,9 +607,9 @@ main .section.gray-gradient-background[data-background-image] {
     background: linear-gradient(
         -180deg,
         #5b6770 0%,
-        #edeff0 78%,
-        rgba(242 244 245 / 55%) 80%,
-        rgba(247 248 248 / 0%) 82%,
+        #edeff0 68%,
+        rgba(242 244 245 / 55%) 70%,
+        rgba(247 248 248 / 0%) 72%,
         rgba(255 255 255 / 0%) 92%
     );
   }
@@ -615,4 +635,5 @@ main .section.gray-gradient-background[data-background-image] {
   main .section > div {
     padding: 0 40px;
   }
+
 }
