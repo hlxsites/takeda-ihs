@@ -27,3 +27,7 @@ main .section.hero-container > div {
 .block.hero.quartz-background .image {
   background-color: var(--quartz);
 }
+
+.block.hero.cadet-background .image {
+  background-color: var(--cadet);
+}

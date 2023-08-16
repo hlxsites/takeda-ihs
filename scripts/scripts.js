@@ -151,6 +151,13 @@ function fixDefaultImage(main) {
     picture.parentElement.style.maxWidth = `${img.width}px`;
     picture.parentElement.style.margin = '0 auto 1.5em';
   });
+
+  main.querySelectorAll(':scope .section.image-boxshadow .default-content-wrapper > p > picture').forEach((picture) => {
+    const p = picture.parentElement;
+    if (p.children.length === 1) {
+      p.classList.add('image');
+    }
+  });
 }
 
 /**
