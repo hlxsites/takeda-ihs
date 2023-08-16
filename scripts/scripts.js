@@ -28,7 +28,7 @@ const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 
 async function decorateDisclaimerModal() {
   const main = document.querySelector('main');
-  const isModalAccepted = document.cookie.match(/\shcpModalDismiss=1;?/) !== null || window.location.href.indexOf('?bypassModal') > -1 || window.hlx.lighthouse;
+  const isModalAccepted = document.cookie.match(/\s*hcpModalDismiss=1;?/) !== null || window.location.href.indexOf('?bypassModal') > -1 || window.hlx.lighthouse;
   const shouldShowModal = !isModalAccepted || (document.location.href.indexOf('?showModal') > -1);
   if (shouldShowModal) {
     await loadCSS(`${window.hlx.codeBasePath}/blocks/disclaimer-modal/disclaimer-modal.css`);
@@ -59,7 +59,7 @@ async function decorateDisclaimerModal() {
       acceptButn.addEventListener('click', () => {
         const CookieDate = new Date();
         CookieDate.setFullYear(CookieDate.getFullYear() + 5);
-        document.cookie = `hcpModalDismiss=1;path=/;expires=${CookieDate.toUTCString()};`;
+        document.cookie = `hcpModalDismiss=1;path=/;expires=${CookieDate.get()};`;
         document.body.style.overflowY = null;
         disclaimerContainer.remove();
       });
@@ -150,13 +150,6 @@ function fixDefaultImage(main) {
     picture.style.paddingBottom = `${ratio}%`;
     picture.parentElement.style.maxWidth = `${img.width}px`;
     picture.parentElement.style.margin = '0 auto 1.5em';
-  });
-
-  main.querySelectorAll(':scope .section.image-boxshadow .default-content-wrapper > p > picture').forEach((picture) => {
-    const p = picture.parentElement;
-    if (p.children.length === 1) {
-      p.classList.add('image');
-    }
   });
 }
 
