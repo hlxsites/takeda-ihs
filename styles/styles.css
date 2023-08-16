@@ -305,6 +305,14 @@ main .section .default-content-wrapper > p > picture {
   margin: 0 auto;
 }
 
+main .section.image-boxshadow .default-content-wrapper > p.image {
+  padding: 32px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%)
+}
+
+
 main .section .default-content-wrapper > p > picture > img {
   position: absolute;
   top: 0;
