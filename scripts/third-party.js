@@ -13,5 +13,7 @@ function createInlineScript(innerHTML, parent) {
 
 // eslint-disable-next-line import/prefer-default-export
 export function integrateMartech() {
-  createInlineScript(GTM_SCRIPT, document.body);
+  if (window.location.href.match(/^https?:\/\/(localhost|127.0.0.1)/) === null) {
+    createInlineScript(GTM_SCRIPT, document.body);
+  }
 }
