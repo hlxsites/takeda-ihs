@@ -68,7 +68,7 @@ async function decorateDisclaimerModal() {
   }
 }
 /**
- * Converts paagraphs that start with a `<sup>` element, to a p.reference paragraph.
+ * Converts paragraphs that start with a `<sup>` element, to a p.reference paragraph.
  * @param {HTMLElement} main
  */
 function updateRefParagraphs(main) {
