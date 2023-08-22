@@ -113,7 +113,8 @@
 }
 
 .block.hero.cuvitru .link .button-container a {
-  color: var(--cuvitru);
+  background-color: var(--cuvitru);
+  color: var(--white);
 }
 
 .block.hero.flexbumin .link .button-container a {
