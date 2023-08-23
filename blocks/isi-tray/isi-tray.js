@@ -59,7 +59,7 @@ export default async function decorate(block) {
 
   const initialBoxedIdx = keys.indexOf(keys.find((k) => k.match(/initial-boxed/i)));
   let initialBoxedContent;
-  if (initialBoxedIdx) {
+  if (initialBoxedIdx >= 0) {
     [, initialBoxedContent] = block.children[initialBoxedIdx].children;
     if (!initialBoxedContent.children.length) {
       const p = document.createElement('p');
@@ -70,7 +70,7 @@ export default async function decorate(block) {
 
   const fullBoxedIdx = keys.indexOf(keys.find((k) => k.match(/full-boxed/i)));
   let fullBoxedContent;
-  if (fullBoxedIdx) {
+  if (fullBoxedIdx >= 0) {
     [, fullBoxedContent] = block.children[fullBoxedIdx].children;
     if (!fullBoxedContent.children.length) {
       const p = document.createElement('p');
