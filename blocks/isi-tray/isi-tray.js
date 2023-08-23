@@ -112,7 +112,7 @@ export default async function decorate(block) {
         <button class="expand"><span>+</span></button>
       </div>
       <div class="${initialBoxedContent ? 'boxed-warning' : ''}">
-        ${initialBoxedContent ? initialBoxedContent.innerHTML : '<h5 class="upper">Contraindications</h5>' + contraContent.innerHTML}
+        ${initialBoxedContent ? initialBoxedContent.innerHTML : `<h5 class="upper">Contraindications</h5>${contraContent.innerHTML}`}
       </div>
     </div>
      <div class="collapsed-tray">
@@ -129,7 +129,7 @@ export default async function decorate(block) {
         <h5>Please expand for <a href="#indication" title="Indication">Indication</a> and <a href="#important-safety-information" title="Important Safety Information">Important Safety Information</a>.</h5>
         <h5 class="upper">Important Safey Information</h5>
         <div class="${fullBoxedContent ? 'boxed-warning' : ''}">
-          ${fullBoxedContent ? fullBoxedContent.innerHTML : '<h5 class="upper">Contraindications</h5>' + contraContent.innerHTML}
+          ${fullBoxedContent ? fullBoxedContent.innerHTML : `<h5 class="upper">Contraindications</h5>${contraContent.innerHTML}`}
         </div>
       </div>
     </div>
