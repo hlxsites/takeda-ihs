@@ -69,6 +69,18 @@ function buildCardContent(block) {
     contentDiv.append(content);
   }
 
+  if (config.content) {
+    const idx = keys.indexOf('content');
+    const body = block.children[idx].children[1];
+    if (!body.querySelector('p')) {
+      const p = document.createElement('p');
+      p.textContent = body.textContent;
+      body.replaceChildren(p);
+    }
+    body.classList.add('body');
+    contentDiv.append(body);
+  }
+
   if (config.resources) {
     const idx = keys.indexOf('resources');
     const content = block.children[idx].children[1];
@@ -82,7 +94,7 @@ function buildCardContent(block) {
       name.textContent = text;
       const download = document.createElement('p');
       download.classList.add('download');
-      download.textContent = a.textContent;
+      download.textContent = 'Download';
       wrapper.append(name, download);
       a.replaceChildren(wrapper);
     });
