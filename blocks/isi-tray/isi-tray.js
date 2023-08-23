@@ -112,7 +112,6 @@ export default async function decorate(block) {
         <button class="expand"><span>+</span></button>
       </div>
       <div class="${initialBoxedContent ? 'boxed-warning' : ''}">
-        ${initialBoxedContent ? '' : }
         ${initialBoxedContent ? initialBoxedContent.innerHTML : '<h5 class="upper">Contraindications</h5>' + contraContent.innerHTML}
       </div>
     </div>
