@@ -147,7 +147,6 @@ export default async function decorate(block) {
         <div class="${fullBoxedContent ? 'boxed-warning' : ''}">
           ${fullBoxedContent ? fullBoxedContent.innerHTML : ''}
         </div>
-        <h5 class="upper">Contraindications</h5>
         ${contraContent.innerHTML}
         ${safety.innerHTML}
       </div>
