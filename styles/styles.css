@@ -444,6 +444,20 @@ main .section.gray-gradient-background[data-background-image] {
   );
 }
 
+main .angled-inverted-background.section.hero-container > .hero-wrapper {
+  background-color: var(--gray-gradient-light);
+
+}
+
+main .section.angled-inverted-background.hero-container .hero {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+}
+
+main .section.inverted-gradient-background {
+  padding: 32px 0 0;
+  background: linear-gradient(-180deg, #edeff0 0%, #edeff0 41%, #9da8af 100%);
+}
+
 .angled-background,
 .small-angled-background,
 .large-angled-background {
@@ -526,6 +540,10 @@ main .section.gray-gradient-background[data-background-image] {
   :root {
     --nav-height: 75px;
   }
+
+  main .section.angled-inverted-background.hero-container .hero {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -543,6 +561,10 @@ main .section.gray-gradient-background[data-background-image] {
 
   main > .section[data-background-image] > .section-bg-image-wrapper > picture > img {
     object-position: unset;
+  }
+
+  main .section.angled-inverted-background.hero-container .hero {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
   }
 }
 
@@ -600,6 +622,10 @@ main .section.gray-gradient-background[data-background-image] {
         rgba(255 255 255 / 0%) 100%
     );
   }
+
+  main .section.angled-inverted-background.hero-container .hero {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -634,6 +660,10 @@ main .section.gray-gradient-background[data-background-image] {
 
   main .section > div {
     padding: 0 40px;
+  }
+
+  main .section.angled-inverted-background.hero-container .hero {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
   }
 
 }
