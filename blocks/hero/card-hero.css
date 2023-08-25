@@ -132,7 +132,7 @@
   }
 
   .hero.block.card .content-wrapper .content .resources ul > li {
-    flex-basis: calc(50% - 1em);
+    flex-basis: calc(38% - 1em);
   }
 
   .hero.block.card .content-wrapper .content .resources a.resource {
