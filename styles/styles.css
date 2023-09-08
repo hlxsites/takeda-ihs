@@ -53,10 +53,13 @@
   --bright-gray: #efefef;
   --medium-gray: #ddd;
   --gray: #979797;
+  --text-default: #333;
+  --text-strong: #1e1e23;
   --gray-box-shadow: rgb(0 0 0 / 20%);
   --silver: #d8d8d8;
   --quartz: #4c4948;
   --red: #e10;
+  --dark-red: #bd120a;
   --white: #fff;
   --blue: #003087;
   --black-olive: #3a3a3a;
@@ -223,18 +226,19 @@ span {
 
 p.button-container a {
   display: inline-block;
-  padding: 8px 20px;
+  padding: 10px 24px;
   font-weight: bold;
   line-height: var(--line-height-l);
+  font-size: var(--body-font-size-m);
   text-decoration: none;
-  color: var(--black);
-  background-color: var(--white);
-  border-radius: 4px;
-  box-shadow: 3px 3px 7px 1px rgba(0 0 0 / 20%);
+  color: var(--white);
+  background-color: var(--dark-red);
+  border-bottom-left-radius:20px;
+  /*box-shadow: 3px 3px 7px 1px rgba(0 0 0 / 20%);*/
 }
 
 p.button-container a:visited {
-  color: var(--black);
+  color: var(--white);
   text-decoration: none;
 }
 
