@@ -5,7 +5,7 @@
       "id": "library",
       "title": "Library",
       "environments": ["edit"],
-      "url": "/tools/sidekick/library.html",
+      "url": "https://phase-1b-test--takeda-ihs--hlxsites.hlx.page/tools/sidekick/library.html",
       "includePaths": ["**.docx**"]
     }
   ]
