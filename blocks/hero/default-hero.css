@@ -1,6 +1,6 @@
 
 .hero.block.default h1 {
-  color: var(--white);
+  color: var(--black-olive);
 }
 
 .hero.block.default .image {
@@ -18,7 +18,7 @@
   position: relative;
   height: 100%;
   width: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+  /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);*/
 }
 
 .hero.block.default .image picture img {
@@ -40,6 +40,11 @@
 
 .hero.block.default .content-wrapper .content {
   max-width: 75%;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  border-left: 8px solid red;
+  background-color: var(--white);
 }
 
 .hero.block.default .content-wrapper.no-image .content {
@@ -50,7 +55,7 @@
   display: flex;
   align-items: center;
   column-gap: 15px;
-  color: var(--red);
+  color: var(--black-olive);
 }
 
 .hero.block.default.red .content-wrapper.no-image .content h1 {
@@ -76,7 +81,7 @@
 .hero.block.default .content-wrapper .content p {
   font-size: var(--body-font-size-s);
   line-height: var(--line-height-s);
-  color: var(--white);
+  color: var(--black-olive);
 }
 
 .hero.block.default .content-wrapper.no-image .content p {
@@ -98,7 +103,7 @@
   }
 
   .hero.block.default .image picture {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+    /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);*/
   }
 
 }
@@ -123,7 +128,7 @@
   }
 
   .hero.block.default .content-wrapper .content p {
-    font-size: var(--body-font-size-xxl);
+    font-size: var(--body-font-size-m);
   }
 
   .hero.block.default .content-wrapper.no-image .content p {
