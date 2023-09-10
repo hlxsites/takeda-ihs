@@ -60,6 +60,7 @@
   --quartz: #4c4948;
   --red: #e10;
   --dark-red: #bd120a;
+  --hover-red: #891515;
   --white: #fff;
   --blue: #003087;
   --black-olive: #3a3a3a;
@@ -79,9 +80,14 @@
   --onepath: #00a9ec;
   --myigsource: #a1e1b3;
   --hello-programs: #808080;
+  --text-normal: #333;
+  --text-emph: #34373f;
 
   /* Font Colors */
-  --default-text-color: var(--black-olive);
+  --default-text-color: var(--text-normal);
+
+
+
 
   /* Fonts */
   --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
@@ -279,7 +285,22 @@ main .section.silver-background {
 main .section.quartz-background {
   background-color: var(--quartz);
 }
-
+main .section.content-bump-out .default-content-wrapper {
+  border:0;
+  max-width: 800px;
+  margin: -100px auto 0 auto;
+  display: table;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px 0px #0000008a;
+  padding: 50px;
+  position: relative;
+}
+main .section.content-bump-out .default-content-wrapper p:first-of-type{
+  color:red;
+  margin-top:8px;
+}
 main .section.quartz-background h1,
 main .section.quartz-background h2,
 main .section.quartz-background p,
@@ -326,6 +347,8 @@ main .section .default-content-wrapper > p > picture > img {
   object-fit: contain;
   object-position: center center;
 }
+
+
 
 main > .section[data-background-image] > .section-bg-image-wrapper {
   position: absolute;
@@ -385,6 +408,8 @@ main .section[data-layout]:not(.center) .layout-content-wrapper .default-content
   border-left: 3px solid var(--red);
 }
 
+
+
 main .section[data-layout="50/50"] .layout-content-wrapper > div.separator-wrapper {
   flex-basis: 100%;
   padding: 2em 0;
@@ -406,7 +431,6 @@ main > .section.full-width > div {
   margin: 0;
   max-width: var(--full-page-width);
 }
-
 
 main .section.cadet-gradient-background {
   background: linear-gradient(
