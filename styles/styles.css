@@ -287,19 +287,19 @@ main .section.quartz-background {
 }
 main .section.content-bump-out .default-content-wrapper {
   border:0;
-  max-width: 800px;
-  margin: -100px auto 0 auto;
+  max-width: 1000px;
+  margin: -80px auto 0 auto;
   display: table;
   width: 100%;
   text-align: center;
   background-color: #fff;
-  box-shadow: 0px 5px 10px 0px #0000008a;
-  padding: 50px;
+  /*box-shadow: 0px 5px 10px 0px #0000008a;*/
+  padding: 20px 50px;
   position: relative;
 }
 main .section.content-bump-out .default-content-wrapper p:first-of-type{
   color:red;
-  margin-top:8px;
+  margin-top:20px;
 }
 main .section.quartz-background h1,
 main .section.quartz-background h2,
@@ -405,7 +405,7 @@ main .section[data-layout] .layout-content-wrapper {
 
 main .section[data-layout]:not(.center) .layout-content-wrapper .default-content-wrapper {
   padding: 0 24px;
-  border-left: 3px solid var(--red);
+  /*border-left: 3px solid var(--red);*/
 }
 
 
