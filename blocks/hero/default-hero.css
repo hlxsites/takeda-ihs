@@ -3,6 +3,11 @@
   color: var(--black-olive);
 }
 
+.hero.block.default h1 em {
+  color: var(--red);
+  font-style: normal;
+}
+
 .hero.block.default .image {
   display: block;
   position: absolute;
@@ -143,9 +148,9 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1600px) {
   .hero.block.default .content-wrapper {
     padding: 120px 40px;
-    max-width: var(--normal-page-width);
+    max-width: var( --new-page-width);
   }
 }

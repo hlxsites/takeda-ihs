@@ -134,6 +134,7 @@
   --normal-page-width: 1200px;
   --wide-page-width: 1600px;
   --full-page-width: 100vw;
+  --new-page-width: 1200px;
 
   /* Gradient breakpoints */
   --gray-gradient-breakpoint: 41%;
@@ -273,6 +274,10 @@ main .section {
   padding: 32px 0;
   background-color: var(--white);
 }
+main .section.background {
+  padding: 32px 0;
+  z-index: 1000;
+}
 
 main .section.gray-background {
   background-color: var(--bright-gray);
@@ -293,9 +298,29 @@ main .section.content-bump-out .default-content-wrapper {
   width: 100%;
   text-align: center;
   background-color: #fff;
-  /*box-shadow: 0px 5px 10px 0px #0000008a;*/
   padding: 20px 50px;
   position: relative;
+}
+
+main .section.content-bump-out-section-hero .default-content-wrapper {
+  border:0;
+  max-width: 1000px;
+  margin: -175px auto 0 auto;
+  display: table;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px 50px;
+  position: relative;
+}
+
+main .section.content-bump-out-section-hero .default-content-wrapper p:first-of-type{
+  color:red;
+  margin-top:20px;
+}
+
+main .section.content-bump-out.section-background-image-container .default-content-wrapper{
+  border:4px dashed green;
 }
 main .section.content-bump-out .default-content-wrapper p:first-of-type{
   color:red;
