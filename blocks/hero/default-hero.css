@@ -55,7 +55,7 @@
   max-width: 75%;
   background-color: var(--white);
   border-left:10px solid var(--dark-red);
-  padding: 20px 20px;
+  padding: 20px;
 }
 
 .hero.block.default .content-wrapper.no-image .content {
@@ -154,6 +154,13 @@
 @media screen and (min-width: 1280px) {
   .hero.block.default .content-wrapper {
     padding: 80px 40px;
+    max-width: var(--normal-page-width);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .hero.block.default .content-wrapper {
+    padding: 120px 40px;
     max-width: var(--normal-page-width);
   }
 }
