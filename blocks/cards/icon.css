@@ -24,8 +24,8 @@
 
 .cards.icon.block .card span.icon {
   display: inline-block;
-  height: 43px;
-  width: 43px;
+  height: 120px;
+  width: 200px;
 }
 
 .cards.icon.block .card span.icon svg {

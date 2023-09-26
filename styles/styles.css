@@ -271,21 +271,14 @@ main .section.content-bump-out .default-content-wrapper {
   margin: -80px auto 0 ;
   display: table;
   width: 100%;
-  text-align: center@media screen and (min-width: 1600px) {
-  .hero.block.default .content-wrapper {
-    padding: 150px 40px;
-    max-width: var( --new-page-width);
-  }
-};
+  text-align: center;
   background-color: #fff;
   padding: 20px 50px;
   position: relative;
-  max-width: 1200px;
 }
 
 main .section .default-content-wrapper.button-wrapper {
   margin:   0 auto;
-  border:4px dashed green;
   max-width: 1200px;
   text-align: right;
 }
