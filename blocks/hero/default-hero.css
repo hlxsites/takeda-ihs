@@ -1,6 +1,10 @@
 
 .hero.block.default h1 {
-  color: var(--white);
+  color: var(--black-olive);
+}
+.hero.block.default h1 em {
+  color: var(--red);
+  font-style: normal;
 }
 
 .hero.block.default .image {
@@ -18,7 +22,6 @@
   position: relative;
   height: 100%;
   width: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
 }
 
 .hero.block.default .image picture img {
@@ -38,8 +41,21 @@
   margin: 0 20px;
 }
 
+.hero.block.default .content-wrapper .button-container {
+  text-align: left;
+}
+
+.hero.block.default .content-wrapper .button-container span.icon {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
 .hero.block.default .content-wrapper .content {
   max-width: 75%;
+  background-color: var(--white);
+  border-left:10px solid var(--dark-red);
+  padding: 20px 20px;
 }
 
 .hero.block.default .content-wrapper.no-image .content {
@@ -72,11 +88,10 @@
   color: var(--quartz);
 }
 
-
 .hero.block.default .content-wrapper .content p {
   font-size: var(--body-font-size-s);
   line-height: var(--line-height-s);
-  color: var(--white);
+  color: var(--black-olive);
 }
 
 .hero.block.default .content-wrapper.no-image .content p {
@@ -85,7 +100,6 @@
   line-height: var(--line-height-m);
   color: var(--quartz);
 }
-
 
 .hero.block.default.light-image .content-wrapper .content p {
   color: var(--quartz);
@@ -96,11 +110,6 @@
     max-width: 550px;
     margin: 0 auto;
   }
-
-  .hero.block.default .image picture {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
-  }
-
 }
 
 @media screen and (min-width: 900px) {
@@ -124,6 +133,10 @@
 
   .hero.block.default .content-wrapper .content p {
     font-size: var(--body-font-size-xxl);
+  }
+
+  .hero.block.default .content-wrapper .content p:nth-of-type(1) {
+   display:none;
   }
 
   .hero.block.default .content-wrapper.no-image .content p {

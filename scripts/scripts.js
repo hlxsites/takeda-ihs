@@ -29,7 +29,6 @@ const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 function decorateSectionGradientTopper(main) {
   const section = main.querySelector('.section.inverted-gradient-background');
   const hasInvertedGradient = section !== null;
-
   if (!hasInvertedGradient) return;
 
   const hero = main.querySelector('& > .section.hero-container');
@@ -132,9 +131,10 @@ function buildSectionBackgroundImage(main) {
     const keys = Object.keys(readBlockConfig(metadata));
     const bgIdx = keys.indexOf(keys.find((k) => k.match(/background-image/i)));
     if (bgIdx >= 0) {
+
       const picture = metadata.children[bgIdx].children[1];
       picture.querySelector('picture').classList.add('section-bg-image');
-      metadata.parentElement.append(picture.cloneNode(true));
+      metadata.parentElement.prepend(picture.cloneNode(true));
     }
   });
 }
@@ -176,7 +176,6 @@ export function buildLayoutContainers(main) {
     container.append(...section.children);
     if (title) section.prepend(title);
     section.append(container);
-
     section.querySelectorAll('.separator-wrapper').forEach((sep) => {
       sep.innerHTML = '<hr/>';
     });
@@ -190,8 +189,15 @@ export function buildLayoutContainers(main) {
 function decorateSectionBackgroundImage(main) {
   main.querySelectorAll(':scope div > picture.section-bg-image').forEach((picture) => {
     const wrapper = picture.parentElement;
-    wrapper.classList.add('section-bg-image-wrapper');
+    wrapper.classList.add('bg-image-wrapper');
     wrapper.parentElement.replaceWith(wrapper);
+  });
+}
+function decorateSectionButtonRow(main) {
+  main.querySelectorAll(':scope div > .default-content-wrapper > p.button-container').forEach((buttonContainer) => {
+    console.log(buttonContainer);
+    const wrapper = buttonContainer.parentElement;
+    wrapper.classList.add('button-wrapper');
   });
 }
 
@@ -209,6 +215,7 @@ export function decorateMain(main) {
   fixDefaultImage(main);
   decorateBlocks(main);
   buildLayoutContainers(main);
+  decorateSectionButtonRow(main);
   decorateSectionBackgroundImage(main);
   decorateSectionGradientTopper(main);
 }
