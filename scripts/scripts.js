@@ -189,7 +189,7 @@ export function buildLayoutContainers(main) {
 function decorateSectionBackgroundImage(main) {
   main.querySelectorAll(':scope div > picture.section-bg-image').forEach((picture) => {
     const wrapper = picture.parentElement;
-    wrapper.classList.add('bg-image-wrapper');
+    wrapper.classList.add('section-bg-image-wrapper');
     wrapper.parentElement.replaceWith(wrapper);
   });
 }

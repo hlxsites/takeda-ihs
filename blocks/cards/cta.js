@@ -6,6 +6,13 @@ import { decorateIcons } from '../../scripts/lib-franklin.js';
  */
 export default async function decorate(block) {
   const cards = [...block.children];
+  const ButtonContainer = block.querySelector('p.button-container');
+  ButtonContainer.classList.remove('button-container');
+  const anchor = block.querySelector('a');
+
+  anchor.classList.remove('button', 'primary');
+  anchor.classList.add('top-link');
+  console.log(anchor);
   const ul = document.createElement('ul');
   ul.classList.add(`cards-${cards.length}`);
   cards.forEach((card) => {

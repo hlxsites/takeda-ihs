@@ -29,6 +29,10 @@ main > .section.contact-us-container > .contact-us-wrapper {
   padding: 56px 16px;
 }
 
+.contact-us.block .top-row .content {
+  padding: 40px 60px;
+}
+
 .contact-us.block p {
   margin-bottom: 0;
   font-weight: var(--font-weight-semibold);
@@ -57,9 +61,9 @@ main > .section.contact-us-container > .contact-us-wrapper {
   .contact-us.block .content {
     max-width: 1000px;
     text-align: center;
-    background-color: grey;
+    background-color: var(--gray-neutral-80);
     border-radius: 0 0 10px 10px;
-    padding: 20px ;
+    padding: 40px;
   }
 
 }

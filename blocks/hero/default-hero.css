@@ -160,7 +160,7 @@
 
 @media screen and (min-width: 1600px) {
   .hero.block.default .content-wrapper {
-    padding: 120px 40px;
+    padding: 160px 0;
     max-width: var(--normal-page-width);
   }
 }

@@ -53,7 +53,9 @@
   --bright-gray: #efefef;
   --medium-gray: #ddd;
   --gray: #979797;
-  --gray-cool-80: #34373F;
+  --gray-neutral-70: #454545;
+  --gray-neutral-80: #333;
+  --gray-neutral-90: #1e1e23;
   --gray-box-shadow: rgb(0 0 0 / 20%);
   --silver: #d8d8d8;
   --quartz: #4c4948;
@@ -108,7 +110,7 @@
   --heading-font-size-xs: 20px;
   --heading-font-size-s: 24px;
   --heading-font-size-m: 26px;
-  --heading-font-size-l: 30px;
+  --heading-font-size-l: 32px;
   --heading-font-size-xl: 42px;
 
   /* Nav Height */
@@ -172,7 +174,7 @@ h1 {
 
 h2 {
   margin-bottom: 12px;
-  font-size: var(--heading-font-size-s);
+  font-size: var(--heading-font-size-l);
   line-height: var(--line-height-s);
 }
 
@@ -268,13 +270,17 @@ main .section {
 main .section.content-bump-out .default-content-wrapper {
   border:0;
   max-width: 1200px;
-  margin: -80px auto 0 ;
+  margin: -60px auto 0 ;
   display: table;
   width: 100%;
-  text-align: center;
+  text-align: left;
   background-color: #fff;
   padding: 20px 50px;
   position: relative;
+}
+
+main .section.content-bump-out.content-center .default-content-wrapper  {
+  text-align: center;
 }
 
 main .section .default-content-wrapper.button-wrapper {
@@ -282,10 +288,12 @@ main .section .default-content-wrapper.button-wrapper {
   max-width: 1200px;
   text-align: right;
 }
+
 main .section.default-content-wrapper .button-container {
   text-align: right;
   max-width: 1200px;
 }
+
 main .section.default-content-wrapper {
   text-align: right;
   max-width: 1200px;
@@ -356,7 +364,6 @@ main .section .bg-image-wrapper {
   text-align: center;
 }
 main > .section[data-background-image] > .section-bg-image-wrapper {
-  position: absolute;
   margin: 0;
   padding: 0;
   bottom: 0;
@@ -374,7 +381,6 @@ main > .section[data-background-image] > .section-bg-image-wrapper picture {
 }
 
 main > .section[data-background-image] > .section-bg-image-wrapper picture img {
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -597,6 +603,12 @@ main .section.inverted-gradient-background {
 
   main > .section[data-background-image] > .section-bg-image-wrapper > picture > img {
     object-position: unset;
+  }
+  main > .section > .default-content-wrapper > picture > img {
+    object-position: unset;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   main .section.angled-inverted-background.hero-container .hero {
