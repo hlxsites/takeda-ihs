@@ -205,7 +205,7 @@ ul, li {
 }
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.2em;
 }
 
 p.reference {
@@ -227,7 +227,7 @@ span {
 
 p.button-container a {
   display: inline-block;
-  padding: 10px 24px;
+  padding: 10px 42px;
   font-weight: bold;
   line-height: var(--line-height-l);
   text-decoration: none;
@@ -275,12 +275,13 @@ main .section.content-bump-out .default-content-wrapper {
   width: 100%;
   text-align: left;
   background-color: #fff;
-  padding: 20px 50px;
+  padding: 12px 50px;
   position: relative;
 }
 
 main .section.content-bump-out.content-center .default-content-wrapper  {
   text-align: center;
+  border-radius: 40px;
 }
 
 main .section .default-content-wrapper.button-wrapper {
@@ -348,7 +349,7 @@ main .section.image-boxshadow .default-content-wrapper > p.image {
 
 main .section.content-bump-out .default-content-wrapper p:first-of-type {
   color: red;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 main .section .default-content-wrapper > p > picture > img {
   position: absolute;
@@ -615,6 +616,7 @@ main .section.inverted-gradient-background {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
   }
 }
+
 
 @media screen and (min-width: 900px) {
   h1 {

@@ -24,7 +24,6 @@ function buildProductContent(block) {
   const keys = Object.keys(config);
   const contentDiv = document.createElement('div');
   contentDiv.classList.add('content');
-
   ['logo', 'title', 'references', 'link'].forEach((part) => {
     const idx = keys.indexOf(part);
     if (idx >= 0) {

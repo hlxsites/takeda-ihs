@@ -11,20 +11,20 @@
 }
 
 .cards.cta.block > ul > li div {
-  padding-top: 30px;
+  padding-top: 0;
   border-top: 3px solid white;
 }
 
 .cards.cta.block > ul > li.onepath div {
-  border-color: var(--onepath);
+  /* border-color: var(--onepath); */
 }
 
 .cards.cta.block > ul > li.myigsource div {
-  border-color: var(--myigsource);
+  /* border-color: var(--myigsource); */
 }
 
 .cards.cta.block > ul > li.hello-programs div {
-  border-color: var(--hello-programs);
+  /* border-color: var(--hello-programs); */
 }
 
 .cards.cta.block button.primary.top-link {
@@ -34,6 +34,25 @@
   line-height: var(--line-height-l);
   text-decoration: none;
   border: 0;
+}
+
+.cards.cta.block .card-body .top-section {
+  position: relative;
+  margin-left:12px;
+}
+
+.cards.cta.block .card-body p.link-container span.icon svg  {
+  position: relative;
+  height: 25px;
+  width: 25px;
+}
+
+.cards.cta.block .card-body p.link-container span.icon {
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 96%;
+  top: -5px;
 }
 
 .cards.cta.block > ul > li div p.image {
@@ -60,17 +79,22 @@
 
 .cards.cta.block > ul > li h3 {
   font-size: var(--heading-font-size-xs);
-  text-align: center;
+  text-align: left;
   color: var(--gray);
-  margin: 12px auto;
+  margin: 12px 12px;
 }
 
 .cards.cta.block > ul > li p {
   text-align: center;
 }
 
+.cards.cta.block > ul > li p.link-container {
+  text-align: left;
+}
+
 .cards.cta.block > ul > li p.button-container {
-  margin: 18px auto;
+  margin: 12px 12px;
+  text-align: left;
 }
 
 @media screen and (min-width: 900px) {
@@ -95,6 +119,18 @@
 
   .cards.cta.block > ul > li div p.image {
     width: 100%;
+  }
+
+  .cards.cta.block .card-body {
+    margin-right:20px;
+  }
+
+  .cards.cta.block .card-body p.link-container span.icon {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 96%;
+    top: -5px;
   }
 }
 

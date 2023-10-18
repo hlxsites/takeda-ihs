@@ -31,6 +31,10 @@ main > .section.contact-us-container > .contact-us-wrapper {
 
 .contact-us.block .top-row .content {
   padding: 40px 60px;
+  max-width: 1000px;
+  text-align: center;
+  background-color: var(--gray-neutral-80);
+  border-radius: 0 0 10px 10px;
 }
 
 .contact-us.block p {
