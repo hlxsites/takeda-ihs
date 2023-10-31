@@ -3,7 +3,7 @@ Takeda Integrated Health Systems
 
 ## Environments
 
--Preview: https://main--takeda-ihs--hlxsites.hlx.page/
+-Preview: https://phase-1b-test--takeda-ihs--hlxsites.hlx.page
 
 -Live: https://main--takeda-ihs--hlxsites.hlx.live/
 
