@@ -81,7 +81,7 @@
   font-size: var(--heading-font-size-xs);
   text-align: left;
   color: var(--gray);
-  margin: 12px 12px;
+  margin: 12px;
 }
 
 .cards.cta.block > ul > li p {
@@ -93,7 +93,7 @@
 }
 
 .cards.cta.block > ul > li p.button-container {
-  margin: 12px 12px;
+  margin: 12px;
   text-align: left;
 }
 

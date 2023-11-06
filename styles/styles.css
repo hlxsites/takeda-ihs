@@ -238,7 +238,6 @@ p.button-container a {
 }
 
 p.button-container a:visited {
-  /* color: var(--black);*/
   text-decoration: none;
 }
 
@@ -277,6 +276,10 @@ main .section.content-bump-out .default-content-wrapper {
   background-color: #fff;
   padding: 12px 50px;
   position: relative;
+}
+
+main .section.center .default-content-wrapper {
+  text-align: center;
 }
 
 main .section.content-bump-out.content-center .default-content-wrapper  {
@@ -326,11 +329,6 @@ main .section.red-title h2 {
 
 main .section[data-background-image] {
   position: relative;
-  /*padding-bottom: 200px;*/
-}
-
-main .section.center .default-content-wrapper {
-  text-align: center;
 }
 
 main .section .default-content-wrapper > p > picture {
@@ -351,6 +349,7 @@ main .section.content-bump-out .default-content-wrapper p:first-of-type {
   color: red;
   margin-top: 16px;
 }
+
 main .section .default-content-wrapper > p > picture > img {
   position: absolute;
   top: 0;
@@ -364,6 +363,7 @@ main .section .default-content-wrapper > p > picture > img {
 main .section .bg-image-wrapper {
   text-align: center;
 }
+
 main > .section[data-background-image] > .section-bg-image-wrapper {
   margin: 0;
   padding: 0;
@@ -437,7 +437,6 @@ main .section[data-layout="50/50"] .layout-content-wrapper > div.separator-wrapp
 main > .section > div {
   padding: 0 16px;
   margin: 0 auto;
-  /* max-width: var(--normal-page-width); */
 }
 
 main > .section.full-width > div {
@@ -598,18 +597,20 @@ main .section.inverted-gradient-background {
     padding: 0 24px;
   }
 
+  main > .section > .default-content-wrapper > picture > img {
+    object-position: unset;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
   main > .section[data-background-image] > .section-bg-image-wrapper {
     height: 20%;
   }
 
   main > .section[data-background-image] > .section-bg-image-wrapper > picture > img {
     object-position: unset;
-  }
-  main > .section > .default-content-wrapper > picture > img {
-    object-position: unset;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   main .section.angled-inverted-background.hero-container .hero {
@@ -706,10 +707,6 @@ main .section.inverted-gradient-background {
     align-items: center;
     gap: 1em;
     grid-template-columns: 3fr 1fr;
-  }
-
-  main .section > div {
-    /*padding: 0 40px;*/
   }
 
   main .section.angled-inverted-background.hero-container .hero {

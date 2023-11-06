@@ -10,8 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-import { generateFormRendition } from '../../../../../blocks/form/form.js';
-
 /* eslint-disable no-undef */
 
 const FORM_IMPORTER = 'https://g7ory75qdb.execute-api.ap-south-1.amazonaws.com/vega-services/importer';

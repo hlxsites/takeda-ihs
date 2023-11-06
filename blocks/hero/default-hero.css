@@ -2,6 +2,7 @@
 .hero.block.default h1 {
   color: var(--black-olive);
 }
+
 .hero.block.default h1 em {
   color: var(--red);
   font-style: normal;

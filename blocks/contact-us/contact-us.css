@@ -22,7 +22,7 @@ main > .section.contact-us-container > .contact-us-wrapper {
 }
 
 .contact-us.block .button-container {
-  padding: 20px  0 20px 0;
+  padding: 20px;
 }
 
 .contact-us.block > div {
@@ -49,6 +49,7 @@ main > .section.contact-us-container > .contact-us-wrapper {
   color: var(--white);
   font-size: var(--heading-font-size-l);
 }
+
 @media screen and (min-width: 600px) {
   .contact-us.block {
     height: 460px;

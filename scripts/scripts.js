@@ -131,7 +131,6 @@ function buildSectionBackgroundImage(main) {
     const keys = Object.keys(readBlockConfig(metadata));
     const bgIdx = keys.indexOf(keys.find((k) => k.match(/background-image/i)));
     if (bgIdx >= 0) {
-
       const picture = metadata.children[bgIdx].children[1];
       picture.querySelector('picture').classList.add('section-bg-image');
       metadata.parentElement.prepend(picture.cloneNode(true));
@@ -195,7 +194,6 @@ function decorateSectionBackgroundImage(main) {
 }
 function decorateSectionButtonRow(main) {
   main.querySelectorAll(':scope div > .default-content-wrapper > p.button-container').forEach((buttonContainer) => {
-    console.log(buttonContainer);
     const wrapper = buttonContainer.parentElement;
     wrapper.classList.add('button-wrapper');
   });
