@@ -42,5 +42,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "estraverse": "^4.3.0"
   }
 }
