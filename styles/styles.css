@@ -227,8 +227,8 @@ span {
 
 p.button-container a {
   display: inline-block;
-  padding: 10px 42px;
-  font-weight: bold;
+  padding: 8px 42px;
+  font-weight: normal;
   line-height: var(--line-height-l);
   text-decoration: none;
   color: var(--white);
@@ -284,13 +284,13 @@ main .section.center .default-content-wrapper {
 
 main .section.content-bump-out.content-center .default-content-wrapper  {
   text-align: center;
-  border-radius: 40px;
+
 }
 
 main .section .default-content-wrapper.button-wrapper {
   margin:   0 auto;
   max-width: 1200px;
-  text-align: right;
+  text-align: center;
 }
 
 main .section.default-content-wrapper .button-container {
@@ -633,7 +633,7 @@ main .section.inverted-gradient-background {
   }
 
   main > .section > div {
-    padding: 0 90px;
+    padding: 20px 90px;
   }
 
   main > .section[data-background-image] {
