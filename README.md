@@ -3,9 +3,9 @@ Takeda Integrated Health Systems
 
 ## Environments
 
--Preview: https://remove-hardcoded-text-from-hero-card--takeda-ihs--hlxsites.hlx.page/
+-Preview: https://main--takeda-ihs--hlxsites.hlx.page/
 
--Live: https://remove-hardcoded-text-from-hero-card--takeda-ihs--hlxsites.hlx.live/
+-Live: https://main--takeda-ihs--hlxsites.hlx.live/
 
 ## Installation
 
