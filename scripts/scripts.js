@@ -52,9 +52,12 @@ async function decorateDisclaimerModal() {
       const modal = tmp.querySelector('.disclaimer-modal');
       const config = readBlockConfig(modal);
       modal.innerHTML = `
+        <div class="close-button">
+          <span class="close">X</span>
+        </div>
         <div class="title"><h2>${config.title}</h2></div>
-          <div class="content"><p> ${config.content}</p></div>
-          <div class="button-section">
+        <div class="content"><p> ${config.content}</p></div>
+        <div class="button-section">
           <div class="agree"><p> ${config.agree}</p></div>
           <div class="leave"><a class="link" href=" ${config.link} "> <p>${config.leave} </p></a></div>
         </div>
@@ -73,6 +76,9 @@ async function decorateDisclaimerModal() {
         document.cookie = `hcpModalDismiss=1;path=/;expires=${CookieDate.toUTCString()};`;
         document.body.style.overflowY = null;
         disclaimerContainer.remove();
+      });
+      modal.querySelector('.close').addEventListener('click', function() {
+        document.querySelector('.disclaimer-modal-container').style.display = 'none';
       });
       main.append(disclaimerContainer);
     }

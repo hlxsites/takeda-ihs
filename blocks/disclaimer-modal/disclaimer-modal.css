@@ -1,19 +1,16 @@
 .disclaimer-modal-container {
-  background-color: var(--black);
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1000;
-  font-family: var(--body-font-family);
-  padding: 0;
 }
 
 .disclaimer-modal-container .disclaimer-modal-wrapper {
-  position: relative;
   display: flex;
-  /*background-color: var(--black);*/
   width: 100%;
   height: 100%;
   align-items: center;
@@ -28,16 +25,30 @@
   border-radius: 10px;
 }
 
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .close-button {
+  text-align: end;
+  padding: 10px;
+}
+
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .close-button .close {
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+  font-size: x-large;
+}
+
 .disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .title h2 {
   color: var(--text-emph);
   padding: 20px 20px 10px 40px;
   margin: 0;
   background-color: var(--white);
+  text-align: center;
 }
 
 .disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .content p {
   padding: 5px 38px 20px 40px;
   margin: 0;
+  text-align: center;
 }
 
 .disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section {
@@ -53,24 +64,32 @@
   margin-bottom: 0;
 }
 
-.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .agree p {
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .agree,
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .leave
+{
+  width: 100%;
+  background-color: var(--dark-red);
+  border-radius: 0 0 0 16px;
+  overflow: hidden;
+}
+
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .leave a {
+  text-decoration: none;
+}
+
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .agree p,
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .leave a p {
   cursor: pointer;
   font-weight: var(--font-weight-semibold);
   text-align: center;
-  background-color: var(--dark-red);
   color: var(--white);
   padding: 12px 18px;
-  border-radius: 4px;
   box-shadow: 3px 3px 7px 1px #0003;
 }
 
-.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .leave a p {
-  text-decoration: underline;
-  color: var(--black);
-  font-weight: var(--font-weight-semibold);
-}
-
-.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .agree p:hover {
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .agree:hover,
+.disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal .button-section .leave:hover
+{
   background-color: #c00;
 }
 
