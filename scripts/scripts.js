@@ -77,8 +77,9 @@ async function decorateDisclaimerModal() {
         document.body.style.overflowY = null;
         disclaimerContainer.remove();
       });
-      modal.querySelector('.close').addEventListener('click', function() {
+      modal.querySelector('.close').addEventListener('click', () => {
         document.querySelector('.disclaimer-modal-container').style.display = 'none';
+        document.body.style.overflow = 'auto';
       });
       main.append(disclaimerContainer);
     }
@@ -137,7 +138,6 @@ function buildSectionBackgroundImage(main) {
   main.querySelectorAll(':scope > div div.section-metadata').forEach((metadata) => {
     const keys = Object.keys(readBlockConfig(metadata));
     const bgIdx = keys.indexOf(keys.find((k) => k.match(/background-image/i)));
-    console.log(bgIdx);
     if (bgIdx >= 0) {
       const picture = metadata.children[bgIdx].children[1];
       picture.querySelector('picture').classList.add('section-bg-image');
@@ -168,7 +168,6 @@ function fixDefaultImage(main) {
     picture.style.paddingBottom = `${ratio}%`;
     picture.parentElement.style.maxWidth = `${img.width}px`;
     picture.parentElement.style.margin = '0 auto 1.5em';
-    console.log(picture);
   });
 }
 
@@ -200,7 +199,6 @@ function decorateSectionBackgroundImage(main) {
     const wrapper = picture.parentElement;
     wrapper.classList.add('section-bg-image-wrapper');
     wrapper.parentElement.replaceWith(wrapper);
-    console.log(picture);
   });
 }
 

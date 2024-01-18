@@ -23,6 +23,6 @@ export default async function decorate(block) {
     image.height = '36';
 
     decorateIcons(footer);
-    block.append(footer);
+    block.innerHTML = footer.outerHTML;
   }
 }

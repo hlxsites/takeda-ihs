@@ -6,23 +6,51 @@ footer {
 }
 
 
-footer .footer {
+footer .footer.block {
   max-width: 1200px;
   margin: auto;
 }
 
-.footer.block a {
-  color: inherit;
+footer .footer.block > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.footer.block p > picture {
+footer .footer.block > div > div:has(p>a) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.footer.block picture {
   display: inline-block;
   position: relative;
   height: 36px;
   width: auto;
 }
 
+.footer.block a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer.block a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
 .footer.block > div > div > p {
-  font-size: var(--body-font-size-xxs);
+  font-size: var(--body-font-size-xs);
   margin-bottom: 14px;
+  text-align: left;
+}
+
+@media screen and (min-width: 600px) {
+  footer .footer.block > div > div:has(p>a){
+    flex-direction: row;
+    gap: 30px;
+  }
 }
