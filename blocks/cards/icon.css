@@ -13,14 +13,14 @@
   padding: 20px 30px;
   flex-direction: column;
   background-color: white;
-  /*box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%);*/
-  /*border-radius: 10px;*/
   border-right: 1px solid grey;
   text-align: center;
 }
+
 .cards.icon.block .card:last-of-type {
   border:0;
 }
+
 .cards.icon.block .card span.icon {
   display: inline-block;
   height: 43px;

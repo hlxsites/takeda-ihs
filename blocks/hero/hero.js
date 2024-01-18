@@ -38,7 +38,6 @@ function buildProductContent(block) {
       content.replaceChildren(p);
       contentDiv.append(content);
       const a = content.querySelector('a');
-      console.log(a);
       if (a) {
         a.setAttribute('target', '_blank');
       }
