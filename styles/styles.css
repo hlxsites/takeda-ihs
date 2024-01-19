@@ -263,7 +263,11 @@ body.gray-gradient > main {
 }
 
 main .section {
-  padding: 0;
+
+}
+main .section .cards-container{
+
+  padding: 12px 0;
 }
 
 main .section.content-bump-out .default-content-wrapper {
@@ -698,6 +702,7 @@ main .disclaimer-modal-container {
 
   main > .section[data-background-image] > .section-bg-image-wrapper {
     height: 30%;
+    padding-top: 40px;
   }
 
   main .section[data-layout="25/75"] .layout-content-wrapper {
