@@ -636,7 +636,7 @@ main .disclaimer-modal-container {
   }
 
   main > .section > div {
-    padding: 20px 90px;
+    padding: 0 90px;
   }
 
   main > .section[data-background-image] {
