@@ -17,6 +17,7 @@
 }
 
 .disclaimer-modal-container .disclaimer-modal-wrapper .disclaimer-modal {
+  margin-top:-400px;
   width: 100%;
   background-color: var(--white);
   border: 4px solid #fff;
