@@ -18,6 +18,12 @@ footer .footer.block > div {
   gap: 20px;
 }
 
+footer .footer.block > div > div:has(picture) {
+  border-bottom: 2px solid var(--silver);
+  padding-bottom: 20px;
+  width: 100%;
+}
+
 footer .footer.block > div > div:has(p>a) {
   display: flex;
   flex-direction: column;
@@ -26,8 +32,7 @@ footer .footer.block > div > div:has(p>a) {
 }
 
 .footer.block picture {
-  display: inline-block;
-  position: relative;
+  display: flex;
   height: 36px;
   width: auto;
 }
