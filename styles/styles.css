@@ -388,6 +388,8 @@ main > .section[data-background-image] > .section-bg-image-wrapper picture img {
   width: 100%;
   object-fit: cover;
   object-position: center;
+  /* temporary until there are right sized images */
+  height: 600px;
 }
 
 main .section .default-content-wrapper span.icon {
