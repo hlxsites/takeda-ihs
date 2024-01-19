@@ -348,6 +348,7 @@ main .section.image-boxshadow .default-content-wrapper > p.image {
 main .section.content-bump-out .default-content-wrapper p:first-of-type {
   color: red;
   margin-top: 16px;
+  text-align: center;
 }
 
 main .section .default-content-wrapper > p > picture > img {
