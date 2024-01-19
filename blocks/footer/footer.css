@@ -16,8 +16,7 @@ footer .footer {
 }
 
 .footer.block p > picture {
-  display: inline-block;
-  position: relative;
+  display:flex;
   height: 36px;
   width: auto;
 }

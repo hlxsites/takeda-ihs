@@ -51,6 +51,9 @@ async function decorateDisclaimerModal() {
       const modal = tmp.querySelector('.disclaimer-modal');
       const config = readBlockConfig(modal);
       modal.innerHTML = `
+        <div class="close-button">
+          <span class="close"></span>
+        </div>
         <div class="title"><h2>${config.title}</h2></div>
           <div class="content"><p> ${config.content}</p></div>
           <div class="button-section">
@@ -59,7 +62,7 @@ async function decorateDisclaimerModal() {
         </div>
       `;
       const disclaimerContainer = document.createElement('div');
-      disclaimerContainer.className = 'disclaimer-modal-container';
+      disclaimerContainer.className = 'section disclaimer-modal-container';
       const disclaimerWrapper = document.createElement('div');
       disclaimerWrapper.className = 'disclaimer-modal-wrapper';
       disclaimerWrapper.appendChild(modal);
@@ -74,6 +77,9 @@ async function decorateDisclaimerModal() {
         disclaimerContainer.remove();
       });
       main.append(disclaimerContainer);
+      modal.querySelector('.close').addEventListener('click', function() {
+        document.querySelector('.disclaimer-modal-container').style.display = 'none';
+      });
     }
   }
 }

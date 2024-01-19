@@ -577,7 +577,9 @@ main .section.inverted-gradient-background {
   height: 1px;
   overflow: hidden;
 }
-
+main .disclaimer-modal-container {
+  background-color: rgb(0 0 0 / 50%);
+}
 @media screen and (max-width: 299px) {
   :root {
     --nav-height: 75px;
