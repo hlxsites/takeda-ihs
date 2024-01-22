@@ -263,11 +263,10 @@ body.gray-gradient > main {
 }
 
 main .section {
-
+padding:12px 0;
 }
-main .section .cards-container{
-
-  padding: 12px 0;
+ main .section.cards-container {
+   padding-bottom: 20px;
 }
 
 main .section.content-bump-out .default-content-wrapper {
@@ -282,13 +281,8 @@ main .section.content-bump-out .default-content-wrapper {
   position: relative;
 }
 
-main .section.center .default-content-wrapper {
-  text-align: center;
-}
-
 main .section.content-bump-out.content-center .default-content-wrapper  {
   text-align: center;
-
 }
 
 main .section .default-content-wrapper.button-wrapper {
