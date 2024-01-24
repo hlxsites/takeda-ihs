@@ -50,26 +50,32 @@
 
 :root {
   /* Colors */
+  /* grey color palette */
   --bright-gray: #efefef;
   --medium-gray: #ddd;
   --gray: #979797;
   --gray-neutral-70: #454545;
+  --brand--secondary-subtle: #edf2fa;
   --gray-neutral-80: #333;
   --gray-neutral-90: #1e1e23;
   --gray-box-shadow: rgb(0 0 0 / 20%);
+  --gray-gradient-light: #edeff0;
+  --gray-gradient-dark: #9da8af; /* Gradient breakpoint is defined below */
+
+  /* general colors */
   --silver: #d8d8d8;
   --quartz: #4c4948;
-  --red: #e10;
+  --red: #e1242a;
   --dark-red: #BD120A;
   --white: #fff;
   --blue: #003087;
   --black-olive: #3a3a3a;
   --black: black;
   --cadet: #5B6770; /* gray-blue */
-  --gray-gradient-light: #edeff0;
-  --gray-gradient-dark: #9da8af; /* Gradient breakpoint is defined below */
+
 
   /* Brand Colors */
+  --takeda-red-50: #e1242a;
   --gammagard-liq: #003087;
   --gammagard-sd: #35a4d8;
   --hyqvia: #500778;
@@ -272,7 +278,7 @@ padding:12px 0;
 main .section.content-bump-out .default-content-wrapper {
   border:0;
   max-width: 1200px;
-  margin: -60px auto 0 ;
+  margin: -81px auto 0 ;
   display: table;
   width: 100%;
   text-align: left;
@@ -632,7 +638,7 @@ main .disclaimer-modal-container {
   }
 
   p {
-    font-size: var(--body-font-size-l);
+    font-size: var(--body-font-size-s);
   }
 
   main > .section > div {
