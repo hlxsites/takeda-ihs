@@ -4,6 +4,7 @@
   background-color: var(--brand--secondary-subtle);
 
 }
+
 .block.floating-images > div {
   display: flex;
   flex-direction: column-reverse;
