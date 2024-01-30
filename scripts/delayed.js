@@ -11,6 +11,3 @@ const loadAdobeDTM = async () => {
 };
 
 await loadAdobeDTM();
-
-
-<script src="https://assets.adobedtm.com/8fee56b0a165/0dcea4176083/launch-868c1997ca51-development.min.js" async></script>
