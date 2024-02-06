@@ -205,6 +205,16 @@ function decorateSectionButtonRow(main) {
   });
 }
 
+function decorateSectionIDs(main) {
+  main.querySelectorAll(':scope .section').forEach((section) => {
+    const id = section.getAttribute('data-id');
+    if (id) {
+      section.id = id.toLowerCase().replaceAll(' ', '-');
+    }
+  });
+
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -222,6 +232,7 @@ export function decorateMain(main) {
   decorateSectionButtonRow(main);
   decorateSectionBackgroundImage(main);
   decorateSectionGradientTopper(main);
+  decorateSectionIDs(main);
 }
 
 /**
