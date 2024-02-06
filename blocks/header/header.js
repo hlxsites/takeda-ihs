@@ -7,6 +7,7 @@ import {
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
 function setAttributes(element, attributes) {
+  // eslint-disable-next-line
   for (const key in attributes) {
     element.setAttribute(key, attributes[key]);
   }
@@ -205,7 +206,7 @@ export default async function decorate(block) {
     // Add a link to the Author guide, if anywhere in the Author Guide
     if (window.location.pathname.startsWith('/author-guide')) {
       const li = document.createElement('li');
-      li.innerHTML = '<a href=' / author - guide / '>Author Guide</a>';
+      li.innerHTML = '<a href="/author-guide/">Author Guide</a>';
       utility.querySelector('ul').prepend(li);
     }
   }

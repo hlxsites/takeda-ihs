@@ -77,7 +77,7 @@ async function decorateDisclaimerModal() {
         disclaimerContainer.remove();
       });
       main.append(disclaimerContainer);
-      modal.querySelector('.close').addEventListener('click', function() {
+      modal.querySelector('.close').addEventListener('click', () => {
         document.querySelector('.disclaimer-modal-container').style.display = 'none';
       });
     }
@@ -212,7 +212,6 @@ function decorateSectionIDs(main) {
       section.id = id.toLowerCase().replaceAll(' ', '-');
     }
   });
-
 }
 
 /**
