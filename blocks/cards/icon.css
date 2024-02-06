@@ -54,21 +54,18 @@
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-s);
 }
-@media screen and (min-width: 600px) {
-  .cards.icon.block .card {
-
-  }
-}
 
 @media screen and (min-width: 900px) {
   .cards.icon.block .row {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .cards.icon.block .card {
     border-right: 1px solid grey;
     border-bottom:0;
 
   }
+
   main .section[data-layout] .cards.icon.block .row {
     grid-template-columns: 1fr;
   }
@@ -79,7 +76,5 @@
   main .section[data-layout] .cards.icon.block .row {
     grid-template-columns: repeat(3, 1fr);
   }
-  .cards.icon.block .card {
 
-  }
 }
