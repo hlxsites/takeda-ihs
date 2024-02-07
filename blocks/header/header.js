@@ -3,6 +3,7 @@ import {
   decorateIcons,
   decorateSections,
 } from '../../scripts/lib-franklin.js';
+import { createElemWithClass } from '../../scripts/utils.js';
 
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
@@ -11,12 +12,6 @@ function setAttributes(element, attributes) {
   for (const key in attributes) {
     element.setAttribute(key, attributes[key]);
   }
-}
-
-function createElemWithClass(type, ...classNames) {
-  const elem = document.createElement(type);
-  elem.classList.add(...classNames);
-  return elem;
 }
 
 function toggleAllNavSections(sections, expanded = false) {
