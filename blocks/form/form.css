@@ -247,7 +247,7 @@ main .form-file-wrapper .file-description button {
 
 @media (min-width: 768px) {
     :root {
-        --form-width: 740px;
+        --form-width: 800px;
     }
 
     main .form button {
@@ -257,7 +257,7 @@ main .form-file-wrapper .file-description button {
 
 @media (min-width: 1200px) {
     :root {
-        --form-width: 990px;
+        --form-width: 1200px;
     }
 }
 
