@@ -58,7 +58,7 @@
   --gray-neutral-90: #1e1e23;
   --gray-box-shadow: rgb(0 0 0 / 20%);
   --gray-gradient-light: #edeff0;
-  --gray-gradient-dark: #9da8af; 
+  --gray-gradient-dark: #9da8af;
 
   /* general colors */
   --silver: #d8d8d8;
@@ -255,6 +255,15 @@ body.appear {
 
 header {
   height: var(--nav-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+
+main {
+  padding-top: var(--nav-height);
 }
 
 body.gray-gradient > main {
@@ -391,7 +400,7 @@ main > .section[data-background-image] > .section-bg-image-wrapper picture img {
   width: 100%;
   object-fit: cover;
   object-position: center;
-  
+
   /* temporary until there are right sized images */
   height: 600px;
 }

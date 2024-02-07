@@ -32,19 +32,16 @@ function constructPayload(form) {
 }
 
 async function submissionFailure(error, form) {
-  alert(error); // TODO define error mechansim
   form.setAttribute('data-submitting', 'false');
   form.querySelector('button[type="submit"]').disabled = false;
 }
 
 async function prepareRequest(form, transformer) {
   const { payload } = constructPayload(form);
-  console.log(payload);
   const headers = {
     'Content-Type': 'application/json',
   };
   const body = JSON.stringify({ data: payload });
-  console.log(body);
   const url = form.dataset.submit || form.dataset.action;
   if (typeof transformer === 'function') {
     return transformer({ headers, body, url }, form);
@@ -61,7 +58,6 @@ async function submitForm(form, transformer) {
       headers,
       body,
     });
-    console.log(response);
     if (response.ok) {
       /* window.location.href = form.dataset?.redirect || 'thankyou'; */
     } else {
@@ -336,7 +332,6 @@ async function fetchData(url) {
 async function fetchForm(pathname) {
   // get the main form
   const jsonData = await fetchData(pathname);
-  console.log(jsonData);
   return jsonData;
 }
 
@@ -379,7 +374,6 @@ async function createForm(formURL) {
 
 export default async function decorate(block) {
   const formLink = block.querySelector('a[href$=".json"]');
-  console.log(formLink);
   if (formLink) {
     const form = await createForm(formLink.href);
     formLink.replaceWith(form);

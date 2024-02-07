@@ -13,7 +13,6 @@
   gap: 24px;
 }
 
-
 .cards.icon.block .card {
   display: flex;
   padding-right:20px;
@@ -52,7 +51,6 @@
 
 .cards.icon.block .card h3 {
   margin-bottom: 1em;
-  mar
   font-size: var(--heading-font-size-xs);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-s);
@@ -72,11 +70,13 @@
   .cards.icon.block .row {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .cards.icon.block .card {
     border-right: 1px solid grey;
     border-bottom:0;
 
   }
+
   main .section[data-layout] .cards.icon.block .row {
     grid-template-columns: 1fr;
   }
@@ -87,7 +87,5 @@
   main .section[data-layout] .cards.icon.block .row {
     grid-template-columns: repeat(3, 1fr);
   }
-  .cards.icon.block .card {
 
-  }
 }
