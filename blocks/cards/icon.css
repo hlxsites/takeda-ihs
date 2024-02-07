@@ -16,7 +16,8 @@
 
 .cards.icon.block .card {
   display: flex;
-  padding: 20px 30px;
+  padding-right:20px;
+  margin:20px 0;
   flex-direction: column;
   background-color: white;
   text-align: center;
@@ -27,6 +28,7 @@
   display: inline-block;
   height: 70px;
   width: 70px;
+  margin-bottom:1em;
 }
 
 .cards.icon.block .card .button-container  span.icon {
@@ -50,9 +52,15 @@
 
 .cards.icon.block .card h3 {
   margin-bottom: 1em;
+  mar
   font-size: var(--heading-font-size-xs);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-s);
+}
+
+.cards.icon.block .card  p {
+  margin-bottom:0;
+
 }
 @media screen and (min-width: 600px) {
   .cards.icon.block .card {
