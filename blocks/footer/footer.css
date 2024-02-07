@@ -1,8 +1,8 @@
 footer {
   margin: 0;
-  padding: 2rem;
+  padding: 0 2rem 2rem;
   text-align: center;
-  background-color: var(--bright-gray);
+  background: linear-gradient(to top, var(--bright-gray) 75%, white 0%);
 }
 
 footer .footer.block {
