@@ -86,7 +86,7 @@
   --hello-programs: #808080;
 
   /* Font Colors */
-  --default-text-color: var(--black-olive);
+  --default-text-color: var(--gray-neutral-80);
 
   /* Fonts */
   --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
