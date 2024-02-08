@@ -285,13 +285,13 @@ main .section.cards-container {
 
 main .section.content-bump-out .default-content-wrapper {
   border:0;
-  max-width: 1040px;
+  max-width: 1030px;
   margin: -81px auto 0 ;
   display: table;
   width: 100%;
   text-align: left;
   background-color: #fff;
-  padding: 12px 50px;
+  padding: 12px 91px;
   position: relative;
 }
 
@@ -657,7 +657,7 @@ main .disclaimer-modal-container {
   }
 
   main > .section[data-background-image] {
-    /* padding-bottom: 300px; */
+    padding-bottom: 81px;
   }
 
 

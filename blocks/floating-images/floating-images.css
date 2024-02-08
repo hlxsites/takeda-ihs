@@ -55,7 +55,7 @@
 @media screen and (min-width: 600px) {
   .block.floating-images > div {
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     padding:20px 0;
   }
 
