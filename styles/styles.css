@@ -610,7 +610,7 @@ main .disclaimer-modal-container {
 
 @media screen and (min-width: 600px) {
   :root {
-    --nav-height: 125px;
+    --nav-height: 80px;
   }
 
   main > .section > div {
