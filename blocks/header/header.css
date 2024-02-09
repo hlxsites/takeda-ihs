@@ -86,7 +86,7 @@
   margin: 0;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 48px;
 }
 
 .header.block .nav-sections > ul > li > ul {
@@ -161,7 +161,7 @@
       "logo sections contact-us" 75px
       ". . hamburger" min-content
       / min-content 1fr min-content;
-      padding: 20px 90px;
+      padding: 0 90px;
   }
 
   .header.block .nav-hamburger {
