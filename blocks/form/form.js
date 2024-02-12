@@ -9,6 +9,7 @@ import GoogleReCaptcha from './integrations/recaptcha.js';
 
 import fileDecorate from './file.js';
 import DocBaseFormToAF from './transform.js';
+import handleSubmit from './submit.js';
 
 export const DELAY_MS = 0;
 let captchaField;
@@ -351,6 +352,10 @@ export async function createForm(formDef, data) {
       afModule.loadRuleEngine(formDef, form, captcha, generateFormRendition, data);
     }, DELAY_MS);
   }
+
+  form.addEventListener('submit', (event) => {
+    handleSubmit(event, form);
+  });
 
   return form;
 }
