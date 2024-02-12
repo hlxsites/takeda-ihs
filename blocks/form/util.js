@@ -195,3 +195,7 @@ export function checkValidation(fieldElement) {
     updateOrCreateInvalidMsg(fieldElement, '');
   }
 }
+
+export function isDocumentBasedForm(formDef) {
+  return formDef?.[':type'] === 'sheet' && formDef?.data;
+}

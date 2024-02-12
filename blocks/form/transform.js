@@ -1,4 +1,7 @@
 /* eslint-disable no-param-reassign */
+
+import { getId } from './util.js';
+
 /* eslint-disable class-methods-use-this */
 const PROPERTY = 'property';
 
@@ -110,6 +113,13 @@ export default class DocBaseFormToAF {
         }
       }
     });
+
+    formDef.items = formDef.items.map((fd) => ({
+      ...fd,
+      id: fd.id || getId(fd.name),
+      value: fd.Value || '',
+    }));
+
     return formDef;
   }
 

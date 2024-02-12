@@ -355,13 +355,10 @@ export async function createForm(formDef, data) {
   return form;
 }
 
-function isDocumentBasedForm(formDef) {
-  return formDef?.[':type'] === 'sheet' && formDef?.data;
-}
-
 export default async function decorate(block) {
   let container = block.querySelector('a[href$=".json"]');
-  let formDef, pathname;
+  let formDef;
+  let pathname;
   if (container) {
     ({ pathname } = new URL(container.href));
     formDef = await fetchForm(pathname);
@@ -374,19 +371,11 @@ export default async function decorate(block) {
     }
   }
   if (formDef) {
-    if (isDocumentBasedForm(formDef)) {
-      const { data } = formDef;
-      const transform = new DocBaseFormToAF();
-      const afFormDef = transform.transform(formDef);
-      const form = await createForm(afFormDef, data);
-      form.dataset.action = pathname?.split('.json')[0];;
-      container.replaceWith(form);
-    } else {
-      afModule = await import('./rules/index.js');
-      if (afModule && afModule.initAdaptiveForm) {
-        const form = await afModule.initAdaptiveForm(formDef, createForm);
-        container.replaceWith(form);
-      }
-    }
+    const { data } = formDef;
+    const transform = new DocBaseFormToAF();
+    const afFormDef = transform.transform(formDef);
+    const form = await createForm(afFormDef, data);
+    form.dataset.action = pathname?.split('.json')[0];
+    container.replaceWith(form);
   }
 }
