@@ -361,9 +361,9 @@ function isDocumentBasedForm(formDef) {
 
 export default async function decorate(block) {
   let container = block.querySelector('a[href$=".json"]');
-  let formDef;
+  let formDef, pathname;
   if (container) {
-    const { pathname } = new URL(container.href);
+    ({ pathname } = new URL(container.href));
     formDef = await fetchForm(pathname);
   } else {
     container = block.querySelector('pre');
@@ -379,6 +379,7 @@ export default async function decorate(block) {
       const transform = new DocBaseFormToAF();
       const afFormDef = transform.transform(formDef);
       const form = await createForm(afFormDef, data);
+      form.dataset.action = pathname?.split('.json')[0];;
       container.replaceWith(form);
     } else {
       afModule = await import('./rules/index.js');
