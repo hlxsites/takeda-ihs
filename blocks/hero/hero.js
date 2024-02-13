@@ -79,7 +79,10 @@ function buildCardContent(block) {
       const name = document.createElement('p');
       name.classList.add('name');
       name.textContent = text;
-      wrapper.append(name);
+      const download = document.createElement('p');
+      download.classList.add('download');
+      download.textContent = 'Download';
+      wrapper.append(name, download);
       a.replaceChildren(wrapper);
     });
 
