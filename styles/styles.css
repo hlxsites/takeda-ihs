@@ -126,7 +126,7 @@
   --heading-font-size-xl: 42px;
 
   /* Nav Height */
-  --nav-height: 100px;
+  --nav-height: 65px;
 
   /* Line heights */
   --line-height-xs: 1.15em;
@@ -618,7 +618,7 @@ main .disclaimer-modal-container {
 
 @media screen and (min-width: 600px) {
   :root {
-    --nav-height: 80px;
+    --nav-height: 65px;
   }
 
   main > .section > div {

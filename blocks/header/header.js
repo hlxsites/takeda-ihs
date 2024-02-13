@@ -16,7 +16,7 @@ function setAttributes(element, attributes) {
 
 function toggleAllNavSections(sections, expanded = false) {
   sections
-    .querySelectorAll('.nav-sections > ul > li.nav-drop')
+    .querySelectorAll('.nav-sections > ul > li.top-nav')
     .forEach((section) => {
       setAttributes(section, {
         'aria-expanded': expanded,
@@ -83,65 +83,65 @@ function buildSections(sections) {
   const expander = document.createElement('span');
   expander.classList.add('icon', 'icon-chevron-down');
 
-  sections.querySelectorAll(':scope > ul > li').forEach((section) => {
-    const active = section.querySelector('a');
+  sections.querySelectorAll(':scope > ul > li').forEach((topmenu) => {
+    topmenu.classList.add('top-nav');
+    const active = topmenu.querySelector('a');
     if (active) {
       const url = new URL(active.href);
       if (window.location.pathname === url.pathname) {
-        section.classList.add('active');
+        topmenu.classList.add('active');
       }
     }
 
-    const submenu = section.querySelector('ul');
+    const submenu = topmenu.querySelector('ul');
     if (submenu) {
-      const anchor = section.querySelector('a');
-      anchor.append(expander.cloneNode());
-      section.classList.add('nav-drop');
+      const topanchor = topmenu.querySelector('a');
+      topanchor.append(expander.cloneNode());
 
       const submenuLinks = submenu.querySelectorAll('li > a');
-      const isCurrentPath = Array.from(submenuLinks).some((link) => {
-        const isMatch = window.location.pathname === new URL(link.href).pathname
-        && link.hash === window.location.hash;
+      const isCurrentPath = Array.from(submenuLinks).some((subanchor) => {
+        const isMatch = window.location.pathname === new URL(subanchor.href).pathname
+        && subanchor.hash === window.location.hash;
         if (isMatch) {
-          link.parentElement.classList.add('active');
-          link.href = link.hash;
+          subanchor.parentElement.classList.add('active');
+          subanchor.href = subanchor.hash;
         }
         return isMatch;
       });
-      section.setAttribute('aria-expanded', isCurrentPath ? 'true' : 'false');
+      topmenu.setAttribute('aria-expanded', isCurrentPath ? 'true' : 'false');
 
-      submenuLinks.forEach((link) => {
-        if (window.location.pathname === new URL(link.href).pathname) {
-          link.href = link.hash;
+      submenuLinks.forEach((subanchor) => {
+        subanchor.parentElement.classList.add('sub-nav');
+        if (window.location.pathname === new URL(subanchor.href).pathname) {
+          subanchor.href = subanchor.hash;
         }
-        link.addEventListener('click', (e) => {
+        subanchor.addEventListener('click', (e) => {
           // remove active class from all links
           submenuLinks.forEach((l) => l.parentElement.classList.remove('active'));
-          if (link.hash && window.location.pathname === new URL(link.href).pathname) {
-            link.parentElement.classList.add('active');
+          if (subanchor.hash && window.location.pathname === new URL(subanchor.href).pathname) {
+            subanchor.parentElement.classList.add('active');
             e.stopPropagation();
+            toggleMenu(document.getElementById('nav'), sections, false);
           }
         });
       });
 
-      anchor.setAttribute('tabindex', '0');
-      anchor.setAttribute('role', 'button');
-      anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const expanded = section.getAttribute('aria-expanded') === 'true';
-        toggleAllNavSections(sections);
+      topanchor.setAttribute('tabindex', '0');
+      topanchor.setAttribute('role', 'button');
+      topanchor.addEventListener('click', (e) => {
         if (!isDesktop.matches) {
-          section.setAttribute('aria-expanded', !expanded);
-        } else {
-          section.setAttribute('aria-expanded', true);
-        }
-        const all = section.querySelector('.show-all');
-        if (all) {
-          all.classList.remove('hide');
-        }
-        if (e.pointerType !== 'mouse') {
-          section.setAttribute('data-touch-click', 'true');
+          e.preventDefault();
+          e.stopPropagation();
+          const expanded = topmenu.getAttribute('aria-expanded') === 'true';
+          toggleAllNavSections(sections);
+          topmenu.setAttribute('aria-expanded', !expanded);
+          const all = topmenu.querySelector('.show-all');
+          if (all) {
+            all.classList.remove('hide');
+          }
+          if (e.pointerType !== 'mouse') {
+            topmenu.setAttribute('data-touch-click', 'true');
+          }
         }
       });
     }
