@@ -52,7 +52,7 @@
   --bright-gray: #efefef;
   --medium-gray: #ddd;
   --gray: #979797;
-  --gray-neutral-70: #454545;
+  --gray-neutral-70: #333333;
   --brand--secondary-subtle: #edf2fa;
   --gray-neutral-80: #333;
   --gray-neutral-90: #1e1e23;
@@ -88,8 +88,16 @@
   /* Font Colors */
   --default-text-color: var(--gray-neutral-80);
 
+  @font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/GothamSSm-Book_Web.woff2') format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+  }
+
   /* Fonts */
-  --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
+  --font-family-opensans: 'Gotham', 'Gotham Fallback', 'Arial', sans-serif;
   --body-font-family: var(--font-family-opensans);
   --heading-font-family: var(--font-family-opensans);
 
@@ -114,7 +122,7 @@
   --heading-font-size-xs: 20px;
   --heading-font-size-s: 24px;
   --heading-font-size-m: 26px;
-  --heading-font-size-l: 32px;
+  --heading-font-size-l: 36px;
   --heading-font-size-xl: 42px;
 
   /* Nav Height */
@@ -167,7 +175,7 @@ sub {
 h1, h2, h3 {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-bold);
-  color: var(--black);
+  color: var(--gray-neutral-80);
 }
 
 h1 {
@@ -713,7 +721,6 @@ main .disclaimer-modal-container {
 
   main > .section[data-background-image] > .section-bg-image-wrapper {
     height: 30%;
-    padding-top: 40px;
   }
 
   main .section[data-layout="25/75"] .layout-content-wrapper {
