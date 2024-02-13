@@ -1,5 +1,3 @@
-import { checkValidation } from './util.js';
-
 function submitSuccess(e, form) {
   const { payload } = e;
   if (payload?.body?.redirectUrl) {

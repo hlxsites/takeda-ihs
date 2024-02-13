@@ -11,7 +11,7 @@
     --form-font-size-xs: 16px;
     --form-background-color: var(--background-color-primary);
     --form-padding: 0;
-    --form-columns: 1;
+    --form-columns: 12;
     --form-field-horz-gap: 40px;
     --form-field-vert-gap: 20px;
     --form-invalid-border-color: #ff5f3f;
@@ -50,6 +50,8 @@
     --form-wizard-background-color: #f2f2f2;
     --form-wizard-border-color: #757575;
     --form-wizard-number-color: var(--button-primary-color);
+    --form-max-width: 100%;
+    --form-grid-gap: 0 30px;
 }
 
 form output {
@@ -78,20 +80,29 @@ main .form > div:not(:first-child) {
 }
 
 main .form form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
-    align-items: start;
+    display: grid;
+    grid-template-columns: repeat(var(--form-columns), minmax(0, 1fr));
+    gap: var(--form-grid-gap);
+    padding: var(--form-padding);
+    max-width: var(--form-max-width);
 }
 
 main .form form fieldset {
+    display: grid;
+    align-content: flex-start;
+    gap: var(--form-fieldset-grid-gap);
+    grid-template-columns: repeat(var(--form-fieldset-columns), minmax(0, 1fr));
     border: var(--form-fieldset-border);
-    margin: var(--form-fieldset-marign);
-    width: 100%;
+    margin: var(--form-fieldset-margin);
+    padding: var(--form-fieldset-padding);
 }
 
 main .form form fieldset fieldset {
     padding: 0;
+}
+
+main .form form .field-wrapper {
+    grid-column: span 12;
 }
 
 main .form .field-description {
@@ -388,6 +399,50 @@ main .wizard  .current-wizard-step.field-wrapper:last-of-type ~ .form-wizard-but
     main .wizard.left .form-wizard-button-wrapper {
         margin-top: -160px;
         margin-left:  var(--wizard-left-titlebar-width);
+    }
+
+    main .form form .field-wrapper.col-11 {
+        grid-column: span 11;
+    }
+
+    main .form form .field-wrapper.col-10 {
+        grid-column: span 10;
+    }
+
+    main .form form .field-wrapper.col-9 {
+        grid-column: span 9;
+    }
+
+    main .form form .field-wrapper.col-8 {
+        grid-column: span 8;
+    }
+
+    main .form form .field-wrapper.col-7 {
+        grid-column: span 7;
+    }
+
+    main .form form .field-wrapper.col-6 {
+        grid-column: span 6;
+    }
+
+    main .form form .field-wrapper.col-5 {
+        grid-column: span 5;
+    }
+
+    main .form form .field-wrapper.col-4 {
+        grid-column: span 4;
+    }
+
+    main .form form .field-wrapper.col-3 {
+        grid-column: span 3;
+    }
+
+    main .form form .field-wrapper.col-2 {
+        grid-column: span 2;
+    }
+
+    main .form form .field-wrapper.col-1 {
+        grid-column: span 1;
     }
 }
 

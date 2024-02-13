@@ -100,7 +100,8 @@ export default class DocBaseFormToAF {
         const source = Object.fromEntries(Object.entries(item).filter(([_, v]) => (v != null && v !== '')));
         let field = { ...source, ...this.#initField() };
         this.#transformFieldNames(field);
-
+        field.id = field.id || getId(field.name);
+        field.value = field.Value || '';
         if (this.#isProperty(field)) {
           this.#handleProperites(formDef, field);
         } else {
@@ -113,12 +114,6 @@ export default class DocBaseFormToAF {
         }
       }
     });
-
-    formDef.items = formDef.items.map((fd) => ({
-      ...fd,
-      id: fd.id || getId(fd.name),
-      value: fd.Value || '',
-    }));
 
     return formDef;
   }
