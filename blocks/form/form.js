@@ -329,6 +329,22 @@ export async function generateFormRendition(panel, container) {
   await applyLayout(panel, container);
 }
 
+function enableValidation(form) {
+  form.querySelectorAll('input,textarea,select').forEach((input) => {
+    input.addEventListener('invalid', (event) => {
+      checkValidation(event.target);
+    });
+  });
+
+  form.addEventListener('change', (event) => {
+    const { validity } = event.target;
+    if (validity.valid) {
+      // only to remove the error message
+      checkValidation(event.target);
+    }
+  });
+}
+
 export async function createForm(formDef, data) {
   const { action: formPath } = formDef;
   const form = document.createElement('form');
@@ -343,9 +359,7 @@ export async function createForm(formDef, data) {
     captcha.loadCaptcha(form);
   }
 
-  form.addEventListener('change', (event) => {
-    checkValidation(event.target);
-  });
+  enableValidation(form);
 
   if (afModule) {
     window.setTimeout(async () => {

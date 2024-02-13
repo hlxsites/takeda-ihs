@@ -17,6 +17,7 @@ function submitSuccess(e, form) {
     }
     form.reset();
   }
+  form.querySelector('button[type="submit"]').disabled = false;
 }
 
 function submitFailure(error, form) {
@@ -94,10 +95,6 @@ export default async function handleSubmit(e, form) {
       await submitForm(form);
     }
   } else {
-    const fields = form.querySelectorAll(':invalid:not(fieldset)');
-    fields.forEach((field) => {
-      checkValidation(field);
-    });
     const firstInvalidEl = form.querySelector(':invalid:not(fieldset)');
     if (firstInvalidEl) {
       firstInvalidEl.focus();
