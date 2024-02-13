@@ -29,7 +29,6 @@ const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
 function decorateSectionGradientTopper(main) {
   const section = main.querySelector('.section.inverted-gradient-background');
   const hasInvertedGradient = section !== null;
-
   if (!hasInvertedGradient) return;
 
   const hero = main.querySelector('& > .section.hero-container');
@@ -52,6 +51,9 @@ async function decorateDisclaimerModal() {
       const modal = tmp.querySelector('.disclaimer-modal');
       const config = readBlockConfig(modal);
       modal.innerHTML = `
+        <div class="close-button">
+          <span class="close"></span>
+        </div>
         <div class="title"><h2>${config.title}</h2></div>
           <div class="content"><p> ${config.content}</p></div>
           <div class="button-section">
@@ -60,7 +62,7 @@ async function decorateDisclaimerModal() {
         </div>
       `;
       const disclaimerContainer = document.createElement('div');
-      disclaimerContainer.className = 'disclaimer-modal-container';
+      disclaimerContainer.className = 'section disclaimer-modal-container';
       const disclaimerWrapper = document.createElement('div');
       disclaimerWrapper.className = 'disclaimer-modal-wrapper';
       disclaimerWrapper.appendChild(modal);
@@ -75,6 +77,9 @@ async function decorateDisclaimerModal() {
         disclaimerContainer.remove();
       });
       main.append(disclaimerContainer);
+      modal.querySelector('.close').addEventListener('click', () => {
+        document.querySelector('.disclaimer-modal-container').style.display = 'none';
+      });
     }
   }
 }
@@ -134,7 +139,7 @@ function buildSectionBackgroundImage(main) {
     if (bgIdx >= 0) {
       const picture = metadata.children[bgIdx].children[1];
       picture.querySelector('picture').classList.add('section-bg-image');
-      metadata.parentElement.append(picture.cloneNode(true));
+      metadata.parentElement.prepend(picture.cloneNode(true));
     }
   });
 }
@@ -176,7 +181,6 @@ export function buildLayoutContainers(main) {
     container.append(...section.children);
     if (title) section.prepend(title);
     section.append(container);
-
     section.querySelectorAll('.separator-wrapper').forEach((sep) => {
       sep.innerHTML = '<hr/>';
     });
@@ -194,6 +198,21 @@ function decorateSectionBackgroundImage(main) {
     wrapper.parentElement.replaceWith(wrapper);
   });
 }
+function decorateSectionButtonRow(main) {
+  main.querySelectorAll(':scope div > .default-content-wrapper > p.button-container').forEach((buttonContainer) => {
+    const wrapper = buttonContainer.parentElement;
+    wrapper.classList.add('button-wrapper');
+  });
+}
+
+function decorateSectionIDs(main) {
+  main.querySelectorAll(':scope .section').forEach((section) => {
+    const id = section.getAttribute('data-id');
+    if (id) {
+      section.id = id.toLowerCase().replaceAll(' ', '-');
+    }
+  });
+}
 
 /**
  * Decorates the main element.
@@ -209,8 +228,10 @@ export function decorateMain(main) {
   fixDefaultImage(main);
   decorateBlocks(main);
   buildLayoutContainers(main);
+  decorateSectionButtonRow(main);
   decorateSectionBackgroundImage(main);
   decorateSectionGradientTopper(main);
+  decorateSectionIDs(main);
 }
 
 /**

@@ -1,6 +1,11 @@
+
 .cards.icon.block {
   display: grid;
   gap: 24px;
+}
+
+.cards-wrapper {
+  max-width: var(--normal-page-width);
 }
 
 .cards.icon.block .row {
@@ -8,26 +13,40 @@
   gap: 24px;
 }
 
-
 .cards.icon.block .card {
   display: flex;
-  padding: 20px 30px;
+  padding-right:20px;
+  margin:20px 0;
   flex-direction: column;
   background-color: white;
-  box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%);
-  border-radius: 10px;
+  text-align: center;
+  border-bottom: 1px solid grey;
 }
 
 .cards.icon.block .card span.icon {
   display: inline-block;
-  height: 43px;
-  width: 43px;
+  height: 70px;
+  width: 70px;
+  margin-bottom:1em;
+}
+
+.cards.icon.block .card .button-container  span.icon {
+  position: relative;
+  top: 8px;
+  left: 10px;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
 }
 
 .cards.icon.block .card span.icon svg {
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+.cards.icon.block .card:last-of-type {
+  border:0;
 }
 
 .cards.icon.block .card h3 {
@@ -37,9 +56,25 @@
   line-height: var(--line-height-s);
 }
 
+.cards.icon.block .card  p {
+  margin-bottom:0;
+
+}
+@media screen and (min-width: 600px) {
+  .cards.icon.block .card {
+
+  }
+}
+
 @media screen and (min-width: 900px) {
   .cards.icon.block .row {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards.icon.block .card {
+    border-right: 1px solid grey;
+    border-bottom:0;
+
   }
 
   main .section[data-layout] .cards.icon.block .row {
@@ -52,4 +87,5 @@
   main .section[data-layout] .cards.icon.block .row {
     grid-template-columns: repeat(3, 1fr);
   }
+
 }
