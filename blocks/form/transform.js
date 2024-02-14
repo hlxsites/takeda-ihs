@@ -101,7 +101,6 @@ export default class DocBaseFormToAF {
         let field = { ...source, ...this.#initField() };
         this.#transformFieldNames(field);
         field.id = field.id || getId(field.name);
-        field.value = field.Value || '';
         if (this.#isProperty(field)) {
           this.#handleProperites(formDef, field);
         } else {
