@@ -183,6 +183,9 @@ function toggleDropdownValues(subNavigationDropdown) {
 
 function buildSubNavigationDropdown(navigation) {
   const activeTopNavigationMenu = navigation.querySelector('.top-nav.active');
+  if (!activeTopNavigationMenu) {
+    return;
+  }
   const activeSubNavigationMenu = activeTopNavigationMenu.children[1].cloneNode(true);
   activeSubNavigationMenu.classList.add('active-submenu');
 
