@@ -8,43 +8,21 @@ import { createElemWithClass } from '../../scripts/utils.js';
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
 function setAttributes(element, attributes) {
-  // eslint-disable-next-line
-  for (const key in attributes) {
-    element.setAttribute(key, attributes[key]);
-  }
-}
-
-function toggleAllNavSections(sections, expanded = false) {
-  sections
-    .querySelectorAll('.nav-sections > ul > li.top-nav')
-    .forEach((section) => {
-      setAttributes(section, {
-        'aria-expanded': expanded,
-        'data-touch-click': null,
-      });
-    });
-}
-
-function toggleMenu(nav, navSections, forceExpanded = null) {
-  const button = nav.querySelector('.nav-hamburger button');
-  const expanded = forceExpanded !== null
-    ? !forceExpanded
-    : nav.getAttribute('aria-expanded') === 'true';
-
-  document.body.style.overflowY = expanded || isDesktop.matches ? '' : 'hidden';
-  setAttributes(nav, { 'aria-expanded': expanded ? 'false' : 'true' });
-  toggleAllNavSections(navSections);
-  setAttributes(button, {
-    'aria-label': expanded ? 'Open navigation' : 'Close navigation',
+  Object.keys(attributes).forEach((attributeKey) => {
+    element.setAttribute(attributeKey, attributes[attributeKey]);
   });
 }
 
+function createElementWithAttributes(tag, attributes) {
+  const element = document.createElement(tag);
+  setAttributes(element, attributes);
+  return element;
+}
+
 function buildLogo() {
-  const logo = createElemWithClass('div', 'nav-logo');
-  const link = document.createElement('a');
-  setAttributes(link, { href: '/', rel: 'noopener', tabindex: '0' });
-  const img = document.createElement('img');
-  setAttributes(img, {
+  const logoContainer = createElemWithClass('div', 'nav-logo');
+  const logoLink = createElementWithAttributes('a', { href: '/', rel: 'noopener', tabindex: '0' });
+  const logoImage = createElementWithAttributes('img', {
     alt: 'Takeda Logo',
     class: 'logo',
     src: '/styles/images/logo.png',
@@ -52,157 +30,253 @@ function buildLogo() {
     height: '274',
     width: '815',
   });
-  link.appendChild(img);
-  logo.appendChild(link);
-  return logo;
+  logoLink.appendChild(logoImage);
+  logoContainer.appendChild(logoLink);
+  return logoContainer;
 }
 
 function buildHamburger() {
-  const hamburger = createElemWithClass('div', 'nav-hamburger');
-  const button = document.createElement('button');
-  setAttributes(button, {
+  const hamburgerContainer = createElemWithClass('div', 'nav-hamburger');
+  const hamburgerButton = createElementWithAttributes('button', {
     class: 'nav-hamburger-icon',
     'aria-controls': 'nav',
     'aria-label': 'Open navigation',
     tabindex: '0',
   });
-  const iconHamburger = createElemWithClass('span', 'icon', 'icon-hamburger');
-  const iconClose = createElemWithClass('span', 'icon', 'icon-close');
-  button.append(iconHamburger, iconClose);
-  hamburger.appendChild(button);
-  return hamburger;
+  const hamburgerIcon = createElemWithClass('span', 'icon', 'icon-hamburger');
+  const closeIcon = createElemWithClass('span', 'icon', 'icon-close');
+  hamburgerButton.append(hamburgerIcon, closeIcon);
+  hamburgerContainer.appendChild(hamburgerButton);
+  return hamburgerContainer;
 }
 
-/**
- * Builds the Sections menu Div
- *
- * @param {HTMLDivElement} sections the sections nav elementsVie
- * @returns {HTMLDivElement}
- */
-function buildSections(sections) {
-  const expander = document.createElement('span');
-  expander.classList.add('icon', 'icon-chevron-down');
+function toggleNavigation(navigation) {
+  navigation.setAttribute('aria-expanded', navigation.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+}
 
-  sections.querySelectorAll(':scope > ul > li').forEach((topmenu) => {
-    topmenu.classList.add('top-nav');
-    const active = topmenu.querySelector('a');
-    if (active) {
-      const url = new URL(active.href);
-      if (window.location.pathname === url.pathname) {
-        topmenu.classList.add('active');
-      }
+function toggleTopMenu(topMenu) {
+  topMenu.parentElement.querySelectorAll('.top-nav').forEach((menu) => {
+    if (menu !== topMenu) {
+      menu.setAttribute('aria-expanded', 'false');
     }
+  });
+  topMenu.setAttribute('aria-expanded', topMenu.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+}
 
-    const submenu = topmenu.querySelector('ul');
-    if (submenu) {
-      const topanchor = topmenu.querySelector('a');
-      topanchor.append(expander.cloneNode());
+function buildSections(sections) {
+  const expanderIcon = document.createElement('span');
+  expanderIcon.classList.add('icon', 'icon-chevron-down');
 
-      const submenuLinks = submenu.querySelectorAll('li > a');
-      const isCurrentPath = Array.from(submenuLinks).some((subanchor) => {
-        const isMatch = window.location.pathname === new URL(subanchor.href).pathname
-        && subanchor.hash === window.location.hash;
-        if (isMatch) {
-          subanchor.parentElement.classList.add('active');
-          subanchor.href = subanchor.hash;
+  sections.querySelectorAll(':scope > ul > li').forEach((topMenu) => {
+    topMenu.classList.add('top-nav');
+    const activeLink = topMenu.querySelector('a');
+    if (activeLink) {
+      const url = new URL(activeLink.href);
+      const subMenu = topMenu.querySelector('ul');
+      if (subMenu) {
+        if (window.location.pathname === url.pathname) {
+          topMenu.classList.add('active');
         }
-        return isMatch;
-      });
-      topmenu.setAttribute('aria-expanded', isCurrentPath ? 'true' : 'false');
+        const topMenuAnchor = topMenu.querySelector('a');
+        topMenuAnchor.append(expanderIcon.cloneNode());
 
-      submenuLinks.forEach((subanchor) => {
-        subanchor.parentElement.classList.add('sub-nav');
-        if (window.location.pathname === new URL(subanchor.href).pathname) {
-          subanchor.href = subanchor.hash;
-        }
-        subanchor.addEventListener('click', (e) => {
-          // remove active class from all links
-          submenuLinks.forEach((l) => l.parentElement.classList.remove('active'));
-          if (subanchor.hash && window.location.pathname === new URL(subanchor.href).pathname) {
-            subanchor.parentElement.classList.add('active');
-            e.stopPropagation();
-            toggleMenu(document.getElementById('nav'), sections, false);
+        const subMenuLinks = subMenu.querySelectorAll('li > a');
+        const isCurrentPath = Array.from(subMenuLinks).some((subMenuAnchor) => {
+          const isMatch = window.location.pathname === new URL(subMenuAnchor.href).pathname
+        && subMenuAnchor.hash === window.location.hash;
+          if (isMatch) {
+            subMenuAnchor.parentElement.classList.add('active');
+            subMenuAnchor.href = subMenuAnchor.hash;
+          }
+          return isMatch;
+        });
+        topMenu.setAttribute('aria-expanded', isCurrentPath ? 'true' : 'false');
+
+        subMenuLinks.forEach((subMenuAnchor) => {
+          subMenuAnchor.parentElement.classList.add('sub-nav');
+          if (window.location.pathname === new URL(subMenuAnchor.href).pathname) {
+            subMenuAnchor.href = subMenuAnchor.hash;
+          }
+          subMenuAnchor.addEventListener('click', () => {
+            subMenuLinks.forEach((link) => link.parentElement.classList.remove('active'));
+            if (
+              subMenuAnchor.hash
+              && window.location.pathname === new URL(subMenuAnchor.href).pathname
+            ) {
+              subMenuAnchor.parentElement.classList.add('active');
+              if (!isDesktop.matches) {
+                toggleNavigation(document.getElementById('nav'));
+              }
+            }
+          });
+        });
+
+        topMenuAnchor.setAttribute('tabindex', '0');
+        topMenuAnchor.setAttribute('role', 'button');
+        topMenuAnchor.addEventListener('click', (event) => {
+          if (!isDesktop.matches) {
+            event.preventDefault();
+            event.stopPropagation();
+            toggleTopMenu(topMenu);
           }
         });
-      });
-
-      topanchor.setAttribute('tabindex', '0');
-      topanchor.setAttribute('role', 'button');
-      topanchor.addEventListener('click', (e) => {
-        if (!isDesktop.matches) {
-          e.preventDefault();
-          e.stopPropagation();
-          const expanded = topmenu.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(sections);
-          topmenu.setAttribute('aria-expanded', !expanded);
-          const all = topmenu.querySelector('.show-all');
-          if (all) {
-            all.classList.remove('hide');
-          }
-          if (e.pointerType !== 'mouse') {
-            topmenu.setAttribute('data-touch-click', 'true');
-          }
-        }
-      });
+      }
     }
   });
   return sections;
 }
 
+let mostVisibleSection = null;
+
+function handleSectionVisibilityChange(entries) {
+  entries.forEach((entry) => {
+    if (!mostVisibleSection || entry.intersectionRatio > mostVisibleSection.intersectionRatio) {
+      mostVisibleSection = entry;
+    }
+  });
+
+  const sectionElement = mostVisibleSection.target;
+  const sectionId = `#${sectionElement.getAttribute('data-id')}`;
+  const currentPath = window.location.pathname;
+  const topNavigationAnchor = document.querySelector(`.top-nav a[href="${currentPath}"]`);
+  const subNavigationDropdown = document.querySelector('.subnav-ribbon');
+  const currentSectionValue = subNavigationDropdown.querySelector('.subnav-dropdown > .current-section');
+  const subNavigationAnchor = subNavigationDropdown.querySelector(`.active-submenu a[href="${sectionId}"]`);
+
+  if (topNavigationAnchor) {
+    topNavigationAnchor.parentElement.setAttribute('aria-expanded', 'true');
+    if (
+      mostVisibleSection
+      && mostVisibleSection.isIntersecting
+      && mostVisibleSection.intersectionRatio > 0.5
+    ) {
+      subNavigationDropdown.classList.add('active');
+      if (subNavigationAnchor) {
+        Array.from(subNavigationDropdown.querySelectorAll('.active-submenu .sub-nav')).forEach((link) => link.classList.remove('active'));
+        subNavigationAnchor.parentElement.classList.add('active');
+        currentSectionValue.replaceChildren(subNavigationAnchor.cloneNode(true));
+      }
+    } else {
+      subNavigationDropdown.classList.remove('active');
+      Array.from(subNavigationDropdown.querySelectorAll('.active-submenu .sub-nav')).forEach((link) => link.classList.remove('active'));
+    }
+  }
+  // Reset mostVisibleSection after all entries have been processed
+  mostVisibleSection = null;
+}
+
+function observeSectionInteractions() {
+  const sectionElements = document.querySelectorAll('div.section[data-id]');
+  const intersectionObserver = new IntersectionObserver(handleSectionVisibilityChange, {
+    threshold: [0, 0.5, 1],
+  });
+
+  sectionElements.forEach((section) => {
+    intersectionObserver.observe(section);
+  });
+}
+
+function toggleDropdownValues(subNavigationDropdown) {
+  subNavigationDropdown.classList.add('active');
+  subNavigationDropdown.setAttribute('aria-expanded', subNavigationDropdown.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+}
+
+function buildSubNavigationDropdown(navigation) {
+  const activeTopNavigationMenu = navigation.querySelector('.top-nav.active');
+  const activeSubNavigationMenu = activeTopNavigationMenu.children[1].cloneNode(true);
+  activeSubNavigationMenu.classList.add('active-submenu');
+
+  const subNavigationDropdown = createElemWithClass('div', 'subnav-ribbon');
+  const currentDropdownValueContainer = createElemWithClass('div', 'subnav-dropdown');
+  const currentSectionListItem = createElemWithClass('li', 'current-section');
+
+  currentDropdownValueContainer.append(currentSectionListItem);
+
+  const dropdownExpander = document.createElement('span');
+  dropdownExpander.classList.add('icon', 'icon-solid-down-arrow');
+  currentDropdownValueContainer.appendChild(dropdownExpander);
+
+  subNavigationDropdown.append(currentDropdownValueContainer);
+  subNavigationDropdown.append(activeSubNavigationMenu);
+  navigation.append(subNavigationDropdown);
+
+  currentDropdownValueContainer.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleDropdownValues(subNavigationDropdown);
+  });
+
+  activeSubNavigationMenu.querySelectorAll('.sub-nav').forEach((subNavigationAnchor) => {
+    subNavigationAnchor.addEventListener('click', () => {
+      subNavigationDropdown.setAttribute('aria-expanded', 'false');
+      subNavigationDropdown.classList.add('active');
+    });
+  });
+}
+
 /**
  * decorates the header, mainly the nav
- * @param {Element} block The header block element
+ * @param {Element} headerBlock The header block element
  */
-export default async function decorate(block) {
-  // fetch nav content
-  const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta).pathname : '/drafts/phase-two-redo/nav';
-  const resp = await fetch(`${navPath}.plain.html`);
+export default async function decorate(headerBlock) {
+  // fetch navigation content
+  const navigationMetadata = getMetadata('nav');
+  const navigationPath = navigationMetadata ? new URL(navigationMetadata).pathname : '/drafts/phase-two-redo/nav';
+  const response = await fetch(`${navigationPath}.plain.html`);
 
-  if (resp.ok) {
-    const html = document.createElement('div');
-    html.innerHTML = await resp.text();
-    decorateSections(html);
-    html.querySelectorAll('.section[data-section]').forEach((section) => {
-      const clazz = section.getAttribute('data-section');
-      const wrapper = section.children[0];
-      wrapper.classList.replace('default-content-wrapper', `nav-${clazz}`);
+  if (response.ok) {
+    const navigationHtml = document.createElement('div');
+    navigationHtml.innerHTML = await response.text();
+    decorateSections(navigationHtml);
+    navigationHtml.querySelectorAll('.section[data-section]').forEach((section) => {
+      const sectionClass = section.getAttribute('data-section');
+      const sectionWrapper = section.children[0];
+      sectionWrapper.classList.replace('default-content-wrapper', `nav-${sectionClass}`);
     });
 
-    const navWrapper = createElemWithClass('div', 'nav-wrapper');
-    const navElement = createElemWithClass('nav', 'nav');
-    navElement.id = 'nav';
-    navElement.setAttribute('aria-expanded', isDesktop.matches);
+    const navigationWrapper = createElemWithClass('div', 'nav-wrapper');
+    const navigationElement = createElemWithClass('nav', 'nav');
+    navigationElement.id = 'nav';
+    navigationElement.setAttribute('aria-expanded', isDesktop.matches);
 
-    navWrapper.appendChild(navElement);
-    block.appendChild(navWrapper);
+    navigationWrapper.appendChild(navigationElement);
+    headerBlock.appendChild(navigationWrapper);
 
-    const nav = block.querySelector('nav');
-    const sections = buildSections(html.querySelector('.nav-sections'));
-    const hamburger = buildHamburger();
-    hamburger.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleMenu(nav, sections);
+    const navigation = headerBlock.querySelector('nav');
+    const navigationSections = buildSections(navigationHtml.querySelector('.nav-sections'));
+    const hamburgerMenu = buildHamburger();
+    hamburgerMenu.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleNavigation(navigation);
     });
 
-    const contactus = html.querySelector('.nav-contact-us');
+    const contactUsSection = navigationHtml.querySelector('.nav-contact-us');
 
-    const utility = html.querySelector('.nav-utility');
+    const utilitySection = navigationHtml.querySelector('.nav-utility');
 
-    // Order maintains tabindex keyboard nav
-    nav.append(buildLogo());
-    nav.append(hamburger);
-    nav.append(sections);
-    nav.append(contactus);
+    // Order maintains tabindex keyboard navigation
+    navigation.append(buildLogo());
+    navigation.append(hamburgerMenu);
+    navigation.append(navigationSections);
+    navigation.append(contactUsSection);
 
-    await decorateIcons(block);
+    buildSubNavigationDropdown(navigation);
+
+    await decorateIcons(headerBlock);
+
+    observeSectionInteractions();
+
+    // on window resize, toggle the navigation
+    window.addEventListener('resize', () => {
+      navigation.setAttribute('aria-expanded', isDesktop.matches);
+    });
 
     // Add a link to the Author guide, if anywhere in the Author Guide
     if (window.location.pathname.startsWith('/author-guide')) {
-      const li = document.createElement('li');
-      li.innerHTML = '<a href="/author-guide/">Author Guide</a>';
-      utility.querySelector('ul').prepend(li);
+      const listItem = document.createElement('li');
+      listItem.innerHTML = '<a href="/author-guide/">Author Guide</a>';
+      utilitySection.querySelector('ul').prepend(listItem);
     }
   }
 }
