@@ -3,21 +3,12 @@ import {
   decorateIcons,
   decorateSections,
 } from '../../scripts/lib-franklin.js';
-import { createElemWithClass } from '../../scripts/utils.js';
+import {
+  createElemWithClass,
+  createElementWithAttributes,
+} from '../../scripts/utils.js';
 
 const isDesktop = window.matchMedia('(min-width: 900px)');
-
-function setAttributes(element, attributes) {
-  Object.keys(attributes).forEach((attributeKey) => {
-    element.setAttribute(attributeKey, attributes[attributeKey]);
-  });
-}
-
-function createElementWithAttributes(tag, attributes) {
-  const element = document.createElement(tag);
-  setAttributes(element, attributes);
-  return element;
-}
 
 function buildLogo() {
   const logoContainer = createElemWithClass('div', 'nav-logo');
