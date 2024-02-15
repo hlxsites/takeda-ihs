@@ -130,7 +130,7 @@
 
   /* Line heights */
   --line-height-xs: 1.15em;
-  --line-height-s: 1.25em;
+  --line-height-s: 1.5em;
   --line-height-m: 1.5em;
   --line-height-l: 1.75em;
   --line-height-xl: 2em;
@@ -207,7 +207,7 @@ p, li {
   font-family: var(--body-font-family);
   font-weight: var(--font-weight-normal);
   font-size: var(--body-font-size-m);
-  line-height: var(--line-height-s);
+  line-height: var(--line-height-m);
   color: var(--default-text-color);
   text-align: inherit;
 }
@@ -299,7 +299,7 @@ main .section.content-bump-out .default-content-wrapper {
   width: 100%;
   text-align: left;
   background-color: #fff;
-  padding: 12px 91px;
+  padding: 12px 20px;
   position: relative;
 }
 
