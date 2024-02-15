@@ -82,7 +82,7 @@
   margin: 0;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 40px;
 }
 
 .header nav .subnav-ribbon a {
