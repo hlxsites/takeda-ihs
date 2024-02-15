@@ -25,7 +25,7 @@ export default class DocBaseFormToAF {
     Mandatory: 'required',
     Options: 'enum',
     OptionNames: 'enumNames',
-    'Required Error Message': 'constraintMessages.required'
+    'Required Error Message': 'constraintMessages.required',
   };
 
   fieldMapping = new Map([
@@ -191,6 +191,8 @@ export default class DocBaseFormToAF {
   #transformFieldType(field) {
     if (this.fieldMapping.has(field?.fieldType)) {
       field.fieldType = this.fieldMapping.get(field?.fieldType);
+    } else {
+      field.fieldType = field.fieldType.toLowerCase();
     }
   }
 
