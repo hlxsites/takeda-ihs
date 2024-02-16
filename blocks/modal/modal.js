@@ -1,7 +1,7 @@
 import { loadFragment } from '../fragment/fragment.js';
 import {
   buildBlock, decorateBlock, decorateIcons, loadBlock, loadCSS,
-} from '../../scripts/lib-franklin.js';
+} from '../../scripts/aem.js';
 
 // This is not a traditional block, so there is no decorate function. Instead, links to
 // a */modals/* path  are automatically transformed into a modal. Other blocks can also use

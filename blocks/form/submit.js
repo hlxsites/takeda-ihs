@@ -1,5 +1,3 @@
-
-
 function resetForm(form) {
   form.reset();
   form.querySelector('button[type="submit"]').disabled = false;
@@ -13,7 +11,7 @@ async function submitSuccess(e, form) {
     window.location.assign(encodeURI(payload.body.redirectUrl));
   } else {
     const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
-    openModal("/drafts/collins/success-message");
+    openModal('/drafts/collins/success-message');
   }
 }
 

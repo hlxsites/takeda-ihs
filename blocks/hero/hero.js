@@ -1,4 +1,4 @@
-import { decorateButtons, readBlockConfig } from '../../scripts/lib-franklin.js';
+import { decorateButtons, readBlockConfig } from '../../scripts/aem.js';
 
 /**
  * Builds the image wrapper div from the block definition
