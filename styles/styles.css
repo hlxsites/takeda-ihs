@@ -257,7 +257,7 @@ body.gray-gradient>main {
 }
 
 main .section {
-  padding: 12px 0;
+  padding: 20px 0;
 }
 
 main .section.cards-container {
@@ -267,11 +267,11 @@ main .section.cards-container {
 main .section.content-bump-out .default-content-wrapper {
   border: 0;
   max-width: 1158px;
-  margin: -81px 140px 0;
+  margin: -180px 20px 0;
   display: table;
   text-align: left;
   background-color: #fff;
-  padding: 12px 32px;
+  padding: 129px 32px;
   position: relative;
 }
 
@@ -338,9 +338,9 @@ main .section.image-boxshadow .default-content-wrapper>p.image {
 }
 
 main .section.content-bump-out .default-content-wrapper p:first-of-type {
-  color: red;
-  margin-top: 16px;
+  margin-top: 12px;
   text-align: center;
+  color: #891515;
 }
 
 main .section .default-content-wrapper>p>picture>img {
@@ -606,6 +606,10 @@ main .disclaimer-modal-container {
   main .section.angled-inverted-background.hero-container .hero {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
   }
+
+  main .section.content-bump-out .default-content-wrapper p:first-of-type {
+    font-size: 16px;
+  }
 }
 
 
@@ -697,6 +701,10 @@ main .disclaimer-modal-container {
 
   main .section.angled-inverted-background.hero-container .hero {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+  }
+
+  main .section.content-bump-out.content-center .default-content-wrapper {
+    margin: -81px 140px 0;
   }
 
 }
