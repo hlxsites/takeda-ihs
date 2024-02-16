@@ -1,24 +1,23 @@
-function submitSuccess(e, form) {
+
+
+function resetForm(form) {
+  form.reset();
+  form.querySelector('button[type="submit"]').disabled = false;
+  form.setAttribute('data-submitting', 'false');
+}
+
+async function submitSuccess(e, form) {
+  resetForm(form);
   const { payload } = e;
   if (payload?.body?.redirectUrl) {
     window.location.assign(encodeURI(payload.body.redirectUrl));
   } else {
-    let thankYouMessage = form.querySelector('.form-message.success-message');
-    if (!thankYouMessage) {
-      thankYouMessage = document.createElement('div');
-      thankYouMessage.className = 'form-message success-message';
-    }
-    thankYouMessage.innerHTML = 'Thanks for your submission';
-    form.prepend(thankYouMessage);
-    if (thankYouMessage.scrollIntoView) {
-      thankYouMessage.scrollIntoView({ behavior: 'smooth' });
-    }
-    form.reset();
+    const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+    openModal("/drafts/collins/success-message");
   }
-  form.querySelector('button[type="submit"]').disabled = false;
 }
 
-function submitFailure(error, form) {
+async function submitFailure(error, form) {
   let errorMessage = form.querySelector('.form-message.error-message');
   if (!errorMessage) {
     errorMessage = document.createElement('div');
