@@ -157,7 +157,7 @@ h1 {
 
 h2 {
   margin-bottom: 12px;
-  font-size: var(--heading-font-size-l);
+  font-size: var(--heading-font-size-s);
   line-height: var(--line-height-s);
 }
 
@@ -262,6 +262,10 @@ main .section {
 
 main .section.cards-container {
   padding-bottom: 20px;
+}
+
+main .content-center .default-content-wrapper {
+  text-align: center;
 }
 
 main .section.content-bump-out .default-content-wrapper {
@@ -583,6 +587,14 @@ main .disclaimer-modal-container {
     --nav-height: 65px;
   }
 
+  h1 {
+    font-size: var(--heading-font-size-xxl);
+  }
+
+  h2 {
+    font-size: var(--heading-font-size-l);
+  }
+
   main>.section>div {
     padding: 0 24px;
   }
@@ -614,18 +626,6 @@ main .disclaimer-modal-container {
 
 
 @media screen and (min-width: 900px) {
-  h1 {
-    font-size: var(--heading-font-size-xxl);
-  }
-
-  h2 {
-    font-size: var(--heading-font-size-l);
-  }
-
-  p {
-    font-size: var(--body-font-size-s);
-  }
-
   main>.section>div {
     padding: 0 90px;
   }
