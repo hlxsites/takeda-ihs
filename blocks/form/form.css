@@ -38,11 +38,11 @@
     --form-fieldset-legend-border: none;
     --form-fieldset-legend-padding: 16px 0;
     --form-button-color: var(--background-color-primary);
-    --form-button-font-size: var(--form-font-size-s);
+    --form-button-font-size: var(--form-font-size-m);
     --form-button-background-color: var(--button-primary-color);
     --form-button-background-hover-color: var(--button-primary-hover-color);
     --form-button-border: 2px solid transparent;
-    --form-button-padding: 15px 50px;
+    --form-button-padding: 8px 45px;
     --form-upload-color: var(--background-color-primary);
     --form-upload-font-size: var(--form-font-size-xs);
     --form-upload-background-color: var(--background-color-primary);
@@ -234,12 +234,12 @@ input::file-selector-button {
 }
 
 main .form button {
-    color: var(--form-button-color);
-    background: var(--form-button-background-color);
+    color: var(--white);
+    background: var(--dark-red);
     border: var(--form-button-border);
     padding: var(--form-button-padding);
     font-size: var(--form-button-font-size);
-    border-radius: unset;
+    border-bottom-left-radius:20px;
     width: 100%;
 }
 

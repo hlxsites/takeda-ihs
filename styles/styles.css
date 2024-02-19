@@ -629,7 +629,7 @@ main .disclaimer-modal-container {
 
 @media screen and (min-width: 900px) {
   main>.section>div {
-    padding: 0 90px;
+    padding: 0 40px;
   }
 
   main>.section[data-background-image] {
