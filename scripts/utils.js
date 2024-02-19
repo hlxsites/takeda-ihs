@@ -4,7 +4,7 @@ export function createElemWithClass(type, ...classNames) {
   return elem;
 }
 
-function setAttributes(element, attributes) {
+export function setAttributes(element, attributes) {
   Object.keys(attributes).forEach((attributeKey) => {
     element.setAttribute(attributeKey, attributes[attributeKey]);
   });
