@@ -1,4 +1,4 @@
-import { decorateSections, getMetadata } from '../../scripts/lib-franklin.js';
+import { decorateSections, getMetadata } from '../../scripts/aem.js';
 import { createElemWithClass } from '../../scripts/utils.js';
 
 /**

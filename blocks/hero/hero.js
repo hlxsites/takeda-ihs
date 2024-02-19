@@ -1,4 +1,4 @@
-import { decorateButtons, readBlockConfig } from '../../scripts/lib-franklin.js';
+import { decorateButtons, readBlockConfig } from '../../scripts/aem.js';
 
 /**
  * Builds the image wrapper div from the block definition
@@ -79,10 +79,7 @@ function buildCardContent(block) {
       const name = document.createElement('p');
       name.classList.add('name');
       name.textContent = text;
-      const download = document.createElement('p');
-      download.classList.add('download');
-      download.textContent = 'Download';
-      wrapper.append(name, download);
+      wrapper.append(name);
       a.replaceChildren(wrapper);
     });
 
