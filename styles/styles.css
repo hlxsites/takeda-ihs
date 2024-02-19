@@ -25,7 +25,7 @@
   --bright-gray: #efefef;
   --medium-gray: #ddd;
   --gray: #979797;
-  --gray-neutral-70: #333333;
+  --gray-neutral-70: #333;
   --brand--secondary-subtle: #edf2fa;
   --gray-neutral-80: #333;
   --gray-neutral-90: #1e1e23;
@@ -43,8 +43,6 @@
   --black-olive: #3a3a3a;
   --black: black;
   --cadet: #5B6770;
-  /* gray-blue */
-
 
   /* Brand Colors */
   --takeda-red-50: #e1242a;
@@ -258,6 +256,10 @@ body.gray-gradient>main {
 
 main .section {
   padding: 20px 0;
+}
+
+main>div.section:first-child {
+  padding-top: 0;
 }
 
 main .section.cards-container {
