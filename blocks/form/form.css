@@ -10,7 +10,8 @@
     --form-font-size-s: 18px;
     --form-font-size-xs: 16px;
     --form-background-color: var(--background-color-primary);
-    --form-padding: 0;
+    --form-padding: 8px 0;
+    --form-margin: 0 ;
     --form-columns: 12;
     --form-field-horz-gap: 40px;
     --form-field-vert-gap: 20px;
@@ -46,11 +47,11 @@
     --form-upload-font-size: var(--form-font-size-xs);
     --form-upload-background-color: var(--background-color-primary);
     --form-submit-width: 100%;
-    --form-width: 95%;
+    --form-width: 80%;
     --form-wizard-background-color: #f2f2f2;
     --form-wizard-border-color: #757575;
     --form-wizard-number-color: var(--button-primary-color);
-    --form-max-width: 100%;
+    --form-max-width: 1200px;
     --form-grid-gap: 0 30px;
 }
 
@@ -68,11 +69,14 @@ main .form-container {
     background-color: var(--form-background-color);
     padding: var(--form-padding);
     width: var(--form-width);
-    margin: var(--nav-height) auto;
+    margin: var(--form-margin) auto;
 }
 
 main .form {
     background-color: var(--form-background-color);
+}
+main .form .form-wrapper{
+    padding:var(--form-padding);
 }
 
 main .form > div:not(:first-child) {
@@ -461,6 +465,8 @@ main .wizard  .current-wizard-step.field-wrapper:last-of-type ~ .form-wizard-but
     main .form form .form-panel-wrapper {
         flex-flow: row wrap;
         gap: 10px 15px;
+        padding-bottom:24px;
+
     }
 }
 
@@ -468,6 +474,7 @@ main form .form-panel-wrapper {
     display: flex;
     padding: 0;
     flex-direction: column;
+    padding-bottom:24px;
 }
 
 main .form .form-message.success-message {
