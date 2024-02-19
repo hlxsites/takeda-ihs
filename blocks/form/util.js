@@ -134,12 +134,15 @@ export function updateOrCreateInvalidMsg(fieldElement, msg) {
     container.append(element);
   }
   if (msg) {
+    fieldElement.classList.add('error');
     element.classList.add('field-invalid');
     element.textContent = msg;
   } else if (container.dataset.description) {
+    fieldElement.classList.remove('error');
     element.classList.remove('field-invalid');
     element.innerHTML = container.dataset.description;
   } else if (element) {
+    fieldElement.classList.remove('error');
     element.remove();
   }
   return element;

@@ -2,7 +2,7 @@ import {
   getMetadata,
   decorateIcons,
   decorateSections,
-} from '../../scripts/lib-franklin.js';
+} from '../../scripts/aem.js';
 import {
   createElemWithClass,
   createElementWithAttributes,

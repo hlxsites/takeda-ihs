@@ -12,7 +12,7 @@ import {
   buildBlock,
   loadCSS,
   readBlockConfig,
-} from './lib-franklin.js';
+} from './aem.js';
 
 import {
   integrateMartech,
