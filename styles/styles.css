@@ -176,7 +176,7 @@ p,
 li {
   font-family: var(--body-font-family);
   font-weight: var(--font-weight-normal);
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-l);
   line-height: var(--line-height-m);
   color: var(--default-text-color);
   text-align: inherit;
@@ -622,7 +622,7 @@ main .disclaimer-modal-container {
   }
 
   main .section.content-bump-out .default-content-wrapper p:first-of-type {
-    font-size: 16px;
+    font-size: var(--body-font-size-m);
   }
 }
 
