@@ -14,7 +14,7 @@
 
 .header nav a {
   text-decoration: none;
-  color: var(--quartz);
+  color: var(--gray-neutral-70);
   font-weight: normal;
 }
 
@@ -82,7 +82,7 @@
   margin: 0;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 40px;
 }
 
 .header nav .subnav-ribbon a {
@@ -98,6 +98,7 @@
   border-bottom-left-radius: 20px;
   white-space: nowrap;
   line-height: 19px;
+  font-size: 22px;
 }
 
 .header nav .nav-sections>ul>li>a {
@@ -165,7 +166,7 @@
   grid-area: contact-us;
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 40px;
 }
 
 .header nav .subnav-ribbon {
@@ -224,7 +225,6 @@
       "logo sections contact-us" 65px
       ". . hamburger" min-content
       / min-content 1fr min-content;
-    padding: 0 90px;
   }
 
   .header nav .nav-hamburger {
@@ -245,7 +245,7 @@
     padding: 0;
     border-bottom: none;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
   }
 
   .header nav .nav-sections>ul>li.top-nav>a>.icon {
@@ -267,6 +267,11 @@
 
   .header nav .subnav-ribbon>.active-submenu .sub-nav.active a {
     border-bottom: 2px solid var(--white);
+  }
+
+  .header nav .nav-contact-us>p>a {
+    padding: 8px 20px;
+    font-size: 14px;
   }
 
 }
