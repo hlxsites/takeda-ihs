@@ -218,7 +218,7 @@ export default class DocBaseFormToAF {
   #handleMultiValues(item, key) {
     let values;
     if (item && item[key] && typeof item[key] === 'string') {
-      values = item[key]?.split(',').map((value) => value.trim());
+      values = item[key]?.split(';').map((value) => value.trim());
       item[key] = values;
     }
   }
