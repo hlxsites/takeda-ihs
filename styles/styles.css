@@ -333,6 +333,10 @@ main .section.red-title h2 {
 main .section.hero h1 {
   font-size:36px;
 }
+main .section.red-headline .default-content-wrapper p:first-of-type  {
+  color: var(--dark-red);
+}
+
 main .section[data-background-image] {
   position: relative;
 }
