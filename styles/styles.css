@@ -327,6 +327,9 @@ main .section.red-title h2 {
   color: var(--red);
 }
 
+main .section .hero h1 {
+  font-size:36px;
+}
 main .section[data-background-image] {
   position: relative;
 }
