@@ -13,5 +13,4 @@ export default async function decorate(block) {
       card.classList.add('card');
     });
   });
-  await decorateIcons(block);
 }

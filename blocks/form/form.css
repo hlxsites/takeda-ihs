@@ -11,7 +11,7 @@
     --form-font-size-xs: 16px;
     --form-background-color: var(--background-color-primary);
     --form-padding: 8px 0;
-    --form-margin: 0 ;
+    --form-margin: 0;
     --form-columns: 12;
     --form-field-horz-gap: 40px;
     --form-field-vert-gap: 20px;
@@ -80,8 +80,9 @@ main .form-container {
 main .form {
     background-color: var(--form-background-color);
 }
-main .form .form-wrapper{
-    padding:var(--form-padding);
+
+main .form .form-wrapper {
+    padding: var(--form-padding);
 }
 
 main .form>div:not(:first-child) {
@@ -162,6 +163,7 @@ main .form input[type='radio'] {
     position: static;
     z-index: 1;
     transform: scale(1.5);
+    accent-color: var(--dark-red);
 }
 
 main .form textarea {
@@ -480,7 +482,7 @@ main .wizard .current-wizard-step.field-wrapper:last-of-type~.form-wizard-button
     main .form form .form-panel-wrapper {
         flex-flow: row wrap;
         gap: 10px 15px;
-        padding-bottom:24px;
+        padding-bottom: 24px;
 
     }
 }
@@ -489,7 +491,7 @@ main form .form-panel-wrapper {
     display: flex;
     padding: 0;
     flex-direction: column;
-    padding-bottom:24px;
+    padding-bottom: 24px;
 }
 
 main .form .form-message.success-message {

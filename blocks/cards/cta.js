@@ -33,5 +33,4 @@ export default async function decorate(block) {
     ul.append(li);
   });
   block.replaceChildren(ul);
-  await decorateIcons(block);
 }

@@ -26,6 +26,7 @@ export default class DocBaseFormToAF {
     Options: 'enum',
     OptionNames: 'enumNames',
     'Required Error Message': 'constraintMessages.required',
+    'Pattern Error Message': 'constraintMessages.pattern',
   };
 
   fieldMapping = new Map([

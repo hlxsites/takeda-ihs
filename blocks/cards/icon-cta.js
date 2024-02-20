@@ -43,5 +43,4 @@ export default async function decorate(block) {
       card.append(content, link);
     });
   });
-  await decorateIcons(block);
 }
