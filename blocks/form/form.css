@@ -218,8 +218,8 @@ main .form form .form-radio-wrapper {
     gap: 8px;
 }
 
-main .form form fieldset>.form-radio-wrapper:first-of-type,
-main .form form fieldset>.form-checkbox-wrapper:first-of-type {
+main .form form fieldset>.form-radio-wrapper,
+main .form form fieldset>.form-checkbox-wrapper {
     margin: var(--form-field-gap);
 }
 
