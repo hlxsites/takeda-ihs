@@ -6,8 +6,8 @@
 .cards.cta.block > ul > li {
   display: block;
   padding: 16px;
-  border-radius: 8px;
   box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%);
+  background-color: #fff;
 }
 
 .cards.cta.block > ul > li div {

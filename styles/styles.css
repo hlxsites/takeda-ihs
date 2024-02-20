@@ -304,7 +304,7 @@ main .section.default-content-wrapper {
 }
 
 main .section.gray-background {
-  background-color: var(--bright-gray);
+  background-color: var(--brand--secondary-subtle);
 }
 
 main .section.silver-background {
@@ -630,7 +630,10 @@ main .disclaimer-modal-container {
 
 @media screen and (min-width: 900px) {
   main>.section>div {
-    padding: 0 40px;
+    padding-top: 16px;
+    margin: 16px auto;
+    max-width: 1200px;
+
   }
 
   main>.section[data-background-image] {
