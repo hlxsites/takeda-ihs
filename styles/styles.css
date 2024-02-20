@@ -37,7 +37,7 @@
   --silver: #d8d8d8;
   --quartz: #4c4948;
   --red: #e1242a;
-  --dark-red: #BD120A;
+  --dark-red: #891515;
   --white: #fff;
   --blue: #003087;
   --black-olive: #3a3a3a;
@@ -267,7 +267,7 @@ main .section.cards-container {
   padding-bottom: 20px;
 }
 main .section.cards-container .default-content-wrapper:first-child p{
-  color:red;
+  color: var(--dark-red);
 }
 
 main .content-center .default-content-wrapper {
@@ -354,7 +354,7 @@ main .section.image-boxshadow .default-content-wrapper>p.image {
 main .section.content-bump-out .default-content-wrapper p:first-of-type {
   margin-top: 12px;
   text-align: center;
-  color: #891515;
+  color: var(--dark-red);
 }
 
 main .section .default-content-wrapper>p>picture>img {
