@@ -249,12 +249,9 @@ main form .form-file-wrapper>button {
     display: flex;
 }
 
-main .form button:hover {
-    background: var(--form-button-background-hover-color);
-}
-
 main .form-submit-wrapper {
     width: var(--form-submit-width);
+    text-align: center;
 }
 
 main .form input:disabled,
