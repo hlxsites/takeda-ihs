@@ -1,7 +1,7 @@
 :root {
     --background-color-primary: #fff;
     --label-color: #666;
-    --border-color: #818a91;
+    --border-color: #707070;
     --form-error-color: #E1242A;
     --button-primary-color: #5F8DDA;
     --button-secondary-color: #666;
@@ -10,7 +10,8 @@
     --form-font-size-s: 18px;
     --form-font-size-xs: 16px;
     --form-background-color: var(--background-color-primary);
-    --form-padding: 0;
+    --form-padding: 8px 0;
+    --form-margin: 0 ;
     --form-columns: 12;
     --form-field-horz-gap: 40px;
     --form-field-vert-gap: 20px;
@@ -35,7 +36,7 @@
     --form-fieldset-legend-font-size: var(--form-label-font-size);
     --form-fieldset-legend-font-weight: var(--form-title-font-weight);
     --form-fieldset-legend-border: none;
-    --form-fieldset-legend-padding: 0;
+    --form-fieldset-legend-padding: 16px 0;
     --form-button-color: var(--background-color-primary);
     --form-button-font-size: var(--form-font-size-s);
     --form-button-background-color: var(--button-primary-color);
@@ -46,13 +47,13 @@
     --form-upload-font-size: var(--form-font-size-xs);
     --form-upload-background-color: var(--background-color-primary);
     --form-submit-width: 100%;
-    --form-width: 95%;
+    --form-width: 80%;
     --form-wizard-background-color: #f2f2f2;
     --form-wizard-border-color: #757575;
     --form-wizard-number-color: var(--button-primary-color);
-    --form-max-width: 100%;
+    --form-max-width: 1200px;
     --form-grid-gap: 0 30px;
-    --form-field-gap: 20px 0;
+    --form-field-gap: 8px 0;
 }
 
 form {
@@ -73,11 +74,14 @@ main .form-container {
     background-color: var(--form-background-color);
     padding: var(--form-padding);
     width: var(--form-width);
-    margin: var(--nav-height) auto;
+    margin: var(--form-margin) auto;
 }
 
 main .form {
     background-color: var(--form-background-color);
+}
+main .form .form-wrapper{
+    padding:var(--form-padding);
 }
 
 main .form>div:not(:first-child) {
@@ -151,12 +155,13 @@ main .form input[type='file'] {
 
 main .form input[type='checkbox'],
 main .form input[type='radio'] {
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
     flex: none;
-    margin: 0;
+    margin: 2px 10px;
     position: static;
     z-index: 1;
+    transform: scale(1.5);
 }
 
 main .form textarea {
@@ -475,6 +480,8 @@ main .wizard .current-wizard-step.field-wrapper:last-of-type~.form-wizard-button
     main .form form .form-panel-wrapper {
         flex-flow: row wrap;
         gap: 10px 15px;
+        padding-bottom:24px;
+
     }
 }
 
@@ -482,6 +489,7 @@ main form .form-panel-wrapper {
     display: flex;
     padding: 0;
     flex-direction: column;
+    padding-bottom:24px;
 }
 
 main .form .form-message.success-message {
