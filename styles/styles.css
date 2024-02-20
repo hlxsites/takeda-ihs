@@ -266,6 +266,9 @@ main>div.section:first-child {
 main .section.cards-container {
   padding-bottom: 20px;
 }
+main .section.cards-container .default-content-wrapper:first-child p{
+  color:red;
+}
 
 main .content-center .default-content-wrapper {
   text-align: center;
