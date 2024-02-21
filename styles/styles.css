@@ -280,7 +280,7 @@ main .content-center .default-content-wrapper {
 
 main .section.content-bump-out .default-content-wrapper {
   border: 0;
-  max-width: 1030px;
+  max-width: 1158px;
   margin: -81px auto 0;
   display: table;
   width: 100%;
@@ -646,7 +646,7 @@ main .disclaimer-modal-container {
   main>.section>div {
     padding-top: 16px;
     margin: 16px auto;
-    max-width: 1200px;
+    max-width: 1158px;
 
   }
 
