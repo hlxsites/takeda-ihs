@@ -1,14 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Group 5</title>
-    <g id="close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="PI---Level-2-ISI-Open" transform="translate(-1314.000000, -27.000000)" stroke="#000000" stroke-width="2">
-            <g id="Group-2-Copy-5" transform="translate(1303.000000, 17.000000)">
-                <g id="Group-5" transform="translate(11.000000, 11.000000)">
-                    <line x1="12" y1="-3.78947368" x2="12" y2="26.5263158" id="Layer-2" transform="translate(12.000000, 11.368421) rotate(45.000000) translate(-12.000000, -11.368421) "></line>
-                    <line x1="27.7894737" y1="12" x2="-2.52631579" y2="12" id="Layer-2" transform="translate(12.631579, 12.000000) rotate(45.000000) translate(-12.631579, -12.000000) "></line>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2_20177)">
+<path d="M35.5565 0L20.0894 15.7337L4.62234 0L0 4.62131L15.6449 20.0894L0 35.5554L4.44456 40L19.9116 24.2663L35.3787 40L40 35.3777L24.2673 19.9116L40 4.44353L35.5565 0Z" fill="#1A1818"/>
+</g>
+<defs>
+<clipPath id="clip0_2_20177">
+<rect width="40" height="40" fill="white"/>
+</clipPath>
+</defs>
 </svg>
