@@ -33,7 +33,12 @@
   background-color: unset;
 }
 
-.cards.product.block .card .details .icon.icon-download-button {
+.cards.product.block .card .details .icon.icon-download-button,.icon.icon-jump_link {
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+.cards.product.block .card .details .icon.icon-jump_link {
   display: block;
   width: 35px;
   height: 35px;
