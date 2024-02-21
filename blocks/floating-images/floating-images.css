@@ -41,6 +41,10 @@
   font-weight: var(--font-weight-normal);
 }
 
+.block.floating-images .content p:first-of-type  {
+  color: var(--dark-red);
+}
+
 .block.floating-images .content ul {
   margin-left: 1em;
   margin-bottom: 1em;
