@@ -46,6 +46,6 @@
 
 @media screen and (min-width: 600px) {
   .cards.product.block {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
