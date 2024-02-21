@@ -139,7 +139,7 @@ function handleSectionVisibilityChange(entries) {
     if (
       mostVisibleSection
       && mostVisibleSection.isIntersecting
-      && mostVisibleSection.intersectionRatio > 0.5
+      && mostVisibleSection.intersectionRatio > 0.15
     ) {
       subNavigationDropdown.classList.add('active');
       if (subNavigationAnchor) {
