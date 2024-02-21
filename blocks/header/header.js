@@ -127,7 +127,7 @@ function handleSectionVisibilityChange(entries) {
   });
 
   const sectionElement = mostVisibleSection.target;
-  const sectionId = `#${sectionElement.getAttribute('data-id')}`;
+  const sectionId = `#${sectionElement.getAttribute('id')}`;
   const currentPath = window.location.pathname;
   const topNavigationAnchor = document.querySelector(`.top-nav a[href="${currentPath}"]`);
   const subNavigationDropdown = document.querySelector('.subnav-ribbon');
@@ -139,7 +139,7 @@ function handleSectionVisibilityChange(entries) {
     if (
       mostVisibleSection
       && mostVisibleSection.isIntersecting
-      && mostVisibleSection.intersectionRatio > 0.5
+      && mostVisibleSection.intersectionRatio > 0.15
     ) {
       subNavigationDropdown.classList.add('active');
       if (subNavigationAnchor) {
@@ -157,7 +157,7 @@ function handleSectionVisibilityChange(entries) {
 }
 
 function observeSectionInteractions() {
-  const sectionElements = document.querySelectorAll('div.section[data-id]');
+  const sectionElements = document.querySelectorAll('div.section[id]');
   const intersectionObserver = new IntersectionObserver(handleSectionVisibilityChange, {
     threshold: [0, 0.5, 1],
   });

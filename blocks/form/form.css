@@ -218,8 +218,8 @@ main .form form .form-radio-wrapper {
     gap: 8px;
 }
 
-main .form form fieldset>.form-radio-wrapper:first-of-type,
-main .form form fieldset>.form-checkbox-wrapper:first-of-type {
+main .form form fieldset>.form-radio-wrapper,
+main .form form fieldset>.form-checkbox-wrapper {
     margin: var(--form-field-gap);
 }
 
@@ -249,12 +249,9 @@ main form .form-file-wrapper>button {
     display: flex;
 }
 
-main .form button:hover {
-    background: var(--form-button-background-hover-color);
-}
-
 main .form-submit-wrapper {
     width: var(--form-submit-width);
+    text-align: center;
 }
 
 main .form input:disabled,
