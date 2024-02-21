@@ -86,7 +86,9 @@
 }
 
 .header nav .subnav-ribbon a {
-  color: var(--gray);
+  color: var(--white);
+  font-size:var(--body-font-size-s);
+  font-weight:var(--font-weight-light);
 }
 
 .header nav .nav-contact-us>p>a {
@@ -94,7 +96,7 @@
   padding: 8px 42px;
   text-decoration: none;
   color: var(--white);
-  background-color: var(--dark-red);
+  background-color: var(--brand-critical-strong);
   border-bottom-left-radius: 20px;
   white-space: nowrap;
   line-height: 19px;
@@ -267,7 +269,7 @@
   }
 
   .header nav .subnav-ribbon>.active-submenu .sub-nav.active a {
-    border-bottom: 2px solid var(--white);
+    border-bottom: 4px solid var(--white);
   }
 
   .header nav .nav-contact-us>p>a {

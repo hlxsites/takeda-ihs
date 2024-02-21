@@ -39,6 +39,8 @@
   --quartz: #4c4948;
   --red: #e1242a;
   --dark-red: #891515;
+  --brand-critical: #eb0000;
+  --brand-critical-strong: #c10000;
   --white: #fff;
   --blue: #003087;
   --black-olive: #3a3a3a;
@@ -219,7 +221,7 @@ p.button-container a {
   line-height: var(--line-height-l);
   text-decoration: none;
   color: var(--white);
-  background-color: var(--dark-red);
+  background-color: var(--brand-critical-strong);
   border-bottom-left-radius: 20px;
 
 }
@@ -603,7 +605,7 @@ main .disclaimer-modal-container {
   }
 
   h1 {
-    font-size: var(--heading-font-size-xxl);
+    font-size: var(--heading-font-size-xl);
   }
 
   h2 {

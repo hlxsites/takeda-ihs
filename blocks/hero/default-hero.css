@@ -28,7 +28,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
@@ -53,8 +52,8 @@
 
 .hero.block.default .content-wrapper .content {
   background-color: var(--white);
-  border-left: 10px solid var(--dark-red);
-  padding: 35px 50px;
+  border-left: 10px solid var(--brand-critical);
+  padding: 24px 50px;
   margin-bottom: 60px;
 }
 
@@ -133,7 +132,7 @@
   }
 
   .hero.block.default .content-wrapper .content p {
-    font-size: var(--body-font-size-xxl);
+    font-size: var(--body-font-size-l);
   }
 
   .hero.block.default .content-wrapper .content p:nth-of-type(1) {
