@@ -260,7 +260,8 @@
 
   .header nav .subnav-ribbon>.active-submenu {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap:48px
   }
 
   .header nav .subnav-ribbon.active>.subnav-dropdown {
