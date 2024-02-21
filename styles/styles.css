@@ -106,7 +106,7 @@
   --line-height-xxxl: 2.9em;
 
   /* Page Widths */
-  --normal-page-width: 1200px;
+  --normal-page-width: 1158px;
   --wide-page-width: 1600px;
   --full-page-width: 100vw;
 
@@ -725,6 +725,7 @@ main .disclaimer-modal-container {
 
   main .section.content-bump-out.content-center .default-content-wrapper {
     margin: -40px auto 0;
+    padding: 0 64px;
   }
 
 }
