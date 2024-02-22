@@ -121,11 +121,15 @@ function handleSectionVisibilityChange() {
   const sectionElements = Array.from(document.querySelectorAll('div.section[id]'));
 
   let currentSection = null;
+  let maxVisiblePercentage = 0;
+
   sectionElements.forEach((section) => {
     const rect = section.getBoundingClientRect();
     const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
     const visiblePercentage = visibleHeight / rect.height;
-    if (visiblePercentage >= 0.25) {
+
+    if (visiblePercentage > maxVisiblePercentage) {
+      maxVisiblePercentage = visiblePercentage;
       currentSection = section;
     }
   });
