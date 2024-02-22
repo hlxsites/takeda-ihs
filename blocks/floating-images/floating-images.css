@@ -1,6 +1,6 @@
 /* styles for the floating images auto block */
 
-.section.floating-images-container.grey > div {
+.section.floating-images-container.grey  {
   background-color: var(--brand--secondary-subtle);
 }
 
