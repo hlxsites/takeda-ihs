@@ -43,6 +43,7 @@
   --brand-primary: #bd120a;
   /* for button and link hover states #891515 */
   --brand-primary-strong: #891515;
+  --brand-primary-strongest: #450a0a;
   --brand-critical: #eb0000;
   --brand-critical-strong: #c10000;
   --white: #fff;
@@ -96,6 +97,13 @@
   --heading-font-size-l: 36px;
   --heading-font-size-xl: 40px;
   --heading-font-size-xxl: 54px;
+
+  /* hover state colors buttons links */
+
+  --hover-state-default: var(--brand-primary-strong);
+  --hover--state-pressed: var(--brand-primary-strongest);
+
+
 
   /* Nav Height */
   --nav-height: 65px;
