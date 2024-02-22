@@ -30,6 +30,7 @@
   --brand--secondary-subtle: #edf2fa;
   --gray-neutral-80: #333;
   --gray-neutral-90: #1e1e23;
+  --brand-secondary-subtle: #edf2f4;
   --gray-box-shadow: rgb(0 0 0 / 20%);
   --gray-gradient-light: #edeff0;
   --gray-gradient-dark: #9da8af;
@@ -263,7 +264,7 @@ main .section {
 }
 
 main>div.section:first-child {
-  padding-top: 0;
+  padding-bottom: 24px;
 }
 
 main .section.cards-container {

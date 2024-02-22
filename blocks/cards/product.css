@@ -8,10 +8,12 @@
   grid-template-columns: 25% 75%;
   padding: 1em;
   gap: 1em;
- border-color:var(--brand-border);
+  border-color:var(--brand-border);
   border: 1px solid;
 }
-
+.cards.product.block .card:nth-child(even) {
+  background-color:var(--brand-secondary-subtle);
+}
 .cards.product.block .card img {
   width: 100%;
   object-fit: contain;
