@@ -56,7 +56,7 @@ function toggleTopMenu(topMenu) {
 
 function buildSections(sections) {
   const expanderIcon = document.createElement('span');
-  expanderIcon.classList.add('icon', 'icon-chevron-down');
+  expanderIcon.classList.add('icon', 'icon-cheveron-down');
 
   sections.querySelectorAll(':scope > ul > li').forEach((topMenu) => {
     topMenu.classList.add('top-nav');
