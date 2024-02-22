@@ -91,14 +91,14 @@
   --heading-font-size-s: 24px;
   --heading-font-size-m: 30px;
   --heading-font-size-l: 36px;
-  --heading-font-size-xl: 42px;
+  --heading-font-size-xl: 40px;
   --heading-font-size-xxl: 54px;
 
   /* Nav Height */
   --nav-height: 65px;
 
   /* Line heights */
-  --line-height-xs: 1.15em;
+  --line-height-xs: 1.1em;
   --line-height-s: 1.5em;
   --line-height-m: 1.5em;
   --line-height-l: 1.75em;
@@ -364,7 +364,7 @@ main .section.image-boxshadow .default-content-wrapper>p.image {
 }
 
 main .section.content-bump-out .default-content-wrapper p:first-of-type {
-  margin: 56px 0 16px;
+  margin: 40px 0 16px;
   text-align: center;
   color: var(--dark-red);
 }
@@ -732,7 +732,7 @@ main .section.content-bump-out.content-center .default-content-wrapper p:first-o
   }
 
   main .section.content-bump-out.content-center .default-content-wrapper {
-    margin: -81px auto 0;
+    margin: -16px auto 0;
     padding: 0 64px;
   }
 
