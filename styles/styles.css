@@ -25,10 +25,12 @@
   --bright-gray: #efefef;
   --medium-gray: #ddd;
   --gray: #979797;
+  --brand-border: #cdd1d6;
   --gray-neutral-70: #333;
   --brand--secondary-subtle: #edf2fa;
   --gray-neutral-80: #333;
   --gray-neutral-90: #1e1e23;
+  --brand-secondary-subtle: #edf2f4;
   --gray-box-shadow: rgb(0 0 0 / 20%);
   --gray-gradient-light: #edeff0;
   --gray-gradient-dark: #9da8af;
@@ -38,6 +40,8 @@
   --quartz: #4c4948;
   --red: #e1242a;
   --dark-red: #891515;
+  --brand-critical: #eb0000;
+  --brand-critical-strong: #c10000;
   --white: #fff;
   --blue: #003087;
   --black-olive: #3a3a3a;
@@ -103,7 +107,7 @@
   --line-height-xxxl: 2.9em;
 
   /* Page Widths */
-  --normal-page-width: 1200px;
+  --normal-page-width: 1158px;
   --wide-page-width: 1600px;
   --full-page-width: 100vw;
 
@@ -148,7 +152,6 @@ h3 {
 }
 
 h1 {
-  margin-bottom: 20px;
   font-size: var(--heading-font-size-m);
   line-height: var(--line-height-xs);
 }
@@ -176,9 +179,10 @@ p,
 li {
   font-family: var(--body-font-family);
   font-weight: var(--font-weight-normal);
-  font-size: var(--body-font-size-l);
+  font-size: var(--body-font-size-m);
   line-height: var(--line-height-m);
   color: var(--default-text-color);
+  gap:40px;
   text-align: inherit;
 }
 
@@ -217,7 +221,7 @@ p.button-container a {
   line-height: var(--line-height-l);
   text-decoration: none;
   color: var(--white);
-  background-color: var(--dark-red);
+  background-color: var(--brand-critical-strong);
   border-bottom-left-radius: 20px;
 
 }
@@ -260,14 +264,14 @@ main .section {
 }
 
 main>div.section:first-child {
-  padding-top: 0;
+  padding-bottom: 24px;
 }
 
 main .section.cards-container {
   padding-bottom: 20px;
 }
-main .section.cards-container .default-content-wrapper:first-child p{
-  color: var(--dark-red);
+main .section.cards-container .default-content-wrapper:first-child p {
+  color: var(--brand-critical-strong);
 }
 
 main .content-center .default-content-wrapper {
@@ -276,21 +280,25 @@ main .content-center .default-content-wrapper {
 
 main .section.content-bump-out .default-content-wrapper {
   border: 0;
-  max-width: 1030px;
+  max-width: 1158px;
   margin: -81px auto 0;
   display: table;
   width: 100%;
   text-align: left;
   background-color: #fff;
-  padding: 10px 32px;
   position: relative;
+  padding-left: 58px;
 }
-
-main .section.content-bump-out.content-center .default-content-wrapper {
+main .section.content-bump-out .default-content-wrapperp:first-of-type {
   text-align: center;
 }
 
-main .section .default-content-wrapper.button-wrapper {
+
+main .section.content-bump-out.content-center .default-content-wrapper {
+  text-align:center;
+}
+
+main .section .default-content-wrapper.button-container {
   margin: 0 auto;
   max-width: 1200px;
   text-align: center;
@@ -346,7 +354,7 @@ main .section .default-content-wrapper>p>picture {
   position: relative;
   height: 100%;
   width: 100%;
-  margin: 0 auto;
+  margin: 64px auto;
 }
 
 main .section.image-boxshadow .default-content-wrapper>p.image {
@@ -356,7 +364,7 @@ main .section.image-boxshadow .default-content-wrapper>p.image {
 }
 
 main .section.content-bump-out .default-content-wrapper p:first-of-type {
-  margin-top: 12px;
+  margin: 56px 0 16px;
   text-align: center;
   color: var(--dark-red);
 }
@@ -601,11 +609,11 @@ main .disclaimer-modal-container {
   }
 
   h1 {
-    font-size: var(--heading-font-size-xxl);
+    font-size: var(--heading-font-size-xl);
   }
 
   h2 {
-    font-size: var(--heading-font-size-l);
+    font-size: var(--heading-font-size-m);
   }
 
   main>.section>div {
@@ -618,7 +626,6 @@ main .disclaimer-modal-container {
     height: 100%;
     object-fit: cover;
   }
-
 
   main>.section[data-background-image]>.section-bg-image-wrapper {
     height: 20%;
@@ -634,20 +641,25 @@ main .disclaimer-modal-container {
 
   main .section.content-bump-out .default-content-wrapper p:first-of-type {
     font-size: var(--body-font-size-m);
+    text-align: left;
   }
+}
+
+main .section.content-bump-out.content-center .default-content-wrapper p:first-of-type {
+  font-size: var(--body-font-size-m);
+  text-align: center;
 }
 
 
 @media screen and (min-width: 900px) {
   main>.section>div {
-    padding-top: 16px;
-    margin: 16px auto;
-    max-width: 1200px;
+    margin: 16px auto 32px;
+    max-width: 1158px;
 
   }
 
   main>.section[data-background-image] {
-    padding-bottom: 81px;
+    /*padding-bottom: 81px;*/
   }
 
 
@@ -720,7 +732,8 @@ main .disclaimer-modal-container {
   }
 
   main .section.content-bump-out.content-center .default-content-wrapper {
-    margin: -64px auto 0;
+    margin: -81px auto 0;
+    padding: 0 64px;
   }
 
 }

@@ -1,6 +1,6 @@
 /* styles for the floating images auto block */
 
-.section.floating-images-container.grey > div {
+.section.floating-images-container.grey  {
   background-color: var(--brand--secondary-subtle);
 }
 
@@ -39,6 +39,10 @@
   color:red;
   font-size: var(--body-font-size-l);
   font-weight: var(--font-weight-normal);
+}
+
+.block.floating-images .content p:first-of-type  {
+  color: var(--dark-red);
 }
 
 .block.floating-images .content ul {
