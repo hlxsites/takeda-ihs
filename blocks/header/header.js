@@ -117,49 +117,52 @@ function buildSections(sections) {
   return sections;
 }
 
-let mostVisibleSection = null;
+function handleSectionVisibilityChange() {
+  const sectionElements = Array.from(document.querySelectorAll('div.section[id]'));
 
-function handleSectionVisibilityChange(entries) {
-  entries.forEach((entry) => {
-    if (!mostVisibleSection || entry.intersectionRatio > mostVisibleSection.intersectionRatio) {
-      mostVisibleSection = entry;
+  let currentSection = null;
+  let maxVisiblePercentage = 0;
+
+  sectionElements.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+    const visiblePercentage = visibleHeight / rect.height;
+
+    if (visiblePercentage > maxVisiblePercentage) {
+      maxVisiblePercentage = visiblePercentage;
+      currentSection = section;
     }
   });
 
-  const sectionElement = mostVisibleSection.target;
-  const sectionId = `#${sectionElement.getAttribute('id')}`;
-  const currentPath = window.location.pathname;
-  const topNavigationAnchor = document.querySelector(`.top-nav a[href="${currentPath}"]`);
   const subNavigationDropdown = document.querySelector('.subnav-ribbon');
-  const currentSectionValue = subNavigationDropdown.querySelector('.subnav-dropdown > .current-section');
-  const subNavigationAnchor = subNavigationDropdown.querySelector(`.active-submenu a[href="${sectionId}"]`);
+  if (currentSection) {
+    const sectionId = `#${currentSection.getAttribute('id')}`;
+    const currentPath = window.location.pathname;
+    const topNavigationAnchor = document.querySelector(`.top-nav a[href="${currentPath}"]`);
+    const currentSectionValue = subNavigationDropdown.querySelector('.subnav-dropdown > .current-section');
+    const subNavigationAnchor = subNavigationDropdown.querySelector(`.active-submenu a[href="${sectionId}"]`);
 
-  if (topNavigationAnchor) {
-    topNavigationAnchor.parentElement.setAttribute('aria-expanded', 'true');
-    if (
-      mostVisibleSection
-      && mostVisibleSection.isIntersecting
-      && mostVisibleSection.intersectionRatio > 0.15
-    ) {
-      subNavigationDropdown.classList.add('active');
-      if (subNavigationAnchor) {
-        Array.from(subNavigationDropdown.querySelectorAll('.active-submenu .sub-nav')).forEach((link) => link.classList.remove('active'));
-        subNavigationAnchor.parentElement.classList.add('active');
-        currentSectionValue.replaceChildren(subNavigationAnchor.cloneNode(true));
+    if (topNavigationAnchor) {
+      topNavigationAnchor.parentElement.setAttribute('aria-expanded', 'true');
+      if (currentSection) {
+        subNavigationDropdown.classList.add('active');
+        if (subNavigationAnchor) {
+          Array.from(subNavigationDropdown.querySelectorAll('.active-submenu .sub-nav')).forEach((link) => link.classList.remove('active'));
+          subNavigationAnchor.parentElement.classList.add('active');
+          currentSectionValue.replaceChildren(subNavigationAnchor.cloneNode(true));
+        }
       }
-    } else {
-      subNavigationDropdown.classList.remove('active');
-      Array.from(subNavigationDropdown.querySelectorAll('.active-submenu .sub-nav')).forEach((link) => link.classList.remove('active'));
     }
+  } else {
+    subNavigationDropdown.classList.remove('active');
+    Array.from(subNavigationDropdown.querySelectorAll('.active-submenu .sub-nav')).forEach((link) => link.classList.remove('active'));
   }
-  // Reset mostVisibleSection after all entries have been processed
-  mostVisibleSection = null;
 }
 
 function observeSectionInteractions() {
   const sectionElements = document.querySelectorAll('div.section[id]');
   const intersectionObserver = new IntersectionObserver(handleSectionVisibilityChange, {
-    threshold: [0, 0.5, 1],
+    threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
   });
 
   sectionElements.forEach((section) => {
