@@ -731,8 +731,13 @@ main .section.content-bump-out.content-center .default-content-wrapper p:first-o
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
   }
 
-  main .section.content-bump-out.content-center .default-content-wrapper {
+  main .section.content-bump-out.content-center.hero-container .default-content-wrapper {
     margin: -16px auto 0;
+    padding: 0 64px;
+  }
+
+  main .section.content-bump-out.content-center .default-content-wrapper {
+    margin: -56px auto 0;
     padding: 0 64px;
   }
 
