@@ -27,8 +27,8 @@
     --form-paragraph-font-style: none;
     --form-paragraph-font-size: var(--form-font-size-s);
     --form-label-color: var(--label-color);
-    --form-label-font-size: var(--form-font-size-s);
-    --form-label-font-weight: 400;
+    --form-label-font-size: var(--form-font-size-xs);
+    --form-label-font-weight: 500;
     --form-title-font-weight: 600;
     --form-fieldset-border: 0;
     --form-fieldset-marign: 0;
@@ -139,7 +139,7 @@ main .form select {
     max-width: unset;
     margin-top: .5rem;
     margin-bottom: 1rem;
-    border-radius: 0.25rem;
+    border-radius: 0.125rem;
 }
 
 main .form input.error,
@@ -147,6 +147,7 @@ main .form textarea.error,
 main .form select.error {
     border: 1px solid #FF3B3B;
     background: #FFE4E4 0% 0% no-repeat padding-box;
+    margin-bottom: 8px;
 }
 
 main .form input[type='file'] {
@@ -163,7 +164,7 @@ main .form input[type='radio'] {
     position: static;
     z-index: 1;
     transform: scale(1.5);
-    accent-color: var(--dark-red);
+    accent-color: var(--brand-primary);
 }
 
 main .form textarea {
@@ -201,6 +202,7 @@ main .form form .field-wrapper {
     margin: var(--form-field-gap);
     color: var(--form-label-color);
     flex: 1 0 calc(100%/var(--form-columns) - var(--form-field-horz-gap));
+    margin-bottom: 24px;
 }
 
 main .form form p {
@@ -237,7 +239,7 @@ input::file-selector-button {
 
 main .form button {
     color: var(--white);
-    background: var(--dark-red);
+    background: var(--brand-primary);
     border: var(--form-button-border);
     padding: var(--form-button-padding);
     font-size: var(--form-button-font-size);

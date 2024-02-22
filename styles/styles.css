@@ -40,6 +40,9 @@
   --quartz: #4c4948;
   --red: #e1242a;
   --dark-red: #891515;
+  --brand-primary: #bd120a;
+  /* for button and link hover states #891515 */
+  --brand-primary-strong: #891515;
   --brand-critical: #eb0000;
   --brand-critical-strong: #c10000;
   --white: #fff;
@@ -159,7 +162,7 @@ h1 {
 h2 {
   margin-bottom: 12px;
   font-size: var(--heading-font-size-s);
-  line-height: var(--line-height-s);
+  line-height: var(--line-height-xs);
 }
 
 h2 sub {
@@ -202,7 +205,7 @@ p.reference {
 a,
 a:visited {
   font-family: var(--body-font-family);
-  color: var(--blue);
+  color: var(--brand-primary);
 }
 
 span {
@@ -221,7 +224,7 @@ p.button-container a {
   line-height: var(--line-height-l);
   text-decoration: none;
   color: var(--white);
-  background-color: var(--brand-critical-strong);
+  background-color: var(--brand-primary);
   border-bottom-left-radius: 20px;
 
 }

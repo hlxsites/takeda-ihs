@@ -10,7 +10,10 @@
   background-color: var(--white);
   z-index: 10;
   position: relative;
+  box-shadow: 0 8px 8px -4px #00000029;
+  opacity:1;
 }
+
 
 .header nav a {
   text-decoration: none;
@@ -103,7 +106,7 @@
   padding: 8px 42px;
   text-decoration: none;
   color: var(--white);
-  background-color: var(--brand-critical-strong);
+  background-color: var(--brand-primary);
   border-bottom-left-radius: 20px;
   white-space: nowrap;
   line-height: 19px;
@@ -285,9 +288,22 @@
   }
 
 }
-
+@media screen and (min-width: 1280px) {
+  .header nav {
+    padding: 0 140px;
+    box-shadow: none;
+  }
+}
 @media (min-width: 1200px) {
   .header nav {
     padding: 0 140px;
+    box-shadow: none;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .header nav {
+    padding: 0 140px;
+    box-shadow: none;
   }
 }
