@@ -59,7 +59,8 @@
 
 .cards.cta.block>ul>li div p.image {
   width: 230px;
-  margin: 0 auto;
+ 
+
 }
 
 .cards.cta.block>ul>li picture {
@@ -67,7 +68,7 @@
   position: relative;
   height: 100%;
   width: 100%;
-  padding-bottom: 16px;
+
 }
 
 .cards.cta.block>ul>li picture img {
@@ -75,7 +76,6 @@
   width: 100%;
   object-position: center center;
   object-fit: contain;
-  padding-bottom:8px;
 }
 
 .cards.cta.block>ul>li h3 {
@@ -139,6 +139,6 @@
 
 @media screen and (min-width: 1200px) {
   .cards.cta.block>ul>li div p.image {
-    width: 230px;
+    width: 100%;
   }
 }

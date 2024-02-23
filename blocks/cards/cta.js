@@ -17,11 +17,10 @@ export default async function decorate(block) {
     const cardBody = (card.children[1]);
     cardBody.classList.add('card-body');
     const ButtonContainer = card.querySelector('p.button-container');
-    ButtonContainer.classList.remove('button-container');
     ButtonContainer.classList.add('link-container');
     cardBody.prepend(topSection);
     const topLink = card.querySelector('p.link-container');
-    topSection.append(topLink);
+    /* cardBody.append(topLink); */
     const li = document.createElement('li');
     li.classList.add('cta', card.children[0].textContent);
     li.append(card.children[1]);
