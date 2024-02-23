@@ -194,7 +194,7 @@ li {
   line-height: var(--line-height-m);
   color: var(--default-text-color);
   gap:40px;
-  text-align: inherit;
+  text-align: center;
 }
 
 ul,
@@ -283,6 +283,7 @@ main .section.cards-container {
 }
 main .section.cards-container .default-content-wrapper:first-child p {
   color: var(--brand-critical-strong);
+  text-align:left;
 }
 
 main .content-center .default-content-wrapper {
@@ -300,8 +301,9 @@ main .section.content-bump-out .default-content-wrapper {
   position: relative;
   padding-left: 58px;
 }
-main .section.content-bump-out .default-content-wrapperp:first-of-type {
-  text-align: center;
+
+main .section.content-bump-out .default-content-wrapper p {
+  text-align: right;
 }
 
 

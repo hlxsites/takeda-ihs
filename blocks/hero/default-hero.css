@@ -134,6 +134,7 @@
 
   .hero.block.default .content-wrapper .content p {
     font-size: var(--body-font-size-l);
+    text-align:left;
   }
 
   .hero.block.default .content-wrapper .content p:nth-of-type(1) {
