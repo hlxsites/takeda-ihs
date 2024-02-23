@@ -28,8 +28,8 @@ export default async function decorate(block) {
     const picture = li.querySelector('picture');
     picture.closest('p').classList.add('image');
     const img = picture.querySelector('img');
-    const ratio = (parseInt(img.height, 10) / parseInt(img.width, 10)) * 100;
-    picture.style.paddingBottom = `${ratio}%`;
+    const ratio = (parseInt(img.height, 10) / parseInt(img.width, 10)) * 0;
+    img.style.marginBottom = `${ratio}%`;
     ul.append(li);
   });
   block.replaceChildren(ul);
