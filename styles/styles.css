@@ -302,7 +302,10 @@ main .section.content-bump-out .default-content-wrapper {
   padding-left: 58px;
 }
 
-main .section.content-bump-out .default-content-wrapper p {
+main .section.content-bump-out .default-content-wrapper p  {
+  text-align: left;
+}
+main .section.content-bump-out .default-content-wrapper .button-container  {
   text-align: right;
 }
 
@@ -426,13 +429,17 @@ main>.section[data-background-image]>.section-bg-image-wrapper picture img {
 
 main .section .default-content-wrapper span.icon {
   position: relative;
-  top: 8px;
-  left: 10px;
+  top: 4px;
+  left: 24px;
   display: inline-block;
   height: 25px;
   width: 25px;
 }
+main .section .default-content-wrapper span.icon {
 
+  height:25px;
+  width:25px;
+}
 main .section .default-content-wrapper span.icon svg {
   height: 100%;
   width: 100%;
@@ -658,7 +665,7 @@ main .disclaimer-modal-container {
   }
 }
 
-main .section.content-bump-out.content-center .default-content-wrapper p:first-of-type {
+main .section.content-bump-out.content-center .default-content-wrapper p {
   font-size: var(--body-font-size-m);
   text-align: center;
 }
