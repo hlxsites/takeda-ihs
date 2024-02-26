@@ -40,7 +40,7 @@ footer .footer.block {
 
 .footer.block .content-wrapper .footer-contact-us p {
   font-weight: var(--font-weight-normal);
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-m);
   text-align: center;
   padding-bottom: 30px;
 }

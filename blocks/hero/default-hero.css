@@ -122,6 +122,7 @@
 
   .hero.block.default .content-wrapper .content {
     max-width: 650px;
+    margin-bottom: 32px;
   }
 
   .hero.block.default .content-wrapper.no-image .content h2 {
@@ -162,13 +163,15 @@
 @media screen and (min-width: 1280px) {
   .hero.block.default .content-wrapper {
     max-width: var(--normal-page-width);
+    padding: 120px 0;
+    margin: -64px auto 0;
   }
 }
 
 @media screen and (min-width: 1600px) {
   .hero.block.default .content-wrapper {
-    padding: 80px 24px;
+    padding: 160px 0;
     max-width: var(--normal-page-width);
-    margin: -64px auto 0;
+    margin: -96px auto 0;
   }
 }
