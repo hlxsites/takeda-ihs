@@ -194,7 +194,7 @@ li {
   line-height: var(--line-height-m);
   color: var(--default-text-color);
   gap:40px;
-  text-align: center;
+
 }
 
 ul,
