@@ -21,8 +21,8 @@
   font-weight: normal;
 }
 .header nav .nav-sections .top-nav.active{
-  border-bottom: 4px solid var(--brand-primary-strong);
-  color:var(--brand-primary-strong);
+  border-bottom: 4px solid var(--brand-primary);
+  color:var(--brand-primary);
 
 }
 
@@ -299,12 +299,12 @@
   }
 
   .header nav .subnav-ribbon>.active-submenu .sub-nav.active a {
-    border-bottom: 4px solid var(--white);
+    border-bottom: 2px solid var(--white);
   }
 
   .header nav .nav-contact-us>p>a {
-    padding: 8px 20px;
-    font-size: 14px;
+    padding: 12px 24px;
+    font-size: var( --body-font-size-m);
   }
 
 }
