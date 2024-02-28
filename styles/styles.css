@@ -27,10 +27,9 @@
   --gray: #979797;
   --brand-border: #cdd1d6;
   --gray-neutral-70: #333;
-  --brand--secondary-subtle: #edf2fa;
+  --brand--secondary-subtle: #edf2f4;
   --gray-neutral-80: #333;
   --gray-neutral-90: #1e1e23;
-  --brand-secondary-subtle: #edf2f4;
   --gray-box-shadow: rgb(0 0 0 / 20%);
   --gray-gradient-light: #edeff0;
   --gray-gradient-dark: #9da8af;
@@ -306,8 +305,12 @@ main .section.content-bump-out .default-content-wrapper {
 main .section.content-bump-out .default-content-wrapper p  {
   text-align: left;
 }
+
 main .section.content-bump-out .default-content-wrapper .button-container  {
   text-align: right;
+}
+main .section .default-content-wrapper .button-container  {
+  text-align: center;
 }
 
 

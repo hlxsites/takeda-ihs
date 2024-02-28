@@ -25,6 +25,7 @@
 .cards.product.block .card .details p {
   text-align: left;
   font-size: var(--body-font-size-xl);
+  margin-bottom:.25em;
 }
 
 .cards.product.block .card .button-wrapper .button-container  .icon.icon-download-button, .icon.icon-jump_link{

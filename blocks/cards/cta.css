@@ -5,7 +5,7 @@
 
 .cards.cta.block>ul>li {
   display: flex;
-  padding: 16px;
+  padding: 24px;
   box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%);
   background-color: #fff;
   justify-content: center;
@@ -59,8 +59,6 @@
 
 .cards.cta.block>ul>li div p.image {
   width: 230px;
- 
-
 }
 
 .cards.cta.block>ul>li picture {
@@ -68,7 +66,6 @@
   position: relative;
   height: 100%;
   width: 100%;
-
 }
 
 .cards.cta.block>ul>li picture img {
@@ -81,7 +78,9 @@
 .cards.cta.block>ul>li h3 {
   font-size: var(--heading-font-size-xs);
   text-align: left;
-  color: var(--gray);}
+  color: var(--gray-neutral-80);
+  margin-bottom:4px;
+}
 
 .cards.cta.block>ul>li p {
   text-align: left;
@@ -92,7 +91,6 @@
 }
 
 .cards.cta.block>ul>li p.button-container {
-  margin: 12px;
   text-align: left;
   margin-top:auto;
 }
@@ -126,7 +124,7 @@
   }
 
   .cards.cta.block .card-body {
-    margin-right: 20px;
+
   }
 
   .cards.cta.block .card-body p.link-container span.icon {

@@ -36,7 +36,7 @@
     --form-fieldset-legend-font-size: var(--form-label-font-size);
     --form-fieldset-legend-font-weight: var(--form-title-font-weight);
     --form-fieldset-legend-border: none;
-    --form-fieldset-legend-padding: 16px 0;
+    --form-fieldset-legend-padding: 0  0 16px;
     --form-button-color: var(--background-color-primary);
     --form-button-font-size: var(--form-font-size-m);
     --form-button-background-color: var(--button-primary-color);
@@ -215,7 +215,7 @@ main .form form p {
 main .form form .form-checkbox-wrapper,
 main .form form .form-radio-wrapper {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     margin: 0;
     gap: 8px;
 }
