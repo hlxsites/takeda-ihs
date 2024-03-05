@@ -200,6 +200,10 @@ ul,
 li {
   font-family: var(--body-font-family);
 }
+ li:hover {
+  color:green;
+  border-bottom: 4px solid var(--brand-primary);
+}
 
 p {
   margin-bottom: 1.2em;
@@ -211,6 +215,10 @@ p.reference {
 
 a,
 a:visited {
+  font-family: var(--body-font-family);
+  color: var(--brand-primary);
+}
+a:hover {
   font-family: var(--body-font-family);
   color: var(--brand-primary);
 }
@@ -234,7 +242,10 @@ p.button-container a {
   background-color: var(--brand-primary);
   font-size:var(--body-font-size-m);
   border-bottom-left-radius: 20px;
-
+  transition-duration: .2s;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-timing-function: linear;
 }
 
 p.button-container a:visited {
