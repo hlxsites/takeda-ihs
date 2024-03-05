@@ -157,7 +157,7 @@ h1,
 h2,
 h3 {
   font-family: var(--heading-font-family);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-bold);
   color: var(--gray-neutral-80);
 }
 
@@ -220,7 +220,7 @@ a:visited {
 }
 a:hover {
   font-family: var(--body-font-family);
-  color: var(--brand-primary);
+  color: var(--brand-primary-strong);
 }
 
 span {
