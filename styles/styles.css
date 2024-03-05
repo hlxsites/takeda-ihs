@@ -99,7 +99,7 @@
 
   /* hover state colors buttons links */
 
-  --hover-state-default: var(--brand-primary-strong);
+  --hover-state-default: var(--brand-primary);
   --hover--state-pressed: var(--brand-primary-strongest);
 
 
@@ -239,6 +239,14 @@ p.button-container a {
 
 p.button-container a:visited {
   text-decoration: none;
+}
+p.button-container:focus {
+  background-color: var(--brand-primary-strong);
+
+}
+p.button-container a:hover {
+
+  background-color: var(--brand-primary-strong);
 }
 
 body {

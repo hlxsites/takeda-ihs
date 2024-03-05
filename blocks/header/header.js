@@ -249,7 +249,8 @@ export default async function decorate(headerBlock) {
     });
 
     const contactUsSection = navigationHtml.querySelector('.nav-contact-us');
-
+    const contactUsButton = navigationHtml.querySelector('div > p');
+    contactUsButton.classList.add('button-container');
     const utilitySection = navigationHtml.querySelector('.nav-utility');
 
     // Order maintains tabindex keyboard navigation

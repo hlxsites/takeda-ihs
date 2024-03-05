@@ -121,7 +121,6 @@
   padding: 8px 42px;
   text-decoration: none;
   color: var(--white);
-  background-color: var(--brand-primary);
   border-bottom-left-radius: 20px;
   white-space: nowrap;
   line-height: 19px;
@@ -164,7 +163,7 @@
 }
 
 .header nav .subnav-ribbon[aria-expanded="true"] .subnav-dropdown span {
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 .header nav .subnav-ribbon .subnav-dropdown span img {
   height:25px;
