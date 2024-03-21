@@ -3,9 +3,9 @@ Takeda Integrated Health Systems
 
 ## Environments
 
--Preview: https://main--takeda-ihs--hlxsites.hlx.page/
+-Preview: https://phase-two-redo--takeda-ihs--hlxsites.hlx.page/
 
--Live: https://main--takeda-ihs--hlxsites.hlx.live/
+-Live: https://phase-two-redo--takeda-ihs--hlxsites.hlx.live/
 
 ## Installation
 

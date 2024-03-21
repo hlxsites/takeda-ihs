@@ -1,9 +1,13 @@
 /* styles for the floating images auto block */
 
+.section.floating-images-container.grey  {
+  background-color: var(--brand--secondary-subtle);
+}
 
 .block.floating-images > div {
   display: flex;
   flex-direction: column-reverse;
+  align-items: start;
   gap: 1em;
 }
 
@@ -29,8 +33,16 @@
 }
 
 .block.floating-images .content {
-  border-left: 3px solid var(--red);
   padding: 0 24px;
+}
+.block.floating-images .content h3 {
+  color:red;
+  font-size: var(--body-font-size-l);
+  font-weight: var(--font-weight-normal);
+}
+
+.block.floating-images .content p:first-of-type  {
+  color: var(--dark-red);
 }
 
 .block.floating-images .content ul {
@@ -47,7 +59,8 @@
 @media screen and (min-width: 600px) {
   .block.floating-images > div {
     flex-direction: row;
-    align-items: center;
+    align-items: start;
+    padding:20px 0;
   }
 
   .block.floating-images.image-left > div {
