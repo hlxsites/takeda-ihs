@@ -200,10 +200,6 @@ ul,
 li {
   font-family: var(--body-font-family);
 }
- li:hover {
-  color:green;
-  border-bottom: 4px solid var(--brand-primary);
-}
 
 p {
   margin-bottom: 1.2em;
