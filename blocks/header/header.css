@@ -23,13 +23,15 @@
 .header nav .nav-sections .top-nav.active{
   border-bottom: 4px solid var(--brand-primary);
   color:var(--brand-primary);
-
 }
 
 .header nav .nav-logo {
   grid-area: logo;
 }
+.header nav .nav-sections .top-nav a:hover {
+  border-bottom: 4px solid var(--brand-primary);
 
+}
 .header nav .nav-logo img {
   padding: 15px 0;
   height: auto;
@@ -300,7 +302,9 @@
   .header nav .subnav-ribbon>.active-submenu .sub-nav.active a {
     border-bottom: 2px solid var(--white);
   }
-
+  .header nav .subnav-ribbon a:hover {
+    border-bottom: 2px solid var(--white);
+  }
   .header nav .nav-contact-us>p>a {
     padding: 12px 24px;
     font-size: var( --body-font-size-m);
