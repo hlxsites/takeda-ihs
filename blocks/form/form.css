@@ -85,6 +85,10 @@ main .form .form-wrapper {
     padding: var(--form-padding);
 }
 
+main .form .field-wrapper.form-hidden-wrapper {
+    display:none;
+}
+
 main .form>div:not(:first-child) {
     display: none;
 }
