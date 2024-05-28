@@ -318,6 +318,7 @@ function renderField(fd) {
   }
   if (fd.description) {
     field.append(createHelpText(fd));
+    field.prepend(createHelpText(fd));
     field.dataset.description = fd.description; // In case overriden by error message
   }
   return field;

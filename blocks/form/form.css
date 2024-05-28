@@ -122,6 +122,7 @@ main .form form .field-wrapper {
 main .form .field-description {
     color: var(--form-label-color);
     font-size: var(--form-font-size-xs);
+    margin:16px 0;
 }
 
 main .form form .field-invalid {
