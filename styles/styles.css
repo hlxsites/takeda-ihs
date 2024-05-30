@@ -12,60 +12,47 @@
 
 @import url('reset.css');
 
+/* fallback font for Gotham (normal - 400) */
 @font-face {
-  font-family: 'Open Sans Fallback';
+  font-family: "Gothum Fallback";
   font-style: normal;
   font-weight: 400;
-  src: local('Arial');
-  size-adjust: 105.43%;
-  ascent-override: 105%;
-}
-
-@font-face {
-  font-family: 'Open Sans Fallback';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Arial Italic');
-  size-adjust: 105.43%;
-  ascent-override: 105%;
-}
-
-@font-face {
-  font-family: 'Open Sans Fallback';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Arial Bold');
-  size-adjust: 105.43%;
-  ascent-override: 105%;
-}
-
-@font-face {
-  font-family: 'Open Sans Fallback';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Arial Bold');
-  size-adjust: 105.43%;
-  ascent-override: 105%;
+  size-adjust: 117.99%;
+  src: local("Arial");
 }
 
 :root {
-  /* Colors */
   --bright-gray: #efefef;
   --medium-gray: #ddd;
   --gray: #979797;
+  --brand-border: #cdd1d6;
+  --gray-neutral-70: #333;
+  --brand--secondary-subtle: #edf2f4;
+  --gray-neutral-80: #333;
+  --gray-neutral-90: #1e1e23;
   --gray-box-shadow: rgb(0 0 0 / 20%);
+  --gray-gradient-light: #edeff0;
+  --gray-gradient-dark: #9da8af;
+
+  /* general colors */
   --silver: #d8d8d8;
   --quartz: #4c4948;
-  --red: #e10;
+  --red: #e1242a;
+  --dark-red: #891515;
+  --brand-primary: #bd120a;
+  /* for button and link hover states #891515 */
+  --brand-primary-strong: #891515;
+  --brand-primary-strongest: #450a0a;
+  --brand-critical: #eb0000;
+  --brand-critical-strong: #c10000;
   --white: #fff;
   --blue: #003087;
   --black-olive: #3a3a3a;
   --black: black;
-  --cadet: #5B6770; /* gray-blue */
-  --gray-gradient-light: #edeff0;
-  --gray-gradient-dark: #9da8af; /* Gradient breakpoint is defined below */
+  --cadet: #5B6770;
 
   /* Brand Colors */
+  --takeda-red-50: #e1242a;
   --gammagard-liq: #003087;
   --gammagard-sd: #35a4d8;
   --hyqvia: #500778;
@@ -78,12 +65,12 @@
   --hello-programs: #808080;
 
   /* Font Colors */
-  --default-text-color: var(--black-olive);
+  --default-text-color: var(--gray-neutral-80);
 
   /* Fonts */
-  --font-family-opensans: 'Open Sans', 'Open Sans Fallback', 'Arial', sans-serif;
-  --body-font-family: var(--font-family-opensans);
-  --heading-font-family: var(--font-family-opensans);
+  --font-family-gotham: 'Gotham', 'Gotham Fallback', 'Arial', sans-serif;
+  --body-font-family: var(--font-family-gotham);
+  --heading-font-family: var(--font-family-gotham);
 
   /* Font Weights */
   --font-weight-bold: 700;
@@ -99,22 +86,30 @@
   --body-font-size-m: 16px;
   --body-font-size-l: 18px;
   --body-font-size-xl: 20px;
-  --body-font-size-xxl: 24px;
+  --body-font-size-xxl: 22px;
 
   /* Heading */
   --heading-font-size-xxs: 18px;
   --heading-font-size-xs: 20px;
   --heading-font-size-s: 24px;
-  --heading-font-size-m: 26px;
-  --heading-font-size-l: 30px;
-  --heading-font-size-xl: 42px;
+  --heading-font-size-m: 30px;
+  --heading-font-size-l: 36px;
+  --heading-font-size-xl: 40px;
+  --heading-font-size-xxl: 54px;
+
+  /* hover state colors buttons links */
+
+  --hover-state-default: var(--brand-primary);
+  --hover--state-pressed: var(--brand-primary-strongest);
+
+
 
   /* Nav Height */
-  --nav-height: 100px;
+  --nav-height: 65px;
 
   /* Line heights */
-  --line-height-xs: 1.15em;
-  --line-height-s: 1.25em;
+  --line-height-xs: 1.1em;
+  --line-height-s: 1.5em;
   --line-height-m: 1.5em;
   --line-height-l: 1.75em;
   --line-height-xl: 2em;
@@ -122,7 +117,7 @@
   --line-height-xxxl: 2.9em;
 
   /* Page Widths */
-  --normal-page-width: 1200px;
+  --normal-page-width: 1158px;
   --wide-page-width: 1600px;
   --full-page-width: 100vw;
 
@@ -133,7 +128,9 @@
   --gray-gradient-angle: -180deg;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -156,22 +153,23 @@ sub {
   line-height: var(--line-height-xs);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-bold);
-  color: var(--black);
+  color: var(--gray-neutral-80);
 }
 
 h1 {
-  margin-bottom: 8px;
   font-size: var(--heading-font-size-m);
-  line-height: var(--line-height-s);
+  line-height: var(--line-height-xs);
 }
 
 h2 {
   margin-bottom: 12px;
   font-size: var(--heading-font-size-s);
-  line-height: var(--line-height-s);
+  line-height: var(--line-height-xs);
 }
 
 h2 sub {
@@ -187,30 +185,38 @@ h3 {
   line-height: var(--line-height-m);
 }
 
-p, li {
+p,
+li {
   font-family: var(--body-font-family);
   font-weight: var(--font-weight-normal);
   font-size: var(--body-font-size-m);
-  line-height: var(--line-height-s);
+  line-height: var(--line-height-m);
   color: var(--default-text-color);
-  text-align: inherit;
+  gap:40px;
+
 }
 
-ul, li {
+ul,
+li {
   font-family: var(--body-font-family);
 }
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.2em;
 }
 
 p.reference {
   font-size: var(--body-font-size-xxs);
 }
 
-a, a:visited{
+a,
+a:visited {
   font-family: var(--body-font-family);
-  color: var(--blue);
+  color: var(--brand-primary);
+}
+a:hover {
+  font-family: var(--body-font-family);
+  color: var(--brand-primary-strong);
 }
 
 span {
@@ -221,21 +227,32 @@ span {
   color: var(--default-text-color);
 }
 
+main button,
 p.button-container a {
   display: inline-block;
-  padding: 8px 20px;
-  font-weight: bold;
+  padding: 12px 24px;
+  font-weight: normal;
   line-height: var(--line-height-l);
   text-decoration: none;
-  color: var(--black);
-  background-color: var(--white);
-  border-radius: 4px;
-  box-shadow: 3px 3px 7px 1px rgba(0 0 0 / 20%);
+  color: var(--white);
+  font-size:var(--body-font-size-m);
+  border-bottom-left-radius: 20px;
+  transition-duration: .2s;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-timing-function: linear;
 }
 
 p.button-container a:visited {
-  color: var(--black);
   text-decoration: none;
+}
+p.button-container:focus {
+  background-color: var(--brand-primary-strong);
+
+}
+p.button-container a:hover {
+
+  background-color: var(--brand-primary-strong);
 }
 
 body {
@@ -248,24 +265,91 @@ body.appear {
 
 header {
   height: var(--nav-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
 }
 
-body.gray-gradient > main {
-  background: linear-gradient(
-          var(--gray-gradient-angle),
-          var(--gray-gradient-light) 0%,
-          var(--gray-gradient-light) var(--gray-gradient-breakpoint),
-          var(--gray-gradient-dark) 100%
-  );
+main {
+  padding-top: var(--nav-height);
+  overflow: hidden;
+}
+
+body.gray-gradient>main {
+  background: linear-gradient(var(--gray-gradient-angle),
+      var(--gray-gradient-light) 0%,
+      var(--gray-gradient-light) var(--gray-gradient-breakpoint),
+      var(--gray-gradient-dark) 100%);
 }
 
 main .section {
-  padding: 32px 0;
-  background-color: var(--white);
+  padding: 20px 0;
+}
+
+main>div.section:first-child {
+  padding-bottom: 24px;
+}
+
+main .section.cards-container {
+  padding-bottom: 20px;
+}
+main .section.cards-container .default-content-wrapper:first-child p {
+  color: var(--brand-critical-strong);
+  text-align:left;
+}
+
+main .content-center .default-content-wrapper {
+  text-align: center;
+}
+
+main .section.content-bump-out .default-content-wrapper {
+  border: 0;
+  max-width: 1158px;
+  margin: -81px auto 0;
+  display: table;
+  width: 100%;
+  text-align: left;
+  background-color: #fff;
+  position: relative;
+  padding-left: 58px;
+}
+
+main .section.content-bump-out .default-content-wrapper p  {
+  text-align: left;
+}
+
+main .section.content-bump-out .default-content-wrapper .button-container  {
+  text-align: right;
+}
+main .section .default-content-wrapper .button-container  {
+  text-align: center;
+}
+
+
+main .section.content-bump-out.content-center .default-content-wrapper {
+  text-align:center;
+}
+
+main .section .default-content-wrapper.button-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+main .section.default-content-wrapper .button-container {
+  text-align: right;
+  max-width: 1200px;
+}
+
+main .section.default-content-wrapper {
+  text-align: right;
+  max-width: 1200px;
 }
 
 main .section.gray-background {
-  background-color: var(--bright-gray);
+  background-color: var(--brand--secondary-subtle);
 }
 
 main .section.silver-background {
@@ -279,7 +363,7 @@ main .section.quartz-background {
 main .section.quartz-background h1,
 main .section.quartz-background h2,
 main .section.quartz-background p,
-main .section.quartz-background li{
+main .section.quartz-background li {
   color: var(--white);
 }
 
@@ -288,32 +372,38 @@ main .section.red-title h2 {
   color: var(--red);
 }
 
+main .section.hero h1 {
+  font-size:36px;
+}
+main .section.red-headline.plain-section .default-content-wrapper p:first-of-type  {
+  color: var(--dark-red);
+}
+
 main .section[data-background-image] {
   position: relative;
-  padding-bottom: 200px;
 }
 
-main .section.center .default-content-wrapper {
-  text-align: center;
-}
-
-main .section .default-content-wrapper > p > picture {
+main .section .default-content-wrapper>p>picture {
   display: block;
   position: relative;
   height: 100%;
   width: 100%;
-  margin: 0 auto;
+  margin: 64px auto;
 }
 
-main .section.image-boxshadow .default-content-wrapper > p.image {
+main .section.image-boxshadow .default-content-wrapper>p.image {
   padding: 32px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 10px 0 rgba(0 0 0 / 20%)
 }
 
+main .section.content-bump-out .default-content-wrapper p:first-of-type {
+  margin: 40px 0 16px;
+  text-align: center;
+  color: var(--dark-red);
+}
 
-main .section .default-content-wrapper > p > picture > img {
+main .section .default-content-wrapper>p>picture>img {
   position: absolute;
   top: 0;
   left: 0;
@@ -323,8 +413,11 @@ main .section .default-content-wrapper > p > picture > img {
   object-position: center center;
 }
 
-main > .section[data-background-image] > .section-bg-image-wrapper {
-  position: absolute;
+main .section .bg-image-wrapper {
+  text-align: center;
+}
+
+main>.section[data-background-image]>.section-bg-image-wrapper {
   margin: 0;
   padding: 0;
   bottom: 0;
@@ -334,28 +427,42 @@ main > .section[data-background-image] > .section-bg-image-wrapper {
   max-width: unset;
 }
 
-main > .section[data-background-image] > .section-bg-image-wrapper picture {
+main>.section[data-background-image]>.section-bg-image-wrapper picture {
   display: block;
   position: relative;
   height: 100%;
   width: 100%;
 }
 
-main > .section[data-background-image] > .section-bg-image-wrapper picture img {
-  position: absolute;
+main>.section[data-background-image]>.section-bg-image-wrapper picture img {
   bottom: 0;
   left: 0;
   width: 100%;
   object-fit: cover;
   object-position: center;
+
+  /* temporary until there are right sized images */
+  height: 600px;
 }
 
 main .section .default-content-wrapper span.icon {
+  position: relative;
+  top: 6px;
+  left: 12px;
   display: inline-block;
-  height: 30px;
-  width: 30px;
+  height: 23px;
+  width: 23px;
+}
+main .section .default-content-wrapper span.icon img {
+  height:100%;
+  width:100%;
 }
 
+main .section .default-content-wrapper span.icon {
+
+  height:25px;
+  width:25px;
+}
 main .section .default-content-wrapper span.icon svg {
   height: 100%;
   width: 100%;
@@ -381,70 +488,61 @@ main .section[data-layout]:not(.center) .layout-content-wrapper .default-content
   border-left: 3px solid var(--red);
 }
 
-main .section[data-layout="50/50"] .layout-content-wrapper > div.separator-wrapper {
+main .section[data-layout="50/50"] .layout-content-wrapper>div.separator-wrapper {
   flex-basis: 100%;
   padding: 2em 0;
 }
 
-main .section[data-layout="50/50"] .layout-content-wrapper > div.separator-wrapper hr {
+main .section[data-layout="50/50"] .layout-content-wrapper>div.separator-wrapper hr {
   border: none;
   border-top: 1px solid var(--gray);
   margin: 0;
 }
 
-main > .section > div {
+main>.section>div {
   padding: 0 16px;
   margin: 0 auto;
-  max-width: var(--normal-page-width);
 }
 
-main > .section.full-width > div {
+main>.section.full-width>div {
   margin: 0;
+  text-align: center;
   max-width: var(--full-page-width);
 }
 
-
 main .section.cadet-gradient-background {
-  background: linear-gradient(
-      -180deg,
+  background: linear-gradient(-180deg,
       #5b6770 0%,
       #edeff0 86%,
       rgba(242 244 245 / 55%) 88%,
       rgba(247 248 248 / 0%) 90%,
-      rgba(255 255 255 / 0%) 100%
-  );
+      rgba(255 255 255 / 0%) 100%);
 }
 
 main .section.cadet-gradient-background[data-background-image] {
-  background: linear-gradient(
-      -180deg,
+  background: linear-gradient(-180deg,
       #5b6770 0%,
       #edeff0 86%,
       rgba(242 244 245 / 55%) 88%,
       rgba(247 248 248 / 0%) 90%,
-      rgba(255 255 255 / 0%) 100%
-  );
+      rgba(255 255 255 / 0%) 100%);
 }
 
 main .section.gray-gradient-background {
-  background: linear-gradient(
-          var(--gray-gradient-angle),
-          var(--gray-gradient-light) 0%,
-          var(--gray-gradient-light) var(--gray-gradient-breakpoint),
-          var(--gray-gradient-dark) 100%
-  );
+  background: linear-gradient(var(--gray-gradient-angle),
+      var(--gray-gradient-light) 0%,
+      var(--gray-gradient-light) var(--gray-gradient-breakpoint),
+      var(--gray-gradient-dark) 100%);
 }
 
 main .section.gray-gradient-background[data-background-image] {
-  background: linear-gradient(
-      var(--gray-gradient-angle),
+  background: linear-gradient(var(--gray-gradient-angle),
       var(--gray-gradient-light) 0%,
       var(--gray-gradient-light) var(--gray-gradient-breakpoint),
-      var(--gray-gradient-dark) 80%
-  );
+      var(--gray-gradient-dark) 80%);
 }
 
-main .angled-inverted-background.section.hero-container > .hero-wrapper {
+main .angled-inverted-background.section.hero-container>.hero-wrapper {
   background-color: var(--gray-gradient-light);
 
 }
@@ -519,12 +617,10 @@ main .section.inverted-gradient-background {
 }
 
 .angle-background {
-  background: linear-gradient(
-          var(--gray-gradient-angle),
-          var(--gray-gradient-light) 0%,
-          var(--gray-gradient-light) var(--gray-gradient-breakpoint),
-          var(--gray-gradient-dark) 100%
-  );
+  background: linear-gradient(var(--gray-gradient-angle),
+      var(--gray-gradient-light) 0%,
+      var(--gray-gradient-light) var(--gray-gradient-breakpoint),
+      var(--gray-gradient-dark) 100%);
 }
 
 .sr-only {
@@ -534,6 +630,10 @@ main .section.inverted-gradient-background {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+main .disclaimer-modal-container {
+  background-color: rgb(0 0 0 / 50%);
 }
 
 @media screen and (max-width: 299px) {
@@ -548,49 +648,65 @@ main .section.inverted-gradient-background {
 
 @media screen and (min-width: 600px) {
   :root {
-    --nav-height: 125px;
+    --nav-height: 65px;
   }
 
-  main > .section > div {
+  h1 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  h2 {
+    font-size: var(--heading-font-size-m);
+  }
+
+  main>.section>div {
     padding: 0 24px;
   }
 
-  main > .section[data-background-image] > .section-bg-image-wrapper {
+  main>.section>.default-content-wrapper>picture>img {
+    object-position: unset;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  main>.section[data-background-image]>.section-bg-image-wrapper {
     height: 20%;
   }
 
-  main > .section[data-background-image] > .section-bg-image-wrapper > picture > img {
+  main>.section[data-background-image]>.section-bg-image-wrapper>picture>img {
     object-position: unset;
   }
 
   main .section.angled-inverted-background.hero-container .hero {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
   }
+
+  main .section.content-bump-out .default-content-wrapper p:first-of-type {
+    font-size: var(--body-font-size-m);
+    text-align: left;
+  }
 }
 
+main .section.content-bump-out.content-center .default-content-wrapper p {
+  font-size: var(--body-font-size-m);
+  text-align: center;
+}
+
+
 @media screen and (min-width: 900px) {
-  h1 {
-    font-size: var(--heading-font-size-xl);
+  main>.section>div {
+    margin: 16px auto 32px;
+    max-width: 1158px;
+
   }
 
-  h2 {
-    font-size: var(--heading-font-size-l);
-  }
-
-  p {
-    font-size: var(--body-font-size-l);
-  }
-
-  main > .section > div {
-    padding: 0 90px;
-  }
-
-  main > .section[data-background-image] {
-    padding-bottom: 300px;
+  main>.section[data-background-image] {
+    /*padding-bottom: 81px;*/
   }
 
 
-  main > .section[data-background-image] > .section-bg-image-wrapper picture {
+  main>.section[data-background-image]>.section-bg-image-wrapper picture {
     height: 100%;
   }
 
@@ -600,7 +716,7 @@ main .section.inverted-gradient-background {
     column-gap: 3em;
   }
 
-  main .section[data-layout="50/50"] .layout-content-wrapper > div {
+  main .section[data-layout="50/50"] .layout-content-wrapper>div {
     flex-basis: calc(50% - 1.5em);
   }
 
@@ -613,14 +729,12 @@ main .section.inverted-gradient-background {
   }
 
   main .section.cadet-gradient-background[data-background-image] {
-    background: linear-gradient(
-        -180deg,
+    background: linear-gradient(-180deg,
         #5b6770 0%,
         #edeff0 76%,
         rgba(242 244 245 / 55%) 78%,
         rgba(247 248 248 / 0%) 80%,
-        rgba(255 255 255 / 0%) 100%
-    );
+        rgba(255 255 255 / 0%) 100%);
   }
 
   main .section.angled-inverted-background.hero-container .hero {
@@ -630,17 +744,15 @@ main .section.inverted-gradient-background {
 
 @media screen and (min-width: 1200px) {
   main .section.cadet-gradient-background[data-background-image] {
-    background: linear-gradient(
-        -180deg,
+    background: linear-gradient(-180deg,
         #5b6770 0%,
         #edeff0 68%,
         rgba(242 244 245 / 55%) 70%,
         rgba(247 248 248 / 0%) 72%,
-        rgba(255 255 255 / 0%) 92%
-    );
+        rgba(255 255 255 / 0%) 92%);
   }
 
-  main > .section[data-background-image] > .section-bg-image-wrapper {
+  main>.section[data-background-image]>.section-bg-image-wrapper {
     height: 30%;
   }
 
@@ -658,12 +770,18 @@ main .section.inverted-gradient-background {
     grid-template-columns: 3fr 1fr;
   }
 
-  main .section > div {
-    padding: 0 40px;
-  }
-
   main .section.angled-inverted-background.hero-container .hero {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+  }
+
+  main .section.content-bump-out.content-center.hero-container .default-content-wrapper {
+    margin: -64px auto 0;
+    padding: 0 64px;
+  }
+
+  main .section.content-bump-out.content-center .default-content-wrapper {
+    margin: -56px auto 0;
+    padding: 0 64px;
   }
 
 }

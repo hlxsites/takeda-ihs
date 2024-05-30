@@ -1,4 +1,5 @@
-import { decorateIcons, getMetadata } from '../../scripts/lib-franklin.js';
+import { decorateSections, getMetadata } from '../../scripts/aem.js';
+import { createElemWithClass } from '../../scripts/utils.js';
 
 /**
  * loads and decorates the footer
@@ -6,7 +7,7 @@ import { decorateIcons, getMetadata } from '../../scripts/lib-franklin.js';
  */
 export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
-  const footerPath = footerMeta ? new URL(footerMeta).pathname : '/footer';
+  const footerPath = footerMeta ? new URL(footerMeta).pathname : '/drafts/phase-two-redo/footer';
   const resp = await fetch(
     `${footerPath}.plain.html`,
     window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {},
@@ -16,13 +17,14 @@ export default async function decorate(block) {
     const footer = document.createElement('div');
     // decorate footer DOM
     footer.innerHTML = await resp.text();
-
-    // size the footer image
-    const image = footer.querySelector('picture img');
-    image.width = '100';
-    image.height = '36';
-
-    decorateIcons(footer);
-    block.append(footer);
+    decorateSections(footer);
+    const contentWrapper = createElemWithClass('div', 'content-wrapper');
+    footer.querySelectorAll('.section[data-section]').forEach((section) => {
+      const clazz = section.getAttribute('data-section');
+      const wrapper = section.children[0];
+      wrapper.classList.replace('default-content-wrapper', `footer-${clazz}`);
+      contentWrapper.append(wrapper);
+    });
+    block.replaceChildren(contentWrapper);
   }
 }

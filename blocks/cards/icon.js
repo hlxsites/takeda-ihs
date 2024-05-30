@@ -1,4 +1,4 @@
-import { decorateIcons } from '../../scripts/lib-franklin.js';
+import { decorateIcons } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
   let count;
@@ -13,5 +13,4 @@ export default async function decorate(block) {
       card.classList.add('card');
     });
   });
-  await decorateIcons(block);
 }
