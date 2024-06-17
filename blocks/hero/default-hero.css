@@ -1,11 +1,12 @@
 .hero.block.default h1 {
-  color: var(--gray-neutral-70);
+  color: var(--brand-text);
   padding-bottom:16px;
+  font-size: var(--heading-font-size-h1);
 }
 
 .hero.block.default h1 em {
   color: var(--brand-secondary-subtle);
-  font-style: normal;
+  font-weight: var(--font-weight-regular);
 }
 
 .hero.block.default .image {
@@ -53,7 +54,7 @@
 
 .hero.block.default .content-wrapper .content {
   background-color: var(--brand-white);
-  border-left: 10px solid var(--brand-critical);
+  border-left: 10px solid var(--brand-primary-subtle);
   padding: 48px 36px 32px 40px;
   margin-bottom: 0;
 }

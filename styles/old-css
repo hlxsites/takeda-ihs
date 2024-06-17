@@ -33,7 +33,6 @@
   --brand-primary-subtle: #e1242a;
   --brand-primary: #bd120a;
   --brand-Secondary-Strong: #000;
-  --brand-secondary-subtle: #edf2f4;
   --brand-primary-strong: #891515;
   --brand-primary-strongest: #450a0a;
   --brand-white: #fff;
@@ -60,14 +59,11 @@
   --brand-Info-Subtle: #e0ebff;
   --brand-Tracks: #e6e6e6;
 
-
-
   /* border colors */
   --brand-Border: #cdd1d6;
   --brand-Border-Subtle: #edf2f4;
   --brand-Border-Strong: #81838a;
   --brand-Border-Strongest: #000;
-
 
   /* Font Colors */
   --default-text-color: var(--brand-text);
@@ -127,13 +123,9 @@
   --wide-page-width: 1600px;
   --full-page-width: 100vw;
 
-  /* Gradient breakpoints */
-  --gray-gradient-breakpoint: 41%;
+/* Borders */
 
-  /* Gradient angles */
-  --gray-gradient-angle: -180deg;
-}
-
+  --border-bottom-left-radius-takeda: 20px:
 *,
 *::before,
 *::after {
@@ -141,7 +133,7 @@
 }
 
 strong {
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-bold);
 }
 
 em {
@@ -187,7 +179,7 @@ h2 sub {
 
 h3 {
   margin-bottom: 12px;
-  font-size: var(--heading-font-size-xxs);
+  font-size: var(--heading-font-size-h3);
   line-height: var(--line-height-m);
 }
 
@@ -212,7 +204,7 @@ p {
 }
 
 p.reference {
-  font-size: var(--body-font-size-xxs);
+  font-size: var(--body-font-size-smallest);
 }
 
 a,
@@ -227,8 +219,8 @@ a:hover {
 
 span {
   font-family: var(--body-font-family);
-  font-weight: var(--font-weight-normal);
-  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--body-font-size-medium);
   line-height: var(--line-height-s);
   color: var(--default-text-color);
 }
@@ -241,8 +233,8 @@ p.button-container a {
   line-height: var(--line-height-l);
   text-decoration: none;
   color: var(--brand-white);
-  font-size:var(--body-font-size-m);
-  border-bottom-left-radius: 20px;
+  font-size:var(--body-font-size-medium);
+  border-bottom-left-radius-takeda: var(--border-bottom-left-radius-takeda);
   transition-duration: .2s;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   background-color: var(--brand-primary);
@@ -407,7 +399,7 @@ main .section.image-boxshadow .default-content-wrapper>p.image {
 main .section.content-bump-out .default-content-wrapper p:first-of-type {
   margin: 40px 0 16px;
   text-align: center;
-  color: var(--brand-primary);
+  color: var(--dark-red);
 }
 
 main .section .default-content-wrapper>p>picture>img {
@@ -663,7 +655,7 @@ main .disclaimer-modal-container {
   }
 
   h2 {
-    font-size: var(--heading-font-size-h2);
+    font-size: var(--heading-font-size-m);
   }
 
   main>.section>div {

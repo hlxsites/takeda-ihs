@@ -2,7 +2,7 @@ footer {
   margin: 0;
   padding: 0 20px 20px;
   text-align: center;
-  background: linear-gradient(to top, var(--bright-gray) 75%, white 0%);
+  background: linear-gradient(to top, var(--brand-secondary-subtle) 75%, white 0%);
 }
 
 footer .footer.block {
@@ -29,11 +29,11 @@ footer .footer.block {
 }
 
 .footer.block .content-wrapper .footer-contact-us * {
-  color: var(--white);
+  color: var(--brand-white);
 }
 
 .footer.block .content-wrapper .footer-contact-us h3 {
-  color: var(--white);
+  color: var(--brand-white);
   font-size: var(--heading-font-size-s);
   padding-bottom: 30px;
 }
@@ -53,7 +53,7 @@ footer .footer.block {
   line-height: var(--line-height-l);
   text-decoration: none;
   color: var(--brand-white);
-  background-color: var(--brand-critical-strong);
+  background-color: var(--brand-primary);
   border-bottom-left-radius: 20px;
 }
 
