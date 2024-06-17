@@ -96,7 +96,7 @@ main .section.isi-tray-container > div {
 
 .isi-tray.block button span {
   font-family: system-ui;
-  font-size: var(--body-font-size-xxl);
+  font-size: var(    --body-font-size-body-xxlarge);
   font-weight: var(--font-weight-semibold);
   color: var(--white);
 }
@@ -303,7 +303,7 @@ main .section.isi-tray-container > div {
 
 @media screen and (min-width: 900px) {
   .isi-tray.block {
-    --tray-font-size: var(--body-font-size-s);
+    --tray-font-size: var(--body-font-size-body-smallest:);
   }
 
   .isi-tray.block .collapsed-tray p {

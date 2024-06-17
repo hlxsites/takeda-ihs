@@ -19,7 +19,7 @@
 }
 
 .cards.profile.block .card hr {
-  border-top: 3px solid var(--red);
+  border-top: 3px solid var(--brand-secondary-subtle);
   width: 100%;
   grid-area: rule;
 }
@@ -31,7 +31,7 @@
 
 .cards.profile.block .card .image p {
   margin-bottom: .5em;
-  font-size: var(--body-font-size-l);
+  font-size: var(--body-font-size-body-large);
   font-weight: var(--font-weight-bold);
   color: var(--black);
 }
@@ -57,16 +57,16 @@
 }
 
 .cards.profile.block .card .details p {
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-body-smallest);
 }
 
 @media screen and (min-width: 900px) {
   .cards.profile.block .card .image p {
-    font-size: var(--body-font-size-l);
+    font-size: var(--body-font-size-body-large);
   }
 
   .cards.profile.block .card .details p {
-    font-size: var(--body-font-size-s);
+    font-size: var(--body-font-size-body-smallest:);
   }
 }
 

@@ -78,13 +78,13 @@
   width: 100%;
   align-items: center;
   justify-content: flex-end;
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-body-smallest);
   font-weight: var(--font-weight-bold);
   color: var(--black);
 }
 
 .cards.icon-cta.block > .card > .card-content .card-body p {
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-body-smallest);
 }
 
 @media screen and (min-width: 600px) {

@@ -43,7 +43,7 @@
 }
 
 .hero.block.product .title {
-  font-size: var(--body-font-size-xl);
+  font-size: var(--body-font-size-body-xlarge);
   line-height: var(--line-height-m);
   color: var(--black);
 }
@@ -82,7 +82,7 @@
 
 .hero.block.product .references p {
   margin-bottom: 30px;
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-body-smallest);
   line-height: var(--line-height-m);
 }
 
@@ -131,15 +131,15 @@
 
 @media screen and (min-width: 600px) {
   .hero.block.product .title p {
-    font-size: var(--body-font-size-xxl);
+    font-size: var(    --body-font-size-body-xxlarge);
   }
 
   .hero.block.product .title p em {
-    font-size: var(--body-font-size-xl);
+    font-size: var(--body-font-size-body-xlarge);
   }
 
   .hero.block.product .link p.button-container {
-    font-size: var(--body-font-size-l);
+    font-size: var(--body-font-size-body-large);
   }
 }
 

@@ -17,13 +17,13 @@ footer .footer.block {
 }
 
 .footer.block .content-wrapper p {
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-body-smallest);
   margin-bottom: 14px;
   text-align: left;
 }
 
 .footer.block .content-wrapper .footer-contact-us {
-  background-color: var(--gray-neutral-80);
+  background-color: var(--brand-text);
   border-radius: 0 0 10px 10px;
   padding: 40px 60px;
 }
@@ -48,7 +48,7 @@ footer .footer.block {
 .footer.block .content-wrapper .footer-contact-us a {
   display: inline-block;
   padding: 8px 42px;
-  font-size: var(--body-font-size-l);
+  font-size: var(--body-font-size-body-large);
   font-weight: normal;
   line-height: var(--line-height-l);
   text-decoration: none;

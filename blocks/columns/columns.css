@@ -45,7 +45,7 @@
 }
 
 .columns.block.icons-on-mobile div.column-item > p {
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-body-smallest:);
 }
 
 @media screen and (min-width: 600px) {

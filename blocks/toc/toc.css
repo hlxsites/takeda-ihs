@@ -5,7 +5,7 @@
     justify-content: center;
     padding-left: 0;
     width: 100%;
-    background-color: var(--gray-neutral-80);
+    background-color: var(--brand-text);
 }
 
 .toc ul li {
@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: center;
     column-gap: 5px;
-    font-size: var(--body-font-size-s);
+    font-size: var(--body-font-size-body-smallest:);
     font-weight: var(--font-weight-normal);
     color: var(--white);
     text-decoration: none;

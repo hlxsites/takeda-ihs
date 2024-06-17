@@ -127,7 +127,7 @@ main .form .field-description {
 
 main .form form .field-invalid {
     color: var(--form-error-color);
-    font-size: var(--body-font-size-s);
+    font-size: var(--body-font-size-body-smallest:);
     font-weight: normal;
 }
 

@@ -28,7 +28,7 @@
   --brand-border: #cdd1d6;
   --gray-neutral-70: #333;
   --brand--secondary-subtle: #edf2f4;
-  --gray-neutral-80: #333;
+  --brand-text: #333;
   --gray-neutral-90: #1e1e23;
   --gray-box-shadow: rgb(0 0 0 / 20%);
   --gray-gradient-light: #edeff0;
@@ -37,18 +37,17 @@
   /* general colors */
   --silver: #d8d8d8;
   --quartz: #4c4948;
-  --red: #e1242a;
-  --dark-red: #891515;
+  --brand-secondary-subtle: #e1242a;
   --brand-primary: #bd120a;
   /* for button and link hover states #891515 */
   --brand-primary-strong: #891515;
   --brand-primary-strongest: #450a0a;
   --brand-critical: #eb0000;
   --brand-critical-strong: #c10000;
-  --white: #fff;
+  --brand-white: #fff;
   --blue: #003087;
   --black-olive: #3a3a3a;
-  --black: black;
+  --brand-black: #000000;
   --cadet: #5B6770;
 
   /* Brand Colors */
@@ -65,7 +64,7 @@
   --hello-programs: #808080;
 
   /* Font Colors */
-  --default-text-color: var(--gray-neutral-80);
+  --default-text-color: var(--brand-text);
 
   /* Fonts */
   --font-family-gotham: 'Gotham', 'Gotham Fallback', 'Arial', sans-serif;
@@ -73,29 +72,27 @@
   --heading-font-family: var(--font-family-gotham);
 
   /* Font Weights */
-  --font-weight-bold: 700;
-  --font-weight-semibold: 600;
-  --font-weight-normal: 400;
   --font-weight-light: 300;
-  --font-weight-thin: 100;
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
 
   /* Body */
-  --body-font-size-xxs: 10px;
-  --body-font-size-xs: 12px;
-  --body-font-size-s: 14px;
-  --body-font-size-m: 16px;
-  --body-font-size-l: 18px;
-  --body-font-size-xl: 20px;
-  --body-font-size-xxl: 22px;
+  --body-font-size-body-smallest: 12px;
+  --body-font-size-body-small: 14px;
+  --body-font-size-body-medium: 16px;
+  --body-font-size-body-large: 18px;
+  --body-font-size-body-xlarge: 20px;
+  --body-font-size-body-xxlarge: 22px;
 
   /* Heading */
-  --heading-font-size-xxs: 18px;
-  --heading-font-size-xs: 20px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-m: 30px;
-  --heading-font-size-l: 36px;
-  --heading-font-size-xl: 40px;
-  --heading-font-size-xxl: 54px;
+  --heading-font-size-h1: 40px;
+  --heading-font-size-h2: 32px;
+  --heading-font-size-h3: 28px;
+  --heading-font-size-h4: 24px;
+  --heading-font-size-h5: 20px;
+  --heading-font-size-h6: 16px;
+  --heading-font-size-h7: 14px;
 
   /* hover state colors buttons links */
 
@@ -149,7 +146,7 @@ sup {
 }
 
 sub {
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-body-smallest);
   line-height: var(--line-height-xs);
 }
 
@@ -158,7 +155,7 @@ h2,
 h3 {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-bold);
-  color: var(--gray-neutral-80);
+  color: var(--brand-text);
 }
 
 h1 {
@@ -370,7 +367,7 @@ main .section.quartz-background li {
 
 main .section.red-title h1,
 main .section.red-title h2 {
-  color: var(--red);
+  color: var(--brand-secondary-subtle);
 }
 
 main .section.hero h1 {
@@ -486,7 +483,7 @@ main .section[data-layout] .layout-content-wrapper {
 
 main .section[data-layout]:not(.center) .layout-content-wrapper .default-content-wrapper {
   padding: 0 24px;
-  border-left: 3px solid var(--red);
+  border-left: 3px solid var(--brand-secondary-subtle);
 }
 
 main .section[data-layout="50/50"] .layout-content-wrapper>div.separator-wrapper {
@@ -653,7 +650,7 @@ main .disclaimer-modal-container {
   }
 
   h1 {
-    font-size: var(--heading-font-size-xl);
+    font-size: var(--heading-font-size-h1);
   }
 
   h2 {
@@ -726,7 +723,7 @@ main .section.content-bump-out.content-center .default-content-wrapper p {
   }
 
   main .section[data-layout] .default-content-wrapper p {
-    font-size: var(--body-font-size-s);
+    font-size: var(--body-font-size-body-smallest:);
   }
 
   main .section.cadet-gradient-background[data-background-image] {

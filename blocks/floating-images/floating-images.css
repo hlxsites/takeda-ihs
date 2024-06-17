@@ -37,7 +37,7 @@
 }
 .block.floating-images .content h3 {
   color:red;
-  font-size: var(--body-font-size-l);
+  font-size: var(--body-font-size-body-large);
   font-weight: var(--font-weight-normal);
 }
 

@@ -80,7 +80,7 @@
 
 .hero.block.card .content-wrapper .content .resources p {
   margin-bottom: 20px;
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-body-smallest:);
   line-height: var(--line-height-s);
 }
 
@@ -119,7 +119,7 @@
 .hero.block.card .content-wrapper .content .resources a.resource p.download {
   margin: 0;
   font-weight: var(--font-weight-bold);
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-body-smallest:);
   line-height: var(--line-height-m);
   color: var(--blue);
   text-align: right;
@@ -182,7 +182,7 @@
   }
 
   .hero.block.card .content-wrapper .content .resources a.resource p.name {
-    font-size: var(--body-font-size-l);
+    font-size: var(--body-font-size-body-large);
   }
 
   .hero.block.card .content-wrapper .content .resources a.resource p.download {

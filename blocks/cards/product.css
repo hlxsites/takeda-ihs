@@ -24,7 +24,7 @@
 }
 .cards.product.block .card .details p {
   text-align: left;
-  font-size: var(--body-font-size-xl);
+  font-size: var(--body-font-size-body-xlarge);
   margin-bottom:.25em;
 }
 

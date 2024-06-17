@@ -4,7 +4,7 @@
 }
 
 .hero.block.default h1 em {
-  color: var(--red);
+  color: var(--brand-secondary-subtle);
   font-style: normal;
 }
 
@@ -66,7 +66,7 @@
   display: flex;
   align-items: center;
   column-gap: 15px;
-  color: var(--red);
+  color: var(--brand-secondary-subtle);
 }
 
 .hero.block.default.red .content-wrapper.no-image .content h1 {
@@ -89,7 +89,7 @@
 }
 
 .hero.block.default .content-wrapper .content p {
-  font-size: var(--body-font-size-l);
+  font-size: var(--body-font-size-body-large);
   font-weight: var(--font-weight-thin);
   line-height: var(--line-height-s);
   color: var(--gray-neutral-70);
@@ -135,7 +135,7 @@
   }
 
   .hero.block.default .content-wrapper .content p {
-    font-size: var(--body-font-size-l);
+    font-size: var(--body-font-size-body-large);
     text-align:left;
   }
 
@@ -144,7 +144,7 @@
   }
 
   .hero.block.default .content-wrapper.no-image .content p {
-    font-size: var(--body-font-size-l);
+    font-size: var(--body-font-size-body-large);
   }
 
   .hero.block.default .content-wrapper .button-container {
