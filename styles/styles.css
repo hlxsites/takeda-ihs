@@ -68,6 +68,14 @@
   --brand-Border-Strong: #81838a;
   --brand-Border-Strongest: #000;
 
+/* border radius */
+  --radius-none = 0rem;
+  --radius-smallest: 0.125rem;
+  --radius-small: 0.25rem;
+  --radius-medium:  .5rem;
+  --radius-large: 1rem;
+  --radius-larger:  1.25rem;
+  --radius-largest: 7.5rem;
 
   /* Font Colors */
   --default-text-color: var(--brand-text);
@@ -314,17 +322,18 @@ main .content-center .default-content-wrapper {
 main .section.content-bump-out .default-content-wrapper {
   border: 0;
   max-width: 1158px;
-  margin: -81px auto 0;
   display: table;
   width: 100%;
   text-align: left;
   background-color: #fff;
   position: relative;
   padding-left: 58px;
+  margin:64px
 }
 
 main .section.content-bump-out .default-content-wrapper p  {
   text-align: left;
+  margin-bottom: 48px;
 }
 
 main .section.content-bump-out .default-content-wrapper .button-container  {
@@ -782,12 +791,11 @@ main .section.content-bump-out.content-center .default-content-wrapper p {
   }
 
   main .section.content-bump-out.content-center.hero-container .default-content-wrapper {
-    margin: -64px auto 0;
     padding: 0 64px;
   }
 
   main .section.content-bump-out.content-center .default-content-wrapper {
-    margin: -56px auto 0;
+
     padding: 0 64px;
   }
 

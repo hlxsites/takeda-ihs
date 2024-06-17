@@ -11,27 +11,42 @@
  * governing permissions and limitations under the License.
  */
 
-
-
+@font-face {
+    font-family: "Gothum Fallback";
+    font-style: normal;
+    font-weight: 400;
+    size-adjust: 117.99%;
+    src: local("Arial");
+}
+/* Fonts */
+{
+--font-family-gotham: 'Gotham', 'Gotham Fallback', 'Arial', sans-serif;
+--body-font-family: var(--font-family-gotham);
+--heading-font-family: var(--font-family-gotham);
+}
 :root {
 
-    --brand-primary: #ef426f;
+    --brand-primary: #dd305d;
+    --brand-secondary: #2cd5c4;
     --brand-critical: #2cd5c4;
-
 }
 
 main button,
 p.button-container a {
-    border-radius: 3.5rem;
+    border-radius: var( --radius-largest);
     background: #ef426f;
 }
 
 .header nav .nav-contact-us>p>a {
-    border-bottom-left-radius: 3.5rem !important;
+    border-bottom-left-radius: var( --radius-largest)!important;
 }
 
 .header nav .nav-logo img {
     padding: 15px 0;
     height: auto;
     width: 200px;
+}
+
+main .section.content-bump-out .default-content-wrapper p:first-of-type {
+    color: var(--brand-secondary);
 }
