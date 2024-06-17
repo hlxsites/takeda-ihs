@@ -114,7 +114,7 @@
 
 .header nav .subnav-ribbon a {
   color: var(--brand-white);
-  font-size:var(--body-font-size-body-smallest:);
+  font-size:var(--body-font-size-body-smallest);
   font-weight:var(--font-weight-light);
 }
 
