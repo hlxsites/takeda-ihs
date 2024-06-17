@@ -7,7 +7,7 @@
     / min-content 1fr min-content;
   padding: 0 20px;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--brand-white);
   z-index: 10;
   position: relative;
   box-shadow: 0 8px 8px -4px #00000029;
@@ -113,7 +113,7 @@
 }
 
 .header nav .subnav-ribbon a {
-  color: var(--white);
+  color: var(--brand-white);
   font-size:var(--body-font-size-body-smallest:);
   font-weight:var(--font-weight-light);
 }
@@ -122,7 +122,7 @@
   display: inline-block;
   padding: 8px 42px;
   text-decoration: none;
-  color: var(--white);
+  color: var(--brand-white);
   border-bottom-left-radius: 20px;
   white-space: nowrap;
   line-height: 19px;

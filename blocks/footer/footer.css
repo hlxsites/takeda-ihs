@@ -52,7 +52,7 @@ footer .footer.block {
   font-weight: normal;
   line-height: var(--line-height-l);
   text-decoration: none;
-  color: var(--white);
+  color: var(--brand-white);
   background-color: var(--brand-critical-strong);
   border-bottom-left-radius: 20px;
 }
