@@ -1,0 +1,37 @@
+
+/*
+ * Copyright 2023 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+
+
+:root {
+
+    --brand-primary: #ef426f;
+    --brand-critical: #2cd5c4;
+
+}
+
+main button,
+p.button-container a {
+    border-radius: 3.5rem;
+    background: #ef426f;
+}
+
+.header nav .nav-contact-us>p>a {
+    border-bottom-left-radius: 3.5rem !important;
+}
+
+.header nav .nav-logo img {
+    padding: 15px 0;
+    height: auto;
+    width: 200px;
+}
