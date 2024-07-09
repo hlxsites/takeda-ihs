@@ -235,6 +235,7 @@ p.button-container a {
   line-height: var(--line-height-l);
   text-decoration: none;
   color: var(--white);
+  background-color: var(--brand-primary);
   font-size:var(--body-font-size-m);
   border-bottom-left-radius: 20px;
   transition-duration: .2s;
