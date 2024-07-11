@@ -180,3 +180,12 @@ main .section.content-bump-out .default-content-wrapper p:first-of-type {
     background-position: top 96px right 50px;
     background-size: 720px;
 }
+
+footer  {
+
+  background-color: var(--brand-primary);
+}
+
+footer .footer p {
+    color:var(--brand-white);
+}
