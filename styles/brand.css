@@ -184,6 +184,7 @@ main .section.content-bump-out .default-content-wrapper p:first-of-type {
 footer  {
 
   background-color: var(--brand-primary);
+    background: var(--brand-primary);
 }
 
 footer .footer p {
