@@ -96,9 +96,8 @@ main .section.content-bump-out .default-content-wrapper p:first-of-type {
     color: var(--brand-white);
     padding-bottom:20px;
 }
-.hero.block.card .image picture img {
-
-    height:90%;
+.hero.block.card .image  {
+    height:80%;
 }
 
 .hero.block.card .content-wrapper .content .title h1 em {
