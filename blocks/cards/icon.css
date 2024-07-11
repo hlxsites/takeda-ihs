@@ -12,7 +12,7 @@
 
 .cards.icon.block .row {
   display: grid;
-  gap: 24px;
+  gap: 16px;
 }
 
 .cards.icon.block .card {
@@ -21,7 +21,7 @@
   margin:20px 0;
   flex-direction: column;
   background-color: white;
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid grey;
 }
 
@@ -59,7 +59,8 @@
 }
 
 .cards.icon.block .card  p {
-  margin-bottom:0;
+  margin-bottom:8px;
+  margin-top:auto;
 
 }
 @media screen and (min-width: 600px) {
@@ -70,13 +71,13 @@
 
 @media screen and (min-width: 900px) {
   .cards.icon.block .row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .cards.icon.block .card {
-    border-right: 1px solid grey;
     border-bottom:0;
-
+    display: grid;
+    height: 100%;
   }
 
   main .section[data-layout] .cards.icon.block .row {
@@ -87,7 +88,7 @@
 @media screen and (min-width: 1200px) {
   .cards.icon.block.cols-3 .row,
   main .section[data-layout] .cards.icon.block .row {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
 }

@@ -73,14 +73,14 @@ function buildCardContent(block) {
     const content = block.children[idx].children[1];
     [...content.querySelectorAll('a')].forEach((a) => {
       a.classList.add('resource');
-      const wrapper = document.createElement('div');
-      wrapper.classList.add('resource-wrapper');
+      // const wrapper = document.createElement('div');
+      // wrapper.classList.add('resource-wrapper');
       const text = a.textContent;
       const name = document.createElement('p');
       name.classList.add('name');
       name.textContent = text;
-      wrapper.append(name);
-      a.replaceChildren(wrapper);
+      // wrapper.append(name);
+      // a.replaceChildren(wrapper);
     });
 
     content.classList.add('resources');
