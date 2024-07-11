@@ -89,6 +89,11 @@ main .section.content-bump-out .default-content-wrapper {
 main .section.content-bump-out .default-content-wrapper p:first-of-type {
     color: var(--brand-secondary);
 }
+
+.hero.block.card .content-wrapper{
+
+    padding:80px 0 150px;
+}
 .hero.block.card .content-wrapper .content .title , .resources {
     text-align: center;
 }
@@ -97,7 +102,7 @@ main .section.content-bump-out .default-content-wrapper p:first-of-type {
     padding-bottom:20px;
 }
 .hero.block.card .image  {
-    height:80%;
+    height:100%;
 }
 
 .hero.block.card .content-wrapper .content .title h1 em {
@@ -188,4 +193,10 @@ footer  {
 
 footer .footer p {
     color:var(--brand-white);
+}
+
+@media screen and (min-width: 900px) {
+    .hero.block.card .content-wrapper .content p  {
+        font-size: var(--body-font-size-medium);
+    }
 }
