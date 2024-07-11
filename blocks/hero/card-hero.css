@@ -173,7 +173,7 @@
   }
 
   .hero.block.card .content-wrapper .content .resources p {
-    font-size: var(--body-font-size-m);
+    font-size: var(--body-font-size-body-medium);
   }
 
   .hero.block.card .content-wrapper .content .resources a.resource p.name {

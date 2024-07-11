@@ -197,6 +197,6 @@ footer .footer p {
 
 @media screen and (min-width: 900px) {
     .hero.block.card .content-wrapper .content p  {
-        font-size: var(--body-font-size-medium);
+        font-size: var( --body-font-size-body-medium);
     }
 }
