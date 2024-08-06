@@ -5,7 +5,7 @@
 }
 
 .hero.block.default h1 em {
-  color: var(--brand-secondary-subtle);
+  color: var(--brand-primary-subtle);
   font-weight: var(--font-weight-regular);
 }
 
