@@ -51,7 +51,7 @@
   --black: black;
   --cadet: #5B6770;
 
-  /* Brand Colors */
+  /* design sytem Brand Colors */
   --takeda-red-50: #e1242a;
   --gammagard-liq: #003087;
   --gammagard-sd: #35a4d8;
@@ -67,10 +67,58 @@
   /* Font Colors */
   --default-text-color: var(--gray-neutral-80);
 
+  /* design sytem colors variables */
+  --brand-primary-subtle: #e1242a;
+  --brand-primary: #bd120a;
+  --brand-Secondary-Strong: #000;
+  --brand-secondary-subtle: #edf2f4;
+  --brand-primary-strong: #891515;
+  --brand-primary-strongest: #450a0a;
+  --brand-white: #fff;
+  --brand-Tertiary: #fff;
+  --brand-black: #000000;
+  --brand-Neutral: #edf2fa;
+  --brand-DarkGray: #1e1e23;
+  --brand-Disabled: #e2e6e9;
+  --brand-Disabled-Strong: #a1a4ac;
+
+  /* design system pallete */
+  --brand-Focus: #4984ff;
+  --brand-Success-Strong: #14662d;
+  --brand-Success: #198038;
+  --brand-Success-Subtle: #e1f9e9;
+  --brand-Caution-Strong: #655006;
+  --brand-Caution: #f1c21b;
+  --brand-Caution-Subtle: #fef9e8;
+  --brand-Critical-Strong: #c10000;
+  --brand-Critical: #eb0000;
+  --brand-Critical-Subtle: #ffe4e4;
+  --brand-Info-Strong: #0036a5;
+  --brand-Info: #0043ce;
+  --brand-Info-Subtle: #e0ebff;
+  --brand-Tracks: #e6e6e6;
+
+  /* design system Heading */
+  --heading-font-size-h1: 40px;
+  --heading-font-size-h2: 32px;
+  --heading-font-size-h3: 28px;
+  --heading-font-size-h4: 24px;
+  --heading-font-size-h5: 20px;
+  --heading-font-size-h6: 16px;
+  --heading-font-size-h7: 14px;
+
   /* Fonts */
   --font-family-gotham: 'Gotham', 'Gotham Fallback', 'Arial', sans-serif;
   --body-font-family: var(--font-family-gotham);
   --heading-font-family: var(--font-family-gotham);
+
+  /* design system Body */
+  --body-font-size-body-smallest: 12px;
+  --body-font-size-body-small: 14px;
+  --body-font-size-body-medium: 16px;
+  --body-font-size-body-large: 18px;
+  --body-font-size-body-xlarge: 20px;
+  --body-font-size-body-xxlarge: 22px;
 
   /* Font Weights */
   --font-weight-bold: 700;
@@ -290,7 +338,7 @@ main .section {
 }
 
 main>div.section:first-child {
-  padding-bottom: 24px;
+  padding-bottom: 0;
 }
 
 main .section.cards-container {
