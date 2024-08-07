@@ -34,6 +34,23 @@
   --gray-gradient-light: #edeff0;
   --gray-gradient-dark: #9da8af;
 
+  /* design system color variables */
+
+  /* colors variables */
+  --brand-primary-subtle: #e1242a;
+  --brand-primary: #bd120a;
+  --brand-Secondary-Strong: #000;
+  --brand-secondary-subtle: #edf2f4;
+  --brand-primary-strong: #891515;
+  --brand-primary-strongest: #450a0a;
+  --brand-white: #fff;
+  --brand-Tertiary: #fff;
+  --brand-black: #000;
+  --brand-Neutral: #edf2fa;
+  --brand-DarkGray: #1e1e23;
+  --brand-Disabled: #e2e6e9;
+  --brand-Disabled-Strong: #a1a4ac;
+
   /* general colors */
   --silver: #d8d8d8;
   --quartz: #4c4948;
@@ -72,12 +89,25 @@
   --body-font-family: var(--font-family-gotham);
   --heading-font-family: var(--font-family-gotham);
 
+  /* Design System Font Colors */
+  --default-text-color: var(--brand-text);
+  --brand-text: #333;
+  --brand-Text-Strong: #1e1e23;
+  --brand-Text-Subtle: #5c5c5c;
+
   /* Font Weights */
   --font-weight-bold: 700;
   --font-weight-semibold: 600;
   --font-weight-normal: 400;
   --font-weight-light: 300;
   --font-weight-thin: 100;
+
+  /* design system font weights */
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
 
   /* Body */
   --body-font-size-xxs: 10px;
@@ -88,6 +118,14 @@
   --body-font-size-xl: 20px;
   --body-font-size-xxl: 22px;
 
+  /* Body */
+  --body-font-size-smallest: 12px;
+  --body-font-size-small: 14px;
+  --body-font-size-medium: 16px;
+  --body-font-size-large: 18px;
+  --body-font-size-xlarge: 20px;
+  --body-font-size-xxlarge: 22px;
+
   /* Heading */
   --heading-font-size-xxs: 18px;
   --heading-font-size-xs: 20px;
@@ -96,6 +134,15 @@
   --heading-font-size-l: 36px;
   --heading-font-size-xl: 40px;
   --heading-font-size-xxl: 54px;
+
+  /* Heading DS */
+  --heading-font-size-h1: 40px;
+  --heading-font-size-h2: 32px;
+  --heading-font-size-h3: 28px;
+  --heading-font-size-h4: 24px;
+  --heading-font-size-h5: 20px;
+  --heading-font-size-h6: 16px;
+  --heading-font-size-h7: 14px;
 
   /* hover state colors buttons links */
 

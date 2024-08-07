@@ -57,7 +57,6 @@ function toggleTopMenu(topMenu) {
 function buildSections(sections) {
   const expanderIcon = document.createElement('span');
   expanderIcon.classList.add('icon', 'icon-cheveron-down');
-
   sections.querySelectorAll(':scope > ul > li').forEach((topMenu) => {
     topMenu.classList.add('top-nav');
     const activeLink = topMenu.querySelector('a');
@@ -220,8 +219,12 @@ export default async function decorate(headerBlock) {
   const navigationMetadata = getMetadata('nav');
   const navigationPath = navigationMetadata ? new URL(navigationMetadata).pathname : '/drafts/phase-two-redo/nav';
   const response = await fetch(`${navigationPath}.plain.html`);
-
+  console.log(navigationMetadata);
   if (response.ok) {
+    if (navigationPath === '/drafts/tmc/nav1') {
+      console.log('path is tmc.nav1');
+    }
+    console.log(response);
     const navigationHtml = document.createElement('div');
     navigationHtml.innerHTML = await response.text();
     decorateSections(navigationHtml);
@@ -235,12 +238,12 @@ export default async function decorate(headerBlock) {
     const navigationElement = createElemWithClass('nav', 'nav');
     navigationElement.id = 'nav';
     navigationElement.setAttribute('aria-expanded', isDesktop.matches);
-
     navigationWrapper.appendChild(navigationElement);
     headerBlock.appendChild(navigationWrapper);
 
     const navigation = headerBlock.querySelector('nav');
     const navigationSections = buildSections(navigationHtml.querySelector('.nav-sections'));
+    console.log(navigationSections);
     const hamburgerMenu = buildHamburger();
     hamburgerMenu.addEventListener('click', (event) => {
       event.preventDefault();
@@ -252,7 +255,11 @@ export default async function decorate(headerBlock) {
     const contactUsButton = navigationHtml.querySelector('div > p');
     contactUsButton.classList.add('button-container');
     const utilitySection = navigationHtml.querySelector('.nav-utility');
-
+    console.log('navElement');
+    if (navigationPath === '/drafts/tmc/nav1') {
+      const navElement = document.getElementById('nav');
+      navElement.classList.add('tmc');
+    }
     // Order maintains tabindex keyboard navigation
     navigation.append(buildLogo());
     navigation.append(hamburgerMenu);

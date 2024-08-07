@@ -6,7 +6,8 @@ import { decorateButtons, readBlockConfig } from '../../scripts/aem.js';
  * @param {HTMLPictureElement} picture the picture
  * @return {HTMLDivElement} the image wrapper
  */
-function buildImageWrapper(picture) {
+function buildImageWrapper(picture, block) {
+  const config = readBlockConfig(block);
   picture.querySelector('img').setAttribute('loading', 'eager');
   const p = picture.parentElement;
   const image = document.createElement('div');
@@ -16,6 +17,29 @@ function buildImageWrapper(picture) {
   if (p.nodeName.toLowerCase() === 'p' && !p.textContent.trim()) {
     p.remove(); // remove floating/empty p
   }
+
+  // if there is a config for image overlay append it to image wrapper
+  if (config.imageoverlay) {
+    const overlayWrap = document.createElement('div');
+    overlayWrap.classList.add('image-overlay');
+    let pairWrap;
+    config.imageoverlay.forEach((text, index) => {
+      /* iterate through all the image overlay config values,
+      wrap every 2 elements into a div and append it to image-overlay element.
+      there are cases where there might be more than 1 image overlay. */
+      if (index % 2 === 0) {
+        pairWrap = document.createElement('div');
+        pairWrap.classList.add('pair-wrap');
+        overlayWrap.append(pairWrap);
+      }
+      const textwrap = document.createElement('p');
+      textwrap.innerHTML = text;
+      pairWrap.append(textwrap);
+    });
+    overlayWrap.append(pairWrap);
+    image.append(overlayWrap);
+  }
+
   return image;
 }
 
@@ -132,7 +156,7 @@ export default async function decorate(block) {
   const content = buildContent(block, type);
   const picture = block.querySelector('picture');
   if (picture) {
-    children.push(buildImageWrapper(picture));
+    children.push(buildImageWrapper(picture, block));
   } else {
     content.classList.add('no-image');
   }

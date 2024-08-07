@@ -24,6 +24,9 @@
   border-bottom: 4px solid var(--brand-primary);
   color:var(--brand-primary);
 }
+.header .nav.tmc .nav-sections, .nav-hamburger{
+ display:none;
+}
 
 .header nav .nav-logo {
   grid-area: logo;
