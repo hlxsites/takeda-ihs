@@ -18,7 +18,7 @@ function buildImageWrapper(picture, block) {
     p.remove(); // remove floating/empty p
   }
 
-  // if there is a config for image overlay append it to image wrapper
+  /* if there is a config for image overlay append it to image wrapper */
   if (config.imageoverlay) {
     const overlayWrap = document.createElement('div');
     overlayWrap.classList.add('image-overlay');
