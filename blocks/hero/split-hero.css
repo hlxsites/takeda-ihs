@@ -21,8 +21,8 @@
 .hero.block.split .content-wrapper .content {
     background: none;
     border: none;
-    padding: 0 16px;
-    border-left: 8px solid var(--brand-primary);
+    padding: 0 16px 0 16px;
+    border-left: 8px solid var(--brand-primary-subtle);
     margin-bottom:24px;
 }
 

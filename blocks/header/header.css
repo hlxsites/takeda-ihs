@@ -308,6 +308,7 @@
   .header nav .nav-contact-us>p>a {
     padding: 12px 24px;
     font-size: var( --body-font-size-m);
+    background-color: var(--brand-primary);
   }
 
 }
