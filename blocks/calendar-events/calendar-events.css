@@ -8,9 +8,8 @@
 }
 
 .calendar-events.block .calendar-event {
-    border: solid 1px transparent;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px var(--gray-box-shadow);
+    border-bottom: solid 1px var(--brand-secondary-subtle);
+
     width: 100%;
 }
 
@@ -48,19 +47,19 @@
 
 .calendar-events.block .calendar-event > .date-card {
     display: grid;
-    grid-template-columns: 80px auto;
+    grid-template-columns: 224px auto;
     padding: 20px;
 }
 
 .calendar-events.block .calendar-event > .date-card  > div:first-of-type {
-    background: var(--red);
-    height: 64px;
+    background: var(--brand-primary-subtle);
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 14px 0 0;
-    border: solid 1px transparent;
+    margin: 0 24px 0 0;
+    border: solid 1px var(--brand-secondary-subtle);
 }
 
 .calendar-events.block .calendar-event > .date-card  > div:first-of-type > h3,
