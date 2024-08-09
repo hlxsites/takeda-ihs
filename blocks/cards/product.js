@@ -1,4 +1,4 @@
-import { getMetadata } from '../../scripts/aem';
+import { getMetadata } from '../../scripts/aem.js';
 
 /**
  * Builds the Profile variation of the cards block.
