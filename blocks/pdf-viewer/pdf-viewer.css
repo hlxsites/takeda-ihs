@@ -1,0 +1,11 @@
+.pdf-viewer.block > div > div > a {
+    display: none;
+}
+
+.pdf-viewer.block .pdf-embed {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    border: 1px solid var(--mt-global-color-gallery);
+    margin: 0 auto;
+}

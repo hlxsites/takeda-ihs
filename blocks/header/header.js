@@ -257,8 +257,11 @@ export default async function decorate(headerBlock) {
     const utilitySection = navigationHtml.querySelector('.nav-utility');
     console.log('navElement');
     if (navigationPath === '/drafts/tmc/nav1') {
+      const innerNavText = '<h1 class="header-title">U.S. Medical</h1>';
       const navElement = document.getElementById('nav');
       navElement.classList.add('tmc');
+      navElement.innerHTML = innerNavText;
+      console.log(innerNavText);
     }
     // Order maintains tabindex keyboard navigation
     navigation.append(buildLogo());
