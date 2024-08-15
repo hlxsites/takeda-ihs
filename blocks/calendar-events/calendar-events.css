@@ -1,3 +1,9 @@
+.section.calendar-events > .default-content-wrapper > h1 {
+
+    font-weight: 200;
+    text-align: center;
+}
+
 .calendar-events.block {
     display: grid;
     grid-template-columns: 1fr;
@@ -9,7 +15,7 @@
 
 .calendar-events.block .calendar-event {
     border-bottom: solid 1px var(--brand-secondary-subtle);
-
+    background-color: #EDF2F4;
     width: 100%;
 }
 
@@ -45,21 +51,35 @@
     line-height: 17px;
 }
 
-.calendar-events.block .calendar-event > .date-card {
+.calendar-events.block .calendar-event > .date-card,.date-card-poster,.date-card-oral,.date-card-abstract {
     display: grid;
-    grid-template-columns: 224px auto;
+    grid-template-columns: 236px auto;
     padding: 20px;
 }
 
-.calendar-events.block .calendar-event > .date-card  > div:first-of-type {
+.calendar-events.block .calendar-event  [class^="date-card"]   div:first-of-type {
     background: var(--brand-primary-subtle);
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: normal;
     justify-content: center;
     margin: 0 24px 0 0;
-    border: solid 1px var(--brand-secondary-subtle);
+    padding: 8px;
+    border: 1px solid var(--brand-Border-Subtle);
+    background: var(--brand-white);
+
+}
+.calendar-events.block .calendar-event > .date-card-poster  > div:first-of-type {
+    background: var(--brand-primary-subtle);
+}
+
+.calendar-events.block .calendar-event > .date-card-abstract  > div:first-of-type {
+    background: var(--brand-primary-strong);
+}
+
+.calendar-events.block .calendar-event > .date-card-oral  > div:first-of-type {
+    background: var(--brand-secondary);
 }
 
 .calendar-events.block .calendar-event > .date-card  > div:first-of-type > h3,
@@ -79,14 +99,37 @@
     text-transform: uppercase;
 }
 
-.calendar-events.block .calendar-event > .date-card  > div:nth-of-type(2) {
-    font-family: var(--body-font-family);
-    font-size: var(--body-font-size-m);
-    line-height: 22px;
+.calendar-events.block .calendar-event > .date-card-oral  > div:first-of-type > p {
+    font-size: var(--body-font-size-s);
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: unset;
 }
 
-.calendar-events.block .calendar-event > .date-card  > div:nth-of-type(2) > p {
-    font-size: var(--body-font-size-l);
+.calendar-events.block .calendar-event > .date-card-abstract  > div:first-of-type > p {
+    font-size: var(--body-font-size-s);
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: unset;
+}
+
+.calendar-events.block .calendar-event > .date-card-poster  > div:first-of-type > p {
+    font-size: var(--body-font-size-s);
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: unset;
+}
+
+.calendar-events.block .calendar-event  [class^="date-card"]  div:nth-of-type(2) {
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size-m);
+    line-height: 16px;
+
+}
+
+.calendar-events.block .calendar-event [class^="date-card"]  div:nth-of-type(2) > p {
+    font-size: var(--body-font-size-m);
+    margin-bottom: unset;
 }
 
 @media screen and (min-width: 900px){

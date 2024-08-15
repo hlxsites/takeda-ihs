@@ -72,6 +72,7 @@
   --brand-primary: #bd120a;
   --brand-Secondary-Strong: #000;
   --brand-secondary-subtle: #edf2f4;
+  --brand-secondary: #a1a4ac;
   --brand-primary-strong: #891515;
   --brand-primary-strongest: #450a0a;
   --brand-white: #fff;
@@ -112,13 +113,29 @@
   --body-font-family: var(--font-family-gotham);
   --heading-font-family: var(--font-family-gotham);
 
-  /* design system Body */
+  /* Design System Body */
   --body-font-size-body-smallest: 12px;
   --body-font-size-body-small: 14px;
   --body-font-size-body-medium: 16px;
   --body-font-size-body-large: 18px;
   --body-font-size-body-xlarge: 20px;
   --body-font-size-body-xxlarge: 22px;
+
+  /* Design System border colors */
+  --brand-Border: #cdd1d6;
+  --brand-Border-Subtle: #edf2f4;
+  --brand-Border-Strong: #81838a;
+  --brand-Border-Strongest: #000;
+
+  /* Design System border radius */
+  --radius-none = 0rem;
+  --radius-smallest: 0.125rem;
+  --radius-small: 0.25rem;
+  --radius-medium:  .5rem;
+  --radius-large: 1rem;
+  --radius-larger:  1.25rem;
+  --radius-largest: 7.5rem;
+
 
   /* Font Weights */
   --font-weight-bold: 700;
