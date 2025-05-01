@@ -1,4 +1,4 @@
-import { readBlockConfig } from '../../scripts/lib-franklin.js';
+import { readBlockConfig } from '../../scripts/aem.js';
 import { BREAKPOINTS } from '../../scripts/scripts.js';
 
 const isDesktop = BREAKPOINTS.medium;

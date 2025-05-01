@@ -1,6 +1,6 @@
 import {
   decorateBlocks, decorateIcons, decorateSections, loadBlocks,
-} from '../../scripts/lib-franklin.js';
+} from '../../scripts/aem.js';
 import { buildLayoutContainers } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {

@@ -1,31 +1,24 @@
-import { decorateIcons } from '../../scripts/lib-franklin.js';
-
 /**
- * Builds the Icons variation of the cards block.
+ * Builds the Profile variation of the cards block.
  * @param {HTMLDivElement} block
  */
 export default async function decorate(block) {
-  const ul = document.createElement('ul');
   [...block.children].forEach((card) => {
-    const li = document.createElement('li');
-    li.classList.add('product', card.children[0].textContent);
-    const picture = card.children[1].querySelector('picture');
-
-    const img = picture.querySelector('img');
-    const ratio = (parseInt(img.height, 10) / parseInt(img.width, 10)) * 100;
-    picture.style.paddingBottom = `${ratio}%`;
-
-    const link = card.children[1].querySelector('a');
-    link.innerHTML = `
-      <hr>
-      <div class="logo">
-        ${picture.outerHTML}
-      </div>
-      <p>Learn More</p>
-    `;
-    li.append(link);
-    ul.append(li);
+    card.classList.add('card');
+    const downloadButton = card.children[2];
+    card.children[0].classList.add('image');
+    card.children[1].classList.add('details');
+    const button = document.createElement('div');
+    button.classList.add('button-wrapper');
+    console.log(downloadButton);
+    const buttonLink = card.querySelector('p.button-container');
+    card.append(button);
+    button.append(buttonLink);
+    let p = card.children[1].querySelector('p');
+    if (!p) {
+      p = document.createElement('p');
+      p.innerHTML = card.children[1].innerHTML;
+      card.children[1].replaceChildren(p);
+    }
   });
-  block.replaceChildren(ul);
-  await decorateIcons(block);
 }

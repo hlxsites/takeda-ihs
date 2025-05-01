@@ -1,4 +1,4 @@
-import { decorateButtons, readBlockConfig } from '../../scripts/lib-franklin.js';
+import { decorateButtons, readBlockConfig } from '../../scripts/aem.js';
 
 /**
  * Builds the image wrapper div from the block definition
@@ -24,7 +24,6 @@ function buildProductContent(block) {
   const keys = Object.keys(config);
   const contentDiv = document.createElement('div');
   contentDiv.classList.add('content');
-
   ['logo', 'title', 'references', 'link'].forEach((part) => {
     const idx = keys.indexOf(part);
     if (idx >= 0) {
